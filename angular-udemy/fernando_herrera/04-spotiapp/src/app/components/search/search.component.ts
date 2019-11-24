@@ -12,10 +12,11 @@ export class SearchComponent {
 
   buscar(termino: string) {
     console.log(`termino: ${termino}`);
-    this.spotifyService.getArtista(termino).subscribe((data: any) => {
-      console.log(data.artists.items);
 
-      this.artistas = data.artists.items;
+    this.spotifyService.getArtista(termino).subscribe((data: any) => {
+      console.log(data);
+
+      this.artistas = data;
     });
   }
 }
