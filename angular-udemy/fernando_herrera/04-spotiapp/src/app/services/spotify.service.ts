@@ -6,37 +6,31 @@ import { map } from "rxjs/operators";
   providedIn: "root"
 })
 export class SpotifyService {
-  token: string =
-    "BQDT0_y6cSIQdQ2X7fduIylubnO45QZ73OE4bD7bXakmHdpdTqYfyaARrnUErcYtRyC5BQtbfArKgTtJLpw";
-
   constructor(private http: HttpClient) {
     console.log("Spotify service listo");
   }
 
-  getNewReleases() {
+  getQuery(query: string) {
+    const url = `https://api.spotify.com/v1/${query}`;
+    const token: string =
+      "BQD_XZLa4wv_T-iG5iIQ4drHvTObXJA-DqQLjgGeP6SjLZ9-fF0VruAcazeaG0W2Lr4lbkih_wLn4R05kuE";
+
     const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.token}`
+      Authorization: `Bearer ${token}`
     });
 
-    return this.http
-      .get("https://api.spotify.com/v1/browse/new-releases", {
-        headers
-      })
-      .pipe(map(data => data["albums"].items));
+    return this.http.get(url, { headers });
+  }
+
+  getNewReleases() {
+    return this.getQuery("browse/new-releases").pipe(
+      map(data => data["albums"].items)
+    );
   }
 
   getArtista(termino: string) {
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.token}`
-    });
-
-    return this.http
-      .get(
-        `https://api.spotify.com/v1/search?q=${termino}&type=artist&limit=15`,
-        {
-          headers
-        }
-      )
-      .pipe(map(data => data["artists"].items));
+    return this.getQuery(`search?q=${termino}&type=artist&limit=15`).pipe(
+      map(data => data["artists"].items)
+    );
   }
 }
