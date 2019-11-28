@@ -15,8 +15,23 @@ export class TemplateComponent {
   usuario = {
     nombre: null,
     apellido: null,
-    correo: null
+    correo: null,
+    pais: "CL",
+    sexo: null
   };
+
+  sexos = ["Masculino", "Femenino"];
+
+  paises = [{
+    codigo: "CL",
+    nombre: "Chile"
+  }, {
+    codigo: "ES",
+    nombre: "España"
+  }, {
+    codigo: "ARG",
+    nombre: "Argentina"
+  }]
 
   constructor() { }
 
