@@ -13,7 +13,7 @@
                placeholder="Nombre"
                name="nombre"
                [(ngModel)]="usuario.nombre"
-               [ngClass]="{'is-invalid': (nombre.errors?.required || nombre.errors?.minlength) && nombre.touched}"
+               [ngClass]="((nombre.errors?.required || nombre.errors?.minlength))? 'is-invalid':'is-valid'"
                minlength="5"
                required
                #nombre="ngModel">
