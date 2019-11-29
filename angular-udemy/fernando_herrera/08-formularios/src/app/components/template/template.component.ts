@@ -17,10 +17,11 @@ export class TemplateComponent {
     apellido: null,
     correo: null,
     pais: "CL",
-    sexo: null
+    sexo: null,
+    acepta: false
   };
 
-  sexos = ["Masculino", "Femenino"];
+  sexos:string[] = ["Masculino", "Femenino"];
 
   paises = [{
     codigo: "CL",
@@ -31,7 +32,7 @@ export class TemplateComponent {
   }, {
     codigo: "ARG",
     nombre: "Argentina"
-  }]
+  }];
 
   constructor() { }
 
