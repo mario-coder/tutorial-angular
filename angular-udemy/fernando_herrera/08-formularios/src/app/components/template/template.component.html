@@ -18,11 +18,11 @@
                required
                #nombre="ngModel">
 
-        <div *ngIf="nombre.errors?.required">
+        <div *ngIf="nombre.errors?.required" class="form-control-feedback">
           Este campo es requerido
         </div>
 
-        <div *ngIf="nombre.errors?.minlength">
+        <div *ngIf="nombre.errors?.minlength" class="form-control-feedback">
           Este campo requiere por lo menos {{nombre.errors.minlength.requiredLength}} caracteres
         </div>
 
