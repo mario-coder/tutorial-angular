@@ -26,21 +26,39 @@ export class DataComponent implements OnInit {
         ]),
         apellido: new FormControl("", [
           Validators.required,
-          Validators.minLength(3)
+          Validators.minLength(3),
+          this.noHerrera
         ])
       }),
       correo: new FormControl("", [
         Validators.required,
         Validators.pattern(this.emailPattern)
-      ])
+      ]),
+      password1: new FormControl("", [Validators.required]),
+      password2: new FormControl()
     });
 
-    this.forma.setValue(this.usuario);
+    this.forma.controls["password2"].setValidators([
+      Validators.required,
+      this.noIgual.bind(this.forma)
+    ]);
+    //this.forma.setValue(this.usuario);
   }
 
   guardarCambios() {
     console.log(this.forma.value);
     this.forma.reset();
+  }
+
+  noHerrera(control: FormControl) {
+    return control.value === "herrera" ? { noherrera: false } : null;
+  }
+
+  noIgual(control: FormControl) {
+    let forma = this;
+    return control.value !== forma.controls["password1"].value
+      ? { noiguales: true }
+      : null;
   }
 
   ngOnInit() {}
