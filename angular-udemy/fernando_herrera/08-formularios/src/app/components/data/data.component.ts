@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 })
 export class DataComponent implements OnInit {
   forma: FormGroup;
-  usuario: Object = {
+  usuario: any = {
     nombreCompleto: {
       nombre: "mario",
       apellido: "bonilla"
@@ -34,10 +34,13 @@ export class DataComponent implements OnInit {
         Validators.pattern(this.emailPattern)
       ])
     });
+
+    this.forma.setValue(this.usuario);
   }
 
   guardarCambios() {
     console.log(this.forma.value);
+    this.forma.reset();
   }
 
   ngOnInit() {}

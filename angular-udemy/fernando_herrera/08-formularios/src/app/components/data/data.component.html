@@ -1,4 +1,4 @@
-<h4>Formularios <small>template</small></h4>
+<h4>Formularios <small>data</small></h4>
 <hr />
 <form [formGroup]="forma" (ngSubmit)="guardarCambios()" novalidate="novalidate">
     <div formGroupName="nombreCompleto">
@@ -8,7 +8,6 @@
                 <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre" [ngClass]="
             forma.get('nombreCompleto.nombre').valid ? 'is-valid' : 'is-invalid'
           " />
-
                 <div *ngIf="forma.get('nombreCompleto.nombre').errors?.required" class="form-control-feedback">
                     Este campo es requerido
                 </div>
