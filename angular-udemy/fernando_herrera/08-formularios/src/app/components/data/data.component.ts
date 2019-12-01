@@ -42,6 +42,15 @@ export class DataComponent implements OnInit {
       Validators.required,
       this.noIgual.bind(this.forma)
     ]);
+
+    //this.forma.valueChanges.subscribe(data => {
+    this.forma.get("nombreCompleto.nombre").valueChanges.subscribe(data => {
+      console.log(data);
+    });
+
+    this.forma.get("nombreCompleto.nombre").statusChanges.subscribe(data => {
+      console.log(data);
+    });
     //this.forma.setValue(this.usuario);
   }
 
