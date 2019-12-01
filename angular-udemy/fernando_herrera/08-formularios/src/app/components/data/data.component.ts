@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormGroup, FormControl, Validators, FormArray } from "@angular/forms";
 import { Observable } from "rxjs/Rx";
 
 @Component({
@@ -14,7 +14,8 @@ export class DataComponent implements OnInit {
       nombre: "mario",
       apellido: "bonilla"
     },
-    correo: "mario@mario.cl"
+    correo: "mario@mario.cl",
+    pasatiempos: ["Comer", "Dormir", "Correr"]
   };
   emailPattern = "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$";
 
@@ -35,6 +36,7 @@ export class DataComponent implements OnInit {
         Validators.required,
         Validators.pattern(this.emailPattern)
       ]),
+      pasatiempos: new FormArray([new FormControl("", [Validators.required])]),
       username: new FormControl("", [Validators.required], this.existeUsuario),
       password1: new FormControl("", [Validators.required]),
       password2: new FormControl()
@@ -45,9 +47,8 @@ export class DataComponent implements OnInit {
       this.noIgual.bind(this.forma)
     ]);
 
-    //this.forma.valueChanges.subscribe(data => {
-
     //Validacion cambio de valor de un campo
+    //this.forma.valueChanges.subscribe(data => {
     this.forma.get("nombreCompleto.nombre").valueChanges.subscribe(data => {
       console.log(data);
     });
@@ -57,6 +58,12 @@ export class DataComponent implements OnInit {
       console.log(data);
     });
     //this.forma.setValue(this.usuario);
+  }
+
+  agregarPasatiempo() {
+    (<FormArray>this.forma.controls["pasatiempos"]).push(
+      new FormControl("", [Validators.required])
+    );
   }
 
   guardarCambios() {
