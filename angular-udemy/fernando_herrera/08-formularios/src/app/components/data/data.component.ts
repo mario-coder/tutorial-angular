@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Observable } from "rxjs/Rx";
 
 @Component({
   selector: "app-data",
@@ -34,6 +35,7 @@ export class DataComponent implements OnInit {
         Validators.required,
         Validators.pattern(this.emailPattern)
       ]),
+      username: new FormControl("", [Validators.required], this.existeUsuario),
       password1: new FormControl("", [Validators.required]),
       password2: new FormControl()
     });
@@ -44,10 +46,13 @@ export class DataComponent implements OnInit {
     ]);
 
     //this.forma.valueChanges.subscribe(data => {
+
+    //Validacion cambio de valor de un campo
     this.forma.get("nombreCompleto.nombre").valueChanges.subscribe(data => {
       console.log(data);
     });
 
+    //Validacion cambio de estado de un campo
     this.forma.get("nombreCompleto.nombre").statusChanges.subscribe(data => {
       console.log(data);
     });
@@ -68,6 +73,19 @@ export class DataComponent implements OnInit {
     return control.value !== forma.controls["password1"].value
       ? { noiguales: true }
       : null;
+  }
+
+  existeUsuario(control: FormControl): Promise<any> | Observable<any> {
+    let promesa = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === "strider") {
+          resolve({ existe: true });
+        } else {
+          resolve(null);
+        }
+      }, 3000);
+    });
+    return promesa;
   }
 
   ngOnInit() {}
