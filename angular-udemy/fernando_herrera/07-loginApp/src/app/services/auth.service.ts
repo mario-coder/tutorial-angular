@@ -23,10 +23,33 @@ export class AuthService {
   logout() {}
 
   login(usuario: UsuarioModel) {
-    
+    const authData = {
+      email: usuario.email,
+      password: usuario.password,
+      returnSecureToken: true
+    }
+
+    return this.http.post(
+      `${this.url}:signInWithPassword?key=${this.apiKey}`, 
+      authData
+    );
   }
 
   nuevoUsuario(usuario: UsuarioModel) {
+    const authData = {
+      email: usuario.email,
+      password: usuario.password,
+      returnSecureToken: true
+    }
+    // const authData = {
+    //   ...usuario,
+    //   returnSecureToken: true
+    // }
     
+    return this.http.post(
+      `${this.url}:signUp?key=${this.apiKey}`, 
+      authData
+    );
+
   }
 }
