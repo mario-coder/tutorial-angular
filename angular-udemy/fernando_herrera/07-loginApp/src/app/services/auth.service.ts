@@ -103,6 +103,9 @@ export class AuthService {
     const expiraDate = new Date();
     expiraDate.setTime(expira);
 
+    console.log(expiraDate.getTime());
+    console.log(new Date().getTime())
+
     if(expiraDate > new Date()) {
       return true;
     } else {
