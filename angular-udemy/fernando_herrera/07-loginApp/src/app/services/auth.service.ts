@@ -15,7 +15,6 @@ export class AuthService {
   //Crear nuevo usuario
   //https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
 
-
   //login
   //https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
 
