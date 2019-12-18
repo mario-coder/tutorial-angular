@@ -1,12 +1,6 @@
+<app-navbar></app-navbar>
 
 
-<div class="container">
-  <h1>Graficos dinamicos en angular</h1>
-  <hr>
-
-
-  <app-linea></app-linea>
-
-
-
+<div [@routeAnimations]="prepareRoute(outlet)" class="container mx-auto m-5">
+  <router-outlet #outlet="outlet"></router-outlet>
 </div>

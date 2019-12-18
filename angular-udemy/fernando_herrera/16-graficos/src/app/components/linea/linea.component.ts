@@ -51,7 +51,7 @@ export class LineaComponent {
           label: {
             enabled: true,
             fontColor: 'orange',
-            content: 'LineAnno'
+            content: 'Annotations'
           }
         },
       ],
