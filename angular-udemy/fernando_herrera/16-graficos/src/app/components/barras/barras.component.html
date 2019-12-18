@@ -2,7 +2,7 @@
     <div class="flex">
       <div class="flex-item">
         <div>
-          <canvas baseChart width="600" height="400"
+          <canvas baseChart width="500" height="350"
             [datasets]="barChartData"
             [labels]="barChartLabels"
             [options]="barChartOptions"
@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="flex-item">
-        <table></table>
-        <button class="btn btn-primary btn-block m-1 mt-5" (click)="randomize()">Update</button>
+        <hr>
+        <button class="btn btn-primary m-1 mt-5" (click)="randomize()">Update</button>
       </div>
     </div>
