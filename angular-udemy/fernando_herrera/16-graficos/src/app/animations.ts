@@ -106,7 +106,7 @@ export const transformer =
       group([
         query(':leave', [
           animate('600ms ease-in-out', style({ [direction]: '100%'}))
-        ], optional),
+        ], { optional: true }),
         query(':enter', [
           animate('600ms ease-in-out', style({ [direction]: '0%'}))
         ])
@@ -114,7 +114,7 @@ export const transformer =
       // Normalize the page style... Might not be necessary
   
       // Required only if you have child animations on the page
-      query(':leave', animateChild()),
+      query(':leave', animateChild(), { optional: true }),
       query(':enter', animateChild()),
     ];
   }//cubic-bezier(0.55, 0.31, 0.15, 0.93)
