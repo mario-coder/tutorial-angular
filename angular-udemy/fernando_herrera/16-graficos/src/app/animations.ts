@@ -80,6 +80,25 @@ export const slider =
     transition('isLeft => *', slideTo('right') )
   ]);
 
+export const fader =
+  trigger('routeAnimations', [
+    transition('* <=> *', [
+      query(':enter, :leave', [
+        style({
+          position: 'relative',
+          opacity: 0,
+          transform: 'scale(0)', // translateY(100%)',
+        }),
+      ], { optional: true }),
+      query(':enter', [
+        animate('1000ms ease', 
+        style({ 
+                opacity: 1, 
+                transform: 'scale(1)'  
+              })), //translateY(0)' })),
+      ], { optional: true })
+    ]),
+]);
 
 export const transformer =
   trigger('routeAnimations', [
