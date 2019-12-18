@@ -1,0 +1,19 @@
+
+    <div class="flex">
+      <div class="flex-item">
+        <div>
+          <canvas baseChart width="600" height="400"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+          </canvas>
+        </div>
+      </div>
+      <div class="flex-item">
+        <table></table>
+        <button class="btn btn-primary btn-block m-1 mt-5" (click)="randomize()">Update</button>
+      </div>
+    </div>
