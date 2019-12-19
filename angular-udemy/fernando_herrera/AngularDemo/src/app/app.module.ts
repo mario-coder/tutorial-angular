@@ -22,7 +22,9 @@ import { CssComponent } from './components/css/css.component';
 import { ClasesComponent } from './components/clases/clases.component';
 import { NgStyleComponent } from './components/ng-style/ng-style.component';
 import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
-
+import {TabViewModule} from 'primeng/tabview';
+import { HomeComponent } from './components/home/home.component';
+import {CardModule} from 'primeng/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,8 @@ import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
     CssComponent,
     ClasesComponent,
     NgStyleComponent,
-    NgSwitchComponent
+    NgSwitchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,9 @@ import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
     FieldsetModule,
     DropdownModule,
     FormsModule,
-    TableModule
+    TableModule,
+    TabViewModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

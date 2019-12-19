@@ -1,5 +1,7 @@
+<p-card>
+
 <div class="flex">
-    <div class="flex-item float-left">
+    <div class="flex-item">
       <div>
         <canvas baseChart width="700" height="500"
                   [datasets]="lineChartData"
@@ -14,7 +16,7 @@
         </canvas>
       </div>
     </div>
-    <div class="flex-item float-sm-left ml-5">
+    <div class="flex-item ml-5">
       <table class="table table-responsive table-condensed">
         <tr>
           <th *ngFor="let label of lineChartLabels">{{label}}</th>
@@ -32,3 +34,4 @@
 
     </div>
   </div>
+</p-card>

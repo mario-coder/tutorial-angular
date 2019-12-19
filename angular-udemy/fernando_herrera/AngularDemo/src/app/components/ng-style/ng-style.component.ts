@@ -13,10 +13,10 @@ import { Component, OnInit } from "@angular/core";
       Hola mundo ... esta es una etiqueta
     </p>
 
-    <button class="btn btn-primary" (click)="tamano = tamano + 10">
+    <button class="btn btn-primary m-1" (click)="tamano = tamano + 10">
       <i class="fa fa-plus"></i>
     </button>
-    <button class="btn btn-primary" (click)="tamano = tamano - 10">
+    <button class="btn btn-primary m-1" (click)="tamano = tamano - 10">
       <i class="fa fa-minus"></i>
     </button>
 

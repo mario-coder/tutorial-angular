@@ -1,33 +1,38 @@
+<p-card>
 <div class="container main-container">
-    <h1>Ejemplos angular</h1>
+    <h1>Ejemplos directivas angular</h1>
     <hr />
 
-    <app-ng-style></app-ng-style>
-
-    <hr />
-
-    <app-css></app-css>
+    <p-tabView>
+        <p-tabPanel header="Estilos">
+            <app-ng-style></app-ng-style>
+        </p-tabPanel>
+    
+        <p-tabPanel header="Estilos CSS">
+            <app-css></app-css>
+        </p-tabPanel>
 
     <!-- <p>
         Hola mundo desde app.component.html
     </p> -->
 
-    <hr />
 
-    <app-clases></app-clases>
+        <p-tabPanel header="Clases CSS">
+            <app-clases></app-clases>
+        </p-tabPanel>
 
-    <hr>
+        <p-tabPanel header="Switch">
+            <app-ng-switch></app-ng-switch>
+        </p-tabPanel>
 
-    <app-ng-switch></app-ng-switch>
-
-    <hr>
-
-    <br>
-
-    <h1>Directivas</h1>
-    <p [appResaltado]="'orange'">Hola mundo</p>
-
+        <p-tabPanel header="Custom">
+            <h1>Directivas</h1>
+            <p [appResaltado]="'orange'">Hola mundo</p>
+        </p-tabPanel>
+    </p-tabView>
 
     <br><br><br><br>
 
 </div>
+
+</p-card>
