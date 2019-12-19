@@ -14,6 +14,14 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { FieldsetModule } from 'primeng/fieldset';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
+import { DatatableComponent } from './components/datatable/datatable.component';
+import { TableModule } from 'primeng/table';
+import { EjemplosComponent } from './components/ejemplos/ejemplos.component';
+import { ResaltadoDirective } from './directives/resaltado.directive';
+import { CssComponent } from './components/css/css.component';
+import { ClasesComponent } from './components/clases/clases.component';
+import { NgStyleComponent } from './components/ng-style/ng-style.component';
+import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +29,14 @@ import { FormsModule } from '@angular/forms';
     LineaComponent,
     NavbarComponent,
     BarrasComponent,
-    FormularioComponent
+    FormularioComponent,
+    DatatableComponent,
+    EjemplosComponent,
+    ResaltadoDirective,
+    CssComponent,
+    ClasesComponent,
+    NgStyleComponent,
+    NgSwitchComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +48,8 @@ import { FormsModule } from '@angular/forms';
     ChartModule,
     FieldsetModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

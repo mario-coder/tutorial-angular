@@ -3,11 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { LineaComponent } from './components/linea/linea.component';
 import { BarrasComponent } from './components/barras/barras.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { DatatableComponent } from './components/datatable/datatable.component';
+import { EjemplosComponent } from './components/ejemplos/ejemplos.component';
 
 
 const routes: Routes = [
+  { path: 'ejemplos', component: EjemplosComponent },//, data: {animation: 'isLeft'} },
   { path: 'lineas', component: LineaComponent },//, data: {animation: 'isLeft'} },
   { path: 'barras', component: BarrasComponent },//, data: {animation: 'isRight'} },
+  { path: 'datatable', component: DatatableComponent },//, data: {animation: 'isRight'} },
   { path: 'formulario', component: FormularioComponent },//, data: {animation: 'isRight'} },
   { path: '**', redirectTo: 'home' }
 ];
