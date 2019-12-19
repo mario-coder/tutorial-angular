@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color:#bcc;
+    background-color: #e3e3e3;
 }
 
 .container {
@@ -22,10 +22,10 @@ div.ui-panel-titlebar {
 
 .form-container {
     background-color: #f8f8f8;
-    border-radius: 10px;
-    border: 1px solid steelblue;
+    border-radius: 18px;
+    border: 1px solid rgb(210, 214, 214);
     margin: 5px;
-    padding: 12px;
+    padding: 16px;
 }
 
 .input-label {
@@ -35,3 +35,24 @@ div.ui-panel-titlebar {
 .ui-inputtext {
     font-size: 90% !important;
 }
+
+.ui-state-highlight {
+    background-color: rgb(12, 12, 126) !important;
+}
+
+.ui-tabview-selected {
+    background-color: rgb(12, 12, 126) !important;
+}
+
+.ui-paginator-page {
+    border-radius: 18px !important;
+}
+
+.ui-paginator-element {
+    border-radius: 18px !important;
+}
+
+.ui-paginator-page.ui-state-active {
+    background-color: rgb(12, 12, 126) !important;
+}
+
