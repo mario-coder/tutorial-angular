@@ -3,6 +3,10 @@ body {
     background-color:#bcc;
 }
 
+.container {
+    max-width: 1400px;
+}
+
 div.ui-panel-titlebar {
     border-radius: 3px !important;
 }

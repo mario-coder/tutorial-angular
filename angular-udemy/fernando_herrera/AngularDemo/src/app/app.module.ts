@@ -25,6 +25,9 @@ import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
 import {TabViewModule} from 'primeng/tabview';
 import { HomeComponent } from './components/home/home.component';
 import {CardModule} from 'primeng/card';
+import { CrudComponent } from './components/crud/crud.component';
+import {DialogModule} from 'primeng/dialog';
+import {ButtonModule} from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,8 @@ import {CardModule} from 'primeng/card';
     ClasesComponent,
     NgStyleComponent,
     NgSwitchComponent,
-    HomeComponent
+    HomeComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,9 @@ import {CardModule} from 'primeng/card';
     FormsModule,
     TableModule,
     TabViewModule,
-    CardModule
+    CardModule,
+    DialogModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

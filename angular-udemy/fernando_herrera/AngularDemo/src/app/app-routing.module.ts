@@ -6,6 +6,7 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { DatatableComponent } from './components/datatable/datatable.component';
 import { EjemplosComponent } from './components/ejemplos/ejemplos.component';
 import { HomeComponent } from './components/home/home.component';
+import { CrudComponent } from './components/crud/crud.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'lineas', component: LineaComponent },//, data: {animation: 'isLeft'} },
   { path: 'barras', component: BarrasComponent },//, data: {animation: 'isRight'} },
   { path: 'datatable', component: DatatableComponent },//, data: {animation: 'isRight'} },
+  { path: 'crud', component: CrudComponent },//, data: {animation: 'isRight'} },
   { path: 'formulario', component: FormularioComponent },//, data: {animation: 'isRight'} },
   { path: '**', redirectTo: 'home' }
 ];
