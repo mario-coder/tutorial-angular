@@ -1,0 +1,34 @@
+<div class="flex">
+    <div class="flex-item float-left">
+      <div>
+        <canvas baseChart width="700" height="500"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  [plugins]="lineChartPlugins"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+        </canvas>
+      </div>
+    </div>
+    <div class="flex-item float-sm-left ml-5">
+      <table class="table table-responsive table-condensed">
+        <tr>
+          <th *ngFor="let label of lineChartLabels">{{label}}</th>
+        </tr>
+        <tr *ngFor="let d of lineChartData; let i=index" [class]="'line-'+i">
+          <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
+        </tr>
+      </table>
+      <button class="btn btn-primary m-1" (click)="randomize()">Randomize</button>
+      <button class="btn btn-primary m-1" (click)="pushOne()">Push</button>
+      <button class="btn btn-primary m-1" (click)="changeColor()">Recolor</button>
+      <button class="btn btn-primary m-1" (click)="hideOne()">Toggle Series B</button>
+      <button class="btn btn-primary m-1" (click)="changeLabel()">Change Label</button>
+
+
+    </div>
+  </div>

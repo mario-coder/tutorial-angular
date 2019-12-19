@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color:#eff3f8;
+}
+
+div.ui-panel-titlebar {
+    border-radius: 3px !important;
+}
+
+.panel-container div.ui-panel-titlebar {
+    background-color: #f8f8f8 !important;
+    color: #002355 !important;
+}
+
+.panel-container span.pi {
+    color: blue !important;
+}
+
+.form-container {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    border: 1px solid steelblue;
+    margin: 5px;
+    padding: 12px;
+}
+
+.input-label {
+    font-size: 80%;
+}
+
+.ui-inputtext {
+    font-size: 90% !important;
+}
