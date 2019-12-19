@@ -1,0 +1,116 @@
+<div class="container animated fadeInLeft faster form-container">
+
+  <form (ngSubmit)="tarificar(f)" #f="ngForm">
+
+    <!-- Panel Principal -->    
+    <p-panel [toggleable]="true">
+      
+      <p-header>
+        <span class="ui-panel-title" style="font-size:20px;">
+          <i class="fa fa-list"></i>
+            Parámetros Iniciales
+        </span>
+      </p-header>
+
+      <div class="panel-container">
+      <!-- Datos del vehiculo -->
+      <p-panel [toggleable]="true">
+
+          <p-header>
+            <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+              Datos del Vehículo
+            </span>
+          </p-header>
+          
+          <div class="row">
+            <div class="col-sm text-right input-label">
+              Nuevo/Usado *
+            </div>
+            <div class="col">
+              <p-dropdown 
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+          
+            <div class="col-sm text-right input-label">
+                Patente
+            </div>
+            <div class="col">
+              <p-dropdown 
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+            <div class="col-sm text-right input-label">
+                InputText
+            </div>
+            <div class="col">
+              <p-dropdown 
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+          </div>
+
+      </p-panel>
+      <!-- Datos del vehiculo -->
+
+      <br>
+
+      <!-- Datos del asegurado -->
+      <p-panel [toggleable]="true">
+
+          <p-header>
+            <span class="ui-panel-title">
+              <i class="fa fa-user"></i>
+              Datos del Asegurado
+            </span>
+          </p-header>
+          
+          <div class="row">
+            <div class="col-sm text-right input-label">
+              Tipo de Documento *
+            </div>
+            <div class="col">
+              <p-dropdown 
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+          
+            <div class="col-sm text-right input-label">
+                InputText
+            </div>
+            <div class="col">
+              <p-dropdown 
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+            <div class="col-sm text-right input-label">
+                InputText
+            </div>
+            <div class="col">
+              <p-dropdown 
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+          </div>
+
+      </p-panel>
+      <!-- Datos del contratante -->
+      </div>
+
+    </p-panel>
+    <!-- Panel Principal -->
+  </form>
+</div>
