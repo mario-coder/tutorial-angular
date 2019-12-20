@@ -1,4 +1,16 @@
-<div class="container animated fadeInLeft faster form-container" [style]="{width: '100%'}">
+<p-card>
+
+  <div class="ml-3">
+    <p-header>
+      <h2>Simular Livianos</h2>
+      <i class="fa fa-home float-left m-1"></i> <h6>Inicio/Simular Livianos</h6>
+    </p-header>
+  </div>
+
+  <hr>
+
+<!-- Contenedor datos principales -->
+<div class="container animated fadeIn faster form-container" [style]="{width: '100%'}">
 
   <form (ngSubmit)="tarificar(f)" #f="ngForm">
 
@@ -24,38 +36,96 @@
           </p-header>
           
           <div class="row">
-            <div class="col-sm text-right input-label">
+            <div class="col-sm input-label">
               Nuevo/Usado *
             </div>
-            <div class="col">
-              <p-dropdown 
-                name="estadosVehiculo"
-                [options]="estadosVehiculo" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
+
+            <div class="col-sm input-label">
+              Patente
             </div>
-          
-            <div class="col-sm text-right input-label">
-                Patente
+
+            <div class="col-sm input-label">
+              &nbsp;
             </div>
-            <div class="col">
-              <p-dropdown 
-                name="estadosVehiculo"
-                [options]="estadosVehiculo" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
-            </div>
-            <div class="col-sm text-right input-label">
-                InputText
-            </div>
-            <div class="col">
-              <p-dropdown 
-                name="estadosVehiculo"
-                [options]="estadosVehiculo" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
+
+            <div class="col-sm input-label">
+              &nbsp;
             </div>
           </div>
+
+          <div class="row">
+            <div class="col">
+              <p-dropdown
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+
+            <div class="col">
+              <input pInputText type="text" />
+            </div>
+
+            <div class="col-sm input-label">
+              &nbsp;
+            </div>
+
+            <div class="col-sm input-label">
+              &nbsp;
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col-sm input-label">
+              Año *
+            </div>
+
+            <div class="col-sm input-label">
+              Marca *
+            </div>
+
+            <div class="col-sm input-label">
+              Modelo *
+            </div>
+
+            <div class="col-sm input-label">
+              &nbsp;
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p-dropdown
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+
+            <div class="col">
+              <p-dropdown
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+
+            <div class="col-sm input-label">
+              <p-dropdown
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+
+            <div class="col-sm input-label">
+              &nbsp;
+            </div>
+          </div>
+
+          <br>
 
       </p-panel>
       <!-- Datos del vehiculo -->
@@ -73,44 +143,189 @@
           </p-header>
           
           <div class="row">
-            <div class="col-sm text-right input-label">
+            <div class="col-sm input-label">
               Tipo de Documento *
             </div>
-            <div class="col">
-              <p-dropdown 
-                name="estadosVehiculo"
-                [options]="estadosVehiculo" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
+
+            <div class="col-sm input-label">
+              Numero de Documento *
             </div>
-          
-            <div class="col-sm text-right input-label">
-                InputText
+
+            <div class="col-sm input-label">
+              Primer Nombre *
             </div>
-            <div class="col">
-              <p-dropdown 
-                name="estadosVehiculo"
-                [options]="estadosVehiculo" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
-            </div>
-            <div class="col-sm text-right input-label">
-                InputText
-            </div>
-            <div class="col">
-              <p-dropdown 
-                name="estadosVehiculo"
-                [options]="estadosVehiculo" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
+
+            <div class="col-sm input-label">
+              Apellido Paterno *
             </div>
           </div>
 
+          <div class="row">
+            <div class="col">
+              <p-dropdown
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+
+            <div class="col">
+              <input pInputText type="text" />
+            </div>
+
+            <div class="col">
+              <input pInputText type="text" />
+            </div>
+
+            <div class="col">
+              <input pInputText type="text" />
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col-sm input-label">
+              Comuna *
+            </div>
+
+            <div class="col-sm input-label">
+              Email *
+            </div>
+
+            <div class="col-sm input-label">
+              Inicio Nueva Vigencia
+            </div>
+
+            <div class="col-sm input-label">
+              &nbsp;
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p-dropdown
+                name="estadosVehiculo"
+                [options]="estadosVehiculo" 
+                [(ngModel)]="selectedEstadoVehiculo">
+              </p-dropdown>
+            </div>
+
+            <div class="col">
+              <input pInputText type="text" />
+            </div>
+
+            <div class="col">
+
+              <p-calendar name="fechaInicioVigencia"
+                [locale]="es" dateFormat="dd/mm/yy"                
+                [(ngModel)]="value"
+                [monthNavigator]="true" 
+                [yearNavigator]="true" yearRange="1930:2030">
+              </p-calendar>
+
+            </div>
+
+            <div class="col">
+              &nbsp;
+            </div>
+          </div>
+
+          <br>
+
       </p-panel>
-      <!-- Datos del contratante -->
+      <!-- Datos del asegurado -->
       </div>
+
+      <br>
+      
+      <!-- Botones tarificacion -->
+      <div class="m-3">
+        <div class="row">
+          <div class="col">
+            <button class="btn btn-outline-primary btn-wide">
+              <i class="fa fa-file"></i>
+              LIMPIAR FORMULARIO
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-warning btn-wide"
+              (click)="tarificar()">
+              <i class="fa fa-calculator"></i>
+              OBTENER TARIFAS
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Botones tarificacion -->
+
 
     </p-panel>
     <!-- Panel Principal -->
   </form>
 </div>
+<!-- Contenedor datos principales -->
+
+<br>
+
+<!-- Contenedor tarifas -->
+<div class="container animated fadeIn faster form-container" *ngIf="tarificado" [style]="{width: '100%'}">
+  <p-panel [toggleable]="true">
+      
+    <p-header>
+      <span class="ui-panel-title" style="font-size:20px;">
+        <i class="fa fa-money"></i>
+          Ofertas Disponibles
+      </span>
+    </p-header>
+
+    <p-card>
+
+      <div>
+        <p-header>
+          <img src="assets/img/logo_reale.png" style="width: 15%;">
+        </p-header>
+        <div class="pull-right mr-3">Nro. Simulación: 12345</div>
+      </div>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">PRODUCTO/DEDUCIBLE</th>
+            <th scope="col">0 UF</th>
+            <th scope="col">3 UF</th>
+            <th scope="col">5 UF</th>
+            <th scope="col">10 UF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">XL Liviano Particular</th>
+
+          </tr>
+          <tr>
+            <th scope="row">L Liviano Particular</th>
+
+          </tr>
+          <tr>
+            <th scope="row">M Liviano Particular</th>
+
+          </tr>
+          <tr>
+            <th scope="row">S Liviano Particular</th>
+
+          </tr>
+        </tbody>
+      </table>
+
+    </p-card>
+
+  </p-panel>
+</div>
+<!-- Contenedor tarifas -->
+
+
+
+
+
+</p-card>

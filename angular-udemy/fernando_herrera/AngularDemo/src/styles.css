@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1800px;
 }
 
 div.ui-panel-titlebar {
@@ -29,6 +29,7 @@ div.ui-panel-titlebar {
 }
 
 .input-label {
+    text-align: left;
     font-size: 80%;
 }
 
@@ -37,11 +38,11 @@ div.ui-panel-titlebar {
 }
 
 .ui-state-highlight {
-    background-color: rgb(12, 12, 126) !important;
+    background-color: rgb(13, 13, 170) !important;
 }
 
 .ui-tabview-selected {
-    background-color: rgb(12, 12, 126) !important;
+    background-color: rgb(13, 13, 170) !important;
 }
 
 .ui-paginator-page {
@@ -53,6 +54,32 @@ div.ui-panel-titlebar {
 }
 
 .ui-paginator-page.ui-state-active {
-    background-color: rgb(12, 12, 126) !important;
+    background-color: rgb(13, 13, 170) !important;
 }
 
+.ui-table-summary {
+    background-color: #f4f4f4 !important;
+    border: 1px solid #c8c8c8 !important;
+    border-top: 0px !important;
+}
+
+.ui-widget {
+    display: block !important;
+}
+
+input {
+    max-width: 100% !important;
+    min-width: 100% !important;
+}
+
+.extendido {
+    width: 100% !important;
+}
+
+table td.ui-datepicker-today > a {
+    color: #ffffff !important;
+}
+
+.btn-wide {
+    min-width: 100% !important;
+}

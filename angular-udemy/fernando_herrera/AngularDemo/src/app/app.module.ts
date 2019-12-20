@@ -8,7 +8,7 @@ import { LineaComponent } from './components/linea/linea.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { BarrasComponent } from './components/barras/barras.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PanelModule } from 'primeng';
+import { PanelModule, InputTextModule, CalendarModule } from 'primeng';
 import { CommonModule } from '@angular/common';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { FieldsetModule } from 'primeng/fieldset';
@@ -22,12 +22,15 @@ import { CssComponent } from './components/css/css.component';
 import { ClasesComponent } from './components/clases/clases.component';
 import { NgStyleComponent } from './components/ng-style/ng-style.component';
 import { NgSwitchComponent } from './components/ng-switch/ng-switch.component';
-import {TabViewModule} from 'primeng/tabview';
+import { TabViewModule } from 'primeng/tabview';
 import { HomeComponent } from './components/home/home.component';
-import {CardModule} from 'primeng/card';
+import { CardModule } from 'primeng/card';
 import { CrudComponent } from './components/crud/crud.component';
-import {DialogModule} from 'primeng/dialog';
-import {ButtonModule} from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+import { HttpClientModule } from "@angular/common/http";
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +63,10 @@ import {ButtonModule} from 'primeng/button';
     TabViewModule,
     CardModule,
     DialogModule,
-    ButtonModule
+    ButtonModule,
+    InputTextModule,
+    CalendarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
