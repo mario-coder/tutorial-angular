@@ -37,24 +37,12 @@ div.ui-panel-titlebar {
     font-size: 90% !important;
 }
 
-.ui-state-highlight {
+.ui-state-highlight, .ui-tabview-selected, .ui-paginator-page.ui-state-active {
     background-color: rgb(13, 13, 170) !important;
 }
 
-.ui-tabview-selected {
-    background-color: rgb(13, 13, 170) !important;
-}
-
-.ui-paginator-page {
+.ui-paginator-page, .ui-paginator-element {
     border-radius: 18px !important;
-}
-
-.ui-paginator-element {
-    border-radius: 18px !important;
-}
-
-.ui-paginator-page.ui-state-active {
-    background-color: rgb(13, 13, 170) !important;
 }
 
 .ui-table-summary {
@@ -77,7 +65,7 @@ input {
 }
 
 table td.ui-datepicker-today > a {
-    color: #ffffff !important;
+    color: white !important;
 }
 
 .btn-wide {

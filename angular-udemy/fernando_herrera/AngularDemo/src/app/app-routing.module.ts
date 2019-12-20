@@ -7,15 +7,19 @@ import { DatatableComponent } from './components/datatable/datatable.component';
 import { EjemplosComponent } from './components/ejemplos/ejemplos.component';
 import { HomeComponent } from './components/home/home.component';
 import { CrudComponent } from './components/crud/crud.component';
+import { TextoComponent } from './components/texto/texto.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },//, data: {animation: 'isLeft'} },
+  { path: 'texto', component: TextoComponent },//, data: {animation: 'isLeft'} },
   { path: 'ejemplos', component: EjemplosComponent },//, data: {animation: 'isLeft'} },
   { path: 'lineas', component: LineaComponent },//, data: {animation: 'isLeft'} },
   { path: 'barras', component: BarrasComponent },//, data: {animation: 'isRight'} },
   { path: 'datatable', component: DatatableComponent },//, data: {animation: 'isRight'} },
   { path: 'crud', component: CrudComponent },//, data: {animation: 'isRight'} },
+  { path: 'login', component: LoginComponent },//, data: {animation: 'isRight'} },
   { path: 'formulario', component: FormularioComponent },//, data: {animation: 'isRight'} },
   { path: '**', redirectTo: 'home' }
 ];

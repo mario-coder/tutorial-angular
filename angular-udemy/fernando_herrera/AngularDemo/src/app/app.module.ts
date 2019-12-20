@@ -29,6 +29,11 @@ import { CrudComponent } from './components/crud/crud.component';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from "@angular/common/http";
+import { TextoComponent } from './components/texto/texto.component';
+import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
+import { ContrasenaPipe } from './pipes/contrasena.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -46,7 +51,12 @@ import { HttpClientModule } from "@angular/common/http";
     NgStyleComponent,
     NgSwitchComponent,
     HomeComponent,
-    CrudComponent
+    CrudComponent,
+    TextoComponent,
+    CapitalizadoPipe,
+    ContrasenaPipe,
+    DomseguroPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
