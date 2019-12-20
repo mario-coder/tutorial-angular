@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { CrudComponent } from './components/crud/crud.component';
 import { TextoComponent } from './components/texto/texto.component';
 import { LoginComponent } from './components/login/login.component';
+import { TarifaComponent } from './components/tarifa/tarifa.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 const routes: Routes = [
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path: 'datatable', component: DatatableComponent },//, data: {animation: 'isRight'} },
   { path: 'crud', component: CrudComponent },//, data: {animation: 'isRight'} },
   { path: 'login', component: LoginComponent },//, data: {animation: 'isRight'} },
+  { path: 'dialog', component: DialogComponent },//, data: {animation: 'isRight'} },
   { path: 'formulario', component: FormularioComponent },//, data: {animation: 'isRight'} },
   { path: '**', redirectTo: 'home' }
 ];
