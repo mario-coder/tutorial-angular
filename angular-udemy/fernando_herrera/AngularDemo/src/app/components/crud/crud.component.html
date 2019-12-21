@@ -1,10 +1,15 @@
 <p-card>
 
-<div class="animated fadeIn">
-<p-table [columns]="cols" [value]="cars" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
+<div class="container form-container animated fadeIn">
+    <h3 class="first">Tabla CRUD</h3>
+<p-table [columns]="cols" #dt [value]="cars" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
     <ng-template pTemplate="caption">
-        List of Cars
+        <div style="text-align: right">        
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input type="text" pInputText size="50" placeholder="Ingrese un termino" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+        </div>
     </ng-template>
+
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns" [pSortableColumn]="col.field">

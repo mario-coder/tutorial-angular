@@ -43,6 +43,11 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.usuario)
       .subscribe( resp => {
         console.log(resp);
+        Swal.fire({
+          allowOutsideClick: false,
+          icon: 'success',
+          text: 'Espere por favor ...'
+        });
         Swal.close();
 
         if(this.recordarme) {

@@ -55,7 +55,7 @@ div.ui-panel-titlebar {
 
 .ui-widget {
     display: block !important;
-}
+} 
 
 input {
     max-width: 100% !important;
@@ -72,4 +72,8 @@ table td.ui-datepicker-today > a {
 
 .btn-wide {
     min-width: 100% !important;
+}
+
+.seleccionado {
+    border: 6px solid rgb(230, 215, 0) !important;
 }

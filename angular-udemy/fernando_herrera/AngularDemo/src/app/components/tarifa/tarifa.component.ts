@@ -7,8 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TarifaComponent implements OnInit {
 
-  // @Input() simulacion: any;
+  @Input() simulacion: any;
   display: boolean = false;
+
+  seleccionado = "";
 
   constructor() { }
 
@@ -18,5 +20,10 @@ export class TarifaComponent implements OnInit {
 
   showDetalleTarifa() {
       this.display = true;
+  }
+
+  selecciona() {
+    console.log("selecciona")
+    this.seleccionado="seleccionado"
   }
 }
