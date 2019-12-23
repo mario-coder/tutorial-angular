@@ -11,12 +11,16 @@ import { TextoComponent } from './components/texto/texto.component';
 import { LoginComponent } from './components/login/login.component';
 import { TarifaComponent } from './components/tarifa/tarifa.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { ComponentesComponent } from './components/componentes/componentes.component';
+import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },//, data: {animation: 'isLeft'} },
+  { path: 'tecnologias', component: TecnologiasComponent },//, data: {animation: 'isLeft'} },
   { path: 'texto', component: TextoComponent },//, data: {animation: 'isLeft'} },
   { path: 'ejemplos', component: EjemplosComponent },//, data: {animation: 'isLeft'} },
+  { path: 'componentes', component: ComponentesComponent },//, data: {animation: 'isLeft'} },
   { path: 'lineas', component: LineaComponent },//, data: {animation: 'isLeft'} },
   { path: 'barras', component: BarrasComponent },//, data: {animation: 'isRight'} },
   { path: 'datatable', component: DatatableComponent },//, data: {animation: 'isRight'} },

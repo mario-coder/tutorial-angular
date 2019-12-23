@@ -36,6 +36,8 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { TarifaComponent } from './components/tarifa/tarifa.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { ComponentesComponent } from './components/componentes/componentes.component';
+import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { DialogComponent } from './components/dialog/dialog.component';
     DomseguroPipe,
     LoginComponent,
     TarifaComponent,
-    DialogComponent
+    DialogComponent,
+    ComponentesComponent,
+    TecnologiasComponent
   ],
   imports: [
     BrowserModule,
