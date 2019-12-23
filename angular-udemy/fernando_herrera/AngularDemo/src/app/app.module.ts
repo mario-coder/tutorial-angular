@@ -38,6 +38,7 @@ import { TarifaComponent } from './components/tarifa/tarifa.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { ComponentesComponent } from './components/componentes/componentes.component';
 import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
+import { Componentes2Component } from './components/componentes2/componentes2.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { TecnologiasComponent } from './components/tecnologias/tecnologias.compo
     TarifaComponent,
     DialogComponent,
     ComponentesComponent,
-    TecnologiasComponent
+    TecnologiasComponent,
+    Componentes2Component
   ],
   imports: [
     BrowserModule,
