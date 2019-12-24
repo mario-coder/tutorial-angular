@@ -39,6 +39,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { ComponentesComponent } from './components/componentes/componentes.component';
 import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
 import { Componentes2Component } from './components/componentes2/componentes2.component';
+import { DatepickerComponent } from './components/datepicker/datepicker.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { Componentes2Component } from './components/componentes2/componentes2.co
     DialogComponent,
     ComponentesComponent,
     TecnologiasComponent,
-    Componentes2Component
+    Componentes2Component,
+    DatepickerComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +88,8 @@ import { Componentes2Component } from './components/componentes2/componentes2.co
     ButtonModule,
     InputTextModule,
     CalendarModule,
-    HttpClientModule
+    HttpClientModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

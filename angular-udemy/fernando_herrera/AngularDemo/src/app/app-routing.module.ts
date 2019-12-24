@@ -14,6 +14,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { ComponentesComponent } from './components/componentes/componentes.component';
 import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
 import { Componentes2Component } from './components/componentes2/componentes2.component';
+import { DatepickerComponent } from './components/datepicker/datepicker.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'componentes2', component: Componentes2Component },//, data: {animation: 'isLeft'} },
   { path: 'lineas', component: LineaComponent },//, data: {animation: 'isLeft'} },
   { path: 'barras', component: BarrasComponent },//, data: {animation: 'isRight'} },
+  { path: 'datepicker', component: DatepickerComponent },//, data: {animation: 'isRight'} },
   { path: 'datatable', component: DatatableComponent },//, data: {animation: 'isRight'} },
   { path: 'crud', component: CrudComponent },//, data: {animation: 'isRight'} },
   { path: 'login', component: LoginComponent },//, data: {animation: 'isRight'} },
