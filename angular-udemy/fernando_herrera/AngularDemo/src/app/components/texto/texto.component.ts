@@ -28,8 +28,8 @@ export class TextoComponent {
       edad: "19"
     }
   };
-
-  video = "mOeSfOJrUIk";
+  
+  video = "UsGX4zaa014";
 
   valorDePromesa = new Promise((resolve, reject) => {
     setTimeout(() => resolve("Llego la data"), 3500);
