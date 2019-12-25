@@ -41,6 +41,7 @@ import { TecnologiasComponent } from './components/tecnologias/tecnologias.compo
 import { Componentes2Component } from './components/componentes2/componentes2.component';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { NavbarCotizadorComponent } from './components/shared/navbar-cotizador/navbar-cotizador.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     ComponentesComponent,
     TecnologiasComponent,
     Componentes2Component,
-    DatepickerComponent
+    DatepickerComponent,
+    NavbarCotizadorComponent
   ],
   imports: [
     BrowserModule,

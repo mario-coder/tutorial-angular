@@ -1,440 +1,387 @@
+<app-navbar-cotizador></app-navbar-cotizador>
+
 <p-card>
 
-  <div class="ml-3">
-    <p-header>
-      <h2>Simular Livianos</h2>
-      <i class="fa fa-home float-left m-1"></i> <h6>Inicio/Simular Livianos</h6>
-    </p-header>
-  </div>
+    <div class="ml-3">
+        <p-header>
+            <h2>Simular Livianos</h2>
+            <i class="fa fa-home float-left m-1"></i>
+            <h6>Inicio/Simular Livianos</h6>
+        </p-header>
+    </div>
 
-  <hr>
+    <hr>
 
-<!-- Contenedor datos principales -->
-<div class="container animated fadeIn faster form-container" [style]="{width: '100%'}">
+    <!-- Contenedor datos principales -->
+    <div class="container animated fadeIn faster form-container" [style]="{width: '100%'}">
 
-  <form (ngSubmit)="tarificar(f)" #f="ngForm">
+        <form (ngSubmit)="tarificar(f)" #f="ngForm">
 
-    <!-- Panel Principal -->    
-    <p-panel [toggleable]="true">
-      
-      <p-header>
-        <span class="ui-panel-title" style="font-size:20px;">
+            <!-- Panel Principal -->
+            <p-panel [toggleable]="true">
+
+                <p-header>
+                    <span class="ui-panel-title" style="font-size:20px;">
           <i class="fa fa-list"></i>
             Parámetros Iniciales
         </span>
-      </p-header>
+                </p-header>
 
-      <div class="panel-container">
-      <!-- Datos del vehiculo -->
-      <p-panel [toggleable]="true">
+                <div class="panel-container">
+                    <!-- Datos del vehiculo -->
+                    <p-panel [toggleable]="true">
 
-          <p-header>
-            <span class="ui-panel-title">
+                        <p-header>
+                            <span class="ui-panel-title">
               <i class="fa fa-car"></i>
               Datos del Vehículo
             </span>
-          </p-header>
-          
-          <div class="row">
-            <div class="col-sm input-label">
-              Nuevo/Usado *
-            </div>
+                        </p-header>
 
-            <div class="col-sm input-label">
-              Patente
-            </div>
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Nuevo/Usado *
+                            </div>
 
-            <div class="col-sm input-label">
-              &nbsp;
-            </div>
+                            <div class="col-sm input-label">
+                                Patente
+                            </div>
 
-            <div class="col-sm input-label">
-              &nbsp;
-            </div>
-          </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
 
-          <div class="row">
-            <div class="col">
-              <p-dropdown
-                name="estadosVehiculo"
-                [options]="estadosVehiculo" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
-            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
 
-            <div class="col">
-              <input pInputText type="text" />
-            </div>
+                        <div class="row">
+                            <div class="col">
+                                <p-dropdown name="estadosVehiculo" [options]="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                </p-dropdown>
+                            </div>
 
-            <div class="col-sm input-label">
-              &nbsp;
-            </div>
+                            <div class="col">
+                                <input pInputText type="text" />
+                            </div>
 
-            <div class="col-sm input-label">
-              &nbsp;
-            </div>
-          </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
 
-          <br>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
 
-          <div class="row">
-            <div class="col-sm input-label">
-              Año *
-            </div>
+                        <br>
 
-            <div class="col-sm input-label">
-              Marca *
-            </div>
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Año *
+                            </div>
 
-            <div class="col-sm input-label">
-              Modelo *
-            </div>
+                            <div class="col-sm input-label">
+                                Marca *
+                            </div>
 
-            <div class="col-sm input-label">
-              &nbsp;
-            </div>
-          </div>
+                            <div class="col-sm input-label">
+                                Modelo *
+                            </div>
 
-          <div class="row">
-            <div class="col">
-              <p-dropdown
-                name="anios"
-                [options]="anios" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
-            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
 
-            <div class="col">
-              <p-dropdown
-                name="marcas"
-                [options]="marcas" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
-            </div>
+                        <div class="row">
+                            <div class="col">
+                                <p-dropdown name="anios" [options]="anios" [(ngModel)]="selectedEstadoVehiculo">
+                                </p-dropdown>
+                            </div>
 
-            <div class="col-sm input-label">
-              <p-dropdown
-                name="modelos"
-                [options]="modelos" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
-            </div>
+                            <div class="col">
+                                <p-dropdown name="marcas" [options]="marcas" [(ngModel)]="selectedEstadoVehiculo">
+                                </p-dropdown>
+                            </div>
 
-            <div class="col-sm input-label">
-              &nbsp;
-            </div>
-          </div>
+                            <div class="col-sm input-label">
+                                <p-dropdown name="modelos" [options]="modelos" [(ngModel)]="selectedEstadoVehiculo">
+                                </p-dropdown>
+                            </div>
 
-          <br>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
 
-      </p-panel>
-      <!-- Datos del vehiculo -->
+                        <br>
 
-      <br>
+                    </p-panel>
+                    <!-- Datos del vehiculo -->
 
-      <!-- Datos del asegurado -->
-      <p-panel [toggleable]="true">
+                    <br>
 
-          <p-header>
-            <span class="ui-panel-title">
+                    <!-- Datos del asegurado -->
+                    <p-panel [toggleable]="true">
+
+                        <p-header>
+                            <span class="ui-panel-title">
               <i class="fa fa-user"></i>
               Datos del Asegurado
             </span>
-          </p-header>
-          
-          <div class="row">
-            <div class="col-sm input-label">
-              Tipo de Documento *
-            </div>
+                        </p-header>
 
-            <div class="col-sm input-label">
-              Numero de Documento *
-            </div>
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Tipo de Documento *
+                            </div>
 
-            <div class="col-sm input-label">
-              Primer Nombre *
-            </div>
+                            <div class="col-sm input-label">
+                                Numero de Documento *
+                            </div>
 
-            <div class="col-sm input-label">
-              Apellido Paterno *
-            </div>
-          </div>
+                            <div class="col-sm input-label">
+                                Primer Nombre *
+                            </div>
 
-          <div class="row">
-            <div class="col">
-              <p-dropdown
-                name="tiposDocumento"
-                [options]="tiposDocumento" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
-            </div>
+                            <div class="col-sm input-label">
+                                Apellido Paterno *
+                            </div>
+                        </div>
 
-            <div class="col">
-              <input pInputText type="text" />
-            </div>
+                        <div class="row">
+                            <div class="col">
+                                <p-dropdown name="tiposDocumento" [options]="tiposDocumento" [(ngModel)]="selectedEstadoVehiculo">
+                                </p-dropdown>
+                            </div>
 
-            <div class="col">
-              <input pInputText type="text" />
-            </div>
+                            <div class="col">
+                                <input pInputText type="text" />
+                            </div>
 
-            <div class="col">
-              <input pInputText type="text" />
-            </div>
-          </div>
+                            <div class="col">
+                                <input pInputText type="text" />
+                            </div>
 
-          <br>
+                            <div class="col">
+                                <input pInputText type="text" />
+                            </div>
+                        </div>
 
-          <div class="row">
-            <div class="col-sm input-label">
-              Comuna *
-            </div>
+                        <br>
 
-            <div class="col-sm input-label">
-              Email *
-            </div>
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Comuna *
+                            </div>
 
-            <div class="col-sm input-label">
-              Inicio Nueva Vigencia
-            </div>
+                            <div class="col-sm input-label">
+                                Email *
+                            </div>
 
-            <div class="col-sm input-label">
-              &nbsp;
-            </div>
-          </div>
+                            <div class="col-sm input-label">
+                                Inicio Nueva Vigencia
+                            </div>
 
-          <div class="row">
-            <div class="col">
-              <p-dropdown
-                name="comunas"
-                [options]="comunas" 
-                [(ngModel)]="selectedEstadoVehiculo">
-              </p-dropdown>
-            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
 
-            <div class="col">
-              <input pInputText type="text" />
-            </div>
+                        <div class="row">
+                            <div class="col">
+                                <p-dropdown name="comunas" [options]="comunas" [(ngModel)]="selectedEstadoVehiculo">
+                                </p-dropdown>
+                            </div>
 
-            <div class="col">
+                            <div class="col">
+                                <input pInputText type="text" />
+                            </div>
 
-              <p-calendar name="fechaInicioVigencia"
-                [locale]="es" dateFormat="dd/mm/yy"                
-                [(ngModel)]="value"
-                [monthNavigator]="true" 
-                [yearNavigator]="true" yearRange="1930:2030">
-              </p-calendar>
+                            <div class="col">
 
-            </div>
+                                <p-calendar name="fechaInicioVigencia" [locale]="es" dateFormat="dd/mm/yy" [(ngModel)]="value" [monthNavigator]="true" [yearNavigator]="true" yearRange="1930:2030">
+                                </p-calendar>
 
-            <div class="col">
-              &nbsp;
-            </div>
-          </div>
+                            </div>
 
-          <br>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
 
-      </p-panel>
-      <!-- Datos del asegurado -->
-      </div>
+                        <br>
 
-      <br>
-      
-      <!-- Botones tarificacion -->
-      <div class="m-3">
-        <div class="row">
-          <div class="col">
-            <button id="btn-borrar" class="btn btn-outline-primary btn-wide"
-              (click)="saludo()">
+                    </p-panel>
+                    <!-- Datos del asegurado -->
+                </div>
+
+                <br>
+
+                <!-- Botones tarificacion -->
+                <div class="m-3">
+                    <div class="row">
+                        <div class="col">
+                            <button id="btn-borrar" class="btn btn-outline-primary btn-wide" (click)="saludo()">
               <i class="fa fa-file"></i>
               LIMPIAR FORMULARIO
             </button>
-          </div>
-          <div class="col">
-            <button id="btn-tarificar" class="btn btn-warning btn-wide"
-              (click)="tarificar()">
+                        </div>
+                        <div class="col">
+                            <button id="btn-tarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
               <i class="fa fa-calculator"></i>
               OBTENER TARIFAS
             </button>
-          </div>
-        </div>
-      </div>
-      <!-- Botones tarificacion -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Botones tarificacion -->
 
 
-    </p-panel>
-    <!-- Panel Principal -->
-  </form>
-</div>
-<!-- Contenedor datos principales -->
+            </p-panel>
+            <!-- Panel Principal -->
+        </form>
+    </div>
+    <!-- Contenedor datos principales -->
 
-<br>
+    <br>
 
-<!-- Contenedor tarifas -->
-<div class="container animated fadeIn faster form-container" *ngIf="tarificado" [style]="{width: '100%'}">
-  <p-panel [toggleable]="true">
-      
-    <p-header>
-      <span class="ui-panel-title" style="font-size:20px;">
+    <!-- Contenedor tarifas -->
+    <div class="container animated fadeIn faster form-container" *ngIf="tarificado" [style]="{width: '100%'}">
+        <p-panel [toggleable]="true">
+
+            <p-header>
+                <span class="ui-panel-title" style="font-size:20px;">
         <i class="fa fa-money"></i>
           Ofertas Disponibles
       </span>
-    </p-header>
+            </p-header>
 
-    <p-card>
+            <p-card>
 
-      <div>
-        <p-header>
-          <img src="assets/img/logo_reale.png" style="width: 15%;">
-        </p-header>
-        <div class="pull-right mr-3">Nro. Simulación: 12345</div>
-      </div>
+                <div>
+                    <p-header>
+                        <img src="assets/img/logo_reale.png" style="width: 15%;">
+                    </p-header>
+                    <div class="pull-right mr-3">Nro. Simulación: 12345</div>
+                </div>
 
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">PRODUCTO/DEDUCIBLE</th>
-            <th scope="col" class="text-center">0 UF</th>
-            <th scope="col" class="text-center">3 UF</th>
-            <th scope="col" class="text-center">5 UF</th>
-            <th scope="col" class="text-center">10 UF</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">XL Liviano Particular</th>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['1-1'] !== undefined && tarifasClasificadas['1-1'][0]"
-                [simulacion]="tarifasClasificadas['1-1'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['1-2'] !== undefined && tarifasClasificadas['1-2'][0]"
-                [simulacion]="tarifasClasificadas['1-2'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['1-3'] !== undefined && tarifasClasificadas['1-3'][0]"
-                [simulacion]="tarifasClasificadas['1-3'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['1-4'] !== undefined && tarifasClasificadas['1-4'][0]"
-                [simulacion]="tarifasClasificadas['1-4'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">L Liviano Particular</th>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">PRODUCTO/DEDUCIBLE</th>
+                            <th scope="col" class="text-center">0 UF</th>
+                            <th scope="col" class="text-center">3 UF</th>
+                            <th scope="col" class="text-center">5 UF</th>
+                            <th scope="col" class="text-center">10 UF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">XL Liviano Particular</th>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['1-1'] !== undefined && tarifasClasificadas['1-1'][0]" [simulacion]="tarifasClasificadas['1-1'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['1-2'] !== undefined && tarifasClasificadas['1-2'][0]" [simulacion]="tarifasClasificadas['1-2'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['1-3'] !== undefined && tarifasClasificadas['1-3'][0]" [simulacion]="tarifasClasificadas['1-3'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['1-4'] !== undefined && tarifasClasificadas['1-4'][0]" [simulacion]="tarifasClasificadas['1-4'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">L Liviano Particular</th>
 
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['2-1'] !== undefined && tarifasClasificadas['2-1'][0]"
-                [simulacion]="tarifasClasificadas['2-1'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['2-2'] !== undefined && tarifasClasificadas['2-2'][0]"
-                [simulacion]="tarifasClasificadas['2-2'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['2-3'] !== undefined && tarifasClasificadas['2-3'][0]"
-                [simulacion]="tarifasClasificadas['2-3'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['2-4'] !== undefined && tarifasClasificadas['2-4'][0]"
-                [simulacion]="tarifasClasificadas['2-4'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">M Liviano Particular</th>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['2-1'] !== undefined && tarifasClasificadas['2-1'][0]" [simulacion]="tarifasClasificadas['2-1'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['2-2'] !== undefined && tarifasClasificadas['2-2'][0]" [simulacion]="tarifasClasificadas['2-2'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['2-3'] !== undefined && tarifasClasificadas['2-3'][0]" [simulacion]="tarifasClasificadas['2-3'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['2-4'] !== undefined && tarifasClasificadas['2-4'][0]" [simulacion]="tarifasClasificadas['2-4'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">M Liviano Particular</th>
 
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['3-1'] !== undefined && tarifasClasificadas['3-1'][0]"
-                [simulacion]="tarifasClasificadas['3-1'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['3-2'] !== undefined && tarifasClasificadas['3-2'][0]"
-                [simulacion]="tarifasClasificadas['3-2'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['3-3'] !== undefined && tarifasClasificadas['3-3'][0]"
-                [simulacion]="tarifasClasificadas['3-3'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['3-4'] !== undefined && tarifasClasificadas['3-4'][0]"
-                [simulacion]="tarifasClasificadas['3-4'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">S Liviano Particular</th>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['3-1'] !== undefined && tarifasClasificadas['3-1'][0]" [simulacion]="tarifasClasificadas['3-1'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['3-2'] !== undefined && tarifasClasificadas['3-2'][0]" [simulacion]="tarifasClasificadas['3-2'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['3-3'] !== undefined && tarifasClasificadas['3-3'][0]" [simulacion]="tarifasClasificadas['3-3'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['3-4'] !== undefined && tarifasClasificadas['3-4'][0]" [simulacion]="tarifasClasificadas['3-4'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">S Liviano Particular</th>
 
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['4-1'] !== undefined && tarifasClasificadas['4-1'][0]"
-                [simulacion]="tarifasClasificadas['4-1'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['4-2'] !== undefined && tarifasClasificadas['4-2'][0]"
-                [simulacion]="tarifasClasificadas['4-2'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['4-3'] !== undefined && tarifasClasificadas['4-3'][0]"
-                [simulacion]="tarifasClasificadas['4-3'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-            <td>
-              <app-tarifa 
-                *ngIf="tarifasClasificadas['4-4'] !== undefined && tarifasClasificadas['4-4'][0]"
-                [simulacion]="tarifasClasificadas['4-4'][0]" >
-              </app-tarifa>
-              &nbsp;
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['4-1'] !== undefined && tarifasClasificadas['4-1'][0]" [simulacion]="tarifasClasificadas['4-1'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['4-2'] !== undefined && tarifasClasificadas['4-2'][0]" [simulacion]="tarifasClasificadas['4-2'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['4-3'] !== undefined && tarifasClasificadas['4-3'][0]" [simulacion]="tarifasClasificadas['4-3'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <app-tarifa *ngIf="tarifasClasificadas['4-4'] !== undefined && tarifasClasificadas['4-4'][0]" [simulacion]="tarifasClasificadas['4-4'][0]">
+                                </app-tarifa>
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-    </p-card>
+            </p-card>
 
-  </p-panel>
-</div>
-<!-- Contenedor tarifas -->
+        </p-panel>
+    </div>
+    <!-- Contenedor tarifas -->
 
 
 
