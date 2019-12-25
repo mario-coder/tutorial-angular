@@ -58,12 +58,13 @@
 
                         <div class="row">
                             <div class="col">
-                                <p-dropdown name="estadosVehiculo" [options]="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
-                                </p-dropdown>
+                                <select class="form-control" name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                  <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option>
+                                </select>
                             </div>
 
                             <div class="col">
-                                <input pInputText type="text" />
+                                <input class="form-control" type="text" />
                             </div>
 
                             <div class="col-sm input-label">
@@ -97,18 +98,21 @@
 
                         <div class="row">
                             <div class="col">
-                                <p-dropdown name="anios" [options]="anios" [(ngModel)]="selectedEstadoVehiculo">
-                                </p-dropdown>
+                                <select class="form-control" name="anio" [(ngModel)]="selectedEstadoVehiculo">
+                                  <option *ngFor="let anio of anios" value={{anio.code}} >{{ anio.label }}</option>
+                                </select>
                             </div>
 
                             <div class="col">
-                                <p-dropdown name="marcas" [options]="marcas" [(ngModel)]="selectedEstadoVehiculo">
-                                </p-dropdown>
+                                <select name="marcas" class="form-control" [(ngModel)]="selectedEstadoVehiculo">
+                                  <option *ngFor="let marca of marcas" value={{marca.code}} >{{ marca.label }}</option>
+                                </select>
                             </div>
 
                             <div class="col-sm input-label">
-                                <p-dropdown name="modelos" [options]="modelos" [(ngModel)]="selectedEstadoVehiculo">
-                                </p-dropdown>
+                                <select name="modelos" class="form-control" [(ngModel)]="selectedEstadoVehiculo">
+                                  <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option>
+                                </select>
                             </div>
 
                             <div class="col-sm input-label">
@@ -153,20 +157,21 @@
 
                         <div class="row">
                             <div class="col">
-                                <p-dropdown name="tiposDocumento" [options]="tiposDocumento" [(ngModel)]="selectedEstadoVehiculo">
-                                </p-dropdown>
+                                <select name="tiposDocumento" class="form-control" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
+                                </select>
                             </div>
 
                             <div class="col">
-                                <input pInputText type="text" />
+                                <input class="form-control" type="text" />
                             </div>
 
                             <div class="col">
-                                <input pInputText type="text" />
+                                <input class="form-control" type="text" />
                             </div>
 
                             <div class="col">
-                                <input pInputText type="text" />
+                                <input class="form-control" type="text" />
                             </div>
                         </div>
 
@@ -192,18 +197,25 @@
 
                         <div class="row">
                             <div class="col">
-                                <p-dropdown name="comunas" [options]="comunas" [(ngModel)]="selectedEstadoVehiculo">
-                                </p-dropdown>
+                                <select name="comunas" class="form-control" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
+                                </select>
                             </div>
 
                             <div class="col">
-                                <input pInputText type="text" />
+                                <input class="form-control" type="text" />
                             </div>
 
                             <div class="col">
 
-                                <p-calendar name="fechaInicioVigencia" [locale]="es" dateFormat="dd/mm/yy" [(ngModel)]="value" [monthNavigator]="true" [yearNavigator]="true" yearRange="1930:2030">
-                                </p-calendar>
+                                <div class="input-group">
+                                    <input type="text" class="form-control calendar-input" bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon2">
+                                    <i class="fa fa-calendar"></i>
+                                  </span>
+                                    </div>
+                                </div>
 
                             </div>
 

@@ -34,6 +34,7 @@ div.ui-panel-titlebar {
 .input-label {
     text-align: left;
     font-size: 80%;
+    margin-bottom: 3px;
 }
 
 .ui-inputtext {
@@ -80,4 +81,8 @@ table td.ui-datepicker-today>a {
 
 .seleccionado {
     border: 6px solid rgb(230, 215, 0) !important;
+}
+
+.calendar-input {
+    min-width: 60% !important;
 }

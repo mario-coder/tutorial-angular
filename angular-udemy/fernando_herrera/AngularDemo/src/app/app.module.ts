@@ -42,6 +42,7 @@ import { Componentes2Component } from './components/componentes2/componentes2.co
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NavbarCotizadorComponent } from './components/shared/navbar-cotizador/navbar-cotizador.component';
+import { HomeCotizadorComponent } from './components/home-cotizador/home-cotizador.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { NavbarCotizadorComponent } from './components/shared/navbar-cotizador/n
     TecnologiasComponent,
     Componentes2Component,
     DatepickerComponent,
-    NavbarCotizadorComponent
+    NavbarCotizadorComponent,
+    HomeCotizadorComponent
   ],
   imports: [
     BrowserModule,
