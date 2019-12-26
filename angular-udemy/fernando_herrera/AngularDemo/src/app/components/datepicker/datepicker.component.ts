@@ -15,7 +15,7 @@ export class DatepickerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.bsConfig = Object.assign({}, { containerClass: this.colorTheme, isAnimated: true, adaptivePosition: true });
+    this.bsConfig = Object.assign({}, { containerClass: this.colorTheme, isAnimated: true, adaptivePosition: true, showWeekNumbers: false });
   }
 
 }
