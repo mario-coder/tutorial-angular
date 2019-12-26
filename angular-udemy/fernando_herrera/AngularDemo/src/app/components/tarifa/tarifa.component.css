@@ -3,9 +3,12 @@
     border: 1px solid rgb(218, 215, 215) !important;
     border-radius: 18px !important;
     padding: 3px;
+    text-align: center;
+    /*
     -webkit-box-shadow: 7px 7px 16px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 7px 7px 16px -5px rgba(0,0,0,0.75);
     box-shadow: 7px 7px 16px -5px rgba(0,0,0,0.75);
+    */
 }
 
 .table {

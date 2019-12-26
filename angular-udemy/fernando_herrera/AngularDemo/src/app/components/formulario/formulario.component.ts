@@ -43,7 +43,7 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
     this.bsConfig = Object.assign(
       {},
-      { containerClass: this.colorTheme, isAnimated: true }
+      { containerClass: this.colorTheme, isAnimated: true, adaptivePosition: true }
     );
     this.localeService.use(this.locale);
 

@@ -1,24 +1,45 @@
 <div class="animated fadeIn">
 
     <p-card>
+      <div class="container form-container">
+
+
+        <p-panel [toggleable]="true">
+
+          <div class="panel-container">
+
+
+            <div class="row">
+              <div class="col-sm input-label">
+                  Ingrese una fecha
+              </div>
+
+              <div class="col-sm input-label">
+                  Ingrese un rango
+              </div>
+
+          </div>
 
         <div class="row">
-            <div class="col-xs-12 col-12 col-md-4 form-group">
+            <div class="col">
               <input type="text"
                      placeholder="Datepicker"
                      class="form-control"
                      bsDatepicker
                      [bsConfig]="bsConfig">
             </div>
-            <div class="col-xs-12 col-12 col-md-4 form-group">
+            <div class="col">
               <input type="text"
                      placeholder="Daterangepicker"
                      class="form-control"
                      bsDaterangepicker
                      [bsConfig]="bsConfig">
             </div>
+            </div>
           </div>
+          </p-panel>
 
+        </div>
     </p-card>
 
 </div>
