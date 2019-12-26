@@ -22,7 +22,7 @@
     <p-card>
         <div class="pl-13">
             <p-header>
-                <h6>{{ simulacion.importePrimerRecibo | currency }}</h6>
+                <h6>{{ simulacion.importePrimerRecibo | number:'.0-2' }} UF</h6>
             </p-header>
         </div>
 
@@ -42,6 +42,7 @@
                 </tr>
             </ng-template>
 
-            | </p-table>
+        </p-table>
+        
     </p-card>
 </p-dialog>
