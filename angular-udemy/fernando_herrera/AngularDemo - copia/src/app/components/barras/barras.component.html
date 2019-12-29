@@ -1,0 +1,26 @@
+<p-card>
+
+<!-- <div class="container">
+  <p-chart type="bar" [data]="barChartData"></p-chart>
+  <button class="btn btn-primary" (click)="randomize()">Random</button>
+</div> -->
+
+    <div class="flex animated fadeIn" style="text-align: center;">
+      <div class="flex-item">
+        <div style="width: 600px; height: 600px; margin: auto auto auto auto;">
+          <canvas baseChart width="600" height="600"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+          </canvas>
+        </div>
+      </div>
+      <div class="flex-item">
+        <button class="btn btn-primary m-1 mt-5" (click)="randomize()">Update</button>
+      </div>
+    </div> 
+
+</p-card>

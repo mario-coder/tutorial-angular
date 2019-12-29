@@ -1,0 +1,24 @@
+<div class="animated fadeIn">
+
+    <p-card>
+        <h1>Ejemplo componentes 2</h1>
+        <hr />
+
+        <button class="btn btn-primary m-1" (click)="cantidad = cantidad + 1">
+            <i class="fa fa-plus"></i>
+          </button>
+          <button class="btn btn-primary m-1" (click)="cantidad = cantidad - 1">
+            <i class="fa fa-minus"></i>
+        </button>
+
+        <p>
+          <span *ngFor="let item of arrayOne(cantidad); let i = index;"> 
+              <app-dialog></app-dialog> 
+          </span>
+        </p>
+
+    </p-card>
+
+    <br>
+
+</div>

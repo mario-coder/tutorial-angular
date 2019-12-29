@@ -1,0 +1,38 @@
+<p-card>
+<div class="container main-container animated fadeIn">
+    <h1>Ejemplos directivas angular</h1>
+    <hr />
+
+    <p-tabView>
+        <p-tabPanel header="Estilos">
+            <app-ng-style></app-ng-style>
+        </p-tabPanel>
+    
+        <p-tabPanel header="Estilos CSS">
+            <app-css></app-css>
+        </p-tabPanel>
+
+    <!-- <p>
+        Hola mundo desde app.component.html
+    </p> -->
+
+
+        <p-tabPanel header="Clases CSS">
+            <app-clases></app-clases>
+        </p-tabPanel>
+
+        <p-tabPanel header="Switch">
+            <app-ng-switch></app-ng-switch>
+        </p-tabPanel>
+
+        <p-tabPanel header="Custom">
+            <h1>Directivas</h1>
+            <p [appResaltado]="'orange'">Hola mundo</p>
+        </p-tabPanel>
+    </p-tabView>
+
+    <br><br><br><br>
+
+</div>
+
+</p-card>

@@ -16,7 +16,6 @@ import { TecnologiasComponent } from "./components/tecnologias/tecnologias.compo
 import { Componentes2Component } from "./components/componentes2/componentes2.component";
 import { DatepickerComponent } from "./components/datepicker/datepicker.component";
 import { HomeCotizadorComponent } from "./components/home-cotizador/home-cotizador.component";
-import { ConsultaSimulacionComponent } from "./components/consulta-simulacion/consulta-simulacion.component";
 
 const routes: Routes = [
   { path: "home", component: HomeComponent }, //, data: {animation: 'isLeft'} },
@@ -34,7 +33,6 @@ const routes: Routes = [
   { path: "login", component: LoginComponent }, //, data: {animation: 'isRight'} },
   { path: "home-cotizador", component: HomeCotizadorComponent }, //, data: {animation: 'isRight'} },
   { path: "formulario", component: FormularioComponent }, //, data: {animation: 'isRight'} },
-  { path: "consulta-simulacion", component: ConsultaSimulacionComponent }, //, data: {animation: 'isRight'} },
   { path: "**", redirectTo: "home" }
 ];
 

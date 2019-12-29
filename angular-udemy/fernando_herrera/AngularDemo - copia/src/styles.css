@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~animate.css/animate.min.css';
+@import '~ngx-bootstrap/datepicker/bs-datepicker.css';
+body {
+    background-color: #e3e3e3;
+}
+
+.container {
+    max-width: 1800px;
+}
+
+div.ui-panel-titlebar {
+    border-radius: 3px !important;
+}
+
+.panel-container div.ui-panel-titlebar {
+    background-color: #f8f8f8 !important;
+    color: #002355 !important;
+}
+
+.panel-container span.pi {
+    color: blue !important;
+}
+
+.form-container {
+    background-color: #f8f8f8;
+    border-radius: 18px;
+    border: 1px solid rgb(210, 214, 214);
+    margin: 5px;
+    padding: 16px;
+}
+
+.input-label {
+    text-align: left;
+    font-size: 80%;
+    margin-bottom: 3px;
+}
+
+.ui-inputtext {
+    font-size: 90% !important;
+}
+
+.ui-state-highlight,
+.ui-tabview-selected,
+.ui-paginator-page.ui-state-active {
+    background-color: rgb(13, 13, 170) !important;
+}
+
+.ui-paginator-page,
+.ui-paginator-element {
+    border-radius: 18px !important;
+}
+
+.ui-table-summary {
+    background-color: #f4f4f4 !important;
+    border: 1px solid #c8c8c8 !important;
+    border-top: 0px !important;
+}
+
+.ui-widget {
+    display: block !important;
+}
+
+input {
+    max-width: 100% !important;
+    min-width: 100% !important;
+}
+
+.extendido {
+    width: 100% !important;
+}
+
+table td.ui-datepicker-today>a {
+    color: white !important;
+}
+
+.btn-wide {
+    min-width: 100% !important;
+}
+
+.seleccionado {
+    border: 6px solid rgb(230, 215, 0) !important;
+}
+
+.calendar-input {
+    min-width: 60% !important;
+}
