@@ -5,19 +5,20 @@
     <h3 class="first">Tabla básica</h3>
     <p-table #dt [value]="cars" [columns]="cols" selectionMode="single" [paginator]="true" [rows]="10">
         <ng-template pTemplate="caption">
-            <div style="text-align: right">        
+            <div class="ui-helper-clearfix" style="text-align: right">        
                 <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
                 <input type="text" pInputText size="50" placeholder="Ingrese un termino" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
             </div>
         </ng-template>
+        
         <ng-template pTemplate="header" let-cols>
-        <tr>
+            <tr>
             <th *ngFor="let col of cols" [pSortableColumn]="col.field">
                 {{col.header}}
                 <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
             </th>
         </tr>
-        </ng-template>
+    </ng-template>
         <ng-template pTemplate="body" let-car>
             <tr [pSelectableRow]="car">
                 <td>{{car.vin}}</td>
@@ -25,6 +26,14 @@
                 <td>{{car.brand}}</td>
                 <td>{{car.color}}</td>
             </tr>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <div class="ui-helper-clearfix" style="text-align: left">
+                <button type="button" pButton icon="pi pi-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="margin-right: 0.5em;"></button>
+                <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportExcel()" style="margin-right: 0.5em;" class="ui-button-success"></button>
+                <button type="button" pButton icon="pi pi-file-pdf" iconPos="left" label="PDF" (click)="exportPdf()" class="ui-button-warning"></button>
+                <button type="button" pButton icon="pi pi-file" iconPos="left" label="CSV - Selection Only" (click)="dt.exportCSV({selectionOnly:true})" style="float:right"></button>
+            </div>
         </ng-template>
     </p-table>
 
