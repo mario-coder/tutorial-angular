@@ -6,7 +6,7 @@
             <p-header>
                 <h2>Consulta Simulaciones</h2>
                 <i class="fa fa-home float-left m-1"></i>
-                <h6>Inicio/Consulta Simulaciones</h6>
+                <h6>Inicio/Consulta Simulacion</h6>
             </p-header>
         </div>
 
@@ -26,61 +26,74 @@
                         local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows.
                     </p-accordionTab>
                     <p-accordionTab header="Busqueda por Fechas">
-                        <div class="row p-1">
-                            <div class="col-5">Periodo</div>
-                            <div class="col-7">
-                                <input class="form-control " type="text" />
+                        <div class="row">
+                            <div class="col-5">
+                                Periodo
+                            </div>
+                            <div class="col-7 ">
+                                <input class="form-control " type="text " />
                             </div>
                         </div>
-                        <div class="row p-1">
-                            <div class="col-5">Fecha Desde</div>
-                            <div class="col-7">
-                                <div class="input-group">
-                                    <input type="text" class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Desde" aria-describedby="basic-addon2" />
-                                    <div class="input-group-append">
-                                        <span class="input-group-text" id="basic-addon2">
-                      <i class="fa fa-calendar"></i>
+                        <div class="row">
+                            <div class="col-5 ">Fecha Desde</div>
+                            <div class="col-7 ">
+                                <div class="input-group ">
+                                    <input type="text " class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Desde " aria-describedby="basic-addon2 " />
+                                    <div class="input-group-append ">
+                                        <span class="input-group-text " id="basic-addon2 ">
+                      <i class="fa fa-calendar "></i>
                     </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row p-1">
-                            <div class="col-5">Fecha Hasta</div>
-                            <div class="col-7">
-                                <div class="input-group">
-                                    <input type="text" class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Hasta" aria-describedby="basic-addon3" />
-                                    <div class="input-group-append">
-                                        <span class="input-group-text" id="basic-addon3">
-                      <i class="fa fa-calendar"></i>
+                        <div class="row">
+                            <div class="col-5 ">Fecha Hasta</div>
+                            <div class="col-7 ">
+                                <div class="input-group ">
+                                    <input type="text " class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Hasta " aria-describedby="basic-addon3 " />
+                                    <div class="input-group-append ">
+                                        <span class="input-group-text " id="basic-addon3 ">
+                      <i class="fa fa-calendar "></i>
                     </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-12" colspan="2">
+                                <button type="button" class="btn btn-outline-primary">
+                  <i class="fa fa-search"></i>
+                  Buscar
+                </button>
+                            </div>
+                        </div>
                     </p-accordionTab>
-                    <p-accordionTab header="Busqueda por Documento">
+                    <p-accordionTab header="Busqueda por Documento ">
                         After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced
                         from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
                     </p-accordionTab>
-                    <p-accordionTab header="Busqueda por Persona">
+                    <p-accordionTab header="Busqueda por Persona ">
                         After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced
                         from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
                     </p-accordionTab>
-                    <p-accordionTab header="Busqueda por Datos del Riesgo Vehiculo">
+                    <p-accordionTab header="Busqueda por Datos del Riesgo Vehiculo ">
                         After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced
                         from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
                     </p-accordionTab>
-                    <p-accordionTab header="Busqueda por Datos del Riesgo Hogar">
+                    <p-accordionTab header="Busqueda por Datos del Riesgo Hogar ">
                         After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced
                         from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
                     </p-accordionTab>
                 </p-accordion>
             </nav>
 
-            <div id="content">
-                <button type="button" class="btn btn-default" (click)="toggleMenu()">
-          <i class="fa" [ngClass]="iconoOpcionMenu"></i>
+            <div id="content ">
+                <button type="button " class="btn btn-default " (click)="toggleMenu()">
+          <i class="fa " [ngClass]="iconoOpcionMenu"></i>
           <small> {{ opcionMenu }} </small>
         </button>
 
