@@ -4,7 +4,7 @@
     <p-card>
         <div class="ml-3">
             <p-header>
-                <h2>Consulta Simulaciones</h2>
+                <h2>Consulta Simulacion</h2>
                 <i class="fa fa-home float-left m-1"></i>
                 <h6>Inicio/Consulta Simulacion</h6>
             </p-header>
@@ -21,9 +21,83 @@
 
                 <p-accordion [multiple]="true">
                     <p-accordionTab header="Busqueda General">
-                        Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream.
-                        In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, killing the
-                        local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows.
+                        <div class="row">
+                            <div class="col-5">
+                                Tipo Consulta
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Canal
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Sucursal
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Corredor
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Cia De Seguros
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Ramo
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-12" colspan="2">
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class="fa fa-search"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
                     </p-accordionTab>
                     <p-accordionTab header="Busqueda por Fechas">
                         <div class="row">
@@ -31,7 +105,10 @@
                                 Periodo
                             </div>
                             <div class="col-7 ">
-                                <input class="form-control " type="text " />
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
                             </div>
                         </div>
                         <div class="row">
@@ -54,8 +131,8 @@
                                     <input type="text " class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Hasta " aria-describedby="basic-addon3 " />
                                     <div class="input-group-append ">
                                         <span class="input-group-text " id="basic-addon3 ">
-                      <i class="fa fa-calendar "></i>
-                    </span>
+                                            <i class="fa fa-calendar "></i>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -66,27 +143,259 @@
                         <div class="row">
                             <div class="col-12" colspan="2">
                                 <button type="button" class="btn btn-outline-primary">
-                  <i class="fa fa-search"></i>
-                  Buscar
-                </button>
+                                    <i class="fa fa-search"></i>
+                                    Buscar
+                                </button>
                             </div>
                         </div>
                     </p-accordionTab>
                     <p-accordionTab header="Busqueda por Documento ">
-                        After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced
-                        from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
+                        <div class="row">
+                            <div class="col-5 ">Numero de Simulacion</div>
+                            <div class="col-7 ">
+                                <input type="text " class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Estado Simulacion
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+
+                        <hr>
+                        
+                        <div class="row">
+                            <div class="col-12" colspan="2">
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class="fa fa-search"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
                     </p-accordionTab>
                     <p-accordionTab header="Busqueda por Persona ">
-                        After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced
-                        from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
+                        <div class="row">
+                            <div class="col-5">
+                                Tipo De Persona
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Tipo De Documento
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5 ">Numero De Documento</div>
+                            <div class="col-7 ">
+                                <input type="text " class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5 ">Nombre</div>
+                            <div class="col-7 ">
+                                <input type="text " class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5 ">Apellido</div>
+                            <div class="col-7 ">
+                                <input type="text " class="form-control" />
+                            </div>
+                        </div>
+
+
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-12" colspan="2">
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class="fa fa-search"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
                     </p-accordionTab>
                     <p-accordionTab header="Busqueda por Datos del Riesgo Vehiculo ">
-                        After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced
-                        from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
+                        <div class="row">
+                            <div class="col-5">
+                                Año
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Tipo
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Marca
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Modelo
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5 ">Patente</div>
+                            <div class="col-7 ">
+                                <input type="text " class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Uso
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Sub Uso
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-12" colspan="2">
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class="fa fa-search"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
                     </p-accordionTab>
                     <p-accordionTab header="Busqueda por Datos del Riesgo Hogar ">
-                        After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced
-                        from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
+                        <div class="row">
+                            <div class="col-5">
+                                Perfil Asegurado
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Ocupacion del Riesgo
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Tipo Construccion
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Region
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Comuna
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                Zona
+                            </div>
+                            <div class="col-7 ">
+                                <select name="modelos" class="form-control " > 
+                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                  </select>
+                            </div>
+                        </div>
+
+                        <hr>
+                        
+                        <div class="row">
+                            <div class="col-12" colspan="2">
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class="fa fa-search"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
                     </p-accordionTab>
                 </p-accordion>
             </nav>

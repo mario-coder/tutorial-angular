@@ -64,6 +64,8 @@ a[aria-expanded="true"] {
 
 .col-5 {
     background-color: rgb(209, 209, 235);
+    font-size: 13px;
+    vertical-align: middle;
 }
 
 .col-5,
