@@ -32,7 +32,7 @@
 }
 
 .dropdown-menu {
-    background-color: rgb(6, 45, 153)
+    background-color: rgb(255, 255, 255)
 }
 
 .dropdown-menu>li>a:hover,
@@ -54,41 +54,41 @@
 }
 
 .navbar-inverse .navbar-brand {
-    color: #FFFFFF
+    color: rgb(0, 0, 0)
 }
 
 .navbar-inverse .navbar-brand:hover {
-    color: #FFCC00
+    color: rgb(255, 255, 255)
 }
 
 .navbar-inverse .navbar-nav>li>a {
-    color: #FFFFFF
+    color: rgb(0, 0, 0)
 }
 
 .navbar-inverse .navbar-nav>li>a:hover,
 .navbar-inverse .navbar-nav>li>a:focus {
-    color: #FFCC00
+    color: rgb(255, 255, 255)
 }
 
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.open>a,
 .navbar-inverse .navbar-nav>.open>a:hover,
 .navbar-inverse .navbar-nav>.open>a:focus {
-    color: #FFCC00
+    color: rgb(255, 255, 255)
 }
 
 .navbar-inverse .navbar-nav>.active>a:hover,
 .navbar-inverse .navbar-nav>.active>a:focus {
-    color: #FFCC00
+    color: rgb(255, 255, 255)
 }
 
 .dropdown-menu>li>a {
-    color: #FFFFFF
+    color: rgb(0, 0, 0)
 }
 
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
-    color: #FFCC00
+    color: rgb(255, 255, 255)
 }
 
 .navbar-inverse .navbar-nav>.dropdown>a .caret {

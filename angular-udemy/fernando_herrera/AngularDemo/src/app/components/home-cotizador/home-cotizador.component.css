@@ -7,6 +7,11 @@
     box-shadow: 7px 7px 16px -5px rgba(0, 0, 0, 0.75);*/
 }
 
+.card-menu-home:hover {
+    border: 1px solid #b6f705;
+    background-color: rgba(236, 188, 30, 0.041);
+}
+
 .card-menu-home>.card-header {
     text-align: center;
 }
