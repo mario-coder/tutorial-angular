@@ -106,3 +106,7 @@
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
     border-bottom-color: #FFFFFF
 }
+
+.nav-link {
+    color: #071170 !important;
+}

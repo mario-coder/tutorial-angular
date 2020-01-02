@@ -1,6 +1,6 @@
 <p-card>
 
-<div class="container form-container animated fadeIn">
+<div class="container form-container fade-in">
     <h3 class="first">Tabla CRUD</h3>
 <p-table [columns]="cols" #dt [value]="cars" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
     <ng-template pTemplate="caption">
