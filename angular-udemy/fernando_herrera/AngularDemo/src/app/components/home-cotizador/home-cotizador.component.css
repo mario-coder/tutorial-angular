@@ -11,7 +11,7 @@
 .card-menu-home:hover {
     border: 1px solid #b6f705;
     background-color: rgba(236, 188, 30, 0.041);
-    transform: scale(2.0);
+    transform: scale(1.1);
 }
 
 .card-menu-home>.card-header {

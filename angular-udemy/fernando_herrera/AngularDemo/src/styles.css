@@ -25,7 +25,7 @@ div.ui-panel-titlebar {
 
 .form-container {
     background-color: #f8f8f8;
-    border-radius: 18px;
+    border-radius: 6px;
     border: 1px solid rgb(210, 214, 214);
     margin: 5px;
     padding: 16px;
@@ -33,8 +33,12 @@ div.ui-panel-titlebar {
 
 .input-label {
     text-align: left;
-    font-size: 80%;
+    font-size: 0.8rem;
     margin-bottom: 3px;
+}
+
+.form-control {
+    border: 1px solid #44b4c0 !important;
 }
 
 .ui-inputtext {

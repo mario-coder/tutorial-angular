@@ -1,10 +1,12 @@
 <app-navbar-cotizador></app-navbar-cotizador>
 
+<div class="fade-in">
+
 <p-card>
 
     <div class="ml-3">
         <p-header>
-            <h2>Simular Livianos</h2>
+            <h1>Simular Livianos</h1>
             <i class="fa fa-home float-left m-1"></i>
             <h6>Inicio/Simular Livianos</h6>
         </p-header>
@@ -13,7 +15,7 @@
     <hr>
 
     <!-- Contenedor datos principales -->
-    <div class="container fade-in form-container shadow-drop-center" [style]="{width: '100%'}">
+    <div class="container form-container shadow-drop-center" [style]="{width: '100%'}">
 
         <form (ngSubmit)="tarificar(f)" #f="ngForm">
 
@@ -396,7 +398,5 @@
     <!-- Contenedor tarifas -->
 
 
-
-
-
 </p-card>
+</div>
