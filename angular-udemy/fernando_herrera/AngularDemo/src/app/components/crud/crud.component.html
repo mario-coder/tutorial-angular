@@ -4,12 +4,17 @@
     <h3 class="first">Tabla CRUD</h3>
 <p-table [columns]="cols" #dt [value]="cars" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
     <ng-template pTemplate="caption">
-        <div style="text-align: right">        
+        <div class="ui-helper-clearfix" style="text-align: right">        
+
+            <!-- <button type="button" pButton icon="pi pi-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="margin-right: 0.5em; float: left;"></button> -->
+            <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportExcel()" style="margin-right: 0.5em; float: left;" class="ui-button-success"></button>
+            <button type="button" pButton icon="pi pi-file-pdf" iconPos="left" label="PDF" (click)="exportPdf()" class="ui-button-warning" style="float: left;"></button>
+
             <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-            <input type="text" pInputText size="50" placeholder="Ingrese un termino" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+            <input type="text" pInputText size="50" placeholder="Ingrese un termino" (input)="dt.filterGlobal($event.target.value, 'contains')" style="min-width:500px !important;  float: right;">
         </div>
     </ng-template>
-
+    
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns" [pSortableColumn]="col.field">
