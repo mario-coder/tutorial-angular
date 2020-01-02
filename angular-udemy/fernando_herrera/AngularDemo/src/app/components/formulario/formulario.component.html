@@ -13,7 +13,7 @@
     <hr>
 
     <!-- Contenedor datos principales -->
-    <div class="container fade-in form-container" [style]="{width: '100%'}">
+    <div class="container fade-in form-container shadow-drop-center" [style]="{width: '100%'}">
 
         <form (ngSubmit)="tarificar(f)" #f="ngForm">
 
@@ -261,7 +261,7 @@
     <br>
 
     <!-- Contenedor tarifas -->
-    <div class="container animated fadeIn faster form-container" *ngIf="tarificado" [style]="{width: '100%'}">
+    <div class="container fade-in form-container shadow-drop-center" *ngIf="tarificado" [style]="{width: '100%'}">
         <p-panel [toggleable]="true">
 
             <p-header>

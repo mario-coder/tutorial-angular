@@ -1,14 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~animate.css/animate.min.css';
 @import './assets/animista/animista.css';
 @import '~ngx-bootstrap/datepicker/bs-datepicker.css';
 body {
-    background-color: #e3e3e3;
+    background-color: #e3e3e3 !important;
 }
 
 .container {
-    max-width: 1800px;
+    max-width: 1800px !important;
 }
 
 div.ui-panel-titlebar {
