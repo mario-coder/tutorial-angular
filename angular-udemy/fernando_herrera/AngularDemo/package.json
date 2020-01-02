@@ -28,7 +28,6 @@
     "chartjs-plugin-annotation": "^0.5.7",
     "chartjs-plugin-datalabels": "^0.7.0",
     "file-saver": "^2.0.2",
-    "font-awesome": "^4.7.0",
     "jspdf": "^1.5.3",
     "jspdf-autotable": "^3.2.11",
     "ng2-charts": "^2.3.0",
