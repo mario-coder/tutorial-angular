@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import './assets/animista/animista.css';
-@import '~ngx-bootstrap/datepicker/bs-datepicker.css';
+@import "./assets/animista/animista.css";
+@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
 body {
     background-color: #e3e3e3 !important;
 }
@@ -26,7 +26,7 @@ div.ui-panel-titlebar {
 
 .ui-panel-content {
     border-bottom-left-radius: 3px !important;
-    border-bottom-right-radius: 3px !important;  
+    border-bottom-right-radius: 3px !important;
 }
 
 .form-container {
@@ -43,13 +43,26 @@ div.ui-panel-titlebar {
     margin-bottom: 3px;
 }
 
-.form-control {
-    border: 1px solid #44b4c0 !important;
+.btn {
+    font-size: 95% !important;
 }
 
+.form-control {
+    border: 1px solid #44b4c0 !important;
+    font-size: 80% !important;
+}
+
+.form-control,
+select {
+    height: 2vw !important;
+}
+
+
+/*
 .ui-inputtext {
     font-size: 90% !important;
 }
+*/
 
 .ui-state-highlight,
 .ui-tabview-selected,
@@ -100,13 +113,14 @@ table td.ui-datepicker-today>a {
 body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
     background-color: rgb(8, 8, 133) !important;
 }
+
 body .ui-accordion .ui-accordion-content {
     padding-top: 0px !important;
 }
 
-.inputSearch{
+.inputSearch {
     width: 30% !important;
-    min-width:30% !important;  
-    max-width:40% !important;  
+    min-width: 30% !important;
+    max-width: 40% !important;
     float: right !important;
 }

@@ -5,8 +5,8 @@
 }
 
 #sidebar {
-    min-width: 20%;
-    max-width: 20%;
+    min-width: 22%;
+    max-width: 22%;
     background: #6a85f1;
     color: #fff;
     border-radius: 4px;
@@ -16,24 +16,19 @@
 }
 
 #sidebar.hidden {
-    margin-left: -20%;
+    margin-left: -22%;
     visibility: hidden;
     opacity: 0;
 }
 
 #sidebar .sidebar-header {
-    padding-left: 20px;
-    padding-top: 10px;
+    padding-left: 7%;
+    padding-top: 5%;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
-}
-
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
 }
 
 #sidebar ul li a {
@@ -64,7 +59,7 @@ a[aria-expanded="true"] {
 
 .col-5 {
     background-color: rgb(209, 209, 235);
-    font-size: 13px;
+    font-size: 85% !important;
     vertical-align: middle;
 }
 

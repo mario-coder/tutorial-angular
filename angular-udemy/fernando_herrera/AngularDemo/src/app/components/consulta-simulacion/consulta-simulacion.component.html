@@ -16,388 +16,390 @@
             <!-- Sidebar  -->
             <nav id="sidebar" [ngClass]="{ hidden: sidebarHidden }">
                 <div class="sidebar-header">
+                    <i class="fa fa-search float-left mt-1 mr-1"></i>
                     <h6>Opciones de busqueda</h6>
                 </div>
 
-                <p-accordion [multiple]="true">
-                    <p-accordionTab header="Busqueda General">
-                        <div class="row">
-                            <div class="col-5">
-                                Tipo Consulta
+                <form>
+                    <p-accordion [multiple]="true">
+                        <p-accordionTab header="Busqueda General">
+                            <div class="row">
+                                <div class="col-5">
+                                    Tipo Consulta
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
+                            <div class="row">
+                                <div class="col-5">
+                                    Canal
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Canal
+                            <div class="row">
+                                <div class="col-5">
+                                    Sucursal
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
+                            <div class="row">
+                                <div class="col-5">
+                                    Corredor
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Sucursal
+                            <div class="row">
+                                <div class="col-5">
+                                    Cia De Seguros
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
+                            <div class="row">
+                                <div class="col-5">
+                                    Ramo
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Corredor
-                            </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Cia De Seguros
-                            </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Ramo
-                            </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
 
-                        <br>
+                            <br />
 
-                        <div class="row">
-                            <div class="col-12" colspan="2">
-                                <button type="button" class="btn btn-outline-primary">
-                                    <i class="fa fa-search"></i>
-                                    Buscar
-                                </button>
+                            <div class="row">
+                                <div class="col-12" colspan="2">
+                                    <button type="button" class="btn btn-outline-primary">
+                    <i class="fa fa-search"></i>
+                    Buscar
+                  </button>
+                                </div>
                             </div>
-                        </div>
-                    </p-accordionTab>
-                    <p-accordionTab header="Busqueda por Fechas" [selected]="true">
-                        <div class="row">
-                            <div class="col-5">
-                                Periodo
+                        </p-accordionTab>
+                        <p-accordionTab header="Busqueda por Fechas" [selected]="true">
+                            <div class="row">
+                                <div class="col-5">
+                                    Periodo
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5 ">Fecha Desde</div>
-                            <div class="col-7 ">
-                                <div class="input-group ">
-                                    <input type="text " class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Desde " aria-describedby="basic-addon2 " />
-                                    <div class="input-group-append ">
-                                        <span class="input-group-text " id="basic-addon2 ">
-                      <i class="fa fa-calendar "></i>
-                    </span>
+                            <div class="row">
+                                <div class="col-5 ">Fecha Desde</div>
+                                <div class="col-7 ">
+                                    <div class="input-group ">
+                                        <input type="text " class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Desde " aria-describedby="basic-addon2 " />
+                                        <div class="input-group-append ">
+                                            <span class="input-group-text " id="basic-addon2 ">
+                        <i class="fa fa-calendar "></i>
+                      </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5 ">Fecha Hasta</div>
-                            <div class="col-7 ">
-                                <div class="input-group ">
-                                    <input type="text " class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Hasta " aria-describedby="basic-addon3 " />
-                                    <div class="input-group-append ">
-                                        <span class="input-group-text " id="basic-addon3 ">
-                                            <i class="fa fa-calendar "></i>
-                                        </span>
+                            <div class="row">
+                                <div class="col-5 ">Fecha Hasta</div>
+                                <div class="col-7 ">
+                                    <div class="input-group ">
+                                        <input type="text " class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Hasta " aria-describedby="basic-addon3 " />
+                                        <div class="input-group-append ">
+                                            <span class="input-group-text " id="basic-addon3 ">
+                        <i class="fa fa-calendar "></i>
+                      </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <br>
+                            <br />
 
-                        <div class="row">
-                            <div class="col-12" colspan="2">
-                                <button type="button" class="btn btn-outline-primary">
-                                    <i class="fa fa-search"></i>
-                                    Buscar
-                                </button>
+                            <div class="row">
+                                <div class="col-12" colspan="2">
+                                    <button type="button" class="btn btn-outline-primary">
+                    <i class="fa fa-search"></i>
+                    Buscar
+                  </button>
+                                </div>
                             </div>
-                        </div>
-                    </p-accordionTab>
-                    <p-accordionTab header="Busqueda por Documento ">
-                        <div class="row">
-                            <div class="col-5 ">Numero de Simulacion</div>
-                            <div class="col-7 ">
-                                <input type="text " class="form-control" />
+                        </p-accordionTab>
+                        <p-accordionTab header="Busqueda por Documento ">
+                            <div class="row">
+                                <div class="col-5 ">Numero de Simulacion</div>
+                                <div class="col-7 ">
+                                    <input type="text " class="form-control" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Estado Simulacion
+                            <div class="row">
+                                <div class="col-5">
+                                    Estado Simulacion
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
 
-                        <br>
-                        
-                        <div class="row">
-                            <div class="col-12" colspan="2">
-                                <button type="button" class="btn btn-outline-primary">
-                                    <i class="fa fa-search"></i>
-                                    Buscar
-                                </button>
-                            </div>
-                        </div>
-                    </p-accordionTab>
-                    <p-accordionTab header="Busqueda por Persona ">
-                        <div class="row">
-                            <div class="col-5">
-                                Tipo De Persona
-                            </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Tipo De Documento
-                            </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5 ">Numero De Documento</div>
-                            <div class="col-7 ">
-                                <input type="text " class="form-control" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5 ">Nombre</div>
-                            <div class="col-7 ">
-                                <input type="text " class="form-control" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5 ">Apellido</div>
-                            <div class="col-7 ">
-                                <input type="text " class="form-control" />
-                            </div>
-                        </div>
+                            <br />
 
+                            <div class="row">
+                                <div class="col-12" colspan="2">
+                                    <button type="button" class="btn btn-outline-primary">
+                    <i class="fa fa-search"></i>
+                    Buscar
+                  </button>
+                                </div>
+                            </div>
+                        </p-accordionTab>
+                        <p-accordionTab header="Busqueda por Persona ">
+                            <div class="row">
+                                <div class="col-5">
+                                    Tipo De Persona
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    Tipo De Documento
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 ">Numero De Documento</div>
+                                <div class="col-7 ">
+                                    <input type="text " class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 ">Nombre</div>
+                                <div class="col-7 ">
+                                    <input type="text " class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 ">Apellido</div>
+                                <div class="col-7 ">
+                                    <input type="text " class="form-control" />
+                                </div>
+                            </div>
 
-                        <br>
+                            <br />
 
-                        <div class="row">
-                            <div class="col-12" colspan="2">
-                                <button type="button" class="btn btn-outline-primary">
-                                    <i class="fa fa-search"></i>
-                                    Buscar
-                                </button>
+                            <div class="row">
+                                <div class="col-12" colspan="2">
+                                    <button type="button" class="btn btn-outline-primary">
+                    <i class="fa fa-search"></i>
+                    Buscar
+                  </button>
+                                </div>
                             </div>
-                        </div>
-                    </p-accordionTab>
-                    <p-accordionTab header="Busqueda por Datos del Riesgo Vehiculo ">
-                        <div class="row">
-                            <div class="col-5">
-                                Año
+                        </p-accordionTab>
+                        <p-accordionTab header="Busqueda por Datos del Riesgo Vehiculo ">
+                            <div class="row">
+                                <div class="col-5">
+                                    Año
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
+                            <div class="row">
+                                <div class="col-5">
+                                    Tipo
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Tipo
+                            <div class="row">
+                                <div class="col-5">
+                                    Marca
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
+                            <div class="row">
+                                <div class="col-5">
+                                    Modelo
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Marca
+                            <div class="row">
+                                <div class="col-5 ">Patente</div>
+                                <div class="col-7 ">
+                                    <input type="text " class="form-control" />
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
+                            <div class="row">
+                                <div class="col-5">
+                                    Uso
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Modelo
+                            <div class="row">
+                                <div class="col-5">
+                                    Sub Uso
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5 ">Patente</div>
-                            <div class="col-7 ">
-                                <input type="text " class="form-control" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Uso
-                            </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Sub Uso
-                            </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
 
-                        <br>
+                            <br />
 
-                        <div class="row">
-                            <div class="col-12" colspan="2">
-                                <button type="button" class="btn btn-outline-primary">
-                                    <i class="fa fa-search"></i>
-                                    Buscar
-                                </button>
+                            <div class="row">
+                                <div class="col-12" colspan="2">
+                                    <button type="button" class="btn btn-outline-primary">
+                    <i class="fa fa-search"></i>
+                    Buscar
+                  </button>
+                                </div>
                             </div>
-                        </div>
-                    </p-accordionTab>
-                    <p-accordionTab header="Busqueda por Datos del Riesgo Hogar ">
-                        <div class="row">
-                            <div class="col-5">
-                                Perfil Asegurado
+                        </p-accordionTab>
+                        <p-accordionTab header="Busqueda por Datos del Riesgo Hogar ">
+                            <div class="row">
+                                <div class="col-5">
+                                    Perfil Asegurado
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
+                            <div class="row">
+                                <div class="col-5">
+                                    Ocupacion del Riesgo
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Ocupacion del Riesgo
+                            <div class="row">
+                                <div class="col-5">
+                                    Tipo Construccion
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
+                            <div class="row">
+                                <div class="col-5">
+                                    Region
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Tipo Construccion
+                            <div class="row">
+                                <div class="col-5">
+                                    Comuna
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
+                            <div class="row">
+                                <div class="col-5">
+                                    Zona
+                                </div>
+                                <div class="col-7 ">
+                                    <select name="modelos" class="form-control ">
+                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
+                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                  </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Region
-                            </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Comuna
-                            </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5">
-                                Zona
-                            </div>
-                            <div class="col-7 ">
-                                <select name="modelos" class="form-control " > 
-                                    <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                    <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
-                                  </select>
-                            </div>
-                        </div>
 
-                        <br>
-                        
-                        <div class="row">
-                            <div class="col-12" colspan="2">
-                                <button type="button" class="btn btn-outline-primary">
-                                    <i class="fa fa-search"></i>
-                                    Buscar
-                                </button>
+                            <br />
+
+                            <div class="row">
+                                <div class="col-12" colspan="2">
+                                    <button type="button" class="btn btn-outline-primary">
+                    <i class="fa fa-search"></i>
+                    Buscar
+                  </button>
+                                </div>
                             </div>
-                        </div>
-                    </p-accordionTab>
-                </p-accordion>
+                        </p-accordionTab>
+                    </p-accordion>
+                </form>
             </nav>
 
             <div id="content ">
