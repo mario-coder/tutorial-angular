@@ -4,11 +4,10 @@
 @import '~ngx-bootstrap/datepicker/bs-datepicker.css';
 body {
     background-color: #e3e3e3 !important;
-    perspective: 1000em;
 }
 
 .container {
-    max-width: 95% !important;
+    max-width: 97% !important;
 }
 
 div.ui-panel-titlebar {
@@ -23,6 +22,11 @@ div.ui-panel-titlebar {
 
 .panel-container span.pi {
     color: blue !important;
+}
+
+.ui-panel-content {
+    border-bottom-left-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;  
 }
 
 .form-container {
