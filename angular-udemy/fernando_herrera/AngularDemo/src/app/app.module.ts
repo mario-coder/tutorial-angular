@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule, LOCALE_ID } from "@angular/core";
 import { ChartsModule } from "ng2-charts";
 import { ChartModule } from "primeng/chart";
 import { AppRoutingModule } from "./app-routing.module";
@@ -99,7 +99,7 @@ import { AccordionModule } from "primeng/accordion";
     BsDatepickerModule.forRoot(),
     AccordionModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
 
 @Component({
   selector: 'app-texto',
   templateUrl: './texto.component.html',
   styleUrls: ['./texto.component.css']
 })
-export class TextoComponent {
+export class TextoComponent implements OnInit {
+  ngOnInit(): void {
+    registerLocaleData(localeEs, 'es');
+  }
+
   nombre = "Mario";
   nombre2 = "mario eduardo bonilla munoz";
 
