@@ -4,14 +4,16 @@
 @import '~ngx-bootstrap/datepicker/bs-datepicker.css';
 body {
     background-color: #e3e3e3 !important;
+    perspective: 1000em;
 }
 
 .container {
-    max-width: 1800px !important;
+    max-width: 95% !important;
 }
 
 div.ui-panel-titlebar {
-    border-radius: 3px !important;
+    border-top-left-radius: 3px !important;
+    border-top-right-radius: 3px !important;
 }
 
 .panel-container div.ui-panel-titlebar {
@@ -25,7 +27,7 @@ div.ui-panel-titlebar {
 
 .form-container {
     background-color: #f8f8f8;
-    border-radius: 6px;
+    border-radius: 5px;
     border: 1px solid rgb(210, 214, 214);
     margin: 5px;
     padding: 16px;
@@ -53,7 +55,7 @@ div.ui-panel-titlebar {
 
 .ui-paginator-page,
 .ui-paginator-element {
-    border-radius: 18px !important;
+    border-radius: 50% !important;
 }
 
 .ui-table-summary {
@@ -89,4 +91,18 @@ table td.ui-datepicker-today>a {
 
 .calendar-input {
     min-width: 60% !important;
+}
+
+body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
+    background-color: rgb(8, 8, 133) !important;
+}
+body .ui-accordion .ui-accordion-content {
+    padding-top: 0px !important;
+}
+
+.inputSearch{
+    width: 30% !important;
+    min-width:30% !important;  
+    max-width:40% !important;  
+    float: right !important;
 }

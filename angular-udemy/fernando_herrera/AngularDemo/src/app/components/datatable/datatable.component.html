@@ -12,8 +12,8 @@
                 <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportExcel()" style="margin-right: 0.5em; float: left;" class="ui-button-success"></button>
                 <button type="button" pButton icon="pi pi-file-pdf" iconPos="left" label="PDF" (click)="exportPdf()" class="ui-button-warning" style="float: left;"></button>
 
-                <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-                <input type="text" pInputText size="50" placeholder="Ingrese un termino" (input)="dt.filterGlobal($event.target.value, 'contains')" style="min-width:500px !important;  float: right;">
+                <i class="fa fa-search mr-2 mt-2"></i>
+                <input type="text" class="inputSearch" pInputText size="50" placeholder="Ingrese un termino" (input)="dt.filterGlobal($event.target.value, 'contains')">
             </div>
         </ng-template>
         

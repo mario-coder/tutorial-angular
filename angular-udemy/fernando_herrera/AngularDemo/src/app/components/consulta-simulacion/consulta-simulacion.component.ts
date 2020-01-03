@@ -12,7 +12,7 @@ defineLocale("es", esLocale);
 export class ConsultaSimulacionComponent implements OnInit {
   sidebarHidden: boolean = false;
   opcionMenu: string = "Ocultar Menu";
-  iconoOpcionMenu: string = "fa-close";
+  iconoOpcionMenu: string = "fa-window-close";
 
   colorTheme = "theme-dark-blue";
   bsConfig: Partial<BsDatepickerConfig>;
@@ -83,6 +83,6 @@ export class ConsultaSimulacionComponent implements OnInit {
     this.sidebarHidden = !this.sidebarHidden;
 
     this.opcionMenu = this.sidebarHidden ? "Mostrar Menu" : "Ocultar Menu";
-    this.iconoOpcionMenu = this.sidebarHidden ? "fa-list" : "fa-close";
+    this.iconoOpcionMenu = this.sidebarHidden ? "fa-list" : "fa-window-close";
   }
 }

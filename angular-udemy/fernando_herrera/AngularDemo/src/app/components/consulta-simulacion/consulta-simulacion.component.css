@@ -5,8 +5,8 @@
 }
 
 #sidebar {
-    min-width: 340px;
-    max-width: 340px;
+    min-width: 20%;
+    max-width: 20%;
     background: #6a85f1;
     color: #fff;
     border-radius: 4px;
@@ -16,7 +16,7 @@
 }
 
 #sidebar.hidden {
-    margin-left: -340px;
+    margin-left: -20%;
     visibility: hidden;
     opacity: 0;
 }
