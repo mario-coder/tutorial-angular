@@ -1,7 +1,7 @@
-<div class="flip-in-hor-bottom cuadro-tarifa shadow-lg {{ seleccionado }}" (click)="selecciona()">
+<div class="flip-in-hor-bottom cuadro-tarifa " (click)="selecciona()">
 
 
-    <div class="pl-13">
+    <div class="pl-6">
         <p-header>
             <h6>{{ simulacion.importePrimerRecibo | number:'.0-2' }} UF</h6>
 
@@ -10,7 +10,7 @@
     </div>
 
     <p-footer>
-        <button class="btn btn-primary" (click)="showDetalleTarifa()">
+        <button class="btn btn-info" (click)="showDetalleTarifa()">
             <i class="fa fa-eye"></i>
             Ver detalles
         </button>
@@ -43,6 +43,6 @@
             </ng-template>
 
         </p-table>
-        
+
     </p-card>
 </p-dialog>

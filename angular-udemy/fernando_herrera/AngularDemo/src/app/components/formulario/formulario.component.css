@@ -1,0 +1,35 @@
+.tabla-tarifas {
+    border: 3px solid darkblue;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tabla-tarifas .list-group-item {
+    border: 1px solid black;
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 70%;
+}
+
+.tabla-tarifas>.col {
+    border: 1px solid black !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.listwrap {
+    border: 1px solid rgb(230, 226, 226);
+    /*margin: 0px !important;*/
+}
+
+
+/*
+.header {
+    padding: 5px 10px 0px 15px;
+}
+
+.headerprod {
+    padding-left: 30px;
+    vertical-align: middle;
+}
+*/
