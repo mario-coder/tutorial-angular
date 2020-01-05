@@ -1,1 +1,325 @@
-<p>propuesta works!</p>
+<p-card class="fade-in">
+
+    <!-- Contenedor datos principales -->
+    <div class="container form-container shadow-drop-center" [style]="{width: '100%'}">
+
+        <form (ngSubmit)="generarPropuesta(fp)" #fp="ngForm">
+
+
+            <!-- Panel Principal Propuesta-->
+            <p-panel [toggleable]="true">
+
+                <p-header>
+                    <span class="ui-panel-title">
+                        <i class="fa fa-car"></i>
+                        Datos Vehiculo
+                    </span>
+                </p-header>
+
+                <!-- <p-tabView>
+                    <p-tabPanel header="Vehiculo Nuevo"> -->
+
+                <!-- Datos del vehiculo -->
+                <div class="panel-container">
+                    <p-panel [toggleable]="true">
+
+                        <p-header>
+                            <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+               Vehiculo Nuevo
+            </span>
+                        </p-header>
+
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Motor *
+                            </div>
+
+                            <div class="col-sm input-label">
+                                Chasis *
+                            </div>
+
+                            <div class="col-sm input-label">
+                                Inicio Nueva Vigencia *
+                            </div>
+
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                    </p-panel>
+                </div>
+            </p-panel>
+            <!-- </p-tabPanel>
+                </p-tabView> -->
+
+            <br>
+
+            <!-- Preexistencias -->
+            <p-panel [toggleable]="true">
+
+                <p-header>
+                    <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+               Preexistencias
+            </span>
+                </p-header>
+
+                <div class="panel-container">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+              ¿Su vehiculo tiene danos?
+            </span>
+                        </p-header>
+
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                </select>
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </p-panel>
+                </div>
+            </p-panel>
+            <!-- Preexistencias -->
+
+            <br>
+
+            <!-- Accesorios -->
+            <p-panel [toggleable]="true">
+
+                <p-header>
+                    <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+               Accesorios
+            </span>
+                </p-header>
+
+                <div class="panel-container">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                <i class="fa fa-car"></i>
+                                ¿Su vehiculo tiene accesorios?
+                    </span>
+                        </p-header>
+
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                </select>
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </p-panel>
+                </div>
+            </p-panel>
+            <!-- Accesorios -->
+
+            <br>
+
+            <!-- Modalidad de Ingreso -->
+            <p-panel [toggleable]="true">
+
+                <p-header>
+                    <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+               Modalidad de Ingreso
+            </span>
+                </p-header>
+
+                <div class="panel-container">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                <i class="fa fa-car"></i>
+                                Modalidad de Ingreso
+                    </span>
+                        </p-header>
+
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                </select>
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </p-panel>
+                </div>
+
+                <br>
+
+                <!-- Con Factura -->
+                <div class="panel-container">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                    <i class="fa fa-file-invoice-dollar"></i>
+                                    Con Factura
+                        </span>
+                        </p-header>
+
+                        <div class="row">
+                            <div class="col">
+                                N° Factura *
+                            </div>
+                            <div class="col">
+                                Fecha Factura *
+                            </div>
+                            <div class="col">
+                                Nombre Emisor *
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                    </select>
+                            </div>
+
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                    </p-panel>
+                </div>
+                <!-- Con Factura -->
+
+            </p-panel>
+            <!-- Modalidad de Ingreso -->
+
+            <br>
+
+            <!-- Datos Personas -->
+            <p-panel [toggleable]="true">
+                <p-header>
+                    <span class="ui-panel-title">
+              <i class="fa fa-users"></i>
+               Datos Personas
+            </span>
+                </p-header>
+
+                <p-tabView>
+                    <p-tabPanel header="Asegurado/Propietario">
+
+                        <div class="panel-container">
+                            <p-panel>
+                                <p-header>
+                                    <span class="ui-panel-title">
+                                <i class="fa fa-user"></i>
+                                Ingrese los datos del Asegurado/Propietario
+                    </span>
+                                </p-header>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                </select>
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                            </p-panel>
+                        </div>
+                    </p-tabPanel>
+
+                    <p-tabPanel header="Contratante">
+
+                    </p-tabPanel>
+
+                    <p-tabPanel header="Beneficiario">
+
+                    </p-tabPanel>
+                </p-tabView>
+
+            </p-panel>
+            <!-- Datos Personas -->
+
+
+        </form>
+
+    </div>
+
+</p-card>
