@@ -281,6 +281,20 @@
                                 Ingrese los datos del Asegurado/Propietario
                     </span>
                                 </p-header>
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Tipo de Documento *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Numero de Documento *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                </div>
 
                                 <div class="row">
                                     <div class="col">
@@ -290,7 +304,7 @@
                                     </div>
 
                                     <div class="col">
-                                        &nbsp;
+                                        <input class="form-control " type="text" />
                                     </div>
 
                                     <div class="col">
@@ -301,16 +315,106 @@
                                         &nbsp;
                                     </div>
                                 </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Primer Nombre *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Segundo Nombre
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Apellido Paterno *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Apellido Materno
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Direccion *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Numero
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Ciudad *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Comuna *
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                            <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                            </select>
+                                    </div>
+                                </div>
                             </p-panel>
                         </div>
                     </p-tabPanel>
 
                     <p-tabPanel header="Contratante">
-
+                        <div class="panel-container">
+                            <p-panel>
+                                <p-header>
+                                    <span class="ui-panel-title">
+                                <i class="fa fa-user"></i>
+                                Ingrese los datos del Contratante
+                    </span>
+                                </p-header>
+                            </p-panel>
+                        </div>
                     </p-tabPanel>
 
                     <p-tabPanel header="Beneficiario">
-
+                        <div class="panel-container">
+                            <p-panel>
+                                <p-header>
+                                    <span class="ui-panel-title">
+                                <i class="fa fa-user"></i>
+                                Ingrese los datos del Beneficiario
+                    </span>
+                                </p-header>
+                            </p-panel>
+                        </div>
                     </p-tabPanel>
                 </p-tabView>
 
