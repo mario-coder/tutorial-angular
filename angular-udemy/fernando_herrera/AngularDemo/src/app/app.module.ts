@@ -45,6 +45,7 @@ import { NavbarCotizadorComponent } from "./components/shared/navbar-cotizador/n
 import { HomeCotizadorComponent } from "./components/home-cotizador/home-cotizador.component";
 import { ConsultaSimulacionComponent } from "./components/consulta-simulacion/consulta-simulacion.component";
 import { AccordionModule } from "primeng/accordion";
+import { PropuestaComponent } from './components/propuesta/propuesta.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { AccordionModule } from "primeng/accordion";
     DatepickerComponent,
     NavbarCotizadorComponent,
     HomeCotizadorComponent,
-    ConsultaSimulacionComponent
+    ConsultaSimulacionComponent,
+    PropuestaComponent
   ],
   imports: [
     BrowserModule,

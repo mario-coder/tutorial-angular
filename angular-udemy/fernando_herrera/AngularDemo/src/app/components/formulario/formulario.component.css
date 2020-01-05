@@ -27,9 +27,23 @@
 .header {
     padding: 5px 10px 0px 15px;
 }
+*/
 
 .headerprod {
-    padding-left: 30px;
-    vertical-align: middle;
+    color: #002466;
+    font-size: 1.3em;
+    font-weight: bold;
+    vertical-align: middle !important;
+    text-align: center !important;
 }
-*/
+
+.header {
+    color: #002466 !important;
+    font-weight: bold !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.header>h4 {
+    font-weight: bold !important;
+}

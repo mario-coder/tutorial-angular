@@ -230,6 +230,59 @@
 
                         </p-panel>
                         <!-- Datos del asegurado -->
+
+                        <br>
+
+                        <!-- Adicionales -->
+                        <p-panel [toggleable]="true">
+
+                            <p-header>
+                                <span class="ui-panel-title">
+                        <i class="fa fa-plus-circle"></i>
+                        Adicionales
+                    </span>
+                            </p-header>
+
+                            <div class="row">
+                                <div class="col-sm input-label">
+                                    Taller
+                                </div>
+
+                                <div class="col-sm input-label">
+                                    Asistencia
+                                </div>
+
+                                <div class="col-sm input-label">
+                                    RC en Exceso
+                                </div>
+
+                                <div class="col-sm input-label">
+                                    &nbsp;
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                  <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                  <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                  <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                </select>
+                                </div>
+                                <div class="col-sm input-label">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </p-panel>
+                        <!-- Fin Adicionales -->
                     </div>
 
                     <br>
@@ -283,7 +336,7 @@
 
                     <ul class="tabla-tarifas list-group" role="tablist">
                         <li class="row">
-                            <div class="listwrap col-2 headerprod">PRODUCTO/DEDUCIBLE</div>
+                            <div class="listwrap col-2 header">PRODUCTO/DEDUCIBLE</div>
                             <div class="list-group-item border-0 col text-center">
                                 <div class="listwrap header">0 UF</div>
                             </div>
@@ -299,7 +352,8 @@
                         </li>
                         <li class="row">
                             <div class="listwrap col-2 headerprod">
-                                XL Liviano Particular
+                                <br>
+                                <h4>XL Liviano Particular</h4>
                             </div>
                             <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
                                 <div class="listwrap">
@@ -332,7 +386,10 @@
                         </li>
                         <li class="row">
 
-                            <div class="listwrap col-2 headerprod">L Liviano Particular</div>
+                            <div class="listwrap col-2 headerprod">
+                                <br>
+                                <h4>L Liviano Particular</h4>
+                            </div>
                             <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
                                 <div class="listwrap">
                                     <app-tarifa *ngIf="tarifasClasificadas['2-1'] !== undefined && tarifasClasificadas['2-1'][0]" [simulacion]="tarifasClasificadas['2-1'][0]">
@@ -363,7 +420,10 @@
                             </div>
                         </li>
                         <li class="row">
-                            <div class="listwrap col-2 headerprod">M Liviano Particular</div>
+                            <div class="listwrap col-2 headerprod">
+                                <br>
+                                <h4>M Liviano Particular</h4>
+                            </div>
 
                             <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
                                 <div class="listwrap">
@@ -395,7 +455,10 @@
                             </div>
                         </li>
                         <li class="row">
-                            <div class="listwrap col-2 headerprod">S Liviano Particular</div>
+                            <div class="listwrap col-2 headerprod">
+                                <br>
+                                <h4>S Liviano Particular</h4>
+                            </div>
                             <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
                                 <div class="listwrap">
                                     <app-tarifa *ngIf="tarifasClasificadas['4-1'] !== undefined && tarifasClasificadas['4-1'][0]" [simulacion]="tarifasClasificadas['4-1'][0]">
@@ -426,6 +489,60 @@
                             </div>
                         </li>
                     </ul>
+
+                    <br>
+
+                    <div class="bg-info p-3 text-white">
+                        <i class="fa fa-exclamation-circle"></i> Nota: Taller seleccionado: Por defecto / Asistencia seleccionada:
+                        <br> Por defecto Todas las Primas Incluyen el IVA
+                    </div>
+
+                    <br>
+
+                    <p-card>
+                        <div class="row">
+                            <div class="col">Descuento/Recargo</div>
+                            <div class="col">Porcentaje</div>
+                            <div class="col">&nbsp;</div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                  </select>
+                            </div>
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                            <div class="col">
+                                <button id="btn-tarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
+                                    <i class="fa fa-calculator"></i>
+                                    RETARIFICAR
+                                  </button>
+                            </div>
+                        </div>
+                    </p-card>
+
+                    <br>
+
+                    <!-- Botones Propuesta -->
+                    <div class="m-3">
+                        <div class="row">
+                            <div class="col">
+                                <button id="btn-borrar" class="btn btn-outline-primary btn-wide" (click)="saludo()">
+              <i class="fa fa-print"></i>
+              IMPRIMIR SIMULACION
+            </button>
+                            </div>
+                            <div class="col">
+                                <button id="btn-tarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
+                                    CONTINUAR
+                                    <i class="fa fa-arrow-circle-right"></i>
+            </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Botones Propuesta -->
 
                 </p-card>
 
