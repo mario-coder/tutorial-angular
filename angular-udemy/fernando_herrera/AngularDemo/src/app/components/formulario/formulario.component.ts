@@ -12,6 +12,12 @@ defineLocale("es", esLocale);
   styleUrls: ["./formulario.component.css"]
 })
 export class FormularioComponent implements OnInit {
+  SIMULACION:number = 1;
+  PROPUESTA:number = 2;
+  EMISION:number = 3;
+
+  CURRENT_STAGE = this.SIMULACION;
+
   estadosVehiculo: any[];
   anios: any[];
   marcas: any[];
@@ -168,5 +174,9 @@ export class FormularioComponent implements OnInit {
 
   saludo() {
     console.log("hola mundirijillo");
+  }
+
+  comenzarPropuesta(){
+    this.CURRENT_STAGE = this.PROPUESTA;
   }
 }

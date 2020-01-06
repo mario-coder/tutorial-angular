@@ -15,7 +15,7 @@
         <hr>
 
         <!-- Contenedor datos principales -->
-        <div class="container form-container shadow-drop-center" [style]="{width: '100%'}">
+        <div class="container section-container shadow-drop-center" [style]="{width: '100%'}">
 
             <form (ngSubmit)="tarificar(f)" #f="ngForm">
 
@@ -23,7 +23,7 @@
                 <p-panel [toggleable]="true">
 
                     <p-header>
-                        <span class="ui-panel-title" style="font-size:20px;">
+                        <span class="ui-panel-title">
                         <i class="fa fa-list"></i>
                         Parámetros Iniciales
                     </span>
@@ -316,7 +316,7 @@
         <br>
 
         <!-- Contenedor tarifas -->
-        <div class="container fade-in form-container shadow-drop-center" *ngIf="tarificado" [style]="{width: '100%'}">
+        <div class="container fade-in section-container shadow-drop-center" *ngIf="tarificado" [style]="{width: '100%'}">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -535,7 +535,7 @@
             </button>
                             </div>
                             <div class="col">
-                                <button id="btn-tarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
+                                <button id="btn-comenzarPropuesta" class="btn btn-warning btn-wide" (click)="comenzarPropuesta()">
                                     CONTINUAR
                                     <i class="fa fa-arrow-circle-right"></i>
             </button>
@@ -557,7 +557,7 @@
     <br>
 
     <!-- Contenedor Propuesta -->
-    <app-propuesta></app-propuesta>
+    <app-propuesta *ngIf="CURRENT_STAGE == PROPUESTA"></app-propuesta>
     <!-- Contenedor Propuesta -->
 
     <br>

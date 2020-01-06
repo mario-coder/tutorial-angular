@@ -1,12 +1,20 @@
 <!-- Contenedor datos principales -->
-<p-card class="fade-in">
-    <div class="container form-container shadow-drop-center" [style]="{width: '100%'}">
+<div class="fade-in">
+<p-card >
+    
+    <div class="ml-3">
+        <p-header>
+            <h1>Propuesta Livianos</h1>
+        </p-header>
+    </div>
 
+    <hr>
 
         <form (ngSubmit)="generarPropuesta(fp)" #fp="ngForm">
 
 
             <!-- Panel Principal Propuesta-->
+            <div class="container section-container shadow-drop-center" [style]="{width: '100%'}">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -69,12 +77,14 @@
                     </p-panel>
                 </div>
             </p-panel>
+            </div>
             <!-- </p-tabPanel>
                 </p-tabView> -->
 
             <br>
 
             <!-- Preexistencias -->
+            <div class="container section-container shadow-drop-center" [style]="{width: '100%'}">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -115,11 +125,13 @@
                     </p-panel>
                 </div>
             </p-panel>
+            </div>
             <!-- Preexistencias -->
 
             <br>
 
             <!-- Accesorios -->
+            <div class="container section-container shadow-drop-center" [style]="{width: '100%'}">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -160,11 +172,13 @@
                     </p-panel>
                 </div>
             </p-panel>
+            </div>
             <!-- Accesorios -->
 
             <br>
 
             <!-- Modalidad de Ingreso -->
+            <div class="container section-container shadow-drop-center" [style]="{width: '100%'}">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -257,11 +271,13 @@
                 <!-- Con Factura -->
 
             </p-panel>
+            </div>
             <!-- Modalidad de Ingreso -->
 
             <br>
 
             <!-- Datos Personas -->
+            <div class="container section-container shadow-drop-center" [style]="{width: '100%'}">
             <p-panel [toggleable]="true">
                 <p-header>
                     <span class="ui-panel-title">
@@ -714,11 +730,13 @@
                 </p-tabView>
 
             </p-panel>
+            </div>
             <!-- Datos Personas -->
 
             <br>
 
             <!-- Datos de Pago -->
+            <div class="container section-container shadow-drop-center" [style]="{width: '100%'}">
             <p-panel [toggleable]="true">
                 <p-header>
                     <span class="ui-panel-title">
@@ -880,7 +898,8 @@
                 <br>
 
                 <!-- Boton Obtener Totales -->
-                <div class="row mx-xl-5 px-xl-5">
+                    <div class="container mx-xl-5 px-xl-5">
+                    <div class="row mx-xl-5 px-xl-5">
 
                     <div class="col mx-xl-5">
                         <button id="btn-tarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
@@ -890,15 +909,17 @@
                     </div>
 
                 </div>
+                </div>
                 <!-- Boton Obtener Totales -->
 
                 <br>
 
             </p-panel>
+            </div>
             <!-- Datos de Pago -->
 
         </form>
 
-    </div>
 
 </p-card>
+</div>
