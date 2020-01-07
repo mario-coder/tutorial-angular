@@ -13,7 +13,7 @@ import { CommonModule } from "@angular/common";
 import { FormularioComponent } from "./components/formulario/formulario.component";
 import { FieldsetModule } from "primeng/fieldset";
 import { DropdownModule } from "primeng/dropdown";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DatatableComponent } from "./components/datatable/datatable.component";
 import { TableModule } from "primeng/table";
 import { EjemplosComponent } from "./components/ejemplos/ejemplos.component";
@@ -46,6 +46,8 @@ import { HomeCotizadorComponent } from "./components/home-cotizador/home-cotizad
 import { ConsultaSimulacionComponent } from "./components/consulta-simulacion/consulta-simulacion.component";
 import { AccordionModule } from "primeng/accordion";
 import { PropuestaComponent } from './components/propuesta/propuesta.component';
+import {TooltipModule} from 'primeng/tooltip';
+import { FormulariosComponent } from './components/formularios/formularios.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,8 @@ import { PropuestaComponent } from './components/propuesta/propuesta.component';
     NavbarCotizadorComponent,
     HomeCotizadorComponent,
     ConsultaSimulacionComponent,
-    PropuestaComponent
+    PropuestaComponent,
+    FormulariosComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +93,7 @@ import { PropuestaComponent } from './components/propuesta/propuesta.component';
     FieldsetModule,
     DropdownModule,
     FormsModule,
+    ReactiveFormsModule,
     TableModule,
     TabViewModule,
     CardModule,
@@ -99,7 +103,8 @@ import { PropuestaComponent } from './components/propuesta/propuesta.component';
     CalendarModule,
     HttpClientModule,
     BsDatepickerModule.forRoot(),
-    AccordionModule
+    AccordionModule,
+    TooltipModule
   ],
   providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
   bootstrap: [AppComponent]
