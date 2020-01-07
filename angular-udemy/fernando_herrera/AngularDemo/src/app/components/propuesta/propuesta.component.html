@@ -289,7 +289,7 @@
                 <p-tabView>
                     <p-tabPanel header="Asegurado/Propietario">
 
-                        <div class="panel-container">
+                        <div class="panel-container fade-in">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -483,7 +483,7 @@
 
                     <p-tabPanel header="Contratante">
 
-                        <div class="panel-container">
+                        <div class="panel-container fade-in">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -606,7 +606,7 @@
 
                     <p-tabPanel header="Beneficiario">
 
-                        <div class="panel-container">
+                        <div class="panel-container fade-in">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -763,9 +763,9 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
-                                <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
-                            </select>
+                        <select class="form-control " name="formasDePago" [(ngModel)]="formaPagoSelected">
+                            <option *ngFor="let formaPago of FORMAS_PAGO" value={{formaPago.code}} >{{ formaPago.label }}</option>
+                        </select>
                     </div>
 
                     <div class="col">
@@ -783,11 +783,12 @@
 
                 <br>
 
-                <div class="panel-container">
+                <!-- Forma de pago PAC -->
+                <div class="panel-container fade-in" *ngIf="formaPagoSelected == FORMA_PAGO_PAC">
                     <p-panel>
                         <p-header>
                             <span class="ui-panel-title">
-                                <i class="fa fa-user"></i>
+                                <!-- <i class="fa fa-user"></i> -->
                                 PAC
                             </span>
                         </p-header>
@@ -819,9 +820,9 @@
                                 &nbsp;
                             </div>
                         </div>
-
+                        
                         <br>
-
+                        
                         <div class="row">
                             <div class="col-sm input-label">
                                 Tipo de Cuenta *
@@ -854,9 +855,9 @@
                                 <input class="form-control " type="text" />
                             </div>
                         </div>
-
+                        
                         <br>
-
+                        
                         <div class="row">
                             <div class="col-sm input-label">
                                 Cuotas *
@@ -889,26 +890,192 @@
                                 &nbsp;
                             </div>
                         </div>
-
+                        
                         <br>
-
+                        
                     </p-panel>
                 </div>
+                <!-- Forma de pago PAC -->
 
+                <!-- Forma de pago PAT -->
+                <div class="panel-container fade-in" *ngIf="formaPagoSelected == FORMA_PAGO_PAT">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                <!-- <i class="fa fa-user"></i> -->
+                                PAT
+                            </span>
+                        </p-header>
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                RUT Mandante *
+                            </div>
+                            <div class="col-sm input-label">
+                                Mandante *
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Tipo Tarjeta *
+                            </div>
+                            <div class="col-sm input-label">
+                                Numero Tarjeta *
+                            </div>
+                            <div class="col-sm input-label">
+                                Banco *
+                            </div>
+                            <div class="col-sm input-label">
+                                Fecha Expiracion (mm/aaaa) *
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Cuotas *
+                            </div>
+                            <div class="col-sm input-label">
+                                Dia de Pago *
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                </select>
+                            </div>
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                </select>
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                    </p-panel>
+                </div>
+                <!-- Forma de pago PAT -->
+
+                <!-- Forma de pago DIRECTO -->
+                <div class="panel-container fade-in" *ngIf="formaPagoSelected == FORMA_PAGO_DIRECTO">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                <!-- <i class="fa fa-user"></i> -->
+                                PAGO DIRECTO
+                            </span>
+                        </p-header>
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Cuotas *
+                            </div>
+                            <div class="col-sm input-label">
+                                Dia de Pago *
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                </select>
+                            </div>
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                </select>
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                    </p-panel>
+                    <!-- Forma de pago DIRECTO -->
+
+
+
+                </div>
+                
                 <br>
 
                 <!-- Boton Obtener Totales -->
-                    <div class="container mx-xl-5 px-xl-5">
+                <div class="container mx-xl-5 px-xl-5">
                     <div class="row mx-xl-5 px-xl-5">
-
-                    <div class="col mx-xl-5">
-                        <button id="btn-tarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
-                            <i class="fa fa-calculator"></i>
-                            OBTENER TOTALES
-                        </button>
+                        
+                        <div class="col mx-xl-5">
+                            <button id="btn-tarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
+                                <i class="fa fa-calculator"></i>
+                                OBTENER TOTALES
+                            </button>
+                        </div>
+                    
                     </div>
-
-                </div>
                 </div>
                 <!-- Boton Obtener Totales -->
 

@@ -4,6 +4,23 @@
 @import "~ngx-bootstrap/datepicker/bs-datepicker.css";
 body {
     background-color: #e3e3e3 !important;
+    /* The image used */
+    /*background-image: url("./assets/img/sucursal-reale-la-serena.jpg");*/
+  
+    /* Add the blur effect */
+    /*
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  */
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    /*
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    */
 }
 
 .container {
@@ -125,3 +142,20 @@ body .ui-accordion .ui-accordion-content {
     max-width: 40% !important;
     float: right !important;
 }
+
+.bg-image {
+    /* The image used */
+    background-image: url("./assets/img/sucursal-reale-la-serena.jpg");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
