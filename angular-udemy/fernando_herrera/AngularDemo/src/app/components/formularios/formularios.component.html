@@ -3,7 +3,15 @@
     
     <div class="container form-container shadow-drop-center">
     <br>
-<h4>Formularios <small>data</small></h4>
+
+    <p-panel class="bg-info">
+
+        <p-header>
+            <span class="ui-panel-title">
+                Formularios Reactivos
+            </span>
+        </p-header>
+    
 <hr />
 <form [formGroup]="forma" (ngSubmit)="guardarCambios()" novalidate="novalidate">
     <div formGroupName="nombreCompleto">
@@ -11,8 +19,7 @@
             <label class="col-2 col-form-label">Nombre</label>
             <div class="col-8">
                 <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre" [ngClass]="
-            forma.get('nombreCompleto.nombre').valid ? 'is-valid' : 'is-invalid'
-          " />
+            forma.get('nombreCompleto.nombre').valid ? 'is-valid' : 'is-invalid'" />
                 <div *ngIf="forma.get('nombreCompleto.nombre').errors?.required" class="form-control-feedback">
                     Este campo es requerido
                 </div>
@@ -81,7 +88,12 @@
 
     {{ forma.valid }}
     <br /> {{ forma.status }}
+
+    
 </form>
+
+</p-panel>
+
 
 <br>
 </div>

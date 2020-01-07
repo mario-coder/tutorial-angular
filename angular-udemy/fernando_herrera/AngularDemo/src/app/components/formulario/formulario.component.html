@@ -107,14 +107,14 @@
 
                                 <div class="col">
                                     <select name="marcas" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                  <option *ngFor="let marca of marcas" value={{marca.code}} >{{ marca.label }}</option>
-                                </select>
+                                      <option *ngFor="let marca of marcas" value={{marca.code}} >{{ marca.label }}</option>
+                                    </select>
                                 </div>
 
                                 <div class="col-sm input-label">
                                     <select name="modelos" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                  <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option>
-                                </select>
+                                      <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option>
+                                    </select>
                                 </div>
 
                                 <div class="col-sm input-label">
@@ -263,17 +263,17 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
-                                  <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                    <select class="form-control " name="taller" [(ngModel)]="selectedEstadoVehiculo">
+                                        <option *ngFor="let taller of talleres" value={{taller.code}} >{{ taller.label }}</option>
                                 </select>
                                 </div>
                                 <div class="col">
-                                    <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
-                                  <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                    <select class="form-control " name="asistencia" [(ngModel)]="selectedEstadoVehiculo">
+                                        <option *ngFor="let asistencia of asistencias" value={{asistencia.code}} >{{ asistencia.label }}</option>
                                 </select>
                                 </div>
                                 <div class="col">
-                                    <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <select class="form-control " name="rcEnExceso" [(ngModel)]="selectedEstadoVehiculo">
                                   <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
                                 </select>
                                 </div>
@@ -507,8 +507,10 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
-                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                <select class="form-control " name="descuentoRecargo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="0" ></option>
+                                    <option value="1" >DESCUENTO</option>
+                                    <option value="2" >RECARGO</option>
                                   </select>
                             </div>
                             <div class="col">

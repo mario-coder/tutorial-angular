@@ -18,10 +18,36 @@ export class ConsultaSimulacionComponent implements OnInit {
   bsConfig: Partial<BsDatepickerConfig>;
   locale = "es";
   es: any;
-
+  comunas: any[];
+  marcas: any[];
+  modelos: any[];
+  anios: any[];
+  tiposDocumento: any[];
+  
   constructor(private localeService: BsLocaleService) {}
-
+  
   ngOnInit() {
+    this.comunas = [
+      { label: "LAS CONDES", code: "1" },
+      { label: "PROVIDENCIA", code: "2" }
+    ];
+    this.marcas = [
+      { label: "Chevrolet", code: "1" },
+      { label: "Ford", code: "2" }
+    ];
+    this.modelos = [
+      { label: "Aveo", code: "1" },
+      { label: "Focus", code: "2" }
+    ];
+    this.anios = [
+      { label: "2020", code: "1" },
+      { label: "2019", code: "2" }
+    ];
+    this.tiposDocumento = [
+      { label: "PERSONA NATURAL", code: "1" },
+      { label: "PERSONA JURIDICA", code: "2" }
+    ];
+    
     this.bsConfig = Object.assign(
       {},
       {

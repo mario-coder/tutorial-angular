@@ -24,6 +24,7 @@ export class FormularioComponent implements OnInit {
   modelos: any[];
   tiposDocumento: any[];
   comunas: any[];
+  talleres: any[];
   colorTheme = "theme-dark-blue";
   bsConfig: Partial<BsDatepickerConfig>;
 
@@ -34,6 +35,7 @@ export class FormularioComponent implements OnInit {
   simulaciones: any[];
   tarifasClasificadas: any = {};
   locale = "es";
+  asistencias: any[];
 
   constructor(
     private tarificadorService: TarificadorService,
@@ -121,6 +123,15 @@ export class FormularioComponent implements OnInit {
     this.comunas = [
       { label: "LAS CONDES", code: "1" },
       { label: "PROVIDENCIA", code: "2" }
+    ];
+    this.talleres = [
+      { label: "TALLER REALE", code: "1" },
+      { label: "TALLER MARCA", code: "2" }
+    ];
+    this.asistencias = [
+      { label: "A", code: "1" },
+      { label: "B", code: "2" },
+      { label: "PLUS", code: "2" }
     ];
   }
 
