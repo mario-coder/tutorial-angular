@@ -1095,7 +1095,7 @@
                     <div class="row mx-xl-5 px-xl-5">
                         
                         <div class="col mx-xl-5">
-                            <button id="btn-tarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
+                            <button id="btn-totales" type="button" name="btn-totales" class="btn btn-warning btn-wide" (click)="obtenerTotales()">
                                 <i class="fa fa-calculator"></i>
                                 OBTENER TOTALES
                             </button>
@@ -1111,8 +1111,82 @@
             </div>
             <!-- Datos de Pago -->
 
+            <br>
+
+            
         </form>
+        
+        
+        <!-- Cuadro Totales -->
+        <div *ngIf="obtenerTotalesSelected"
+        class="container section-container fade-in shadow-drop-center" [style]="{width: '100%'}">
+            <p-panel [toggleable]="true">
+                <p-header>
+                    <span class="ui-panel-title">
+                    <i class="fa fa-calculator"></i>
+                    TOTALES
+                    </span>
+                </p-header>
+
+             <table class="table table-striped bor">
+                 <tbody>
+                     <tr>
+                        <td>Prima Neta</td>
+                        <td class="text-right">UF 78.97</td>
+                    </tr>
+                     <tr>
+                        <td>IVA</td>
+                        <td class="text-right">UF 15.01</td>
+                    </tr>
+                     <tr>
+                        <td><b>Total</b></td>
+                        <td class="text-right">UF 93.98.97</td>
+                    </tr>
+                 </tbody>
+             </table>
+             
+             <br>
+             
+            <!-- Boton Generar Propuesta -->
+            <div class="container mx-xl-5 px-xl-5">
+                <div class="row mx-xl-5 px-xl-5">
+                    
+                    <div class="col mx-xl-5">
+                        <button id="btn-propuesta" type="button" name="btn-propuesta" class="btn btn-warning btn-wide" (click)="generarPropuesta()">
+                            GENERAR PROPUESTA
+                            <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </div>
+                
+                </div>
+            </div>
+            <!-- Boton Generar Propuesta -->
+
+            <br>
+
+         </p-panel>
+        </div>
+         <!-- Cuadro Totales -->
+        
+        
 
 
 </p-card>
 </div>
+
+
+
+<p-dialog header="" [(visible)]="displayCalculandoTotales" [modal]="true">
+    <i class="fa fa-sync fa-spin fa-4x"></i>
+    Calculando Totales ...
+</p-dialog>
+
+<p-dialog header="" [(visible)]="displayGenerandoPropuesta">
+    <i class="fa fa-sync fa-spin fa-4x"></i>
+    Generando Propuesta ...
+</p-dialog>
+
+<p-dialog header="" [(visible)]="displayPropuestaGenerada">
+    <i class="fa fa-check-circle fa-4x text-success"></i>
+    Propuesta generada exitosamente ...
+</p-dialog>

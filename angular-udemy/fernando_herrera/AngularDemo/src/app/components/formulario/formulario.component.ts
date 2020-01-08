@@ -161,7 +161,7 @@ export class FormularioComponent implements OnInit {
       // });
 
       Swal.close();
-    }, 1000);
+    }, 2000);
   }
 
   clasificacionTarifas(simulaciones: any) {

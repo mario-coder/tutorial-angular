@@ -9,7 +9,7 @@
 }
 
 tr.ui-state-highlight a.dropdown-item {
-    color: #212529;
+    color: #212529 !important;
 }
 
 .dropdown-item {

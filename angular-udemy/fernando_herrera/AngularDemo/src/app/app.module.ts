@@ -48,6 +48,7 @@ import { AccordionModule } from "primeng/accordion";
 import { PropuestaComponent } from './components/propuesta/propuesta.component';
 import {TooltipModule} from 'primeng/tooltip';
 import { FormulariosComponent } from './components/formularios/formularios.component';
+import { PropuestageneradaComponent } from './components/propuestagenerada/propuestagenerada.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { FormulariosComponent } from './components/formularios/formularios.compo
     HomeCotizadorComponent,
     ConsultaSimulacionComponent,
     PropuestaComponent,
-    FormulariosComponent
+    FormulariosComponent,
+    PropuestageneradaComponent
   ],
   imports: [
     BrowserModule,

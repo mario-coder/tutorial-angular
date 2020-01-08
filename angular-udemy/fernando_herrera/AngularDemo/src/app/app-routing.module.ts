@@ -18,6 +18,7 @@ import { DatepickerComponent } from "./components/datepicker/datepicker.componen
 import { HomeCotizadorComponent } from "./components/home-cotizador/home-cotizador.component";
 import { ConsultaSimulacionComponent } from "./components/consulta-simulacion/consulta-simulacion.component";
 import { FormulariosComponent } from './components/formularios/formularios.component';
+import { PropuestageneradaComponent } from './components/propuestagenerada/propuestagenerada.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent }, //, data: {animation: 'isLeft'} },
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: "formulario", component: FormularioComponent }, //, data: {animation: 'isRight'} },
   { path: "consulta-simulacion", component: ConsultaSimulacionComponent }, //, data: {animation: 'isRight'} },
   { path: "formularios", component: FormulariosComponent }, //, data: {animation: 'isRight'} },
+  { path: "propuestagenerada", component: PropuestageneradaComponent }, //, data: {animation: 'isRight'} },
   { path: "**", redirectTo: "home" }
 ];
 
