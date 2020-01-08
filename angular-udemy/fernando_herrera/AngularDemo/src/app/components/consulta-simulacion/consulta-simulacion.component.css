@@ -114,3 +114,7 @@ body .ui-accordion .ui-accordion-content {
         display: none;
     }
 }
+
+.jumbotron-fluid {
+    width: 100% !important;
+}
