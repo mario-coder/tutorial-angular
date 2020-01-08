@@ -3,7 +3,7 @@
 <div class="container fade-in">
     <br>
 
-    <h1>Pipes</h1>
+    <h1>Pipes : Transformación de texto</h1>
 
     <hr>
 
@@ -123,19 +123,25 @@
         </tbody>
     </table>
 
-    <h3>Slice Arreglo, slice:5:20</h3>
+    <!-- <h3>Arreglo Original</h3>
     <ul>
-        <li *ngFor="let item of arreglo | slice:5:20">
+        <li *ngFor="let item of arreglo">{{item}}</li>
+    </ul>
+    <h3>Slice Arreglo</h3>
+    <ul>
+        <li><b>arreglo | slice:5:9</b></li>
+        <li *ngFor="let item of arreglo | slice:5:9">
             {{ item }}
         </li>
-    </ul>
+    </ul> -->
 
     <h4>JSON</h4>
+    <b> {{ ejemplo }} </b>
     <pre>{{ heroe | json}}</pre>
 
-    <h4>Youtube <small>video</small></h4>
+    <!-- <h4>Youtube <small>video</small></h4>
     <hr>
-    <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/' " frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/' " frameborder="0" allowfullscreen></iframe> -->
 
 
 

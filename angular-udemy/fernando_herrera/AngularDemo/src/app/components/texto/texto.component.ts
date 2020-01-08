@@ -14,6 +14,7 @@ export class TextoComponent implements OnInit {
 
   nombre = "Mario";
   nombre2 = "mario eduardo bonilla munoz";
+  ejemplo = "{{ persona | json }}"
 
   arreglo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -26,9 +27,9 @@ export class TextoComponent implements OnInit {
   fecha = new Date();
 
   heroe = {
-    nombre: "Logan",
-    clave: "Wolverine",
-    edad: 500,
+    nombre: "Mario",
+    apellido: "Bonilla",
+    empresa: 'Reale' ,
     direccion: {
       calle: "Primera",
       edad: "19"
