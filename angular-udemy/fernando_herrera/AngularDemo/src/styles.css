@@ -53,6 +53,7 @@ div.ui-panel-titlebar {
     border: 1px solid rgb(210, 214, 214);
     margin: 5px;
     padding: 16px;
+    width: 100% !important;
 }
 
 .input-label {

@@ -29,8 +29,7 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="1" >GENERAL</option>
                                     </select>
                                 </div>
                             </div>
@@ -40,8 +39,8 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="1" >TODOS(AS)</option>
+                                        <option value="2" >CORREDORES</option>
                                     </select>
                                 </div>
                             </div>
@@ -51,6 +50,8 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
+                                        <option value="0" >TODOS(AS)</option>
+                                        <option value="1" >ALONSO DE CORDOVA</option>
                                         <option value="1" >ALONSO DE CORDOVA</option>
                                         <option value="2" >LA SERENA</option>
                                         <option value="3" >SANTIAGO CENTRO</option>
@@ -63,8 +64,9 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="0" >TODOS(AS)</option>
+                                        <option value="1" >A y B Corredores de seguros</option>
+                                        <option value="2" >Actualrial</option>
                                     </select>
                                 </div>
                             </div>
@@ -74,8 +76,8 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <option value="1" >LIBERTY</option>
-                                        <option value="2" >SURA</option>
+                                        <option value="0" >TODOS(AS)</option>
+                                        <option value="1" >REALE</option>
                                     </select>
                                 </div>
                             </div>
@@ -85,8 +87,12 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="0" >TODOS(AS)</option>
+                                        <option value="1" >Accidentes Personales</option>
+                                        <option value="2" >Auto</option>
+                                        <option value="3" >Hogar</option>
+                                        <option value="4" >SOAP</option>
+                                        <option value="5" >Vida</option>
                                     </select>
                                 </div>
                             </div>
@@ -109,8 +115,7 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="1" >REGISTRO</option>
                                     </select>
                                 </div>
                             </div>
@@ -165,6 +170,7 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
+                                        <option value="0" >TODOS(AS)</option>
                                         <option value="1" >VIGENTE</option>
                                         <option value="2" >RECHAZADA</option>
                                     </select>
@@ -189,8 +195,7 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="1" >ASEGURADO</option>
                                     </select>
                                 </div>
                             </div>
@@ -200,6 +205,7 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="tiposDocumento" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                        <option value="0" >TODOS(AS)</option>
                                         <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
                                     </select>
                                 </div>
@@ -241,6 +247,7 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select class="form-control " name="anio" [(ngModel)]="selectedEstadoVehiculo">
+                                        <option value="0">Seleccione</option>
                                         <option *ngFor="let anio of anios" value={{anio.code}} >{{ anio.label }}</option>
                                     </select>
                                 </div>
@@ -251,8 +258,14 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="0">Seleccione</option>
+                                        <option value="1" >AUTOMOVIL</option>
+                                        <option value="2" >CAMIONETA</option>
+                                        <option value="3" >FURGON</option>
+                                        <option value="4" >MINIBUS</option>
+                                        <option value="5" >MOTO</option>
+                                        <option value="6" >STATION-WAGON</option>
+                                        <option value="7" >TODO TERRENO</option>
                                     </select>
                                 </div>
                             </div>
@@ -262,8 +275,9 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="marcas" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                        <option value="0">Seleccione</option>
                                         <option *ngFor="let marca of marcas" value={{marca.code}} >{{ marca.label }}</option>
-                                      </select>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
@@ -272,6 +286,7 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                        <option value="0">Seleccione</option>
                                         <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option>
                                     </select>
                                 </div>
@@ -287,7 +302,8 @@
                                     Uso
                                 </div>
                                 <div class="col-7 ">
-                                    <select name="modelos" class="form-control ">
+                                    <select name="modelos" class="form-control">
+                                        <option value="0">Seleccione</option>
                                         <option value="1" >PARTICULAR</option>
                                         <option value="2" >COMERCIAL</option>
                                     </select>
@@ -299,8 +315,10 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="0">Seleccione</option>
+                                        <option value="1" >DIARIO</option>
+                                        <option value="2" >FINES DE SEMANA</option>
+                                        <option value="3" >VACACIONAL</option>
                                     </select>
                                 </div>
                             </div>
@@ -323,8 +341,9 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="0">Seleccione</option>
+                                        <option value="1">Propietario</option>
+                                        <option value="2">Arrendatario</option>
                                     </select>
                                 </div>
                             </div>
@@ -334,8 +353,9 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="0">Seleccione</option>
+                                        <option value="1">Casa Ocupacion Habitacional</option>
+                                        <option value="2">Casa Ocupacion Temporal</option>
                                     </select>
                                 </div>
                             </div>
@@ -345,8 +365,9 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="0">Seleccione</option>
+                                        <option value="1">Solida</option>
+                                        <option value="2">Ligero Combustible</option>
                                     </select>
                                 </div>
                             </div>
@@ -356,8 +377,10 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="0">Seleccione</option>
+                                        <option value="1">Antofagasta</option>
+                                        <option value="2">La Serena</option>
+                                        <option value="3">Metropolitana</option>
                                     </select>
                                 </div>
                             </div>
@@ -367,6 +390,7 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="comunas" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                        <option value="0">Seleccione</option>
                                         <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
                                     </select>
                                 </div>
@@ -377,8 +401,9 @@
                                 </div>
                                 <div class="col-7 ">
                                     <select name="modelos" class="form-control ">
-                                        <!-- /*[(ngModel)]="selectedEstadoVehiculo"*/  -->
-                                        <!-- <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option> -->
+                                        <option value="0">Seleccione</option>
+                                        <option value="1">Rural</option>
+                                        <option value="2">Urbana</option>
                                     </select>
                                 </div>
                             </div>
@@ -387,7 +412,7 @@
 
                             <div class="row">
                                 <div class="col-12" colspan="2">
-                                    <button type="button" class="btn btn-outline-primary">
+                                    <button type="button" class="btn btn-outline-primary" (click)="buscar()">
                                         <i class="fa fa-search"></i>
                                         Buscar
                                     </button>
@@ -404,7 +429,19 @@
                     <small> {{ opcionMenu }} </small>
                 </button>
 
-                <app-crud></app-crud>
+                <!-- Tabla Previa a Resultados de busqueda -->
+                <p-card *ngIf="!busquedaRealizada">
+                    <div class="alert-info m-5">
+                        Por favor realice una busqueda
+                    </div>
+                </p-card>
+                <!-- Tabla Previa a Resultados de busqueda -->
+
+                <!-- Tabla Resultados de busqueda -->
+                <app-crud *ngIf="busquedaRealizada"></app-crud>
+                <!-- Tabla Resultados de busqueda -->
+
+
             </div>
         </div>
     </p-card>

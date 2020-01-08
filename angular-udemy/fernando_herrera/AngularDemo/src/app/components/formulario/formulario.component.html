@@ -15,7 +15,7 @@
         <hr>
 
         <!-- Contenedor datos principales -->
-        <div class="container section-container shadow-drop-center" [style]="{width: '100%'}">
+        <div class="container section-container shadow-drop-center">
 
             <form (ngSubmit)="tarificar(f)" #f="ngForm">
 
@@ -35,9 +35,9 @@
 
                             <p-header>
                                 <span class="ui-panel-title">
-              <i class="fa fa-car"></i>
-              Datos del Vehículo
-            </span>
+                                    <i class="fa fa-car"></i>
+                                    Datos del Vehículo
+                                </span>
                             </p-header>
 
                             <div class="row">
@@ -61,8 +61,8 @@
                             <div class="row">
                                 <div class="col">
                                     <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
-                                  <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option>
-                                </select>
+                                        <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option>
+                                    </select>
                                 </div>
 
                                 <div class="col">
@@ -101,8 +101,8 @@
                             <div class="row">
                                 <div class="col">
                                     <select class="form-control " name="anio" [(ngModel)]="selectedEstadoVehiculo">
-                                  <option *ngFor="let anio of anios" value={{anio.code}} >{{ anio.label }}</option>
-                                </select>
+                                        <option *ngFor="let anio of anios" value={{anio.code}} >{{ anio.label }}</option>
+                                    </select>
                                 </div>
 
                                 <div class="col">
@@ -134,9 +134,9 @@
 
                             <p-header>
                                 <span class="ui-panel-title">
-              <i class="fa fa-user"></i>
-              Datos del Asegurado
-            </span>
+                                    <i class="fa fa-user"></i>
+                                    Datos del Asegurado
+                                </span>
                             </p-header>
 
                             <div class="row">
@@ -160,8 +160,8 @@
                             <div class="row">
                                 <div class="col">
                                     <select name="tiposDocumento" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                    <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
-                                </select>
+                                        <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
+                                    </select>
                                 </div>
 
                                 <div class="col">
@@ -200,8 +200,8 @@
                             <div class="row">
                                 <div class="col">
                                     <select name="comunas" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                    <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
-                                </select>
+                                        <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
+                                    </select>
                                 </div>
 
                                 <div class="col">
@@ -214,8 +214,8 @@
                                         <input type="text" class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <span class="input-group-text" id="basic-addon2">
-                                    <i class="fa fa-calendar"></i>
-                                  </span>
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
                                         </div>
                                     </div>
 
@@ -238,9 +238,9 @@
 
                             <p-header>
                                 <span class="ui-panel-title">
-                        <i class="fa fa-plus-circle"></i>
-                        Adicionales
-                    </span>
+                                    <i class="fa fa-plus-circle"></i>
+                                    Adicionales
+                                </span>
                             </p-header>
 
                             <div class="row">
@@ -265,17 +265,17 @@
                                 <div class="col">
                                     <select class="form-control " name="taller" [(ngModel)]="selectedEstadoVehiculo">
                                         <option *ngFor="let taller of talleres" value={{taller.code}} >{{ taller.label }}</option>
-                                </select>
+                                    </select>
                                 </div>
                                 <div class="col">
                                     <select class="form-control " name="asistencia" [(ngModel)]="selectedEstadoVehiculo">
                                         <option *ngFor="let asistencia of asistencias" value={{asistencia.code}} >{{ asistencia.label }}</option>
-                                </select>
+                                    </select>
                                 </div>
                                 <div class="col">
                                     <select class="form-control " name="rcEnExceso" [(ngModel)]="selectedEstadoVehiculo">
                                   <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
-                                </select>
+                                    </select>
                                 </div>
                                 <div class="col-sm input-label">
                                     &nbsp;
@@ -292,15 +292,15 @@
                         <div class="row">
                             <div class="col">
                                 <button id="btn-borrar" type="button" class="btn btn-outline-primary btn-wide" (click)="saludo()">
-              <i class="fa fa-file"></i>
-              LIMPIAR FORMULARIO
-            </button>
+                                    <i class="fa fa-file"></i>
+                                    LIMPIAR FORMULARIO
+                                </button>
                             </div>
                             <div class="col">
                                 <button id="btn-tarificar" type="button" class="btn btn-warning btn-wide" (click)="tarificar()">
-              <i class="fa fa-calculator"></i>
-              OBTENER TARIFAS
-            </button>
+                                    <i class="fa fa-calculator"></i>
+                                    OBTENER TARIFAS
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -316,7 +316,7 @@
         <br>
 
         <!-- Contenedor tarifas -->
-        <div class="container fade-in section-container shadow-drop-center" *ngIf="tarificado" [style]="{width: '100%'}">
+        <div class="container fade-in section-container shadow-drop-center" *ngIf="tarificado">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -511,7 +511,7 @@
                                     <option value="0" ></option>
                                     <option value="1" >DESCUENTO</option>
                                     <option value="2" >RECARGO</option>
-                                  </select>
+                                </select>
                             </div>
                             <div class="col">
                                 <input class="form-control " type="text" />
@@ -520,7 +520,7 @@
                                 <button id="btn-tarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
                                     <i class="fa fa-calculator"></i>
                                     RETARIFICAR
-                                  </button>
+                                </button>
                             </div>
                         </div>
                     </p-card>
@@ -532,15 +532,15 @@
                         <div class="row">
                             <div class="col">
                                 <button id="btn-borrar" type="button" class="btn btn-outline-primary btn-wide" (click)="saludo()">
-              <i class="fa fa-print"></i>
-              IMPRIMIR SIMULACION
-            </button>
+                                    <i class="fa fa-print"></i>
+                                    IMPRIMIR SIMULACION
+                                </button>
                             </div>
                             <div class="col">
                                 <button id="btn-comenzarPropuesta" type="button" class="btn btn-warning btn-wide" (click)="comenzarPropuesta()">
                                     CONTINUAR
                                     <i class="fa fa-arrow-circle-right"></i>
-            </button>
+                                </button>
                             </div>
                         </div>
                     </div>

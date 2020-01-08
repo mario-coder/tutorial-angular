@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { BsDatepickerConfig, BsLocaleService } from "ngx-bootstrap/datepicker";
 import { defineLocale } from "ngx-bootstrap/chronos";
 import { esLocale } from "ngx-bootstrap/locale";
+import Swal from 'sweetalert2';
 defineLocale("es", esLocale);
 
 @Component({
@@ -11,6 +12,7 @@ defineLocale("es", esLocale);
 })
 export class ConsultaSimulacionComponent implements OnInit {
   sidebarHidden: boolean = false;
+  busquedaRealizada: boolean = false;
   opcionMenu: string = "Ocultar Menu";
   iconoOpcionMenu: string = "fa-window-close";
 
@@ -110,5 +112,27 @@ export class ConsultaSimulacionComponent implements OnInit {
 
     this.opcionMenu = this.sidebarHidden ? "Mostrar Menu" : "Ocultar Menu";
     this.iconoOpcionMenu = this.sidebarHidden ? "fa-list" : "fa-window-close";
+  }
+
+  buscar(){
+    Swal.fire({
+      allowOutsideClick: false,
+      icon: 'info',
+      text: 'Buscando registros ...',
+      timer: 3000
+    }).then(() => {
+      this.busquedaRealizada = true;
+  
+      Swal.fire({
+        allowOutsideClick: false,
+        icon: 'success',
+        text: 'Busqueda exitosa',
+        confirmButtonText: 'Aceptar'
+      });
+    });
+    Swal.showLoading();
+
+
+    console.log("Buscando registros")
   }
 }
