@@ -199,11 +199,9 @@
                                     Tipo De Documento
                                 </div>
                                 <div class="col-7 ">
-                                    <div class="col">
-                                        <select name="tiposDocumento" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                            <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
-                                        </select>
-                                    </div>
+                                    <select name="tiposDocumento" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                        <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
