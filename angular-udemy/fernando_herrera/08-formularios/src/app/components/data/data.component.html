@@ -77,6 +77,9 @@
         </div>
     </div>
 
-    {{ forma.valid }}
-    <br /> {{ forma.status }}
+    <!-- {{ forma.valid }} -->
+    <br /> 
+    <div class="alert alert-danger text-black" *ngIf="forma.status == 'INVALID'">form.status: <b>{{ forma.status }}</b></div>
+    <div class="alert alert-info text-black" *ngIf="forma.status == 'PENDING'">form.status: <b>{{ forma.status }} (validando usuario ...) </b></div>
+    <div class="alert alert-success text-black" *ngIf="forma.status == 'VALID'">form.status: <b>{{ forma.status }}!!!</b></div>
 </form>
