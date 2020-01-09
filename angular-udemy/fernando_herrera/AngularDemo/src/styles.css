@@ -160,3 +160,13 @@ body .ui-accordion .ui-accordion-content {
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+
+   /************/
+  /*DATEPICKER*/
+ /************/
+ .bs-datepicker-container {
+    padding: 0em !important;
+    border-radius: 0em;
+    /*background-color: transparent !important;*/
+}
