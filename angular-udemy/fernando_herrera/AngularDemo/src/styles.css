@@ -4,25 +4,12 @@
 @import "~ngx-bootstrap/datepicker/bs-datepicker.css";
 body {
     background-color: #e3e3e3 !important;
-    /* The image used */
-    /*background-image: url("./assets/img/sucursal-reale-la-serena.jpg");*/
-  
-    /* Add the blur effect */
-    /*
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-  */
-    /* Full height */
     height: 100%;
-  
-    /* Center and scale the image nicely */
-    /*
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    */
 }
 
+  /**************/
+ /*DIAGRAMACION*/
+/**************/
 .container {
     max-width: 97% !important;
 }
@@ -56,6 +43,9 @@ div.ui-panel-titlebar {
     width: 100% !important;
 }
 
+  /****************/
+ /*BOTONES:INPUTS*/
+/****************/
 .input-label {
     text-align: left;
     font-size: 0.8rem;
@@ -64,6 +54,10 @@ div.ui-panel-titlebar {
 
 .btn {
     font-size: 95% !important;
+}
+
+.btn-wide {
+    min-width: 100% !important;
 }
 
 .form-control {
@@ -76,6 +70,14 @@ select {
     height: 2vw !important;
 }
 
+input {
+    max-width: 100% !important;
+    min-width: 100% !important;
+}
+
+.extendido {
+    width: 100% !important;
+}
 
 /*
 .ui-inputtext {
@@ -83,6 +85,9 @@ select {
 }
 */
 
+  /************/
+ /*DATATABLES*/
+/************/
 .ui-state-highlight,
 .ui-tabview-selected,
 .ui-paginator-page.ui-state-active {
@@ -104,31 +109,20 @@ select {
     display: block !important;
 }
 
-input {
-    max-width: 100% !important;
-    min-width: 100% !important;
-}
 
-.extendido {
-    width: 100% !important;
-}
 
-table td.ui-datepicker-today>a {
-    color: white !important;
-}
 
-.btn-wide {
-    min-width: 100% !important;
-}
+
+
 
 .seleccionado {
     border: 6px solid rgb(230, 215, 0) !important;
 }
 
-.calendar-input {
-    min-width: 60% !important;
-}
 
+  /***********/
+ /*ACCORDION*/
+/***********/
 body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
     background-color: rgb(8, 8, 133) !important;
 }
@@ -144,7 +138,7 @@ body .ui-accordion .ui-accordion-content {
     float: right !important;
 }
 
-.bg-image {
+.bg-image-blur {
     /* The image used */
     background-image: url("./assets/img/sucursal-reale-la-serena.jpg");
   
@@ -159,14 +153,22 @@ body .ui-accordion .ui-accordion-content {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
 
-   /************/
-  /*DATEPICKER*/
- /************/
- .bs-datepicker-container {
-    padding: 0em !important;
-    border-radius: 0em;
-    /*background-color: transparent !important;*/
+  /************/
+ /*DATEPICKER*/
+/************/
+.bs-datepicker-container {
+   padding: 0em !important;
+   border-radius: 0em;
+   /*background-color: transparent !important;*/
+}
+
+table td.ui-datepicker-today>a {
+   color: white !important;
+}
+
+.calendar-input {
+   min-width: 60% !important;
 }
