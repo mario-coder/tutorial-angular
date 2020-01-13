@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
 
 @Component({
   selector: 'app-navbar-cotizador',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar-cotizador.component.css']
 })
 export class NavbarCotizadorComponent implements OnInit {
+  fecha:Date = new Date();
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    registerLocaleData(localeEs, 'es');
+    this.newClock()
   }
 
+  ngOnInit() {}
+
+  newClock() {
+    setInterval( () => {
+      this.fecha = new Date()
+    }, 1000)
+  }
 }

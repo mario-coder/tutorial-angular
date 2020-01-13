@@ -1,16 +1,35 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from "@angular/core";
 import { CommonModule } from '@angular/common';
+import { PanelModule, InputTextModule } from "primeng";
+import { CardModule } from "primeng/card";
+import { TableModule } from "primeng/table";
+import { TabViewModule } from "primeng/tabview";
+import { DialogModule } from "primeng/dialog";
+import { ButtonModule } from "primeng/button";
 import { SimulacionComponent } from './componentes/simulacion/simulacion.component';
 import { PropuestaComponent } from './componentes/propuesta/propuesta.component';
 import { EmisionComponent } from './componentes/emision/emision.component';
-import { PropuestaGeneradaComponent } from './componentes/propuesta-generada/propuesta-generada.component';
-
-
+import { PropuestageneradaComponent } from './componentes/propuesta-generada/propuestagenerada.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
+import { TarifaLivianosComponent } from './componentes/tarifa-livianos/tarifa-livianos.component';
 
 @NgModule({
-  declarations: [SimulacionComponent, PropuestaComponent, EmisionComponent, PropuestaGeneradaComponent],
+  declarations: [SimulacionComponent, PropuestaComponent, EmisionComponent, PropuestageneradaComponent, TarifaLivianosComponent],
   imports: [
-    CommonModule
+    BrowserModule,
+    CommonModule,
+    PanelModule,
+    CardModule,
+    DialogModule,
+    ButtonModule,
+    InputTextModule,
+    TableModule,
+    TabViewModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BsDatepickerModule.forRoot()
   ]
 })
 export class LivianosModule { }

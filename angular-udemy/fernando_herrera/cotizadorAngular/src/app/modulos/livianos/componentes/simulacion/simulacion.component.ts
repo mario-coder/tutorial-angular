@@ -11,7 +11,7 @@ defineLocale("es", esLocale);
   templateUrl: "./simulacion.component.html",
   styleUrls: ["./simulacion.component.css"]
 })
-export class FormularioComponent implements OnInit {
+export class SimulacionComponent implements OnInit {
   SIMULACION:number = 1;
   PROPUESTA:number = 2;
   EMISION:number = 3;
