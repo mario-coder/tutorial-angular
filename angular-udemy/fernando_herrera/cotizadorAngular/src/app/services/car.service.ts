@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Car } from '../domain/car';
+import { Car } from '../../../../AngularDemo/src/app/domain/car';
 import { cars } from './data/cars-large';
 
 @Injectable({
