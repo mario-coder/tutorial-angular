@@ -1,0 +1,49 @@
+.tabla-tarifas {
+    border: 3px solid darkblue;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tabla-tarifas .list-group-item {
+    border: 1px solid black;
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 70%;
+}
+
+.tabla-tarifas>.col {
+    border: 1px solid black !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.listwrap {
+    border: 1px solid rgb(230, 226, 226);
+    /*margin: 0px !important;*/
+}
+
+
+/*
+.header {
+    padding: 5px 10px 0px 15px;
+}
+*/
+
+.headerprod {
+    color: #002466;
+    font-size: 1.3em;
+    font-weight: bold;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.header {
+    color: #002466 !important;
+    font-weight: bold !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.header>h4 {
+    font-weight: bold !important;
+}

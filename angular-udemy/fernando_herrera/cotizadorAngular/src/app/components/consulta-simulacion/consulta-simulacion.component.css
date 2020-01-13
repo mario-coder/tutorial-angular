@@ -1,0 +1,120 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 22%;
+    max-width: 22%;
+    background: #6a85f1;
+    color: #fff;
+    border-radius: 4px;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+#sidebar.hidden {
+    margin-left: -22%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#sidebar .sidebar-header {
+    padding-left: 7%;
+    padding-top: 5%;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386d5;
+    background: #fff;
+}
+
+
+/*
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+*/
+
+.row {
+    min-height: 60px;
+    padding-right: 1px;
+    padding-left: 1px;
+}
+
+.col-5 {
+    background-color: rgb(209, 209, 235);
+    font-size: 85% !important;
+    vertical-align: middle;
+}
+
+.col-5,
+.col-7 {
+    padding-top: 10px;
+    /*border-top: 1px solid grey;*/
+    border-bottom: 1px solid rgb(222, 223, 224);
+}
+
+.col-12 {
+    padding-top: 5px;
+    text-align: center;
+}
+
+.col-12>button {
+    min-width: 100%;
+}
+
+body .ui-accordion .ui-accordion-content {
+    padding-top: 0px !important;
+    padding-right: 1em !important;
+    padding-bottom: 0.571em !important;
+    padding-left: 1em !important;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    /* padding: 20px; */
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+.jumbotron-fluid {
+    width: 100% !important;
+}

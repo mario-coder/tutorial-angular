@@ -1,1 +1,174 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./assets/animista/animista.css";
+@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
+body {
+    background-color: #e3e3e3 !important;
+    height: 100%;
+}
+
+  /**************/
+ /*DIAGRAMACION*/
+/**************/
+.container {
+    max-width: 97% !important;
+}
+
+div.ui-panel-titlebar {
+    border-top-left-radius: 3px !important;
+    border-top-right-radius: 3px !important;
+}
+
+.panel-container div.ui-panel-titlebar {
+    background-color: #f8f8f8 !important;
+    color: #002355 !important;
+    border: 1px solid #a5d5f5 !important;
+}
+
+.panel-container span.pi {
+    color: #007ad9 !important;
+}
+
+.ui-panel-content {
+    border-bottom-left-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+}
+
+.section-container {
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    border: 1px solid rgb(210, 214, 214);
+    margin: 5px;
+    padding: 16px;
+    width: 100% !important;
+}
+
+  /****************/
+ /*BOTONES:INPUTS*/
+/****************/
+.input-label {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+}
+
+.btn {
+    font-size: 95% !important;
+}
+
+.btn-wide {
+    min-width: 100% !important;
+}
+
+.form-control {
+    border: 1px solid #44b4c0 !important;
+    font-size: 80% !important;
+}
+
+.form-control,
+select {
+    height: 2vw !important;
+}
+
+input {
+    max-width: 100% !important;
+    min-width: 100% !important;
+}
+
+.extendido {
+    width: 100% !important;
+}
+
+/*
+.ui-inputtext {
+    font-size: 90% !important;
+}
+*/
+
+  /************/
+ /*DATATABLES*/
+/************/
+.ui-state-highlight,
+.ui-tabview-selected,
+.ui-paginator-page.ui-state-active {
+    background-color: rgb(13, 13, 170) !important;
+}
+
+.ui-paginator-page,
+.ui-paginator-element {
+    border-radius: 50% !important;
+}
+
+.ui-table-summary {
+    background-color: #f4f4f4 !important;
+    border: 1px solid #c8c8c8 !important;
+    border-top: 0px !important;
+}
+
+.ui-widget {
+    display: block !important;
+}
+
+
+
+
+
+
+
+.seleccionado {
+    border: 6px solid rgb(230, 215, 0) !important;
+}
+
+
+  /***********/
+ /*ACCORDION*/
+/***********/
+body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
+    background-color: rgb(8, 8, 133) !important;
+}
+
+body .ui-accordion .ui-accordion-content {
+    padding-top: 0px !important;
+}
+
+.inputSearch {
+    width: 30% !important;
+    min-width: 30% !important;
+    max-width: 40% !important;
+    float: right !important;
+}
+
+.bg-image-blur {
+    /* The image used */
+    background-image: url("./assets/img/sucursal-reale-la-serena.jpg");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+  /************/
+ /*DATEPICKER*/
+/************/
+.bs-datepicker-container {
+   padding: 0em !important;
+   border-radius: 0em;
+   /*background-color: transparent !important;*/
+}
+
+table td.ui-datepicker-today>a {
+   color: white !important;
+}
+
+.calendar-input {
+   min-width: 60% !important;
+}

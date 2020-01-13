@@ -1,1 +1,1175 @@
-<p>propuesta works!</p>
+<!-- Contenedor datos principales -->
+<div class="fade-in">
+<p-card >
+    
+    <div class="ml-3">
+        <p-header>
+            <h1>Propuesta Livianos</h1>
+        </p-header>
+    </div>
+
+    <hr>
+
+        <form (ngSubmit)="generarPropuesta(fp)" #fp="ngForm">
+
+
+            <!-- Panel Principal Propuesta-->
+            <div class="container section-container shadow-drop-center">
+            <p-panel [toggleable]="true">
+
+                <p-header>
+                    <span class="ui-panel-title">
+                        <i class="fa fa-car"></i>
+                        Datos Vehiculo
+                    </span>
+                </p-header>
+
+                <!-- <p-tabView>
+                    <p-tabPanel header="Vehiculo Nuevo"> -->
+
+                <!-- Datos del vehiculo -->
+                <div class="panel-container">
+                    <p-panel [toggleable]="true">
+
+                        <p-header>
+                            <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+               Vehiculo Nuevo
+            </span>
+                        </p-header>
+
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Motor *
+                            </div>
+
+                            <div class="col-sm input-label">
+                                Chasis *
+                            </div>
+
+                            <div class="col-sm input-label">
+                                Inicio Nueva Vigencia *
+                            </div>
+
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                    </p-panel>
+                </div>
+            </p-panel>
+            </div>
+            <!-- </p-tabPanel>
+                </p-tabView> -->
+
+            <br>
+
+            <!-- Preexistencias -->
+            <div class="container section-container shadow-drop-center">
+            <p-panel [toggleable]="true">
+
+                <p-header>
+                    <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+               Preexistencias
+            </span>
+                </p-header>
+
+                <div class="panel-container">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+              ¿Su vehiculo tiene danos?
+            </span>
+                        </p-header>
+
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="respuestaDanos" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="2" >NO</option>
+                                    <option value="1" >SI</option>
+                                </select>
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </p-panel>
+                </div>
+            </p-panel>
+            </div>
+            <!-- Preexistencias -->
+
+            <br>
+
+            <!-- Accesorios -->
+            <div class="container section-container shadow-drop-center">
+            <p-panel [toggleable]="true">
+
+                <p-header>
+                    <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+               Accesorios
+            </span>
+                </p-header>
+
+                <div class="panel-container">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                <i class="fa fa-car"></i>
+                                ¿Su vehiculo tiene accesorios?
+                    </span>
+                        </p-header>
+
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="respuestaAccesorios" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="2" >NO</option>
+                                    <option value="1" >SI</option>
+                                </select>
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </p-panel>
+                </div>
+            </p-panel>
+            </div>
+            <!-- Accesorios -->
+
+            <br>
+
+            <!-- Modalidad de Ingreso -->
+            <div class="container section-container shadow-drop-center">
+            <p-panel [toggleable]="true">
+
+                <p-header>
+                    <span class="ui-panel-title">
+              <i class="fa fa-car"></i>
+               Modalidad de Ingreso
+            </span>
+                </p-header>
+
+                <div class="panel-container">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                <i class="fa fa-car"></i>
+                                Modalidad de Ingreso
+                    </span>
+                        </p-header>
+
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="respuestaModalidadIngreso" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="1" >FACTURA</option>
+                                    <option value="2" >INSPECCION</option>
+                                </select>
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </p-panel>
+                </div>
+
+                <br>
+
+                <!-- Con Factura -->
+                <div class="panel-container">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                    <i class="fa fa-file-invoice-dollar"></i>
+                                    Con Factura
+                        </span>
+                        </p-header>
+
+                        <div class="row">
+                            <div class="col">
+                                N° Factura *
+                            </div>
+                            <div class="col">
+                                Fecha Factura *
+                            </div>
+                            <div class="col">
+                                Nombre Emisor *
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                    </p-panel>
+                </div>
+                <!-- Con Factura -->
+
+            </p-panel>
+            </div>
+            <!-- Modalidad de Ingreso -->
+
+            <br>
+
+            <!-- Datos Personas -->
+            <div class="container section-container shadow-drop-center">
+            <p-panel [toggleable]="true">
+                <p-header>
+                    <span class="ui-panel-title">
+                        <i class="fa fa-users"></i>
+                        Datos Personas
+                    </span>
+                </p-header>
+
+                <p-tabView>
+                    <p-tabPanel header="Asegurado/Propietario">
+
+                        <div class="panel-container fade-in">
+                            <p-panel>
+                                <p-header>
+                                    <span class="ui-panel-title">
+                                        <i class="fa fa-user"></i>
+                                        Ingrese los datos del Asegurado/Propietario
+                                    </span>
+                                </p-header>
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Tipo de Documento *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Numero de Documento *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <select class="form-control " name="tipoDocumento" [(ngModel)]="selectedTipoDocumento">
+                                            <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Primer Nombre *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Segundo Nombre
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Apellido Paterno *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Apellido Materno
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Direccion *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Numero
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Ciudad *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Comuna *
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <select name="comunas" class="form-control " [(ngModel)]="selectedComuna">
+                                            <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Celular *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Telefono
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Email
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Medio Notificaciones *
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <select class="form-control" name="medioNotificacion" [(ngModel)]="selectedMedioNotificacion">
+                                            <option value="1" >EMAIL</option>
+                                            <option value="2" >TELEFONO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Direccion Notificaciones *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+                                </div>
+
+                                <br>
+
+                            </p-panel>
+                        </div>
+                    </p-tabPanel>
+
+                    <p-tabPanel header="Contratante">
+
+                        <div class="panel-container fade-in">
+                            <p-panel>
+                                <p-header>
+                                    <span class="ui-panel-title">
+                                            <i class="fa fa-user"></i>
+                                            Ingrese los datos del Contratante
+                                        </span>
+                                </p-header>
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Tipo de Documento *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Numero de Documento *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <select name="tiposDocumento" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                            <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Primer Nombre *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Segundo Nombre
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Apellido Paterno *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Apellido Materno
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Direccion *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Numero
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Ciudad *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Comuna *
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <select name="comunas" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                            <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                            </p-panel>
+                        </div>
+                    </p-tabPanel>
+
+                    <p-tabPanel header="Beneficiario">
+
+                        <div class="panel-container fade-in">
+                            <p-panel>
+                                <p-header>
+                                    <span class="ui-panel-title">
+                                            <i class="fa fa-user"></i>
+                                            Ingrese los datos del Beneficiario
+                                        </span>
+                                </p-header>
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Tipo de Documento *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Numero de Documento *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        &nbsp;
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <select name="tiposDocumento" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                            <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+
+                                    <div class="col">
+                                        &nbsp;
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Primer Nombre *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Segundo Nombre
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Apellido Paterno *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Apellido Materno
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-sm input-label">
+                                        Direccion *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Numero
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Ciudad *
+                                    </div>
+                                    <div class="col-sm input-label">
+                                        Comuna *
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <input class="form-control " type="text" />
+                                    </div>
+
+                                    <div class="col">
+                                        <select name="comunas" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                            <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                            </p-panel>
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+
+            </p-panel>
+            </div>
+            <!-- Datos Personas -->
+
+            <br>
+
+            <!-- Datos de Pago -->
+            <div class="container section-container shadow-drop-center">
+            <p-panel [toggleable]="true">
+                <p-header>
+                    <span class="ui-panel-title">
+                    <i class="fa fa-credit-card"></i>
+                    Datos del Pago
+                    </span>
+                </p-header>
+
+                <div class="row">
+                    <div class="col-sm input-label">
+                        Forma de Pago *
+                    </div>
+                    <div class="col-sm input-label">
+                        &nbsp;
+                    </div>
+                    <div class="col-sm input-label">
+                        &nbsp;
+                    </div>
+                    <div class="row">
+                        <div class="col-sm input-label">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <select class="form-control " name="formasDePago" [(ngModel)]="formaPagoSelected">
+                            <option *ngFor="let formaPago of FORMAS_PAGO" value={{formaPago.code}} >{{ formaPago.label }}</option>
+                        </select>
+                    </div>
+
+                    <div class="col">
+                        &nbsp;
+                    </div>
+
+                    <div class="col">
+                        &nbsp;
+                    </div>
+
+                    <div class="col">
+                        &nbsp;
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- Forma de pago PAC -->
+                <div class="panel-container fade-in" *ngIf="formaPagoSelected == FORMA_PAGO_PAC">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                <!-- <i class="fa fa-user"></i> -->
+                                PAC
+                            </span>
+                        </p-header>
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                RUT Mandante *
+                            </div>
+                            <div class="col-sm input-label">
+                                Mandante *
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Tipo de Cuenta *
+                            </div>
+                            <div class="col-sm input-label">
+                                Numero de Cuenta *
+                            </div>
+                            <div class="col-sm input-label">
+                                Banco *
+                            </div>
+                            <div class="col-sm input-label">
+                                Sucursal Banco
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="1">Corriente</option>
+                                    <option value="2">Vista</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="1">BCI</option>
+                                    <option value="2">BICE</option>
+                                    <option value="3">CHILE</option>
+                                    <option value="4">Santander</option>
+                                    <option value="5">Scotiabank</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Cuotas *
+                            </div>
+                            <div class="col-sm input-label">
+                                Dia de Pago *
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="5">5</option>
+                                    <option value="20">20</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                    </p-panel>
+                </div>
+                <!-- Forma de pago PAC -->
+
+                <!-- Forma de pago PAT -->
+                <div class="panel-container fade-in" *ngIf="formaPagoSelected == FORMA_PAGO_PAT">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                <!-- <i class="fa fa-user"></i> -->
+                                PAT
+                            </span>
+                        </p-header>
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                RUT Mandante *
+                            </div>
+                            <div class="col-sm input-label">
+                                Mandante *
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Tipo Tarjeta *
+                            </div>
+                            <div class="col-sm input-label">
+                                Numero Tarjeta *
+                            </div>
+                            <div class="col-sm input-label">
+                                Banco *
+                            </div>
+                            <div class="col-sm input-label">
+                                Fecha Expiracion (mm/aaaa) *
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="1">BCI</option>
+                                    <option value="2">BICE</option>
+                                    <option value="3">CHILE</option>
+                                    <option value="4">Santander</option>
+                                    <option value="5">Scotiabank</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input class="form-control " type="text" />
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Cuotas *
+                            </div>
+                            <div class="col-sm input-label">
+                                Dia de Pago *
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="5">5</option>
+                                    <option value="20">20</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                    </p-panel>
+                </div>
+                <!-- Forma de pago PAT -->
+
+                <!-- Forma de pago DIRECTO -->
+                <div class="panel-container fade-in" *ngIf="formaPagoSelected == FORMA_PAGO_DIRECTO">
+                    <p-panel>
+                        <p-header>
+                            <span class="ui-panel-title">
+                                <!-- <i class="fa fa-user"></i> -->
+                                PAGO DIRECTO
+                            </span>
+                        </p-header>
+                        <div class="row">
+                            <div class="col-sm input-label">
+                                Cuotas *
+                            </div>
+                            <div class="col-sm input-label">
+                                Dia de Pago *
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                            <div class="col-sm input-label">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
+                                    <option value="5">5</option>
+                                    <option value="20">20</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                        
+                        <br>
+                        
+                    </p-panel>
+                    <!-- Forma de pago DIRECTO -->
+
+
+
+                </div>
+                
+                <br>
+
+                <!-- Boton Obtener Totales -->
+                <div class="container mx-xl-5 px-xl-5">
+                    <div class="row mx-xl-5 px-xl-5">
+                        
+                        <div class="col mx-xl-5">
+                            <button id="btn-totales" type="button" name="btn-totales" class="btn btn-warning btn-wide" (click)="obtenerTotales()">
+                                <i class="fa fa-calculator"></i>
+                                OBTENER TOTALES
+                            </button>
+                        </div>
+                    
+                    </div>
+                </div>
+                <!-- Boton Obtener Totales -->
+
+                <br>
+
+            </p-panel>
+            </div>
+            <!-- Datos de Pago -->
+
+            <br>
+
+            
+        </form>
+        
+        
+        <!-- Cuadro Totales -->
+        <div *ngIf="obtenerTotalesSelected"
+        class="container section-container fade-in shadow-drop-center">
+            <p-panel [toggleable]="true">
+                <p-header>
+                    <span class="ui-panel-title">
+                    <i class="fa fa-calculator"></i>
+                    TOTALES
+                    </span>
+                </p-header>
+
+             <table class="table table-striped bor">
+                 <tbody>
+                     <tr>
+                        <td>Prima Neta</td>
+                        <td class="text-right">UF 78.97</td>
+                    </tr>
+                     <tr>
+                        <td>IVA</td>
+                        <td class="text-right">UF 15.01</td>
+                    </tr>
+                     <tr>
+                        <td><b>Total</b></td>
+                        <td class="text-right">UF 93.98</td>
+                    </tr>
+                 </tbody>
+             </table>
+             
+             <br>
+             
+            <!-- Boton Generar Propuesta -->
+            <div class="container mx-xl-5 px-xl-5">
+                <div class="row mx-xl-5 px-xl-5">
+                    
+                    <div class="col mx-xl-5">
+                        <button id="btn-propuesta" type="button" name="btn-propuesta" class="btn btn-warning btn-wide" (click)="generarPropuesta()">
+                            GENERAR PROPUESTA
+                            <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </div>
+                
+                </div>
+            </div>
+            <!-- Boton Generar Propuesta -->
+
+            <br>
+
+         </p-panel>
+        </div>
+         <!-- Cuadro Totales -->
+        
+        
+
+
+</p-card>
+</div>
