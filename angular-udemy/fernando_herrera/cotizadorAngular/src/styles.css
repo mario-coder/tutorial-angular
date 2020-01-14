@@ -62,17 +62,18 @@ div.ui-panel-titlebar {
 
 .form-control {
     border: 1px solid #44b4c0 !important;
-    font-size: 80% !important;
+    font-size: 100% !important;
 }
 
-.form-control,
+/*.form-control,
 select {
     height: 2vw !important;
 }
+*/
 
 input {
     max-width: 100% !important;
-    min-width: 100% !important;
+    /*min-width: 100% !important;*/
 }
 
 .extendido {

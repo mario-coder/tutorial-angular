@@ -24,6 +24,7 @@ import { LivianosModule } from './modulos/livianos/livianos.module';
 import { HomeCotizadorComponent } from './components/home-cotizador/home-cotizador.component';
 import { ConsultaSimulacionComponent } from './components/consulta-simulacion/consulta-simulacion.component';
 import { ResultadoConsultaSimulacionComponent } from './components/resultado-consulta-simulacion/resultado-consulta-simulacion.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ResultadoConsultaSimulacionComponent } from './components/resultado-con
     NavbarCotizadorComponent,
     HomeCotizadorComponent,
     ConsultaSimulacionComponent,
-    ResultadoConsultaSimulacionComponent
+    ResultadoConsultaSimulacionComponent,
+    LoginComponent
     //TarifaComponent,
   ],
   imports: [

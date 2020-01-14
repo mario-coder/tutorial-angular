@@ -6,6 +6,7 @@ import { HomeCotizadorComponent } from './components/home-cotizador/home-cotizad
 import { PropuestaComponent } from './modulos/livianos/componentes/propuesta/propuesta.component';
 import { SimulacionComponent } from './modulos/livianos/componentes/simulacion/simulacion.component';
 import { EmisionComponent } from './modulos/livianos/componentes/emision/emision.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: "consulta-simulacion", component: ConsultaSimulacionComponent }, //, data: {animation: 'isRight'} },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: "propuestagenerada", component: PropuestageneradaComponent }, //, data: {animation: 'isRight'} },
   { path: "emision", component: EmisionComponent }, //, data: {animation: 'isRight'} },
   { path: "home", component: HomeCotizadorComponent }, //, data: {animation: 'isRight'} },
+  { path: "login", component: LoginComponent }, //, data: {animation: 'isRight'} },
   { path: "**", redirectTo: "home" }
 ];
 
