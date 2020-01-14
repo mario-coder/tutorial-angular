@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: "propuesta-generada-livianos", component: PropuestaGeneradaLivianosComponent }, //, data: {animation: 'isRight'} },
   { path: "emision-livianos", component: EmisionLivianosComponent }, //, data: {animation: 'isRight'} },
   { path: "home-cotizador", component: HomeCotizadorComponent }, //, data: {animation: 'isRight'} },
+  { path: "login", component: LoginComponent }, //, data: {animation: 'isRight'} },
   { path: "**", redirectTo: "home-cotizador" }
 ];
 
