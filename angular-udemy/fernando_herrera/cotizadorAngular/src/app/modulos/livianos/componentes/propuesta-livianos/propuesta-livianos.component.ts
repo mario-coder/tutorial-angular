@@ -3,11 +3,11 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-propuesta',
-  templateUrl: './propuesta.component.html',
-  styleUrls: ['./propuesta.component.css']
+  selector: 'app-propuesta-livianos',
+  templateUrl: './propuesta-livianos.component.html',
+  styleUrls: ['./propuesta-livianos.component.css']
 })
-export class PropuestaComponent implements OnInit {
+export class PropuestaLivianosComponent implements OnInit {
   tiposDocumento:any[];
 
   FORMA_PAGO_PAC:number = 1;

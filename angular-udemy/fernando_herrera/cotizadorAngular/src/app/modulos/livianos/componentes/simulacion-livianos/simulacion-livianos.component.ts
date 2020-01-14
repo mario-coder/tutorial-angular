@@ -7,11 +7,11 @@ import { esLocale } from "ngx-bootstrap/locale";
 defineLocale("es", esLocale);
 
 @Component({
-  selector: "app-simulacion",
-  templateUrl: "./simulacion.component.html",
-  styleUrls: ["./simulacion.component.css"]
+  selector: "app-simulacion-livianos",
+  templateUrl: "./simulacion-livianos.component.html",
+  styleUrls: ["./simulacion-livianos.component.css"]
 })
-export class SimulacionComponent implements OnInit {
+export class SimulacionLivianosComponent implements OnInit {
   SIMULACION:number = 1;
   PROPUESTA:number = 2;
   EMISION:number = 3;
