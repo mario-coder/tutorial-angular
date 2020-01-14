@@ -4,7 +4,7 @@ import { PropuestaLivianosComponent } from './componentes/propuesta-livianos/pro
 import { EmisionLivianosComponent } from './componentes/emision-livianos/emision-livianos.component';
 import { PropuestaGeneradaLivianosComponent } from './componentes/propuesta-generada-livianos/propuesta-generada-livianos.component';
 import { TarifaLivianosComponent } from './componentes/tarifa-livianos/tarifa-livianos.component';
-import { CommonModule } from '../../shared/modules/common/common.module';
+import { SharedModule } from '../../shared/modules/common/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { CommonModule } from '../../shared/modules/common/common.module';
     TarifaLivianosComponent
   ],
   imports: [
-    CommonModule
+    SharedModule
   ]
 })
 export class LivianosModule { }
