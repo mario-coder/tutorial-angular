@@ -24,7 +24,19 @@ import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
     ReactiveFormsModule,
     BsDatepickerModule
   ],
-  exports: [BrowserModule,PanelModule, CardModule, DialogModule, ButtonModule, InputTextModule, TableModule, TabViewModule, FormsModule, ReactiveFormsModule, BsDatepickerModule]
+  exports: [
+    BrowserModule,
+    PanelModule,
+    CardModule,
+    DialogModule,
+    ButtonModule,
+    InputTextModule,
+    TableModule,
+    TabViewModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BsDatepickerModule
+  ]
 })
 export class CommonModule { }
 

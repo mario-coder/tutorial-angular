@@ -7,7 +7,13 @@ import { TarifaLivianosComponent } from './componentes/tarifa-livianos/tarifa-li
 import { CommonModule } from '../../shared/modules/common/common.module';
 
 @NgModule({
-  declarations: [SimulacionLivianosComponent, PropuestaLivianosComponent, EmisionLivianosComponent, PropuestaGeneradaLivianosComponent, TarifaLivianosComponent],
+  declarations: [
+    SimulacionLivianosComponent, 
+    PropuestaLivianosComponent, 
+    EmisionLivianosComponent, 
+    PropuestaGeneradaLivianosComponent, 
+    TarifaLivianosComponent
+  ],
   imports: [
     CommonModule
   ]
