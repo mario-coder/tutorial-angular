@@ -6,6 +6,7 @@ import { PropuestaGeneradaLivianosComponent } from './modulos/livianos/component
 import { PropuestaLivianosComponent } from './modulos/livianos/componentes/propuesta-livianos/propuesta-livianos.component';
 import { SimulacionLivianosComponent } from './modulos/livianos/componentes/simulacion-livianos/simulacion-livianos.component';
 import { EmisionLivianosComponent } from './modulos/livianos/componentes/emision-livianos/emision-livianos.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: "consulta-simulacion", component: ConsultaSimulacionComponent }, //, data: {animation: 'isRight'} },
