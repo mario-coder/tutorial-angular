@@ -80,7 +80,7 @@ export class PropuestaLivianosComponent implements OnInit {
         text: 'Propuesta generada exitosamente',
         confirmButtonText: 'Aceptar'
       }).then(() => {
-          this.router.navigateByUrl("/propuestagenerada");
+          this.router.navigateByUrl("/propuesta-generada-livianos");
       });
     });
     Swal.showLoading();
