@@ -12,6 +12,7 @@ defineLocale("es", esLocale);
   styleUrls: ["./simulacion-livianos.component.css"]
 })
 export class SimulacionLivianosComponent implements OnInit {
+  isLoggedIn : number = 1;
   SIMULACION:number = 1;
   PROPUESTA:number = 2;
   EMISION:number = 3;

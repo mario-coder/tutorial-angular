@@ -11,6 +11,7 @@ defineLocale("es", esLocale);
   styleUrls: ["./consulta-simulacion.component.css"]
 })
 export class ConsultaSimulacionComponent implements OnInit {
+  isLoggedIn : number = 1;
   sidebarHidden: boolean = false;
   busquedaRealizada: boolean = false;
   opcionMenu: string = "Ocultar Menu";

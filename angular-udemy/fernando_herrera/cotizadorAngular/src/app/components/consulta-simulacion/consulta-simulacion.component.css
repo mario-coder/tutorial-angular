@@ -116,5 +116,7 @@ body .ui-accordion .ui-accordion-content {
 }
 
 .jumbotron-fluid {
+    min-width: 60% !important;
     width: 100% !important;
+    /*margin-left: 10% !important;*/
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+    localStorage.setItem("logged", "0")
+   }
+  @Output() logged = new EventEmitter();
 
   ngOnInit() {
   }
 
+  login() {
+    console.log("emitiendo estado")
+    localStorage.setItem('logged', '1');
+    this.logged.emit(1)
+  }
 }
