@@ -18,12 +18,14 @@ export class AuthGuard implements CanActivate {
   }
 
   canActivate(): boolean {
-    console.log('Guard');
-    if(this.auth.estaAutenticado()) {
-      return true;
-    } else {
-      this.router.navigateByUrl('/home');
-      return false;
-    }
+    return true
+    // if(this.auth.estaAutenticado()) {
+    //   console.log("---: autenticado = TRUE")
+    //   return true;
+    // } else {
+    //   console.log("---: autenticado = FALSE")
+    //   this.router.navigateByUrl('/home');
+    //   return false;
+    // }
   }
 }

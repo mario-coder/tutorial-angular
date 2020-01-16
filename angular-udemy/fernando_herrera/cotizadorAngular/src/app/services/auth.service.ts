@@ -7,7 +7,7 @@ export class AuthService {
 
   constructor() { }
 
-  estaAutenticado() {
+  estaAutenticado():boolean {
     let logueado = (localStorage.getItem('logged') === "1")
     //alert(logueado)
     console.log("logueado : "+ logueado)
