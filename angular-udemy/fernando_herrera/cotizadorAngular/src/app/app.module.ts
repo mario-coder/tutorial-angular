@@ -25,6 +25,7 @@ import { HomeCotizadorComponent } from './components/home-cotizador/home-cotizad
 import { ConsultaSimulacionComponent } from './components/consulta-simulacion/consulta-simulacion.component';
 import { ResultadoConsultaSimulacionComponent } from './components/resultado-consulta-simulacion/resultado-consulta-simulacion.component';
 import { LoginComponent } from './components/login/login.component';
+import { DatePickerConfigService } from './shared/config/date-picker-config';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { LoginComponent } from './components/login/login.component';
     AccordionModule,
     TooltipModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
+  providers: [{provide: LOCALE_ID, useValue: "es-Es"}, DatePickerConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { BsDatepickerConfig, BsLocaleService } from "ngx-bootstrap/datepicker";
-import { defineLocale } from "ngx-bootstrap/chronos";
-import { esLocale } from "ngx-bootstrap/locale";
+import { BsDatepickerConfig, DatepickerDateCustomClasses } from "ngx-bootstrap/datepicker";
 import Swal from 'sweetalert2';
-defineLocale("es", esLocale);
+import { DatePickerConfigService } from 'src/app/shared/config/date-picker-config';
 
 @Component({
   selector: "app-consulta-simulacion",
@@ -17,19 +15,22 @@ export class ConsultaSimulacionComponent implements OnInit {
   opcionMenu: string = "Ocultar Menu";
   iconoOpcionMenu: string = "fa-window-close";
 
-  colorTheme = "theme-dark-blue";
   bsConfig: Partial<BsDatepickerConfig>;
-  locale = "es";
-  es: any;
+  dateCustomClasses: DatepickerDateCustomClasses[];
+
   comunas: any[];
   marcas: any[];
   modelos: any[];
   anios: any[];
   tiposDocumento: any[];
   
-  constructor(private localeService: BsLocaleService) {}
+  constructor(private datePickerConfig: DatePickerConfigService) {}
   
   ngOnInit() {
+    this.datePickerConfig.init();
+    this.bsConfig = this.datePickerConfig.bsConfig;
+    this.dateCustomClasses = this.datePickerConfig.dateCustomClasses;
+
     this.comunas = [
       { label: "LAS CONDES", code: "1" },
       { label: "PROVIDENCIA", code: "2" }
@@ -50,62 +51,6 @@ export class ConsultaSimulacionComponent implements OnInit {
       { label: "PERSONA NATURAL", code: "1" },
       { label: "PERSONA JURIDICA", code: "2" }
     ];
-    
-    this.bsConfig = Object.assign(
-      {},
-      {
-        containerClass: this.colorTheme,
-        isAnimated: true,
-        adaptivePosition: true,
-        showWeekNumbers: false
-      }
-    );
-    this.localeService.use(this.locale);
-
-    this.es = {
-      firstDayOfWeek: 1,
-      dayNames: [
-        "domingo",
-        "lunes",
-        "martes",
-        "miércoles",
-        "jueves",
-        "viernes",
-        "sábado"
-      ],
-      dayNamesShort: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
-      dayNamesMin: ["D", "L", "M", "X", "J", "V", "S"],
-      monthNames: [
-        "enero",
-        "febrero",
-        "marzo",
-        "abril",
-        "mayo",
-        "junio",
-        "julio",
-        "agosto",
-        "septiembre",
-        "octubre",
-        "noviembre",
-        "diciembre"
-      ],
-      monthNamesShort: [
-        "ene",
-        "feb",
-        "mar",
-        "abr",
-        "may",
-        "jun",
-        "jul",
-        "ago",
-        "sep",
-        "oct",
-        "nov",
-        "dic"
-      ],
-      today: "Hoy",
-      clear: "Borrar"
-    };
   }
 
   toggleMenu() {

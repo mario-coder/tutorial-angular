@@ -1,17 +1,16 @@
 <!-- Contenedor datos principales -->
 <div class="fade-in">
-<p-card >
-    
-    <div class="ml-3">
-        <p-header>
-            <h1>Propuesta Livianos</h1>
-        </p-header>
-    </div>
+    <p-card >
+        
+        <div class="ml-3">
+            <p-header>
+                <h1>Propuesta Livianos</h1>
+            </p-header>
+        </div>
 
-    <hr>
+        <hr>
 
         <form (ngSubmit)="generarPropuesta(fp)" #fp="ngForm">
-
 
             <!-- Panel Principal Propuesta-->
             <div class="container section-container shadow-drop-center">
@@ -51,7 +50,16 @@
 
                             <div class="col">
                                 <label for="inicioNuevaVigencia" class="input-label">Inicio Nueva Vigencia *</label>
-                                <input class="form-control" name="inicioNuevaVigencia" type="text" />
+                                <div class="input-group">
+                                    <input type="text" name="inicioNuevaVigencia" class="form-control calendar-input"
+                                     bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
+                                     aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon2">
+                                            <i class="fa fa-calendar-day"></i>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="col">
@@ -74,18 +82,18 @@
 
                 <p-header>
                     <span class="ui-panel-title">
-              <i class="fa fa-car"></i>
-               Preexistencias
-            </span>
+                        <i class="fa fa-car"></i>
+                        Preexistencias
+                    </span>
                 </p-header>
 
                 <div class="panel-container">
                     <p-panel>
                         <p-header>
                             <span class="ui-panel-title">
-              <i class="fa fa-car"></i>
-              ¿Su vehiculo tiene danos?
-            </span>
+                                <i class="fa fa-car"></i>
+                                ¿Su vehiculo tiene danos?
+                            </span>
                         </p-header>
 
                         <div class="row">
@@ -227,7 +235,16 @@
 
                             <div class="col">
                                 <label for="fechaFactura" class="input-label">Fecha Factura *</label>
-                                <input class="form-control" name="fechaFactura" type="text" />
+                                <div class="input-group">
+                                    <input type="text" name="fechaFactura" class="form-control calendar-input"
+                                      bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
+                                      aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon2">
+                                            <i class="fa fa-calendar-day"></i>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="col">
@@ -862,7 +879,7 @@
 
                 <br>
 
-            </p-panel>
+                </p-panel>
             </div>
             <!-- Datos de Pago -->
 
@@ -883,45 +900,45 @@
                     </span>
                 </p-header>
 
-             <table class="table table-striped bor">
-                 <tbody>
-                     <tr>
-                        <td>Prima Neta</td>
-                        <td class="text-right">UF 78.97</td>
-                    </tr>
-                     <tr>
-                        <td>IVA</td>
-                        <td class="text-right">UF 15.01</td>
-                    </tr>
-                     <tr>
-                        <td><b>Total</b></td>
-                        <td class="text-right">UF 93.98</td>
-                    </tr>
-                 </tbody>
-             </table>
+                <table class="table table-striped bor">
+                    <tbody>
+                        <tr>
+                            <td>Prima Neta</td>
+                            <td class="text-right">UF 78.97</td>
+                        </tr>
+                        <tr>
+                            <td>IVA</td>
+                            <td class="text-right">UF 15.01</td>
+                        </tr>
+                        <tr>
+                            <td><b>Total</b></td>
+                            <td class="text-right">UF 93.98</td>
+                        </tr>
+                    </tbody>
+                </table>
              
-             <br>
-             
-            <!-- Boton Generar Propuesta -->
-            <div class="container mx-xl-5 px-xl-5">
-                <div class="row mx-xl-5 px-xl-5">
-                    
-                    <div class="col mx-xl-5">
-                        <button id="btn-propuesta" type="button" name="btn-propuesta" class="btn btn-warning btn-wide" (click)="generarPropuesta()">
-                            GENERAR PROPUESTA
-                            <i class="fa fa-paper-plane"></i>
-                        </button>
-                    </div>
+                <br>
                 
+                <!-- Boton Generar Propuesta -->
+                <div class="container mx-xl-5 px-xl-5">
+                    <div class="row mx-xl-5 px-xl-5">
+                        
+                        <div class="col mx-xl-5">
+                            <button id="btn-propuesta" type="button" name="btn-propuesta" class="btn btn-warning btn-wide" (click)="generarPropuesta()">
+                                GENERAR PROPUESTA
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    
+                    </div>
                 </div>
-            </div>
-            <!-- Boton Generar Propuesta -->
+                <!-- Boton Generar Propuesta -->
 
-            <br>
+                <br>
 
-         </p-panel>
+            </p-panel>
         </div>
          <!-- Cuadro Totales -->
         
-</p-card>
+    </p-card>
 </div>

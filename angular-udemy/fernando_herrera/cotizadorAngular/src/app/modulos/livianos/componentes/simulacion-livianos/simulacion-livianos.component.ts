@@ -1,10 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import Swal from "sweetalert2";
 import { TarificadorService } from "src/app/services/tarificador.service";
-import { BsDatepickerConfig, BsLocaleService } from "ngx-bootstrap/datepicker";
-import { defineLocale } from "ngx-bootstrap/chronos";
-import { esLocale } from "ngx-bootstrap/locale";
-defineLocale("es", esLocale);
+import { BsDatepickerConfig, DatepickerDateCustomClasses } from "ngx-bootstrap/datepicker";
+import { DatePickerConfigService } from 'src/app/shared/config/date-picker-config';
 
 @Component({
   selector: "app-simulacion-livianos",
@@ -19,6 +17,9 @@ export class SimulacionLivianosComponent implements OnInit {
 
   CURRENT_STAGE = this.SIMULACION;
 
+  bsConfig: Partial<BsDatepickerConfig>;
+  dateCustomClasses: DatepickerDateCustomClasses[];
+
   estadosVehiculo: any[];
   anios: any[];
   marcas: any[];
@@ -26,80 +27,24 @@ export class SimulacionLivianosComponent implements OnInit {
   tiposDocumento: any[];
   comunas: any[];
   talleres: any[];
-  colorTheme = "theme-dark-blue";
-  bsConfig: Partial<BsDatepickerConfig>;
-
   selectedEstadoVehiculo: any;
-  es: any;
-  invalidDates: Array<Date>;
   tarificado: boolean = true;
   simulaciones: any[];
   tarifasClasificadas: any = {};
-  locale = "es";
   asistencias: any[];
 
   constructor(
-    private tarificadorService: TarificadorService,
-    private localeService: BsLocaleService
-  ) {}
-
-  applyLocale(pop: any) {
-    this.localeService.use(this.locale);
-    pop.hide();
-    pop.show();
+      private tarificadorService: TarificadorService,
+      private datePickerConfig: DatePickerConfigService
+    ) {
   }
-
+    
   ngOnInit(): void {
-    this.bsConfig = Object.assign(
-      {},
-      { containerClass: this.colorTheme, isAnimated: true, adaptivePosition: true, showWeekNumbers: false }
-    );
-    this.localeService.use(this.locale);
-
-    this.es = {
-      firstDayOfWeek: 1,
-      dayNames: [
-        "domingo",
-        "lunes",
-        "martes",
-        "miércoles",
-        "jueves",
-        "viernes",
-        "sábado"
-      ],
-      dayNamesShort: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
-      dayNamesMin: ["D", "L", "M", "X", "J", "V", "S"],
-      monthNames: [
-        "enero",
-        "febrero",
-        "marzo",
-        "abril",
-        "mayo",
-        "junio",
-        "julio",
-        "agosto",
-        "septiembre",
-        "octubre",
-        "noviembre",
-        "diciembre"
-      ],
-      monthNamesShort: [
-        "ene",
-        "feb",
-        "mar",
-        "abr",
-        "may",
-        "jun",
-        "jul",
-        "ago",
-        "sep",
-        "oct",
-        "nov",
-        "dic"
-      ],
-      today: "Hoy",
-      clear: "Borrar"
-    };
+      
+    /*Configuracion por defecto DatePicker*/
+    this.datePickerConfig.init();
+    this.bsConfig = this.datePickerConfig.bsConfig;
+    this.dateCustomClasses = this.datePickerConfig.dateCustomClasses;
 
     this.estadosVehiculo = [
       { label: "Nuevo", code: "1" },

@@ -39,7 +39,8 @@ import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
     FormsModule,
     ReactiveFormsModule,
     BsDatepickerModule
-  ]
+  ],
+  providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
 })
 export class SharedModule { }
 

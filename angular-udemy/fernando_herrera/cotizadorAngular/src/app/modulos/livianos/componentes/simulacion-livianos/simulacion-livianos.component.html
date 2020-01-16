@@ -148,7 +148,9 @@
                                 <div class="col">
                                     <label for="inicioNuevaVigencia" class="input-label">Inicio Nueva Vigencia</label>
                                     <div class="input-group">
-                                        <input type="text" name="inicioNuevaVigencia" class="form-control calendar-input " bsDatepicker [bsConfig]="bsConfig" aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
+                                        <input type="text" name="inicioNuevaVigencia" class="form-control calendar-input"
+                                         bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
+                                         aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <span class="input-group-text" id="basic-addon2">
                                                 <i class="fa fa-calendar-day"></i>

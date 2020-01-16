@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { BsDatepickerConfig, DatepickerDateCustomClasses } from "ngx-bootstrap/datepicker";
+import { DatePickerConfigService } from 'src/app/shared/config/date-picker-config';
 
 @Component({
   selector: 'app-propuesta-livianos',
@@ -14,6 +16,9 @@ export class PropuestaLivianosComponent implements OnInit {
   FORMA_PAGO_PAT:number = 2;
   FORMA_PAGO_DIRECTO:number = 3;
 
+  bsConfig: Partial<BsDatepickerConfig>;
+  dateCustomClasses: DatepickerDateCustomClasses[];
+
   formaPagoSelected : number;
   obtenerTotalesSelected:boolean = false;
   propuestaGeneradaSelected:boolean = false;
@@ -24,9 +29,15 @@ export class PropuestaLivianosComponent implements OnInit {
     {label: "PAGO DIRECTO", code: this.FORMA_PAGO_DIRECTO}]
   comunas: any[];
     
-    constructor(private router: Router) { }
+    constructor(private router: Router,
+      private datePickerConfig: DatePickerConfigService) { }
     
     ngOnInit() {
+      /*Configuracion por defecto DatePicker*/
+      this.datePickerConfig.init();
+      this.bsConfig = this.datePickerConfig.bsConfig;
+      this.dateCustomClasses = this.datePickerConfig.dateCustomClasses;
+
       this.formaPagoSelected = this.FORMA_PAGO_PAC;
 
       this.tiposDocumento = [
@@ -38,7 +49,6 @@ export class PropuestaLivianosComponent implements OnInit {
         { label: "LAS CONDES", code: "1" },
         { label: "PROVIDENCIA", code: "2" }
       ];
-
     }
 
   obtenerTotales() {
