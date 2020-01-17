@@ -17,6 +17,7 @@ body {
 div.ui-panel-titlebar {
     border-top-left-radius: 3px !important;
     border-top-right-radius: 3px !important;
+    font-size: large;
 }
 
 .panel-container div.ui-panel-titlebar {

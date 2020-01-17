@@ -47,3 +47,18 @@
 .header>h4 {
     font-weight: bold !important;
 }
+
+.btn-barra-titulo {
+    float: left;
+    font-size: medium !important;
+    margin-left: 74%;
+    margin-right: 1%;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+@media(max-width: 768px) {
+    .btn-barra-titulo {
+        margin-left: 20%;
+    }   
+}
