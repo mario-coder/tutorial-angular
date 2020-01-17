@@ -217,241 +217,155 @@
         <br>
 
         <!-- Contenedor tarifas -->
-        <div class="container fade-in section-container shadow-drop-center" *ngIf="tarificado">
-            <p-panel [toggleable]="true">
-
-                <p-header>
-                    <span class="ui-panel-title" style="font-size:1.5em;">
-                        <i class="fa fa-money-bill"></i>
-                        Ofertas Disponibles
-                    </span>
-                </p-header>
-
-                <p-card>
-
+        <div class="slide-in-bck-center" *ngIf="tarificado">
+            <div class="container section-container shadow-drop-center" *ngIf="tarificado">
+                <p-panel [toggleable]="true">
 
                     <p-header>
-                        <img src="assets/img/logo_reale.png" style="width: 15em;">
-                        <div style="float: right" class="m-2">Nro. Simulación: 12345</div>
+                        <span class="ui-panel-title" style="font-size:1.5em;">
+                            <i class="fa fa-money-bill"></i>
+                            Ofertas Disponibles
+                        </span>
                     </p-header>
 
-                    <br>
-                    
-                    <ul class="tabla-tarifas list-group" role="tablist">
-                        <li class="row">
-                            <div class="listwrap col-2 header">PRODUCTO/DEDUCIBLE</div>
-                            <div class="list-group-item border-0 col text-center">
-                                <div class="listwrap header">0 UF</div>
-                            </div>
-                            <div class="list-group-item border-0 col text-center">
-                                <div class="listwrap header">3 UF</div>
-                            </div>
-                            <div class="list-group-item border-0 col text-center">
-                                <div class="listwrap header">5 UF</div>
-                            </div>
-                            <div class="list-group-item border-0 col text-center">
-                                <div class="listwrap header">10 UF</div>
-                            </div>
-                        </li>
-                        <li class="row">
-                            <div class="listwrap col-2 headerprod">
-                                <br>
-                                <h4>XL Liviano Particular</h4>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['1-1'] && tarifasClasificadas['1-1'][0]" [simulacion]="tarifasClasificadas['1-1'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['1-2'] !== undefined && tarifasClasificadas['1-2'][0]" [simulacion]="tarifasClasificadas['1-2'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['1-3'] !== undefined && tarifasClasificadas['1-3'][0]" [simulacion]="tarifasClasificadas['1-3'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['1-4'] !== undefined && tarifasClasificadas['1-4'][0]" [simulacion]="tarifasClasificadas['1-4'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                        </li>
-                        <li class="row">
-
-                            <div class="listwrap col-2 headerprod">
-                                <br>
-                                <h4>L Liviano Particular</h4>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['2-1'] !== undefined && tarifasClasificadas['2-1'][0]" [simulacion]="tarifasClasificadas['2-1'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['2-2'] !== undefined && tarifasClasificadas['2-2'][0]" [simulacion]="tarifasClasificadas['2-2'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['2-3'] !== undefined && tarifasClasificadas['2-3'][0]" [simulacion]="tarifasClasificadas['2-3'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['2-4'] !== undefined && tarifasClasificadas['2-4'][0]" [simulacion]="tarifasClasificadas['2-4'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                        </li>
-                        <li class="row">
-                            <div class="listwrap col-2 headerprod">
-                                <br>
-                                <h4>M Liviano Particular</h4>
-                            </div>
-
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['3-1'] !== undefined && tarifasClasificadas['3-1'][0]" [simulacion]="tarifasClasificadas['3-1'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['3-2'] !== undefined && tarifasClasificadas['3-2'][0]" [simulacion]="tarifasClasificadas['3-2'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['3-3'] !== undefined && tarifasClasificadas['3-3'][0]" [simulacion]="tarifasClasificadas['3-3'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['3-4'] !== undefined && tarifasClasificadas['3-4'][0]" [simulacion]="tarifasClasificadas['3-4'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                        </li>
-                        <li class="row">
-                            <div class="listwrap col-2 headerprod">
-                                <br>
-                                <h4>S Liviano Particular</h4>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['4-1'] !== undefined && tarifasClasificadas['4-1'][0]" [simulacion]="tarifasClasificadas['4-1'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['4-2'] !== undefined && tarifasClasificadas['4-2'][0]" [simulacion]="tarifasClasificadas['4-2'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['4-3'] !== undefined && tarifasClasificadas['4-3'][0]" [simulacion]="tarifasClasificadas['4-3'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                            <div class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                <div class="listwrap">
-                                    <app-tarifa-livianos *ngIf="tarifasClasificadas['4-4'] !== undefined && tarifasClasificadas['4-4'][0]" [simulacion]="tarifasClasificadas['4-4'][0]">
-                                    </app-tarifa-livianos>
-                                    &nbsp;
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <br>
-
-                    <div class="bg-info p-3 text-white">
-                        <i class="fa fa-exclamation-circle"></i> Nota: Taller seleccionado: Por defecto / Asistencia seleccionada:
-                        <br> Por defecto Todas las Primas Incluyen el IVA
-                    </div>
-
-                    <br>
-
                     <p-card>
-                    <div class="container mx-1 px-1">
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="descuentoRecargo" class="input-label">Descuento/Recargo</label>
-                                <select class="form-control " name="descuentoRecargo" [(ngModel)]="selectedEstadoVehiculo">
-                                    <option value="0" ></option>
-                                    <option value="1" >DESCUENTO</option>
-                                    <option value="2" >RECARGO</option>
-                                </select>
+                        <p-header>
+                            <img src="assets/img/logo_reale.png" style="width: 15em;">
+                            <div style="float: right" class="m-4">Nro. Simulación: 12345</div>
+                        </p-header>
+
+                        <br>
+                        
+                        <ul class="tabla-tarifas list-group" role="tablist">
+                            <li class="row">
+                                <div class="listwrap col-2 header">PRODUCTO/DEDUCIBLE</div>
+                                <div class="list-group-item border-0 col text-center">
+                                    <div class="listwrap header">0 UF</div>
+                                </div>
+                                <div class="list-group-item border-0 col text-center">
+                                    <div class="listwrap header">3 UF</div>
+                                </div>
+                                <div class="list-group-item border-0 col text-center">
+                                    <div class="listwrap header">5 UF</div>
+                                </div>
+                                <div class="list-group-item border-0 col text-center">
+                                    <div class="listwrap header">10 UF</div>
+                                </div>
+                            </li>
+                            <li class="row" *ngIf="tarifasClasificadas['tarifasXL'] !== undefined && tarifasClasificadas['tarifasXL'].length > 0">
+                                <div class="listwrap col-2 headerprod">
+                                    <br>
+                                    <h4>XL Liviano Particular</h4>
+                                </div>
+                                <div *ngFor="let tarifa of tarifasClasificadas['tarifasXL']" 
+                                    class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
+                                    <div class="listwrap">
+                                        <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
+                                        &nbsp;
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="row" *ngIf="tarifasClasificadas['tarifasL'] !== undefined && tarifasClasificadas['tarifasL'].length > 0">
+                                <div class="listwrap col-2 headerprod">
+                                    <br>
+                                    <h4>L Liviano Particular</h4>
+                                </div>
+                                <div *ngFor="let tarifa of tarifasClasificadas['tarifasL']" 
+                                    class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
+                                    <div class="listwrap">
+                                        <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
+                                        &nbsp;
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="row" *ngIf="tarifasClasificadas['tarifasM'] !== undefined && tarifasClasificadas['tarifasM'].length > 0">
+                                <div class="listwrap col-2 headerprod">
+                                    <br>
+                                    <h4>M Liviano Particular</h4>
+                                </div>
+                                <div *ngFor="let tarifa of tarifasClasificadas['tarifasM']" 
+                                    class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
+                                    <div class="listwrap">
+                                        <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
+                                        &nbsp;
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="row" *ngIf="tarifasClasificadas['tarifasS'] !== undefined && tarifasClasificadas['tarifasS'].length > 0">
+                                <div class="listwrap col-2 headerprod">
+                                    <br>
+                                    <h4>S Liviano Particular</h4>
+                                </div>
+                                <div *ngFor="let tarifa of tarifasClasificadas['tarifasS']" 
+                                    class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
+                                    <div class="listwrap">
+                                        <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
+                                        &nbsp;
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <br>
+
+                        <div class="bg-info p-3 text-white">
+                            <i class="fa fa-exclamation-circle"></i> Nota: Taller seleccionado: Por defecto / Asistencia seleccionada:
+                            <br> Por defecto Todas las Primas Incluyen el IVA
+                        </div>
+
+                        <br>
+
+                        <p-card>
+                            <div class="container mx-1 px-1">
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label for="descuentoRecargo" class="input-label">Descuento/Recargo</label>
+                                        <select class="form-control " name="descuentoRecargo" [(ngModel)]="selectedEstadoVehiculo">
+                                            <option value="0" ></option>
+                                            <option value="1" >DESCUENTO</option>
+                                            <option value="2" >RECARGO</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="porcentaje" class="input-label">Porcentaje</label>
+                                        <input class="form-control" name="porcentaje" type="text" />
+                                    </div>
+                                    <div class="col">
+                                        <label for="retarificar" class="input-label">&nbsp;</label>
+                                        <button id="btn-tarificar" name="retarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
+                                            <i class="fa fa-calculator"></i>
+                                            RETARIFICAR
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col">
-                                <label for="porcentaje" class="input-label">Porcentaje</label>
-                                <input class="form-control" name="porcentaje" type="text" />
-                            </div>
-                            <div class="col">
-                                <label for="retarificar" class="input-label">&nbsp;</label>
-                                <button id="btn-tarificar" name="retarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
-                                    <i class="fa fa-calculator"></i>
-                                    RETARIFICAR
-                                </button>
+                        </p-card>
+
+                        <br>
+
+                        <!-- Botones Propuesta -->
+                        <div class="m-3">
+                            <div class="row mb-3">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <button id="btn-borrar" type="button" class="btn btn-outline-primary btn-wide" (click)="saludo()">
+                                        <i class="fa fa-print"></i>
+                                        IMPRIMIR SIMULACION
+                                    </button>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <button id="btn-comenzarPropuesta" type="button" class="btn btn-warning btn-wide" (click)="comenzarPropuesta()">
+                                        CONTINUAR
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <!-- Botones Propuesta -->
+
                     </p-card>
 
-                    <br>
-
-                    <!-- Botones Propuesta -->
-                    <div class="m-3">
-                        <div class="row mb-3">
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <button id="btn-borrar" type="button" class="btn btn-outline-primary btn-wide" (click)="saludo()">
-                                    <i class="fa fa-print"></i>
-                                    IMPRIMIR SIMULACION
-                                </button>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <button id="btn-comenzarPropuesta" type="button" class="btn btn-warning btn-wide" (click)="comenzarPropuesta()">
-                                    CONTINUAR
-                                    <i class="fa fa-arrow-circle-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Botones Propuesta -->
-
-                </p-card>
-
-            </p-panel>
+                </p-panel>
+            </div>
         </div>
         <!-- Contenedor tarifas -->
 

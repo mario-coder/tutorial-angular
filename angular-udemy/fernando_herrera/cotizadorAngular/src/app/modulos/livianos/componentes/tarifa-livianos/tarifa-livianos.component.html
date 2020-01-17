@@ -3,7 +3,7 @@
 
     <div class="pl-6">
         <p-header>
-            <h6>{{ simulacion.importePrimerRecibo | number:'.0-2' }} UF</h6>
+            <h6> UF {{ simulacion.importePrimerRecibo | number:'.0-2' }} </h6>
 
             <small>Anual</small>
         </p-header>
@@ -18,11 +18,11 @@
 
 </div>
 
-<p-dialog appendTo="body" header="{{ simulacion.descripcionActividad }} - {{simulacion.descripcionDeducible}}" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '600px', minWidth: '600px'}" [minY]="50" [maximizable]="false" [baseZIndex]="100000">
+<p-dialog appendTo="body" header="{{ simulacion.descripcionActividad }} :: Deducible {{simulacion.descripcionDeducible}}" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '600px', minWidth: '600px'}" [minY]="50" [maximizable]="false" [baseZIndex]="100000">
     <p-card>
         <div class="pl-13">
             <p-header>
-                <h6>{{ simulacion.importePrimerRecibo | number:'.0-2' }} UF</h6>
+                <h6>UF {{ simulacion.importePrimerRecibo | number:'.0-2' }}</h6>
             </p-header>
         </div>
 
@@ -36,8 +36,8 @@
                     <td>
                         {{ cobertura.nombreCobertura }}
                     </td>
-                    <td>
-                        {{ cobertura.primaTarifaCob }}
+                    <td class="text-right">
+                        UF {{ cobertura.primaTarifaCob | number:'.0-2' }}
                     </td>
                 </tr>
             </ng-template>

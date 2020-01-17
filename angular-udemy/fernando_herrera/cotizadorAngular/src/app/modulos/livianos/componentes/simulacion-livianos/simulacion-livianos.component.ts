@@ -28,7 +28,7 @@ export class SimulacionLivianosComponent implements OnInit {
   comunas: any[];
   talleres: any[];
   selectedEstadoVehiculo: any;
-  tarificado: boolean = true;
+  tarificado: boolean = false;
   simulaciones: any[];
   tarifasClasificadas: any = {};
   asistencias: any[];
@@ -94,7 +94,8 @@ export class SimulacionLivianosComponent implements OnInit {
     setTimeout(async () => {
       simulaciones = await this.tarificadorService.tarificar();
 
-      this.tarifasClasificadas = this.clasificacionTarifas(simulaciones);
+      //this.tarifasClasificadas = this.clasificacionTarifas(simulaciones);
+      this.tarifasClasificadas = this.mapeoTarifas(simulaciones);
 
       console.log("this.tarifasclasificadas");
       console.log(this.tarifasClasificadas);
@@ -125,8 +126,55 @@ export class SimulacionLivianosComponent implements OnInit {
 
     //console.log("Tarifas Clasificadas")
     //console.log(tarifasClasificadas)
-
+    
     return tarifasClasificadas;
+  }
+  
+  ordena(simA: { codigoDeducible: number; }, simB: { codigoDeducible: number; }){ return (simA.codigoDeducible - simB.codigoDeducible)}
+
+  mapeoTarifas(simulaciones: any) {
+    let tarifasClasificadas: any = {};
+    let tarifasXL: any[] = [];
+    let tarifasL: any[] = [];
+    let tarifasM: any[] = [];
+    let tarifasS: any[] = [];
+
+    let tarifaXL_Part = "1";
+    let tarifaL_Part = "2";
+    let tarifaM_Part = "3";
+    let tarifaS_Part = "4";
+
+    simulaciones.map(simulacion => {
+      switch(simulacion.codigoActividad){
+        case tarifaXL_Part:
+          tarifasXL.push(simulacion)
+        break;
+        case tarifaL_Part:
+          tarifasL.push(simulacion)
+        break;
+        case tarifaM_Part:
+          tarifasM.push(simulacion)
+        break;
+        case tarifaS_Part:
+          tarifasS.push(simulacion)
+        break;
+      }
+    });
+
+    tarifasXL.sort(this.ordena)
+    tarifasL.sort(this.ordena)
+    tarifasM.sort(this.ordena)
+    tarifasS.sort(this.ordena)
+    
+    tarifasClasificadas = {
+      tarifasXL,
+      tarifasL,
+      tarifasM,
+      tarifasS
+    }
+
+    this.tarificado = true;
+    return tarifasClasificadas
   }
 
   saludo() {
