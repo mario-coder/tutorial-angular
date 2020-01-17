@@ -38,58 +38,44 @@
                                 </span>
                             </p-header>
 
-                            <div class="row">
-                                <div class="col">
+                        <div class="container mx-1 px-1">
+                            <div class="row mb-3">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="estadosVehiculo" class="input-label">Nuevo/Usado *</label>
                                     <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
                                         <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option>
                                     </select>
                                 </div>
 
-                                <div class="col">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="patente" class="input-label">Patente</label>
                                     <input class="form-control " name="patente" type="text" />
                                 </div>
-
-                                <div class="col-sm input-label">
-                                    &nbsp;
-                                </div>
-
-                                <div class="col-sm input-label">
-                                    &nbsp;
-                                </div>
                             </div>
 
-                            <br>
-
-                            <div class="row">
-                                <div class="col">
+                            <div class="row mb-3">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="anio" class="input-label">Año *</label>
                                     <select class="form-control " name="anio" [(ngModel)]="selectedEstadoVehiculo">
                                         <option *ngFor="let anio of anios" value={{anio.code}} >{{ anio.label }}</option>
                                     </select>
                                 </div>
 
-                                <div class="col">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="marca" class="input-label">Marca *</label>
                                     <select name="marca" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
                                       <option *ngFor="let marca of marcas" value={{marca.code}} >{{ marca.label }}</option>
                                     </select>
                                 </div>
 
-                                <div class="col-sm input-label">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="modelo" class="input-label">Modelo *</label>
                                     <select name="modelo" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
                                       <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option>
                                     </select>
                                 </div>
-
-                                <div class="col-sm input-label">
-                                    &nbsp;
-                                </div>
                             </div>
-
-                            <br>
+                        </div>
 
                         </p-panel>
                         <!-- Datos del vehiculo -->
@@ -106,67 +92,59 @@
                                 </span>
                             </p-header>
 
-                            <div class="row">
-                                <div class="col">
-                                    <label for="tipoDocumento" class="input-label">Tipo de Documento *</label>
-                                    <select name="tipoDocumento" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                        <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
-                                    </select>
-                                </div>
-
-                                <div class="col">
-                                    <label for="numeroDocumento" class="input-label">Numero de Documento * </label>
-                                    <input class="form-control" name="numeroDocumento" type="text" />
-                                </div>
-
-                                <div class="col">
-                                    <label for="primerNombre" class="input-label">Primer Nombre *</label>
-                                    <input class="form-control" name="primerNombre" type="text" />
-                                </div>
-
-                                <div class="col">
-                                    <label for="apellidoPaterno" class="input-label">Apellido Paterno *</label>
-                                    <input class="form-control" name="apellidoPaterno" type="text" />
-                                </div>
-                            </div>
-
-                            <br>
-
-                            <div class="row">
-                                <div class="col">
-                                    <label for="comuna" class="input-label">Comuna *</label>
-                                    <select name="comuna" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                        <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
-                                    </select>
-                                </div>
-
-                                <div class="col">
-                                    <label for="email" class="input-label">Email *</label>
-                                    <input class="form-control" name="email" type="text" />
-                                </div>
-
-                                <div class="col">
-                                    <label for="inicioNuevaVigencia" class="input-label">Inicio Nueva Vigencia</label>
-                                    <div class="input-group">
-                                        <input type="text" name="inicioNuevaVigencia" class="form-control calendar-input"
-                                         bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
-                                         aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                <i class="fa fa-calendar-day"></i>
-                                            </span>
-                                        </div>
+                            <div class="container mx-1 px-1">
+                                <div class="row mb-3">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="tipoDocumento" class="input-label">Tipo de Documento *</label>
+                                        <select name="tipoDocumento" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                            <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
+                                        </select>
                                     </div>
 
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="numeroDocumento" class="input-label">Numero de Documento * </label>
+                                        <input class="form-control" name="numeroDocumento" type="text" />
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="primerNombre" class="input-label">Primer Nombre *</label>
+                                        <input class="form-control" name="primerNombre" type="text" />
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="apellidoPaterno" class="input-label">Apellido Paterno *</label>
+                                        <input class="form-control" name="apellidoPaterno" type="text" />
+                                    </div>
                                 </div>
 
-                                <div class="col">
-                                    &nbsp;
+                                <div class="row mb-3">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="comuna" class="input-label">Comuna *</label>
+                                        <select name="comuna" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
+                                            <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="email" class="input-label">Email *</label>
+                                        <input class="form-control" name="email" type="text" />
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="inicioNuevaVigencia" class="input-label">Inicio Nueva Vigencia</label>
+                                        <div class="input-group">
+                                            <input type="text" name="inicioNuevaVigencia" class="form-control calendar-input"
+                                            bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
+                                            aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">
+                                                    <i class="fa fa-calendar-day"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <br>
-
                         </p-panel>
                         <!-- Datos del asegurado -->
 
@@ -182,27 +160,26 @@
                                 </span>
                             </p-header>
 
-                            <div class="row">
-                                <div class="col">
-                                    <label for="taller" class="input-label">Taller</label>
-                                    <select class="form-control" name="taller" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option *ngFor="let taller of talleres" value={{taller.code}} >{{ taller.label }}</option>
-                                    </select>
-                                </div>
-                                <div class="col">
-                                    <label for="asistencia" class="input-label">Asistencia</label>
-                                    <select class="form-control " name="asistencia" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option *ngFor="let asistencia of asistencias" value={{asistencia.code}} >{{ asistencia.label }}</option>
-                                    </select>
-                                </div>
-                                <div class="col">
-                                    <label for="rcEnExceso" class="input-label">RC en Exceso</label>
-                                    <select class="form-control " name="rcEnExceso" [(ngModel)]="selectedEstadoVehiculo">
-                                  <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
-                                    </select>
-                                </div>
-                                <div class="col-sm input-label">
-                                    &nbsp;
+                            <div class="container mx-1 px-1">
+                                <div class="row mb-3">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="taller" class="input-label">Taller</label>
+                                        <select class="form-control" name="taller" [(ngModel)]="selectedEstadoVehiculo">
+                                            <option *ngFor="let taller of talleres" value={{taller.code}} >{{ taller.label }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="asistencia" class="input-label">Asistencia</label>
+                                        <select class="form-control " name="asistencia" [(ngModel)]="selectedEstadoVehiculo">
+                                            <option *ngFor="let asistencia of asistencias" value={{asistencia.code}} >{{ asistencia.label }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="rcEnExceso" class="input-label">RC en Exceso</label>
+                                        <select class="form-control " name="rcEnExceso" [(ngModel)]="selectedEstadoVehiculo">
+                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </p-panel>
@@ -214,13 +191,13 @@
                     <!-- Botones tarificacion -->
                     <div class="m-3">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                 <button id="btn-borrar" type="button" class="btn btn-outline-primary btn-wide" (click)="saludo()">
                                     <i class="fa fa-file"></i>
                                     LIMPIAR FORMULARIO
                                 </button>
                             </div>
-                            <div class="col">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                 <button id="btn-tarificar" type="button" class="btn btn-warning btn-wide" (click)="tarificar()">
                                     <i class="fa fa-calculator"></i>
                                     OBTENER TARIFAS
@@ -254,10 +231,12 @@
 
 
                     <p-header>
+                        <img src="assets/img/logo_reale.png" style="width: 15em;">
                         <div style="float: right" class="m-2">Nro. Simulación: 12345</div>
-                        <img src="assets/img/logo_reale.png" style="width: 15%;">
                     </p-header>
 
+                    <br>
+                    
                     <ul class="tabla-tarifas list-group" role="tablist">
                         <li class="row">
                             <div class="listwrap col-2 header">PRODUCTO/DEDUCIBLE</div>
@@ -424,7 +403,8 @@
                     <br>
 
                     <p-card>
-                        <div class="row">
+                    <div class="container mx-1 px-1">
+                        <div class="row mb-3">
                             <div class="col">
                                 <label for="descuentoRecargo" class="input-label">Descuento/Recargo</label>
                                 <select class="form-control " name="descuentoRecargo" [(ngModel)]="selectedEstadoVehiculo">
@@ -445,20 +425,21 @@
                                 </button>
                             </div>
                         </div>
+                    </div>
                     </p-card>
 
                     <br>
 
                     <!-- Botones Propuesta -->
                     <div class="m-3">
-                        <div class="row">
-                            <div class="col">
+                        <div class="row mb-3">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                 <button id="btn-borrar" type="button" class="btn btn-outline-primary btn-wide" (click)="saludo()">
                                     <i class="fa fa-print"></i>
                                     IMPRIMIR SIMULACION
                                 </button>
                             </div>
-                            <div class="col">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                 <button id="btn-comenzarPropuesta" type="button" class="btn btn-warning btn-wide" (click)="comenzarPropuesta()">
                                     CONTINUAR
                                     <i class="fa fa-arrow-circle-right"></i>
