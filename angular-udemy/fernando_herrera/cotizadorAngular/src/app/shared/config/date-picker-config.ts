@@ -32,7 +32,7 @@ export class DatePickerConfigService {
     
     const now = new Date();
     this.dateCustomClasses = [
-      { date: now, classes: ['bg-light', 'shadow-sm'] }
+      { date: now, classes: ['shadow-sm'] }
     ];
 
     this.es = {
