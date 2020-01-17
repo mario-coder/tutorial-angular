@@ -14,3 +14,22 @@ p-card {
     margin-left: 30%;
     margin-right: 30%;
 }
+
+@media (max-width: 768px) {
+    .loginPanel {
+        display: inline-block;
+        max-width: 90%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    
+    p-card {
+        display: inline-block;
+        width: 90% !important;
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+    }   
+}
