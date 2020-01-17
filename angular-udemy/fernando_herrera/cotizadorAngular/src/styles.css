@@ -43,6 +43,20 @@ div.ui-panel-titlebar {
     width: 100% !important;
 }
 
+.result-container {
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    .result-container {
+        overflow-x: scroll;
+    }
+    .result-container table thead th {
+        vertical-align: top;
+    }
+}
+
+
   /****************/
  /*BOTONES:INPUTS*/
 /****************/
