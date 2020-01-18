@@ -134,20 +134,13 @@ body .ui-accordion .ui-accordion-content {
     padding-top: 0px !important;
 }
 
-.inputSearch {
-    display: block;
-    width: 30% !important;
-    min-width: 30% !important;
-    max-width: 40% !important;
-    float: right !important;
+.btnSearch {
+    margin-left: 50em !important;
 }
 
 @media (max-width: 768px) {
-    .inputSearch {
-        width: 80% !important;
-        margin-top: 5% !important;
-        /* margin-left: 10% !important; */
-        float: left !important;
+    .btnSearch {
+        margin-left: 1em !important;
     }
 }
 

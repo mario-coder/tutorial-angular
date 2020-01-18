@@ -21,16 +21,21 @@
                 <p-panel [toggleable]="true">
 
                     <p-header>
-                        <span class="ui-panel-title float-left">
-                            <i class="fa fa-list"></i>
-                            Parámetros Iniciales
-                        </span>
-                        <div class="btn-barra-titulo">
-                            <button class="btn btn-outline-success text-white btn-sm" type="button">
-                                <i class="fa fa-search"></i>
-                                Buscar Documento
-                            </button>
-                        </div>
+                        <!-- <div class="ui-helper-clearfix"> -->
+                            <span class="ui-panel-title" style="display:inline-block;">
+                                <i class="fa fa-list"></i>
+                                Parámetros Iniciales 
+                                <button pButton 
+                                label="Buscar Documento"
+                                class="ui-button-raised ui-button-success float-right btnSearch"
+                                type="button" icon="pi pi-search" iconPos="left"></button>
+                            </span>
+                            <!-- <div class="inputSearch">
+                                <button pButton 
+                                class="ui-button-raised ui-button-success"
+                                type="button" icon="pi pi-search" iconPos="left"></button>
+                            </div> -->
+                        <!-- </div> -->
                     </p-header>
 
                     <div class="panel-container">
