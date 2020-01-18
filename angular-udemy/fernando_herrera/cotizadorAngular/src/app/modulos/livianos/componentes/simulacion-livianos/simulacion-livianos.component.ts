@@ -10,6 +10,7 @@ import { DatePickerConfigService } from 'src/app/shared/config/date-picker-confi
   styleUrls: ["./simulacion-livianos.component.css"]
 })
 export class SimulacionLivianosComponent implements OnInit {
+  _displayBuscarDocumento: boolean = false;
   isLoggedIn : number = 1;
   SIMULACION:number = 1;
   PROPUESTA:number = 2;

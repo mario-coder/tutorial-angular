@@ -12,6 +12,26 @@
 
         <hr>
 
+        <!-- Dialogo busqueda documentos -->
+        <p-dialog 
+            appendTo="body" 
+            [(visible)]="_displayBuscarDocumento" 
+            [modal]="true" 
+            [responsive]="true" 
+            [minY]="50" 
+            [maximizable]="false"
+            [baseZIndex]="100000"
+            [style]="{width: '60%', minWidth: '60%'}">
+
+            <p-header>
+                <i class="fa fa-search"></i>
+                Buscar Documento
+            </p-header>
+            <!-- (onHide)="emitOnHide()" -->
+                <app-buscar-documentos-livianos>
+                </app-buscar-documentos-livianos>
+        </p-dialog>
+
         <!-- Contenedor datos principales -->
         <div class="container section-container shadow-drop-center">
 
@@ -27,6 +47,7 @@
                                 Parámetros Iniciales 
                                 <button pButton 
                                 label="Buscar Documento"
+                                (click)="_displayBuscarDocumento = true"
                                 class="ui-button-raised ui-button-success float-right btnSearch"
                                 type="button" icon="pi pi-search" iconPos="left"></button>
                             </span>

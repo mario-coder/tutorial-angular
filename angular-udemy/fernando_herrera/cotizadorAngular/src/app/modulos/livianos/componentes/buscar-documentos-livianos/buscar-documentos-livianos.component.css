@@ -1,0 +1,16 @@
+.row {
+    min-height: 4em;
+}
+
+.col-5 {
+    background-color: rgb(209, 209, 235);
+    font-size: 85% !important;
+    vertical-align: middle;
+}
+
+.col-5,
+.col-7 {
+    padding-top: 10px;
+    /*border-top: 1px solid grey;*/
+    border-bottom: 1px solid rgb(222, 223, 224);
+}

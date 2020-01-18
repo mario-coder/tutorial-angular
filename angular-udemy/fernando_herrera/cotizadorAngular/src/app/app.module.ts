@@ -1,6 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, LOCALE_ID } from "@angular/core";
-// import { ChartModule } from "primeng/chart";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -15,7 +14,6 @@ import { CardModule } from "primeng/card";
 import { DialogModule } from "primeng/dialog";
 import { ButtonModule } from "primeng/button";
 import { HttpClientModule } from "@angular/common/http";
-// import { TarifaComponent } from "./components/tarifa/tarifa.component";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { AccordionModule } from "primeng/accordion";
 import { TooltipModule } from 'primeng/tooltip';
@@ -35,17 +33,14 @@ import { DatePickerConfigService } from './shared/config/date-picker-config';
     ConsultaSimulacionComponent,
     ResultadoConsultaSimulacionComponent,
     LoginComponent
-    //TarifaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LivianosModule,
-    // ChartModule,
     BrowserAnimationsModule,
     PanelModule, 
     InputTextModule, 
-    // CalendarModule,
     CommonModule,
     FieldsetModule,
     DropdownModule,

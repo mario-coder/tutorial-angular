@@ -3,6 +3,7 @@ import { SimulacionLivianosComponent } from './componentes/simulacion-livianos/s
 import { PropuestaLivianosComponent } from './componentes/propuesta-livianos/propuesta-livianos.component';
 import { EmisionLivianosComponent } from './componentes/emision-livianos/emision-livianos.component';
 import { PropuestaGeneradaLivianosComponent } from './componentes/propuesta-generada-livianos/propuesta-generada-livianos.component';
+import { BuscarDocumentosLivianosComponent } from './componentes/buscar-documentos-livianos/buscar-documentos-livianos.component';
 import { TarifaLivianosComponent } from './componentes/tarifa-livianos/tarifa-livianos.component';
 import { SharedModule } from '../../shared/modules/common/shared.module';
 
@@ -12,7 +13,8 @@ import { SharedModule } from '../../shared/modules/common/shared.module';
     PropuestaLivianosComponent, 
     EmisionLivianosComponent, 
     PropuestaGeneradaLivianosComponent, 
-    TarifaLivianosComponent
+    TarifaLivianosComponent,
+    BuscarDocumentosLivianosComponent
   ],
   imports: [
     SharedModule
