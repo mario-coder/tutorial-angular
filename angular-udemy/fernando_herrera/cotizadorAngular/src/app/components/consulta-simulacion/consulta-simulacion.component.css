@@ -21,6 +21,10 @@
     opacity: 0;
 }
 
+#sidebar.active {
+    margin-left: -22%;
+}
+
 #sidebar .sidebar-header {
     padding-left: 7%;
     padding-top: 5%;
@@ -91,10 +95,9 @@ body .ui-accordion .ui-accordion-content {
     CONTENT STYLE
 ----------------------------------------------------- */
 
-#content {
+.content {
     width: 100%;
-    /* padding: 20px; */
-    min-height: 100vh;
+    min-height: 100%;
     transition: all 0.3s;
 }
 
@@ -105,7 +108,9 @@ body .ui-accordion .ui-accordion-content {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        min-width: 100%;
+        margin-left: 0%;
+        display: block;
     }
     #sidebar.active {
         margin-left: 0;
@@ -113,10 +118,9 @@ body .ui-accordion .ui-accordion-content {
     #sidebarCollapse span {
         display: none;
     }
-}
-
-.jumbotron-fluid {
-    min-width: 60% !important;
-    width: 100% !important;
-    /*margin-left: 10% !important;*/
+    #sidebar.hidden {
+        margin-left: -100%;
+        visibility: hidden;
+        opacity: 0;
+    }
 }

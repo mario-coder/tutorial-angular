@@ -135,10 +135,20 @@ body .ui-accordion .ui-accordion-content {
 }
 
 .inputSearch {
+    display: block;
     width: 30% !important;
     min-width: 30% !important;
     max-width: 40% !important;
     float: right !important;
+}
+
+@media (max-width: 768px) {
+    .inputSearch {
+        width: 80% !important;
+        margin-top: 5% !important;
+        /* margin-left: 10% !important; */
+        float: left !important;
+    }
 }
 
 .bg-image-blur {
