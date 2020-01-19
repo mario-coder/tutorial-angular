@@ -6,6 +6,7 @@ import { PropuestaGeneradaLivianosComponent } from './componentes/propuesta-gene
 import { BuscarDocumentosLivianosComponent } from './componentes/buscar-documentos-livianos/buscar-documentos-livianos.component';
 import { TarifaLivianosComponent } from './componentes/tarifa-livianos/tarifa-livianos.component';
 import { SharedModule } from '../../shared/modules/common/shared.module';
+import { PolizaEmitidaLivianosComponent } from './componentes/poliza-emitida-livianos/poliza-emitida-livianos.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SharedModule } from '../../shared/modules/common/shared.module';
     EmisionLivianosComponent, 
     PropuestaGeneradaLivianosComponent, 
     TarifaLivianosComponent,
-    BuscarDocumentosLivianosComponent
+    BuscarDocumentosLivianosComponent,
+    PolizaEmitidaLivianosComponent
   ],
   imports: [
     SharedModule

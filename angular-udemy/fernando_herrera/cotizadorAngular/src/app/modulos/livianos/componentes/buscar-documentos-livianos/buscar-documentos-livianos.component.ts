@@ -15,6 +15,6 @@ export class BuscarDocumentosLivianosComponent implements OnInit {
   }
   
   emitOnHide() {
-    this.displayChange.emit(false)
+    // this.displayChange.emit(false)
   }
 }

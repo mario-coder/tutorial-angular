@@ -5,9 +5,9 @@
 
         <div class="ml-3">
             <p-header>
-                <h1>Propuesta Livianos</h1>
+                <h1>Poliza Livianos</h1>
                 <i class="fa fa-home float-left m-1"></i>
-                <h6>Inicio/Propuesta Livianos</h6>
+                <h6>Inicio/Emision Livianos</h6>
             </p-header>
         </div>
 
@@ -16,7 +16,7 @@
                 <p-header>
                     <span class="ui-panel-title">
                     <i class="fa fa-file-alt"></i>
-                    DETALLE PROPUESTA
+                    DETALLE POLIZA
                     </span>
                 </p-header>
 
@@ -30,6 +30,7 @@
                                 <th>Plan</th>
                                 <th>Simulacion Reale</th>
                                 <th>Propuesta Reale</th>
+                                <th>Poliza Reale</th>
                                 <th>Estado</th>
                             </thead>
                             <tbody>
@@ -38,7 +39,8 @@
                                     <td>0 UF</td>
                                     <td>5854424</td>
                                     <td>5327227</td>
-                                    <td>Aprobada</td>
+                                    <td>300027227</td>
+                                    <td>Vigente</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -67,50 +69,29 @@
 
             <br>
 
-            
-            <div class="panel-container">
-                <p-panel [toggleable]="true">
-                    
-                    <p-header>
-                        <span class="ui-panel-title">
-                            <i class="fa fa-paperclip"></i>
-                            Adjuntar Archivos
-                        </span>
-                    </p-header>
-                    
-                    <!-- url="./upload.php" -->
-                    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
-                    multiple="multiple" accept="image/*" maxFileSize="1000000">
-                    <ng-template pTemplate="content">
-                        <ul *ngIf="uploadedFiles.length">
-                            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                        </ul>
-                    </ng-template>
-            </p-fileUpload>
-                    
-                </p-panel>
-            </div>
-            
-            
-            <!-- Boton Emitir -->
-            <div class="container mt-2 mx-xl-5 px-xl-5">
-                <div class="row mx-xl-5 px-xl-5">
-                    
-                    <div class="col mx-xl-5">
-                        <button id="btn-propuesta" type="button" name="btn-propuesta" 
-                        class="btn btn-warning btn-wide" (click)="emitirPoliza()">
-                        EMITIR
-                        <i class="fa fa-paper-plane"></i>
-                    </button>
-                </div>
-            </div>
+        </p-panel>
         </div>
-        <!-- Boton Emitir -->
-        <!-- </div> -->
-        
-    </p-panel>
-    </div>
-        
+
+        <div class="fade-in">
+
+                <div class="container section-container fade-in shadow-drop-center">
+                    <!-- Boton Nueva Simulacion -->
+                    <div class="container mx-xl-5 px-xl-5">
+                        <div class="row mx-xl-5 px-xl-5">
+                            
+                            <div class="col mx-xl-5">
+                                <button id="btn-nueva-simulacion" type="button" name="btn-nueva-simulacion" 
+                                    class="btn btn-outline-primary btn-wide" (click)="nuevaSimulacion()">
+                                    <i class="fa fa-file"></i>
+                                    NUEVA SIMULACION
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Boton Nueva Simulacion -->
+                </div>
+            
+        </div>
 
     </p-card>
 </div>

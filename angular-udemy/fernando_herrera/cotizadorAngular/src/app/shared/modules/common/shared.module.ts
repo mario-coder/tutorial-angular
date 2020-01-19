@@ -8,6 +8,7 @@ import { TabViewModule } from "primeng/tabview";
 import { DialogModule } from "primeng/dialog";
 import { ButtonModule } from "primeng/button";
 import { PanelModule, InputTextModule } from "primeng";
+import { FileUploadModule } from 'primeng/fileupload';
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 
 @NgModule({
@@ -24,7 +25,8 @@ import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
     TabViewModule,
     FormsModule,
     ReactiveFormsModule,
-    BsDatepickerModule
+    BsDatepickerModule,
+    FileUploadModule
   ],
   exports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
     TabViewModule,
     FormsModule,
     ReactiveFormsModule,
-    BsDatepickerModule
+    BsDatepickerModule,
+    FileUploadModule
   ],
   providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
 })

@@ -14,3 +14,9 @@
     /*border-top: 1px solid grey;*/
     border-bottom: 1px solid rgb(222, 223, 224);
 }
+
+.optionTD {
+    width: 10%;
+    min-width: 8%;
+    text-align: center;
+}
