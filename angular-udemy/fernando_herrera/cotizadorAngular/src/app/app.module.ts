@@ -24,7 +24,6 @@ import { ConsultaSimulacionComponent } from './components/consulta-simulacion/co
 import { ResultadoConsultaSimulacionComponent } from './components/resultado-consulta-simulacion/resultado-consulta-simulacion.component';
 import { LoginComponent } from './components/login/login.component';
 import { DatePickerConfigService } from './shared/config/date-picker-config';
-import { DragDropDirective } from './shared/directives/drag-drop.directive';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import { DragDropDirective } from './shared/directives/drag-drop.directive';
     HomeCotizadorComponent,
     ConsultaSimulacionComponent,
     ResultadoConsultaSimulacionComponent,
-    LoginComponent,
-    DragDropDirective
+    LoginComponent
   ],
   imports: [
     BrowserModule,

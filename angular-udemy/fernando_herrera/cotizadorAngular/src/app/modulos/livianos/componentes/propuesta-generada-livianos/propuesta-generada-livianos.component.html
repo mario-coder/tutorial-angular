@@ -78,10 +78,15 @@
                         </span>
                     </p-header>
                 
-                    <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
+                    <div appDragDrop
+                        class="uploadfilecontainer" 
+                        (click)="fileInput.click()" 
+                        (fileDropped)="onFileDropped($event)">
+
                         <div class="centered">
                             <i class="fa fa-upload fa-4x"></i>
                             Arrastre aqui sus archivos
+                            
                             <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
                         </div>
                     </div>

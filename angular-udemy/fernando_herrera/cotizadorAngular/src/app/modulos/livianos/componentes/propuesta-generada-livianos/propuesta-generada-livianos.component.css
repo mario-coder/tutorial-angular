@@ -9,7 +9,8 @@
     padding-top: 5%;
 }
 .uploadfilecontainer {
-    background-repeat: no-repeat;
+    /* background-color: #f5fcff; */
+    /* background-repeat: no-repeat; */
     background-size: 100px;
     background-position: center;
     height: 200px;

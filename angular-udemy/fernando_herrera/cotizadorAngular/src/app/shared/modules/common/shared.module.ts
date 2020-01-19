@@ -9,9 +9,10 @@ import { DialogModule } from "primeng/dialog";
 import { ButtonModule } from "primeng/button";
 import { PanelModule, InputTextModule } from "primeng";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
+import { DragDropDirective } from '../../../shared/directives/drag-drop.directive';
 
 @NgModule({
-  declarations: [],
+  declarations: [DragDropDirective],
   imports: [
     BrowserModule,
     CommonModule,

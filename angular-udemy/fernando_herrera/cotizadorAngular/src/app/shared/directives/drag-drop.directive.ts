@@ -1,11 +1,11 @@
-import { Directive, Output, HostBinding, HostListener, EventEmitter } from '@angular/core';
+import { Directive, Input, Output, HostBinding, HostListener, EventEmitter } from '@angular/core';
 
 @Directive({
   selector: '[appDragDrop]'
 })
 export class DragDropDirective {
 
-  @Output() onFileDropped = new EventEmitter<any>();
+  @Output() fileDropped = new EventEmitter<any>();
 	
   @HostBinding('style.background-color') private background = '#f5fcff'
   @HostBinding('style.opacity') private opacity = '1'
@@ -16,6 +16,7 @@ export class DragDropDirective {
     evt.stopPropagation();
     this.background = '#9ecbec';
     this.opacity = '0.8'
+    alert('hello dragover')
   }
 	
   //Dragleave listener
@@ -34,7 +35,7 @@ export class DragDropDirective {
     this.opacity = '1'
     let files = evt.dataTransfer.files;
     if (files.length > 0) {
-      this.onFileDropped.emit(files)
+      this.fileDropped.emit(files)
     }
   }
 	

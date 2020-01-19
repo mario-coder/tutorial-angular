@@ -15,12 +15,9 @@ export class PropuestaGeneradaLivianosComponent implements OnInit {
   files: any[] = [];
   _polizaEmitidaSelected: boolean = false;
 
-
   constructor(private router: Router) {
 
   }
-
-
 
   ngOnInit() {
   }
@@ -48,7 +45,7 @@ export class PropuestaGeneradaLivianosComponent implements OnInit {
     console.log("Emitiendo poliza ...")
   }
 
-  uploadFile(event) {
+  onFileDropped(event) {
     for (let index = 0; index < event.length; index++) {
       const element = event[index];
       this.files.push(element.name)
