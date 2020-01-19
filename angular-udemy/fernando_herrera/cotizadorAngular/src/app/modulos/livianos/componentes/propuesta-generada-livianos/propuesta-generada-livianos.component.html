@@ -77,16 +77,20 @@
                             Adjuntar Archivos
                         </span>
                     </p-header>
-                    
-                    <!-- url="./upload.php" -->
-                    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
-                    multiple="multiple" accept="image/*" maxFileSize="1000000">
-                    <ng-template pTemplate="content">
-                        <ul *ngIf="uploadedFiles.length">
-                            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                        </ul>
-                    </ng-template>
-            </p-fileUpload>
+                
+                    <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
+                        <div class="centered">
+                            <i class="fa fa-upload fa-4x"></i>
+                            Arrastre aqui sus archivos
+                            <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+                        </div>
+                    </div>
+                    <div  class="files-list" *ngFor="let file of files;let i= index">
+                        <p> {{ file }} </p>
+                        <button class="delete-file" (click)="deleteAttachment(i)">
+                            <i class="fa fa-trash-alt"></i>
+                        </button>
+                    </div>
                     
                 </p-panel>
             </div>

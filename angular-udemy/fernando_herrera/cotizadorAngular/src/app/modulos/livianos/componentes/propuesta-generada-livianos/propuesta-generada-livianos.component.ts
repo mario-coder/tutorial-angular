@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
+// const URL = '/api/';
+const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
+ 
 @Component({
   selector: 'app-propuesta-generada-livianos',
   templateUrl: './propuesta-generada-livianos.component.html',
@@ -9,10 +12,13 @@ import { Router } from '@angular/router';
 })
 export class PropuestaGeneradaLivianosComponent implements OnInit {
 
-  uploadedFiles: any[] = [];
+  files: any[] = [];
   _polizaEmitidaSelected: boolean = false;
-  
-  constructor(private router: Router) {}
+
+
+  constructor(private router: Router) {
+
+  }
 
 
 
@@ -40,5 +46,15 @@ export class PropuestaGeneradaLivianosComponent implements OnInit {
     Swal.showLoading();
 
     console.log("Emitiendo poliza ...")
+  }
+
+  uploadFile(event) {
+    for (let index = 0; index < event.length; index++) {
+      const element = event[index];
+      this.files.push(element.name)
+    }  
+  }
+  deleteAttachment(index) {
+    this.files.splice(index, 1)
   }
 }
