@@ -2,7 +2,12 @@
     vertical-align: top;
 }
 
+.fileover {
+    text-align: right;
+}
+
 .centered {
+    text-align: center;
     width: 100%;
     padding-left: 40%;
     padding-right: 30%;

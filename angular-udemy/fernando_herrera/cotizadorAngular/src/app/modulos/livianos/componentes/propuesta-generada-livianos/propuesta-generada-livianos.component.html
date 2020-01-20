@@ -78,20 +78,20 @@
                         </span>
                     </p-header>
                 
-                    <div appDragDrop
-                        class="uploadfilecontainer" 
-                        (click)="fileInput.click()" 
-                        (fileDropped)="onFileDropped($event)">
 
-                        <div class="centered">
+                    <ngx-dropzone (change)="onSelect($event)" [expandable]="true">
+                        <ngx-dropzone-label>
                             <i class="fa fa-upload fa-4x"></i>
+                            <br>
                             Arrastre aqui sus archivos
-                            
-                            <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
-                        </div>
-                    </div>
+                        </ngx-dropzone-label>
+                        <!-- <ngx-dropzone-preview *ngFor="let f of files">
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-preview> -->
+                    </ngx-dropzone>
+
                     <div  class="files-list" *ngFor="let file of files;let i= index">
-                        <p> {{ file }} </p>
+                        <p> {{ file.name }} {{ file.tipe}} </p>
                         <button class="delete-file" (click)="deleteAttachment(i)">
                             <i class="fa fa-trash-alt"></i>
                         </button>

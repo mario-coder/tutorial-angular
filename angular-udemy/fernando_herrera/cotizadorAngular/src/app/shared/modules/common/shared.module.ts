@@ -9,10 +9,10 @@ import { DialogModule } from "primeng/dialog";
 import { ButtonModule } from "primeng/button";
 import { PanelModule, InputTextModule } from "primeng";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
-import { DragDropDirective } from '../../../shared/directives/drag-drop.directive';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
-  declarations: [DragDropDirective],
+  declarations: [],
   imports: [
     BrowserModule,
     CommonModule,
@@ -25,7 +25,8 @@ import { DragDropDirective } from '../../../shared/directives/drag-drop.directiv
     TabViewModule,
     FormsModule,
     ReactiveFormsModule,
-    BsDatepickerModule
+    BsDatepickerModule,
+    NgxDropzoneModule
   ],
   exports: [
     BrowserModule,
@@ -39,7 +40,8 @@ import { DragDropDirective } from '../../../shared/directives/drag-drop.directiv
     TabViewModule,
     FormsModule,
     ReactiveFormsModule,
-    BsDatepickerModule
+    BsDatepickerModule,
+    NgxDropzoneModule
   ],
   providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
 })
