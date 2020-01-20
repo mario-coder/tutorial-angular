@@ -14,6 +14,7 @@ export class PropuestaGeneradaLivianosComponent implements OnInit {
 
   files: any[] = [];
   _polizaEmitidaSelected: boolean = false;
+  _displayVerDocumentos: boolean = false;
 
   constructor(private router: Router) {
 
@@ -51,6 +52,7 @@ export class PropuestaGeneradaLivianosComponent implements OnInit {
       this.files.push(element.name)
     }  
   }
+  
   deleteAttachment(index) {
     this.files.splice(index, 1)
   }

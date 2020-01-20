@@ -3,6 +3,27 @@
 
     <p-card>
 
+
+
+                <!-- Dialogo busqueda documentos -->
+        <p-dialog 
+            appendTo="body" 
+            [(visible)]="_displayBuscarDocumento" 
+            [modal]="true" 
+            [responsive]="true" 
+            [minY]="50" 
+            [maximizable]="false"
+            [baseZIndex]="100000"
+            [style]="{width: '60%', minWidth: '60%'}">
+
+            <p-header>
+                <i class="fa fa-search"></i>
+                Buscar Documento
+            </p-header>
+            <!-- (onHide)="emitOnHide()" -->
+                <app-buscar-documentos-livianos>
+                </app-buscar-documentos-livianos>
+        </p-dialog>
         <div class="ml-3">
             <p-header>
                 <h1>Propuesta Livianos</h1>
@@ -56,7 +77,7 @@
                             </button>
                         </div>
                         <div class="col">
-                            <button type="button" class="btn btn-primary btn-wide">
+                            <button type="button" class="btn btn-primary btn-wide" (click)="_displayVerDocumentos = true">
                                 <i class="fa fa-file-pdf"></i>
                                 Ver Documentos
                             </button>
@@ -123,3 +144,49 @@
 
     </p-card>
 </div>
+
+
+        <!-- Dialogo ver documentos -->
+        <p-dialog 
+            appendTo="body" 
+            [(visible)]="_displayVerDocumentos" 
+            [modal]="true" 
+            [responsive]="true" 
+            [minY]="50" 
+            [maximizable]="false"
+            [baseZIndex]="100000"
+            [style]="{width: '50%', minWidth: '50%'}">
+
+            <p-header>
+                <i class="fa fa-list-alt"></i>
+                Ver Documentos
+            </p-header>
+            
+            <table class="table table striped">
+                <tr>
+                    <td>
+                        <i class="fa fa-2x fa-file-pdf"></i>
+                        &nbsp;
+                        <a href="#">Primera Hoja Propuesta Individual</a>
+                    </td>
+                    <td>
+                        <button class="btn btn-success">
+                            <i class="fa fa-download"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa fa-2x fa-file-pdf"></i>
+                        &nbsp;
+                        <a href="#">Mandato</a>
+                    </td>
+                    <td>
+                        <button class="btn btn-success">
+                            <i class="fa fa-download"></i>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+
+        </p-dialog>

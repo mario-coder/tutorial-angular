@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class PolizaEmitidaLivianosComponent implements OnInit {
 
+  _displayVerDocumentos: boolean = false;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
