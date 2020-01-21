@@ -1,0 +1,538 @@
+<div class="fade-in">
+    <p-card>
+    
+    <div class="container form-container shadow-drop-center">
+        <br>
+        <h3 class="first">Resultado Consulta</h3>
+        <p-table #dt
+            [columns]="cols"
+            [value]="cars" 
+            selectionMode="single" 
+            [(selection)]="selectedCar" 
+            [responsive]="true" 
+            [paginator]="true" 
+            [rows]="15"
+            >
+            <!-- (onRowSelect)="onRowSelect($event)"  -->
+            <ng-template pTemplate="caption">
+                <div class="ui-helper-clearfix" style="text-align: right">        
+        
+                    <!-- <button type="button" pButton icon="pi pi-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="margin-right: 0.5em; float: left;"></button> -->
+                    <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportExcel()" style="margin-right: 0.5em; float: left;" class="ui-button-success"></button>
+                    <button type="button" pButton icon="pi pi-file-pdf" iconPos="left" label="PDF" (click)="exportPdf()" class="ui-button-warning" style="float: left;"></button>
+        
+                    <i class="fa fa-search mr-2 mt-2"></i>
+                    <input type="text" class="inputSearch" pInputText size="50" placeholder="Ingrese un termino" (input)="dt.filterGlobal($event.target.value, 'contains')">
+                </div>
+            </ng-template>
+            
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th class="optionTD">
+                        <i class="fa fa-list fa-2x" pTooltip="Opciones" tooltipPosition="right"></i>
+                    </th>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                        {{col.header}}
+                        <p-sortIcon [field]="col.field"></p-sortIcon>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td class="optionTD">
+                        <div class="btn-group dropright">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <i class="fa fa-list"></i>
+                            </button>
+                            <div class="dropdown-menu shadow-sm swing-in-left-fwd ml-5" appentTo="body">
+                            <h6 class="dropdown-header">OPCIONES</h6>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" (click)="showDialogSimulacion(_OPCION_DETALLE)">
+                                <i class="fa fa-search"></i>
+                                Detalle Simulacion
+                            </a>
+                            <a class="dropdown-item" (click)="showDialogSimulacion(_OPCION_REIMPRIMIR)">
+                                <i class="fa fa-print"></i>
+                                Reimprimir Simulacion
+                            </a>
+                            <a class="dropdown-item" (click)="showDialogSimulacion(_OPCION_CAMBIAR_ESTADO)">
+                                <i class="fa fa-times-circle"></i>
+                                Cambiar Estado
+                            </a>
+                            </div>
+                        </div>
+                    </td>
+                    <td *ngFor="let col of columns">
+                        {{rowData[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <!-- <ng-template pTemplate="summary" let-rowData>
+                <div style="text-align:left">
+                    <button type="button" pButton icon="fa fa-plus" (click)="showDialogToAdd()" label="Add"></button>
+                </div>
+            </ng-template>     -->
+        </p-table>
+    <br>
+    </div>
+    
+    
+    <p-dialog header="Car Details" appendTo="body" [(visible)]="displayDialog" [focusOnShow]="false" [responsive]="true" showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
+        <div class="ui-g ui-fluid" *ngIf="car">
+            <div class="ui-g-12">
+                <div class="ui-g-4">
+                    <label for="vin">Vin</label>
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="vin" [(ngModel)]="car.vin" autofocus />
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-g-4">
+                    <label for="year">Year</label>
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="year" [(ngModel)]="car.year" />
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-g-4">
+                    <label for="brand">Brand</label>
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="brand" [(ngModel)]="car.brand" />
+                </div>
+            </div>
+            <div class="ui-g-12">
+                <div class="ui-g-4">
+                    <label for="color">Color</label>
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="color" [(ngModel)]="car.color" />
+                </div>
+            </div>
+        </div>
+        <p-footer>
+            <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                <button type="button" pButton icon="fa fa-close" (click)="delete()" label="Delete"></button>
+                <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
+            </div>
+        </p-footer>
+    </p-dialog>
+    
+    
+    </p-card>
+    
+</div>
+
+
+
+<!-- MODAL PARA CONSULTAS Y OPCIONES SIMULACION (detalle, reimprimir, cambiar estado)-->
+<p-dialog
+    appendTo="body" 
+    [(visible)]="_displayOpcionesSimulacion" 
+    [modal]="true" 
+    [responsive]="true" 
+    [minY]="20" 
+    [maximizable]="false"
+    [baseZIndex]="100000"
+    [style]="{width: '70%', minWidth: '70%', minHeigth: '100%'}">
+
+    <p-header class="float-left">
+        <div [ngSwitch]="_opcionEscogidaDialogSimulacion">
+            <div *ngSwitchCase="_OPCION_DETALLE">
+                <i class="fa fa-file-alt"></i>&nbsp;
+                DETALLE SIMULACION
+            </div>
+            <div *ngSwitchCase="_OPCION_REIMPRIMIR">
+                <i class="fa fa-print"></i>&nbsp;
+                REIMPRIMIR SIMULACION
+            </div>
+            <div *ngSwitchCase="_OPCION_CAMBIAR_ESTADO">
+                <i class="fa fa-exchange-alt"></i>&nbsp;
+                CAMBIAR ESTADO SIMULACION
+            </div>
+        </div>
+    </p-header>
+
+    <div class="container form-container shadow-drop-center pt-3 pb-3">
+        <p-panel>
+            <p-header>
+                <i class="fa fa-file"></i>&nbsp;
+                Datos Generales de la Simulación
+            </p-header>
+
+            <!-- datos generales simulacion -->
+            <div class="container">
+                <div class="row">
+                    <div class="col text-left">
+                        <strong>Compañia de seguros:</strong>
+                    </div>
+                    <div class="col">
+                        Reale
+                    </div>
+                    <div class="col text-left">
+                        <strong>Nº de simulacion</strong>
+                    </div>
+                    <div class="col">
+                        637188
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">
+                        <strong>Estado:</strong>
+                    </div>
+                    <div class="col">
+                        VIGENTE
+                    </div>
+                    <div class="col text-left">
+                        <strong>Fecha de registro:</strong>
+                    </div>
+                    <div class="col">
+                        21-01-2020
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">
+                        <strong>Asegurado titular:</strong>
+                    </div>
+                    <div class="col">
+                        JUAN PEREZ
+                    </div>
+                    <div class="col text-left">
+                        <strong>Canal:</strong>
+                    </div>
+                    <div class="col">
+                        Corredores
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-left">
+                        <strong>Sucursal:</strong>
+                    </div>
+                    <div class="col">
+                        SANTIAGO CENTRO
+                    </div>
+                    <div class="col text-left">
+                        <strong>Corredor:</strong>
+                    </div>
+                    <div class="col">
+                        CRISTOBAL SOTO
+                    </div>
+                </div>
+            </div>
+        </p-panel>
+
+        <br>
+
+        <div [ngSwitch]="_opcionEscogidaDialogSimulacion">
+
+            <div *ngSwitchCase="_OPCION_DETALLE">
+                <p-panel>
+                    <p-header>
+                        Detalle Riesgo
+                    </p-header>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-left">
+                                <strong>Marca:</strong>
+                            </div>
+                            <div class="col">
+                                KIA MOTORS
+                            </div>
+                            <div class="col text-left">
+                                <strong>Modelo</strong>
+                            </div>
+                            <div class="col">
+                                RIO 5
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-left">
+                                <strong>Año:</strong>
+                            </div>
+                            <div class="col">
+                                2017
+                            </div>
+                            <div class="col text-left">
+                                <strong>Valor Comercial del Vehiculo UF:</strong>
+                            </div>
+                            <div class="col">
+                                $ 6.254.548
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-left">
+                                <strong>Uso:</strong>
+                            </div>
+                            <div class="col">
+                                Particular
+                            </div>
+                            <div class="col text-left">
+                                <strong>Sub uso vehiculo:</strong>
+                            </div>
+                            <div class="col">
+                                Diario
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-left">
+                                <strong>KM Anuales:</strong>
+                            </div>
+                            <div class="col">
+                                No Informado
+                            </div>
+                            <div class="col text-left">
+                                <strong>Cia Anterior:</strong>
+                            </div>
+                            <div class="col">
+                                Ninguna
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-left">
+                                <strong>Nuevo/Usado:</strong>
+                            </div>
+                            <div class="col">
+                                Usado
+                            </div>
+                            <div class="col text-left">
+                                <strong>Tipo Vehiculo:</strong>
+                            </div>
+                            <div class="col">
+                                AUTOMOVIL
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-left">
+                                <strong>Placa:</strong>
+                            </div>
+                            <div class="col">
+                                JTHP31
+                            </div>
+                            <div class="col text-left">
+                                <strong>&nbsp;</strong>
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </p-panel>
+
+                <br>
+
+                <p-panel>
+                    <p-header>
+                        Listado Planes
+                    </p-header>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Actividad</th>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Prima</th>
+                                <th scope="col">Simulacion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>XL Liviano Particular</td>
+                                <td>0 UF</td>
+                                <td>27.47</td>
+                                <td>12345</td>
+                            </tr>
+                            <tr>
+                                <td>XL Liviano Particular</td>
+                                <td>3 UF</td>
+                                <td>27.47</td>
+                                <td>12345</td>
+                            </tr>
+                            <tr>
+                                <td>L Liviano Particular</td>
+                                <td>0 UF</td>
+                                <td>27.47</td>
+                                <td>12345</td>
+                            </tr>
+                            <tr>
+                                <td>L Liviano Particular</td>
+                                <td>3 UF</td>
+                                <td>27.47</td>
+                                <td>12345</td>
+                            </tr>
+                            <tr>
+                                <td>M Liviano Particular</td>
+                                <td>0 UF</td>
+                                <td>27.47</td>
+                                <td>12345</td>
+                            </tr>
+                            <tr>
+                                <td>S Liviano Particular</td>
+                                <td>3 UF</td>
+                                <td>27.47</td>
+                                <td>12345</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </p-panel>
+
+                <br>
+
+                <p-panel>
+                    <p-header>
+                        Controles PSU
+                    </p-header>
+
+                    <h6>Archivos</h6>
+                    <div class="alert alert-warning">
+                        <i class="fa fa-info-circle"></i>&nbsp;
+                        No hay archivos disponibles
+                    </div>
+
+                    <br>
+
+                    <h6>Detalle PSU</h6>
+                    <div class="alert alert-warning">
+                        <i class="fa fa-info-circle"></i>&nbsp;
+                        No hay información disponible
+                    </div>
+
+                </p-panel>
+            </div>
+
+            <div *ngSwitchCase="_OPCION_REIMPRIMIR">
+                <table class="table table striped">
+                    <thead>
+                        <th colspan="2">Documentos</th>
+                    </thead>
+                    <tr>
+                        <td>
+                            <i class="fa fa-2x fa-file-pdf"></i>
+                            &nbsp;
+                            <a href="#">Primera Hoja Propuesta Individual</a>
+                        </td>
+                        <td>
+                            <button class="btn btn-success">
+                                <i class="fa fa-download"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-2x fa-file-pdf"></i>
+                            &nbsp;
+                            <a href="#">Mandato</a>
+                        </td>
+                        <td>
+                            <button class="btn btn-success">
+                                <i class="fa fa-download"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div *ngSwitchCase="_OPCION_CAMBIAR_ESTADO">
+                <p-panel>
+                    <p-header>
+                        Cambio de estado
+                    </p-header>
+
+                    <div class="container">
+                        <div class="row mb-2">
+                            <div class="col-2">
+                                <strong>Nº de simulacion</strong>
+                            </div>
+                            <div class="col-10 text-left">
+                                67235
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-2">
+                                <strong>Nuevo estado</strong>
+                            </div>
+                            <div class="col-10">
+                                <select class="form-control " name="nuevoEstado">
+                                    <option value="0">Seleccione</option>
+                                    <option value="1">Aprobado</option>
+                                    <option value="2">Rechazado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-2">
+                                <strong>Observacion</strong>
+                            </div>
+                            <div class="col-10">
+                                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-outline-primary btn-wide">
+                                    <i class="fa fa-check-circle"></i>
+                                    Aceptar
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-warning btn-wide">
+                                    <i class="fa fa-times-circle"></i>
+                                    Aceptar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </p-panel>
+
+                <br>
+
+                <p-panel>
+                    <p-header>
+                        Bitácora cambio de estado
+                    </p-header>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID. Bitácora</th>
+                                <th scope="col">Tipo Registro</th>
+                                <th scope="col">Fecha Bitácora</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Observación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>(1846:) Afiliacion observacion</td>
+                                <td>21-01-2020</td>
+                                <td>(576:) REALE CRISTOBAL SOTO</td>
+                                <td>(9:) VIGENTE</td>
+                                <td>Creacion de simulacion</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>(49:) Observado</td>
+                                <td>21-01-2020</td>
+                                <td>(576:) REALE CRISTOBAL SOTO</td>
+                                <td>(16:) OBSERVADA</td>
+                                <td>Simulacion retenida por controles tecnicos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p-panel>
+            </div>
+        </div>
+    </div>
+</p-dialog>
+<!-- MODAL PARA CONSULTAS Y OPCIONES  -->

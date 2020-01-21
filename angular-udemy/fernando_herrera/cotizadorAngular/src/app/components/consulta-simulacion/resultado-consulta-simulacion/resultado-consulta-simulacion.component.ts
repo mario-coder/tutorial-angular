@@ -11,6 +11,12 @@ export class ResultadoConsultaSimulacionComponent implements OnInit {
 
   displayDialog: boolean;
 
+  _displayOpcionesSimulacion: boolean = false;
+  _opcionEscogidaDialogSimulacion: number = 0;
+  _OPCION_DETALLE = 1;
+  _OPCION_REIMPRIMIR = 2;
+  _OPCION_CAMBIAR_ESTADO = 3;
+
   car: any = {};
 
   selectedCar: Car;
@@ -38,6 +44,11 @@ export class ResultadoConsultaSimulacionComponent implements OnInit {
   
       this.exportColumns = this.cols.map(col => ({title: col.header, dataKey: col.field}));
     }
+
+  showDialogSimulacion(_OPCION_ESCOGIDA) {
+      this._displayOpcionesSimulacion = true;
+      this._opcionEscogidaDialogSimulacion = _OPCION_ESCOGIDA;
+  }
 
   showDialogToAdd() {
       this.newCar = true;

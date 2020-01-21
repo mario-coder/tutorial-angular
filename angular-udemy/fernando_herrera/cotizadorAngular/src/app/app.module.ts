@@ -4,20 +4,18 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { NavbarCotizadorComponent } from './shared/navbar-cotizador/navbar-cotizador.component';
 import { LivianosModule } from './modulos/livianos/livianos.module';
 import { HomeCotizadorComponent } from './components/home-cotizador/home-cotizador.component';
 import { ConsultaSimulacionComponent } from './components/consulta-simulacion/consulta-simulacion.component';
-import { ResultadoConsultaSimulacionComponent } from './components/resultado-consulta-simulacion/resultado-consulta-simulacion.component';
+import { ResultadoConsultaSimulacionComponent } from './components/consulta-simulacion/resultado-consulta-simulacion/resultado-consulta-simulacion.component';
 import { LoginComponent } from './components/login/login.component';
 import { DatePickerConfigService } from './shared/config/date-picker-config';
-import { SharedModule } from './shared/modules/common/shared.module';
-import { AccordionModule } from 'primeng/accordion';
 import { DragDropDirective } from './shared/directives/drag-drop.directive';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { SharedCommonModule } from './shared/modules/common/shared-common.module';
 
 @NgModule({
   declarations: [
@@ -30,15 +28,12 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     LoginComponent
   ],
   imports: [
-    SharedModule,
+    SharedCommonModule,
     BrowserModule,
-    AccordionModule,
     AppRoutingModule,
     LivianosModule,
     BrowserAnimationsModule,
     CommonModule,
-    FormsModule, 
-    ReactiveFormsModule,
     HttpClientModule,
     BsDatepickerModule.forRoot(),
     NgxDropzoneModule

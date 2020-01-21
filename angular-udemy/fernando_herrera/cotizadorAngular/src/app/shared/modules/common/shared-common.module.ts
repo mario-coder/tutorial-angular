@@ -10,12 +10,14 @@ import { ButtonModule } from "primeng/button";
 import { PanelModule, InputTextModule } from "primeng";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { AccordionModule } from 'primeng/accordion';
 
 @NgModule({
   declarations: [],
   imports: [
     BrowserModule,
     CommonModule,
+    AccordionModule,
     PanelModule,
     CardModule,
     DialogModule,
@@ -31,6 +33,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
   exports: [
     BrowserModule,
     CommonModule,
+    AccordionModule,
     PanelModule,
     CardModule,
     DialogModule,
@@ -45,5 +48,5 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
   ],
   providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
 })
-export class SharedModule { }
+export class SharedCommonModule { }
 
