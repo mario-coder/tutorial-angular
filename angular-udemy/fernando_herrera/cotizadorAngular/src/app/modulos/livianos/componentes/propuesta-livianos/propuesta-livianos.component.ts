@@ -16,9 +16,14 @@ export class PropuestaLivianosComponent implements OnInit {
   FORMA_PAGO_PAT:number = 2;
   FORMA_PAGO_DIRECTO:number = 3;
 
+  RESPUESTA_SI = 1;
+  RESPUESTA_NO = 2;
+
   bsConfig: Partial<BsDatepickerConfig>;
   dateCustomClasses: DatepickerDateCustomClasses[];
 
+  respuestaPreexistenciasSelected : number;
+  respuestaAccesoriosSelected : number;
   formaPagoSelected : number;
   obtenerTotalesSelected:boolean = false;
   propuestaGeneradaSelected:boolean = false;
