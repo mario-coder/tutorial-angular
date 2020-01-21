@@ -52,3 +52,7 @@
 .files-list .delete-file img {
     width: 30px;
 }
+
+table .fa-2x {
+    color: green;
+}

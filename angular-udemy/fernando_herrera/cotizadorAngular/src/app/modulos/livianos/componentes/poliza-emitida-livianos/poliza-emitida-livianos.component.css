@@ -1,3 +1,7 @@
 .container table thead th {
     vertical-align: top;
 }
+
+table .fa-2x {
+    color: green;
+}
