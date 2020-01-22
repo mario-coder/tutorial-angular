@@ -2,6 +2,8 @@
 
 @import "./assets/animista/animista.css";
 @import "~ngx-bootstrap/datepicker/bs-datepicker.css";
+/* @import "./assets/themes/theme-blue-v4.css"; */
+@import "./assets/themes/nova-colored.css";
 body {
     background-color: #e3e3e3 !important;
     height: 100%;
@@ -39,8 +41,8 @@ div.ui-panel-titlebar {
     background-color: #f8f8f8;
     border-radius: 5px;
     border: 1px solid rgb(210, 214, 214);
-    margin: 5px;
-    padding: 16px;
+    margin: 1% auto;
+    padding: 1%;
     width: 100% !important;
 }
 
@@ -128,6 +130,7 @@ input {
 /***********/
 body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
     background-color: rgb(8, 8, 133) !important;
+    color: white;
 }
 
 body .ui-accordion .ui-accordion-content {

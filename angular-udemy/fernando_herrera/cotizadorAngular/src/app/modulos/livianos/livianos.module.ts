@@ -4,7 +4,7 @@ import { PropuestaLivianosComponent } from './componentes/propuesta-livianos/pro
 import { EmisionLivianosComponent } from './componentes/emision-livianos/emision-livianos.component';
 import { PropuestaGeneradaLivianosComponent } from './componentes/propuesta-livianos/propuesta-generada-livianos/propuesta-generada-livianos.component';
 import { BuscarDocumentosLivianosComponent } from './componentes/simulacion-livianos/buscar-documentos-livianos/buscar-documentos-livianos.component';
-import { TarifaLivianosComponent } from './componentes/tarifa-livianos/tarifa-livianos.component';
+import { TarifaLivianosComponent } from './componentes/simulacion-livianos/tarifa-livianos/tarifa-livianos.component';
 import { PolizaEmitidaLivianosComponent } from './componentes/emision-livianos/poliza-emitida-livianos/poliza-emitida-livianos.component';
 import { SharedCommonModule } from '../../shared/modules/common/shared-common.module';
 
