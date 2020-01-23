@@ -12,9 +12,9 @@ import { DatePickerConfigService } from 'src/app/shared/config/date-picker-confi
 export class PropuestaLivianosComponent implements OnInit {
   tiposDocumento:any[];
 
-  FORMA_PAGO_PAC:number = 1;
-  FORMA_PAGO_PAT:number = 2;
-  FORMA_PAGO_DIRECTO:number = 3;
+  FORMA_PAGO_PAC:string = "1";
+  FORMA_PAGO_PAT:string = "2";
+  FORMA_PAGO_DIRECTO:string = "3";
 
   RESPUESTA_SI = 1;
   RESPUESTA_NO = 2;
@@ -24,7 +24,7 @@ export class PropuestaLivianosComponent implements OnInit {
 
   respuestaPreexistenciasSelected : number;
   respuestaAccesoriosSelected : number;
-  formaPagoSelected : number;
+  formaPagoSelected : any;
   obtenerTotalesSelected:boolean = false;
   propuestaGeneradaSelected:boolean = false;
 
@@ -43,7 +43,7 @@ export class PropuestaLivianosComponent implements OnInit {
       this.bsConfig = this.datePickerConfig.bsConfig;
       this.dateCustomClasses = this.datePickerConfig.dateCustomClasses;
 
-      this.formaPagoSelected = this.FORMA_PAGO_PAC;
+      this.formaPagoSelected = this.FORMAS_PAGO[0];
 
       this.tiposDocumento = [
         { label: "PERSONA NATURAL", code: "1" },
