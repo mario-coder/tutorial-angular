@@ -33,6 +33,7 @@ export class SimulacionLivianosComponent implements OnInit {
   simulaciones: any[];
   tarifasClasificadas: any = {};
   asistencias: any[];
+  descuentoRecargo: any[];
 
   constructor(
       private tarificadorService: TarificadorService,
@@ -74,6 +75,10 @@ export class SimulacionLivianosComponent implements OnInit {
     this.talleres = [
       { label: "TALLER REALE", code: "1" },
       { label: "TALLER MARCA", code: "2" }
+    ];
+    this.descuentoRecargo = [
+      { label: "DESCUENTO", code: "1" },
+      { label: "RECARGO", code: "2" }
     ];
     this.asistencias = [
       { label: "A", code: "1" },

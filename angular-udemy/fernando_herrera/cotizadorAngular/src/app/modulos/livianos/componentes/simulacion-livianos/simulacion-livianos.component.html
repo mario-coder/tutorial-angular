@@ -41,22 +41,18 @@
                 <p-panel [toggleable]="true">
 
                     <p-header>
-                        <!-- <div class="ui-helper-clearfix"> -->
-                            <span class="ui-panel-title" style="display:inline-block;">
-                                <i class="fa fa-list"></i>
-                                Parámetros Iniciales 
+                        <div class="ui-panel-title">
+                            <i class="fa fa-list"></i>
+                            Datos Principales
+
+                            <div class="ui-panel-title-buttons">
                                 <button pButton 
-                                label="Buscar Documento"
-                                (click)="_displayBuscarDocumento = true"
-                                class="ui-button-raised ui-button-success float-right btnSearch"
-                                type="button" icon="pi pi-search" iconPos="left"></button>
-                            </span>
-                            <!-- <div class="inputSearch">
-                                <button pButton 
-                                class="ui-button-raised ui-button-success"
-                                type="button" icon="pi pi-search" iconPos="left"></button>
-                            </div> -->
-                        <!-- </div> -->
+                                    label="Buscar Documento"
+                                    (click)="_displayBuscarDocumento = true"
+                                    class="ui-button-raised ui-button-success"
+                                    type="button" icon="pi pi-search" iconPos="left"></button>
+                            </div>
+                        </div>
                     </p-header>
 
                     <div class="panel-container">
@@ -73,10 +69,10 @@
                         <div class="container mx-1 px-1">
                             <div class="row mb-3">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                    <label for="estadosVehiculo" class="input-label">Nuevo/Usado *</label>
-                                    <select class="form-control " name="estadosVehiculo" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option>
-                                    </select>
+                                    <label for="estadoVehiculo" class="input-label">Nuevo/Usado *</label>
+                                    <p-dropdown [options]="estadosVehiculo" name="estadosVehiculo" 
+                                        [(ngModel)]="selectedEstadoVehiculo" 
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -88,23 +84,23 @@
                             <div class="row mb-3">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="anio" class="input-label">Año *</label>
-                                    <select class="form-control " name="anio" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option *ngFor="let anio of anios" value={{anio.code}} >{{ anio.label }}</option>
-                                    </select>
+                                    <p-dropdown [options]="anios" name="anio" 
+                                        [(ngModel)]="selectedEstadoVehiculo" 
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="marca" class="input-label">Marca *</label>
-                                    <select name="marca" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                      <option *ngFor="let marca of marcas" value={{marca.code}} >{{ marca.label }}</option>
-                                    </select>
+                                    <p-dropdown [options]="marcas" name="marca" filter="true"
+                                        [(ngModel)]="selectedEstadoVehiculo" 
+                                        placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="modelo" class="input-label">Modelo *</label>
-                                    <select name="modelo" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                      <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option>
-                                    </select>
+                                    <p-dropdown [options]="modelos" name="modelo" 
+                                        [(ngModel)]="selectedEstadoVehiculo" filter="true"
+                                        placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
                                 </div>
                             </div>
                         </div>
@@ -128,52 +124,52 @@
                                 <div class="row mb-3">
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="tipoDocumento" class="input-label">Tipo de Documento *</label>
-                                        <select name="tipoDocumento" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                            <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
-                                        </select>
+                                        <p-dropdown [options]="tiposDocumento" name="tipoDocumento" 
+                                        [(ngModel)]="selectedEstadoVehiculo"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
 
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="numeroDocumento" class="input-label">Numero de Documento * </label>
-                                        <input class="form-control" name="numeroDocumento" type="text" />
+                                        <input pInputText name="numeroDocumento" type="text" />
                                     </div>
 
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="primerNombre" class="input-label">Primer Nombre *</label>
-                                        <input class="form-control" name="primerNombre" type="text" />
+                                        <input pInputText name="primerNombre" type="text" />
                                     </div>
 
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="apellidoPaterno" class="input-label">Apellido Paterno *</label>
-                                        <input class="form-control" name="apellidoPaterno" type="text" />
+                                        <input pInputText name="apellidoPaterno" type="text" />
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="comuna" class="input-label">Comuna *</label>
-                                        <select name="comuna" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                            <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
-                                        </select>
+                                        <p-dropdown [options]="comunas" name="comuna" 
+                                        [(ngModel)]="selectedEstadoVehiculo" filter="true"
+                                        placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
                                     </div>
 
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="email" class="input-label">Email *</label>
-                                        <input class="form-control" name="email" type="text" />
+                                        <input pInputText name="email" type="text" />
                                     </div>
 
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="inicioNuevaVigencia" class="input-label">Inicio Nueva Vigencia</label>
-                                        <div class="input-group">
-                                            <input type="text" name="inicioNuevaVigencia" class="form-control calendar-input"
-                                            bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
-                                            aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" id="basic-addon2">
-                                                    <i class="fa fa-calendar-day"></i>
-                                                </span>
-                                            </div>
+                                        <div class="ui-inputgroup">
+                                            <input type="text" name="inicioNuevaVigencia"
+                                                pInputText class="calendar-input"
+                                                #dp="bsDatepicker"
+                                                bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
+                                            <button pButton type="button" 
+                                                icon="fa fa-calendar-alt" class="ui-button-primary"
+                                                (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen"></button>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -196,21 +192,21 @@
                                 <div class="row mb-3">
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="taller" class="input-label">Taller</label>
-                                        <select class="form-control" name="taller" [(ngModel)]="selectedEstadoVehiculo">
-                                            <option *ngFor="let taller of talleres" value={{taller.code}} >{{ taller.label }}</option>
-                                        </select>
+                                        <p-dropdown [options]="talleres" name="taller" 
+                                        [(ngModel)]="selectedEstadoVehiculo"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="asistencia" class="input-label">Asistencia</label>
-                                        <select class="form-control " name="asistencia" [(ngModel)]="selectedEstadoVehiculo">
-                                            <option *ngFor="let asistencia of asistencias" value={{asistencia.code}} >{{ asistencia.label }}</option>
-                                        </select>
+                                        <p-dropdown [options]="asistencias" name="asistencia" 
+                                        [(ngModel)]="selectedEstadoVehiculo"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="rcEnExceso" class="input-label">RC en Exceso</label>
-                                        <select class="form-control " name="rcEnExceso" [(ngModel)]="selectedEstadoVehiculo">
-                                    <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
-                                        </select>
+                                        <p-dropdown name="rcEnExceso" 
+                                        [(ngModel)]="selectedEstadoVehiculo"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
                                 </div>
                             </div>
@@ -254,7 +250,7 @@
                 <p-panel [toggleable]="true">
 
                     <p-header>
-                        <span class="ui-panel-title" style="font-size:1.5em;">
+                        <span class="ui-panel-title">
                             <i class="fa fa-money-bill"></i>
                             Ofertas Disponibles
                         </span>
@@ -352,15 +348,14 @@
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="descuentoRecargo" class="input-label">Descuento/Recargo</label>
-                                        <select class="form-control " name="descuentoRecargo" [(ngModel)]="selectedEstadoVehiculo">
-                                            <option value="0" ></option>
-                                            <option value="1" >DESCUENTO</option>
-                                            <option value="2" >RECARGO</option>
-                                        </select>
+                                        <p-dropdown name="descuentoRecargo" [options]="descuentoRecargo"
+                                            [(ngModel)]="selectedEstadoVehiculo"
+                                            placeholder="Selecione" optionLabel="label">
+                                        </p-dropdown>
                                     </div>
                                     <div class="col">
                                         <label for="porcentaje" class="input-label">Porcentaje</label>
-                                        <input class="form-control" name="porcentaje" type="text" />
+                                        <input pInputText name="porcentaje" type="text" />
                                     </div>
                                     <div class="col">
                                         <label for="retarificar" class="input-label">&nbsp;</label>

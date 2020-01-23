@@ -11,6 +11,7 @@ import { PanelModule, InputTextModule } from "primeng";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AccordionModule } from 'primeng/accordion';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [],
@@ -28,7 +29,8 @@ import { AccordionModule } from 'primeng/accordion';
     FormsModule,
     ReactiveFormsModule,
     BsDatepickerModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    DropdownModule
   ],
   exports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { AccordionModule } from 'primeng/accordion';
     FormsModule,
     ReactiveFormsModule,
     BsDatepickerModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    DropdownModule
   ],
   providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
 })

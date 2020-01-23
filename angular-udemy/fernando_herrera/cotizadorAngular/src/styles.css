@@ -3,7 +3,7 @@
 @import "./assets/animista/animista.css";
 @import "~ngx-bootstrap/datepicker/bs-datepicker.css";
 /* @import "./assets/themes/theme-blue-v4.css"; */
-@import "./assets/themes/nova-colored.css";
+@import "./assets/themes/nova-colored-custom.css";
 body {
     background-color: #e3e3e3 !important;
     height: 100%;
@@ -45,6 +45,22 @@ div.ui-panel-titlebar {
     padding: 1%;
     width: 100% !important;
 }
+
+/*workaround toggle button en panel con botones*/
+
+        body .ui-panel .ui-panel-title {
+            width: calc(100% - 30px) !important;
+            display: inline-block !important;
+        }
+        body .ui-panel .ui-panel-title .ui-panel-title-buttons {
+                float: right !important;
+                margin: 0.1em 0.2em !important;
+        }
+
+        body .ui-panel .ui-panel-title .ui-panel-titlebar-icon {
+            margin-top: -0.15em !important;
+            margin-bottom: -0.15em !important;
+        }
 
 
   /****************/
