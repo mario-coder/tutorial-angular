@@ -16,8 +16,13 @@
 }
 
 .flip-in-hor-bottom {
-	-webkit-animation: flip-in-hor-bottom 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: flip-in-hor-bottom 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-webkit-animation: flip-in-hor-bottom 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-hor-bottom 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.flip-in-ver-right {
+	-webkit-animation: flip-in-ver-right 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-ver-right 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .jello-horizontal {
@@ -93,8 +98,8 @@
 }
 
 .slide-in-left {
-	-webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-webkit-animation: slide-in-left 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .slide-in-right {
@@ -1530,6 +1535,36 @@
   100% {
     -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
             transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+    opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation flip-in-ver-right
+ * ----------------------------------------
+ */
+ @-webkit-keyframes flip-in-ver-right {
+  0% {
+    -webkit-transform: rotateY(-80deg);
+            transform: rotateY(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+    opacity: 1;
+  }
+}
+@keyframes flip-in-ver-right {
+  0% {
+    -webkit-transform: rotateY(-80deg);
+            transform: rotateY(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
     opacity: 1;
   }
 }

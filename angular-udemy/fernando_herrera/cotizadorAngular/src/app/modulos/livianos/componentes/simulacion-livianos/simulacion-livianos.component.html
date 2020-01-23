@@ -4,9 +4,11 @@
 
         <div class="ml-3">
             <p-header>
-                <h1>Simular Livianos</h1>
-                <i class="fa fa-home float-left m-1"></i>
-                <h6>Inicio/Simular Livianos</h6>
+                <div class="flip-in-hor-bottom">
+                    <h1>Simular Livianos</h1>
+                    <i class="fa fa-home float-left m-1"></i>
+                    <h6>Inicio/Simular Livianos</h6>
+                </div>
             </p-header>
         </div>
 
@@ -33,7 +35,7 @@
         </p-dialog>
 
         <!-- Contenedor datos principales -->
-        <div class="container section-container shadow-drop-center">
+        <div class="container section-container flip-in-hor-bottom">
 
             <form (ngSubmit)="tarificar(f)" #f="ngForm">
 
@@ -235,7 +237,6 @@
                     </div>
                     <!-- Botones tarificacion -->
 
-
                 </p-panel>
                 <!-- Panel Principal -->
             </form>
@@ -246,7 +247,7 @@
 
         <!-- Contenedor tarifas -->
         <div class="slide-in-bck-center" *ngIf="tarificado">
-            <div class="container section-container shadow-drop-center" *ngIf="tarificado">
+            <div class="container section-container" *ngIf="tarificado">
                 <p-panel [toggleable]="true">
 
                     <p-header>
@@ -406,6 +407,8 @@
     <app-propuesta-livianos *ngIf="CURRENT_STAGE == PROPUESTA"></app-propuesta-livianos>
     <!-- Contenedor Propuesta -->
 
+    <br>
+    <br>
     <br>
     <br>
 

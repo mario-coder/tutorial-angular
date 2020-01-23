@@ -1,5 +1,5 @@
 <!-- Contenedor datos principales -->
-<div class="fade-in">
+<div class="fade-in flip-in-ver-right">
     <p-card >
         
         <div class="ml-3">
@@ -13,7 +13,7 @@
         <form (ngSubmit)="generarPropuesta(fp)" #fp="ngForm">
 
             <!-- Panel Principal Propuesta-->
-            <div class="container section-container shadow-drop-center">
+            <div class="container section-container">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -74,7 +74,7 @@
             <br>
 
             <!-- Preexistencias -->
-            <div class="container section-container shadow-drop-center">
+            <div class="container section-container">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -158,7 +158,7 @@
             <br>
 
             <!-- Accesorios -->
-            <div class="container section-container shadow-drop-center">
+            <div class="container section-container">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -229,7 +229,7 @@
             <br>
 
             <!-- Modalidad de Ingreso -->
-            <div class="container section-container shadow-drop-center">
+            <div class="container section-container">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -312,7 +312,7 @@
             <br>
 
             <!-- Datos Personas -->
-            <div class="container section-container shadow-drop-center">
+            <div class="container section-container">
             <p-panel [toggleable]="true">
                 <p-header>
                     <span class="ui-panel-title">
@@ -324,7 +324,7 @@
                 <p-tabView>
                     <p-tabPanel header="Asegurado/Propietario">
 
-                        <div class="panel-container fade-in">
+                        <div class="panel-container flip-in-hor-bottom">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -434,7 +434,7 @@
 
                     <p-tabPanel header="Contratante">
 
-                        <div class="panel-container fade-in">
+                        <div class="panel-container flip-in-hor-bottom">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -512,7 +512,7 @@
 
                     <p-tabPanel header="Beneficiario">
 
-                        <div class="panel-container fade-in">
+                        <div class="panel-container flip-in-hor-bottom">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -597,7 +597,7 @@
             <br>
 
             <!-- Datos de Pago -->
-            <div class="container section-container shadow-drop-center">
+            <div class="container section-container">
             <p-panel [toggleable]="true">
                 <p-header>
                     <span class="ui-panel-title">
@@ -618,7 +618,7 @@
                 </div>
 
                 <!-- Forma de pago PAC -->
-                <div class="panel-container fade-in" *ngIf="formaPagoSelected == FORMA_PAGO_PAC">
+                <div class="panel-container flip-in-hor-bottom" *ngIf="formaPagoSelected == FORMA_PAGO_PAC">
                     <p-panel>
                         <p-header>
                             <span class="ui-panel-title">
@@ -693,7 +693,7 @@
                 <!-- Forma de pago PAC -->
 
                 <!-- Forma de pago PAT -->
-                <div class="panel-container fade-in" *ngIf="formaPagoSelected == FORMA_PAGO_PAT">
+                <div class="panel-container flip-in-hor-bottom" *ngIf="formaPagoSelected == FORMA_PAGO_PAT">
                     <p-panel>
                         <p-header>
                             <span class="ui-panel-title">
@@ -768,7 +768,7 @@
                 <!-- Forma de pago PAT -->
 
                 <!-- Forma de pago DIRECTO -->
-                <div class="panel-container fade-in" *ngIf="formaPagoSelected == FORMA_PAGO_DIRECTO">
+                <div class="panel-container flip-in-hor-bottom" *ngIf="formaPagoSelected == FORMA_PAGO_DIRECTO">
                     <p-panel>
                         <p-header>
                             <span class="ui-panel-title">
@@ -837,7 +837,7 @@
         
         <!-- Cuadro Totales -->
         <div *ngIf="obtenerTotalesSelected"
-        class="container section-container fade-in shadow-drop-center">
+        class="container section-container flip-in-ver-right">
             <p-panel [toggleable]="true">
                 <p-header>
                     <span class="ui-panel-title">
