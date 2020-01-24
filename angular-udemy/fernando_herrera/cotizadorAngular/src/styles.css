@@ -89,12 +89,6 @@ div.ui-panel-titlebar {
     font-size: 100% !important;
 }
 
-/*.form-control,
-select {
-    height: 2vw !important;
-}
-*/
-
 input {
     max-width: 100% !important;
     /*min-width: 100% !important;*/
@@ -104,11 +98,6 @@ input {
     width: 100% !important;
 }
 
-/*
-.ui-inputtext {
-    font-size: 90% !important;
-}
-*/
 
   /************/
  /*DATATABLES*/
@@ -134,16 +123,19 @@ input {
     display: block !important;
 }
 
-
-
-
-
-
-
 .seleccionado {
     border: 6px solid rgb(230, 215, 0) !important;
 }
 
+  /***********/
+ /*BUSQUEDAS*/
+/***********/
+.inputSearch {
+    width: 30% !important;
+    min-width: 30% !important;
+    max-width: 40% !important;
+    float: right !important;
+}
 
   /***********/
  /*ACCORDION*/
@@ -199,5 +191,5 @@ table td.ui-datepicker-today>a {
 }
 
 .calendar-input {
-   min-width: 60% !important;
+   min-width: 90% !important;
 }

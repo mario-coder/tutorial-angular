@@ -115,38 +115,36 @@
                                         Periodo
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="1" >REGISTRO</option>
-                                        </select>
+                                        <p-dropdown name="periodo" 
+                                        [(ngModel)]="selectedEstadoVehiculo"
+                                        placeholder="REGISTRO" optionLabel="label"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 ">Fecha Desde</div>
                                     <div class="col-7 ">
-                                        <div class="input-group ">
-                                            <input type="text " class="form-control calendar-input"
-                                            bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
-                                            aria-label="Fecha Desde " aria-describedby="basic-addon2 " />
-                                            <div class="input-group-append ">
-                                                <span class="input-group-text " id="basic-addon2 ">
-                                                    <i class="fa fa-calendar-day "></i>
-                                                </span>
-                                            </div>
+                                        <div class="ui-inputgroup">
+                                            <input type="text" name="fechaDesde"
+                                                pInputText class="calendar-input"
+                                                #dp1="bsDatepicker"
+                                                bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
+                                            <button pButton type="button" 
+                                                icon="fa fa-calendar-alt" class="ui-button-primary"
+                                                (click)="dp1.toggle()" [attr.aria-expanded]="dp1.isOpen"></button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 ">Fecha Hasta</div>
                                     <div class="col-7 ">
-                                        <div class="input-group ">
-                                            <input type="text " class="form-control calendar-input"
-                                            bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
-                                            aria-label="Fecha Hasta " aria-describedby="basic-addon3 " />
-                                            <div class="input-group-append ">
-                                                <span class="input-group-text " id="basic-addon3 ">
-                                                    <i class="fa fa-calendar-day "></i>
-                                                </span>
-                                            </div>
+                                        <div class="ui-inputgroup">
+                                            <input type="text" name="fechaHasta"
+                                                pInputText class="calendar-input"
+                                                #dp2="bsDatepicker"
+                                                bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
+                                            <button pButton type="button" 
+                                                icon="fa fa-calendar-alt" class="ui-button-primary"
+                                                (click)="dp2.toggle()" [attr.aria-expanded]="dp2.isOpen"></button>
                                         </div>
                                     </div>
                                 </div>
@@ -218,19 +216,19 @@
                                 <div class="row">
                                     <div class="col-5 ">Numero De Documento</div>
                                     <div class="col-7 ">
-                                        <input type="text " class="form-control" />
+                                        <input pInputText name="" type="text" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 ">Nombre</div>
                                     <div class="col-7 ">
-                                        <input type="text " class="form-control" />
+                                        <input pInputText name="" type="text" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 ">Apellido</div>
                                     <div class="col-7 ">
-                                        <input type="text " class="form-control" />
+                                        <input pInputText name="" type="text" />
                                     </div>
                                 </div>
 
@@ -299,7 +297,7 @@
                                 <div class="row">
                                     <div class="col-5 ">Patente</div>
                                     <div class="col-7 ">
-                                        <input type="text " class="form-control" />
+                                        <input pInputText name="" type="text" />
                                     </div>
                                 </div>
                                 <div class="row">

@@ -50,16 +50,15 @@
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                    <label for="inicioNuevaVigencia" class="input-label">Inicio Nueva Vigencia *</label>
-                                    <div class="input-group">
-                                        <input type="text" name="inicioNuevaVigencia" class="form-control calendar-input"
-                                        bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
-                                        aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                <i class="fa fa-calendar-day"></i>
-                                            </span>
-                                        </div>
+                                    <label for="fechaInicioNuevaVigencia" class="input-label">Inicio Nueva Vigencia *</label>
+                                    <div class="ui-inputgroup">
+                                        <input type="text" name="fechaInicioNuevaVigencia"
+                                            pInputText class="calendar-input"
+                                            #dp="bsDatepicker"
+                                            bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
+                                        <button pButton type="button" 
+                                            icon="fa fa-calendar-alt" class="ui-button-primary"
+                                            (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen"></button>
                                     </div>
                                 </div>
                             </div>
@@ -96,15 +95,15 @@
                         <div class="container mx-1 px-1">
                             <div class="row mb-3">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                    <select class="form-control " name="respuestaDanos" [(ngModel)]="respuestaPreexistenciasSelected">
-                                        <option value="2" >NO</option>
-                                        <option value="1" >SI</option>
-                                    </select>
+                                    <p-dropdown [options]="RESPUESTAS_SI_NO" name="respuestaPreexistencias" 
+                                        [(ngModel)]="preexistenciasSelected"
+                                        optionLabel="label"></p-dropdown>
                                 </div>
                             </div>
                         </div>
 
-                        <div *ngIf="respuestaPreexistenciasSelected == RESPUESTA_SI" class="fade-in">
+                        <div *ngIf="preexistenciasSelected !== undefined && preexistenciasSelected.code == RESPUESTA_SI" 
+                        class="fade-in">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -180,15 +179,15 @@
                         <div class="container mx-1 px-1">
                             <div class="row mb-3">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                    <select class="form-control " name="respuestaAccesorios" [(ngModel)]="respuestaAccesoriosSelected">
-                                        <option value="2" >NO</option>
-                                        <option value="1" >SI</option>
-                                    </select>
+                                    <p-dropdown [options]="RESPUESTAS_SI_NO" name="respuestaAccesorios" 
+                                        [(ngModel)]="accesoriosSelected"
+                                        optionLabel="label"></p-dropdown>
                                 </div>
                             </div>
                         </div>
 
-                        <div *ngIf="respuestaAccesoriosSelected == RESPUESTA_SI" class="fade-in">
+                        <div *ngIf="accesoriosSelected !== undefined && accesoriosSelected.code == RESPUESTA_SI"
+                         class="fade-in">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -251,10 +250,9 @@
                         <div class="container mx-1 px-1">
                             <div class="row mb-3">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                    <select class="form-control " name="respuestaModalidadIngreso" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option value="1" >FACTURA</option>
-                                        <option value="2" >INSPECCION</option>
-                                    </select>
+                                    <p-dropdown [options]="MODALIDADES_INGRESO" name="modalidadIngreso" 
+                                        [(ngModel)]="modalidadIngresoSelected"
+                                        optionLabel="label"></p-dropdown>
                                 </div>
                             </div>
                         </div>
@@ -282,15 +280,14 @@
 
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="fechaFactura" class="input-label">Fecha Factura *</label>
-                                    <div class="input-group">
-                                        <input type="text" name="fechaFactura" class="form-control calendar-input"
-                                        bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
-                                        aria-label="Fecha Inicio Vigencia" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text" id="basic-addon2">
-                                                <i class="fa fa-calendar-day"></i>
-                                            </span>
-                                        </div>
+                                    <div class="ui-inputgroup">
+                                        <input type="text" name="fechaFactura"
+                                            pInputText class="calendar-input"
+                                            #dp="bsDatepicker"
+                                            bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
+                                        <button pButton type="button" 
+                                            icon="fa fa-calendar-alt" class="ui-button-primary"
+                                            (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen"></button>
                                     </div>
                                 </div>
 
@@ -337,7 +334,7 @@
                                     <div class="row mb-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="tipoDocumento" class="input-label">Tipo de Documento *</label>
-                                            <p-dropdown [options]="tiposDocumento" name="tipoDocumento" 
+                                            <p-dropdown [options]="TIPOS_DOCUMENTO" name="tipoDocumento" 
                                                 [(ngModel)]="selectedTipoDocumento"
                                                 placeholder="Selecione" optionLabel="label"></p-dropdown>
                                         </div>
@@ -388,7 +385,7 @@
 
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="comuna" class="input-label">Comuna *</label>
-                                            <p-dropdown [options]="comunas" name="comuna" 
+                                            <p-dropdown [options]="COMUNAS" name="comuna" 
                                             [(ngModel)]="selectedEstadoVehiculo" filter="true"
                                             placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
                                         </div>
@@ -412,10 +409,9 @@
 
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="medioNotificacion" class="input-label">Medio Notificaciones *</label>
-                                            <select class="form-control" name="medioNotificacion" [(ngModel)]="selectedMedioNotificacion">
-                                                <option value="1" >EMAIL</option>
-                                                <option value="2" >TELEFONO</option>
-                                            </select>
+                                            <p-dropdown [options]="MEDIOS_NOTIFICACION" name="medioNotificacion" 
+                                                [(ngModel)]="respuestaMedioNotificacionSelected"
+                                                placeholder="Seleccione" optionLabel="label"></p-dropdown>
                                         </div>
                                     </div>
 
@@ -642,10 +638,9 @@
                             <div class="row mb-3">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="tipoCuenta" class="input-label">Tipo de Cuenta *</label>
-                                    <select class="form-control " name="tipoCuenta" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option value="1">Corriente</option>
-                                        <option value="2">Vista</option>
-                                    </select>
+                                    <p-dropdown [options]="TIPOS_CUENTA" name="tipoCuenta" 
+                                        [(ngModel)]="tipoCuentaSelected"
+                                        optionLabel="label"></p-dropdown>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="numeroCuenta" class="input-label">Numero de Cuenta *</label>
@@ -653,13 +648,9 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="banco" class="input-label">Banco *</label>
-                                    <select class="form-control" name="banco" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option value="1">BCI</option>
-                                        <option value="2">BICE</option>
-                                        <option value="3">CHILE</option>
-                                        <option value="4">Santander</option>
-                                        <option value="5">Scotiabank</option>
-                                    </select>
+                                    <p-dropdown [options]="BANCOS" name="banco" 
+                                        [(ngModel)]="bancoSelected" filter="true" appendTo="body"
+                                        placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="sucursalBanco" class="input-label">Sucursal Banco</label>
@@ -670,20 +661,15 @@
                             <div class="row mb-3">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="numeroCuotas" class="input-label">Cuotas *</label>
-                                    <select class="form-control " name="numeroCuotas" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
+                                    <p-dropdown [options]="NUMERO_CUOTAS" name="numeroCuotas" 
+                                        [(ngModel)]="numeroCuotasSelected" appendTo="body"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="diaDePago" class="input-label">Dia de Pago *</label>
-                                    <select class="form-control" name="diaDePago" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option value="5">5</option>
-                                        <option value="20">20</option>
-                                    </select>
+                                    <p-dropdown [options]="DIAS_PAGO" name="diaDePago" 
+                                        [(ngModel)]="diaPagoSelected" appendTo="body"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                 </div>
                             </div>
                         </div>
@@ -718,9 +704,9 @@
                             <div class="row mb-3">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="tipoTarjeta" class="input-label">Tipo Tarjeta *</label>
-                                    <select class="form-control" name="tipoTarjeta" [(ngModel)]="selectedEstadoVehiculo">
-                                        <!-- <option *ngFor="let estado of estadosVehiculo" value={{estado.code}} >{{ estado.label }}</option> -->
-                                    </select>
+                                    <p-dropdown [options]="TIPOS_TARJETA" name="tipoTarjeta" 
+                                        [(ngModel)]="tipoTarjetaSelected" appendTo="body"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="numeroTarjeta" class="input-label">Numero Tarjeta *</label>
@@ -728,13 +714,9 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="banco" class="input-label">Banco *</label>
-                                    <select class="form-control" name="banco" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option value="1">BCI</option>
-                                        <option value="2">BICE</option>
-                                        <option value="3">CHILE</option>
-                                        <option value="4">Santander</option>
-                                        <option value="5">Scotiabank</option>
-                                    </select>
+                                    <p-dropdown [options]="BANCOS" name="banco" 
+                                        [(ngModel)]="bancoSelected" filter="true" appendTo="body"
+                                        placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="fechaExpiracion" class="input-label">Fecha Expiracion (mm/aaaa) *</label>
@@ -745,20 +727,15 @@
                             <div class="row mb-3">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="numeroCuotas" class="input-label">Cuotas *</label>
-                                    <select class="form-control " name="numeroCuotas" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
+                                    <p-dropdown [options]="NUMERO_CUOTAS" name="numeroCuotas" 
+                                        [(ngModel)]="numeroCuotasSelected" appendTo="body"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="diaDePago" class="input-label">Dia de Pago *</label>
-                                    <select class="form-control" name="diaDePago" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option value="5">5</option>
-                                        <option value="20">20</option>
-                                    </select>
+                                    <p-dropdown [options]="DIAS_PAGO" name="diaDePago" 
+                                        [(ngModel)]="diaPagoSelected" appendTo="body"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                 </div>
                             </div>
                         </div>
@@ -781,20 +758,15 @@
                             <div class="row mb-3">
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="numeroCuotas" class="input-label">Cuotas *</label>
-                                    <select class="form-control " name="numeroCuotas" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
+                                    <p-dropdown [options]="NUMERO_CUOTAS" name="numeroCuotas" 
+                                        [(ngModel)]="numeroCuotasSelected" appendTo="body"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                     <label for="diaDePago" class="input-label">Dia de Pago *</label>
-                                    <select class="form-control" name="diaDePago" [(ngModel)]="selectedEstadoVehiculo">
-                                        <option value="5">5</option>
-                                        <option value="20">20</option>
-                                    </select>
+                                    <p-dropdown [options]="DIAS_PAGO" name="diaDePago" 
+                                        [(ngModel)]="diaPagoSelected" appendTo="body"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
                                 </div>
                             </div>
                         </div>
