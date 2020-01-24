@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  isLoggedIn : number = 1;
+  isLoggedIn : number = 0;
   title = 'cotizadorAngular';
   
   constructor(private router: Router) { 
