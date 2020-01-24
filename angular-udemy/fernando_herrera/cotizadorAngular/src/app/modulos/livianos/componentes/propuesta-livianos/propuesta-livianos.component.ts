@@ -25,6 +25,8 @@ export class PropuestaLivianosComponent implements OnInit {
   bsConfig: Partial<BsDatepickerConfig>;
   dateCustomClasses: DatepickerDateCustomClasses[];
 
+  fechaExpiracion: any;
+
   preexistenciasSelected : any;
   accesoriosSelected : any;
   modalidadIngresoSelected : any;
