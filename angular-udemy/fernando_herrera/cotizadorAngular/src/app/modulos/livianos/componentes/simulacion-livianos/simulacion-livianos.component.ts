@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import { TarificadorService } from "src/app/services/tarificador.service";
 import { BsDatepickerConfig, DatepickerDateCustomClasses } from "ngx-bootstrap/datepicker";
 import { DatePickerConfigService } from 'src/app/shared/config/date-picker-config';
+import { ComboFeedService } from 'src/app/services/data/combofeed.service';
 
 @Component({
   selector: "app-simulacion-livianos",
@@ -11,7 +12,8 @@ import { DatePickerConfigService } from 'src/app/shared/config/date-picker-confi
 })
 export class SimulacionLivianosComponent implements OnInit {
   _displayBuscarDocumento: boolean = false;
-  isLoggedIn : number = 1;
+  _isLoggedIn : number = 1;
+  
   SIMULACION:number = 1;
   PROPUESTA:number = 2;
   EMISION:number = 3;
@@ -20,22 +22,38 @@ export class SimulacionLivianosComponent implements OnInit {
 
   bsConfig: Partial<BsDatepickerConfig>;
   dateCustomClasses: DatepickerDateCustomClasses[];
+  
+  estadoVehiculoSelected: any;
+  anioSelected: any;
+  marcaSelected: any;
+  modeloSelected: any;
+  tipoDocumentoSelected: any;
+  comunaSelected: any;
+  tallerSelected: any;
+  asistenciaSelected: any;
+  descuentoRecargoSelected: any;
+  rcEnExcesoSelected: any;
+  companiaAnteriorSelected: any;
+  usoVehiculoSelected: any;
 
-  estadosVehiculo: any[];
-  anios: any[];
-  marcas: any[];
-  modelos: any[];
-  tiposDocumento: any[];
-  comunas: any[];
-  talleres: any[];
-  selectedEstadoVehiculo: any;
-  tarificado: boolean = false;
+  ESTADOS_VEHICULO: any[];
+  ANIOS: any[];
+  MARCAS: any[];
+  MODELOS: any[];
+  TIPOS_DOCUMENTO: any[];
+  COMUNAS: any[];
+  TALLERES: any[];
+  ASISTENCIAS: any[];
+  DESCUENTO_RECARGO: any[];
+  COMPANIAS_ANTERIORES: any[];
+  USOS_VEHICULO: any[];
+  
+  _tarificado: boolean = false;
   simulaciones: any[];
   tarifasClasificadas: any = {};
-  asistencias: any[];
-  descuentoRecargo: any[];
 
   constructor(
+      private comboFeedService: ComboFeedService,
       private tarificadorService: TarificadorService,
       private datePickerConfig: DatePickerConfigService
     ) {
@@ -48,42 +66,19 @@ export class SimulacionLivianosComponent implements OnInit {
     this.bsConfig = this.datePickerConfig.bsConfig;
     this.dateCustomClasses = this.datePickerConfig.dateCustomClasses;
 
-    this.estadosVehiculo = [
-      { label: "Nuevo", code: "1" },
-      { label: "Usado", code: "2" }
-    ];
-    this.anios = [
-      { label: "2020", code: "1" },
-      { label: "2019", code: "2" }
-    ];
-    this.marcas = [
-      { label: "Chevrolet", code: "1" },
-      { label: "Ford", code: "2" }
-    ];
-    this.modelos = [
-      { label: "Aveo", code: "1" },
-      { label: "Focus", code: "2" }
-    ];
-    this.tiposDocumento = [
-      { label: "PERSONA NATURAL", code: "1" },
-      { label: "PERSONA JURIDICA", code: "2" }
-    ];
-    this.comunas = [
-      { label: "LAS CONDES", code: "1" },
-      { label: "PROVIDENCIA", code: "2" }
-    ];
-    this.talleres = [
-      { label: "TALLER REALE", code: "1" },
-      { label: "TALLER MARCA", code: "2" }
-    ];
-    this.descuentoRecargo = [
+    this.ANIOS = this.comboFeedService.getAnios();
+    this.MARCAS = this.comboFeedService.getMarcas();
+    this.MODELOS = this.comboFeedService.getModelos();
+    this.COMPANIAS_ANTERIORES = this.comboFeedService.getCompaniasAnteriores();
+    this.USOS_VEHICULO = this.comboFeedService.getUsosVehiculo();
+    this.COMUNAS = this.comboFeedService.getComunas();
+    this.TALLERES = this.comboFeedService.getTalleres();;
+    this.ASISTENCIAS = this.comboFeedService.getAsistencias();
+    this.ESTADOS_VEHICULO = this.comboFeedService.getEstadosVehiculo();
+    this.TIPOS_DOCUMENTO = this.comboFeedService.getTiposDocumento();
+    this.DESCUENTO_RECARGO = [
       { label: "DESCUENTO", code: "1" },
       { label: "RECARGO", code: "2" }
-    ];
-    this.asistencias = [
-      { label: "A", code: "1" },
-      { label: "B", code: "2" },
-      { label: "PLUS", code: "2" }
     ];
   }
 
@@ -105,6 +100,8 @@ export class SimulacionLivianosComponent implements OnInit {
 
       console.log("this.tarifasclasificadas");
       console.log(this.tarifasClasificadas);
+
+      this._tarificado = true;
 
       // Swal.fire({
       //   allowOutsideClick: false,
@@ -179,7 +176,7 @@ export class SimulacionLivianosComponent implements OnInit {
       tarifasS
     }
 
-    this.tarificado = true;
+    this._tarificado = true;
     return tarifasClasificadas
   }
 

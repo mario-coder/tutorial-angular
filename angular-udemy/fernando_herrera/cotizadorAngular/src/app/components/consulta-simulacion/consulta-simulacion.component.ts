@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { BsDatepickerConfig, DatepickerDateCustomClasses } from "ngx-bootstrap/datepicker";
 import Swal from 'sweetalert2';
 import { DatePickerConfigService } from 'src/app/shared/config/date-picker-config';
+import { ComboFeedService } from 'src/app/services/data/combofeed.service';
 
 @Component({
   selector: "app-consulta-simulacion",
@@ -9,55 +10,103 @@ import { DatePickerConfigService } from 'src/app/shared/config/date-picker-confi
   styleUrls: ["./consulta-simulacion.component.css"]
 })
 export class ConsultaSimulacionComponent implements OnInit {
-  isLoggedIn : number = 1;
-  sidebarHidden: boolean = false;
-  busquedaRealizada: boolean = false;
+  _isLoggedIn : number = 1;
+  _sidebarHidden: boolean = false;
+  _busquedaRealizada: boolean = false;
   opcionMenu: string = "Ocultar Menu";
   iconoOpcionMenu: string = "fa-window-close";
 
   bsConfig: Partial<BsDatepickerConfig>;
   dateCustomClasses: DatepickerDateCustomClasses[];
 
-  comunas: any[];
-  marcas: any[];
-  modelos: any[];
-  anios: any[];
-  tiposDocumento: any[];
+  tipoConsultaSelected:any;
+  canalSelected:any;
+  corredorSelected:any;
+  companiaSelected:any;
+  ramoSelected:any;
+  periodoSelected:any;
+  estadoSimulacionSelected:any;
+  tipoVehiculoSelected:any;
+  usoVehiculoSelected:any;
+  subUsoVehiculoSelected:any;
+  perfilAseguradoSelected:any;
+  ocupacionHabitacionalSelected:any;
+  tipoConstruccionSelected:any;
+  zonaSelected:any;
+  regionSelected:any;
+
+  sucursalSelected:any;
+  comunaSelected:any;
+  marcaSelected:any;
+  modeloSelected:any;
+  anioSelected:any;
+  tipoDocumentoSelected:any;
+  tipoPersonaSelected:any;
+
+  TIPO_CONSULTA:any[];
+  CANALES:any[];
+  CORREDORES:any[];
+  COMPANIAS:any[];
+  RAMOS:any[];
+  PERIODOS:any[];
+  ESTADOS_SIMULACION:any[];
+  TIPOS_VEHICULO:any[];
+  USOS_VEHICULO:any[];
+  SUB_USOS_VEHICULO:any[];
+  PERFILES_ASEGURADO:any[];
+  OCUPACIONES_HABITACIONALES:any[];
+  TIPOS_CONSTRUCCION:any[];
+  ZONAS:any[];
+  REGIONES:any[];
+  SUCURSALES: any[];
+
+  COMUNAS: any[];
+  MARCAS: any[];
+  MODELOS: any[];
+  ANIOS: any[];
+  TIPOS_DOCUMENTO: any[];
+  TIPOS_PERSONA: any[];
   
-  constructor(private datePickerConfig: DatePickerConfigService) {}
+  constructor(
+    private comboFeedService: ComboFeedService,
+    private datePickerConfig: DatePickerConfigService) {}
   
   ngOnInit() {
     this.datePickerConfig.init();
     this.bsConfig = this.datePickerConfig.bsConfig;
     this.dateCustomClasses = this.datePickerConfig.dateCustomClasses;
 
-    this.comunas = [
-      { label: "LAS CONDES", code: "1" },
-      { label: "PROVIDENCIA", code: "2" }
-    ];
-    this.marcas = [
-      { label: "Chevrolet", code: "1" },
-      { label: "Ford", code: "2" }
-    ];
-    this.modelos = [
-      { label: "Aveo", code: "1" },
-      { label: "Focus", code: "2" }
-    ];
-    this.anios = [
-      { label: "2020", code: "1" },
-      { label: "2019", code: "2" }
-    ];
-    this.tiposDocumento = [
-      { label: "PERSONA NATURAL", code: "1" },
-      { label: "PERSONA JURIDICA", code: "2" }
-    ];
+    this.TIPO_CONSULTA = this.comboFeedService.getTiposConsulta();
+    this.CANALES = this.comboFeedService.getCanales();
+    this.CORREDORES = this.comboFeedService.getCorredores();
+    this.COMPANIAS = this.comboFeedService.getCompanias();
+    this.RAMOS = this.comboFeedService.getRamos();
+    this.PERIODOS = this.comboFeedService.getPeriodos();
+    this.ESTADOS_SIMULACION = this.comboFeedService.getEstadosSimulacion();
+    this.TIPOS_VEHICULO = this.comboFeedService.getTiposVehiculo();
+    this.USOS_VEHICULO = this.comboFeedService.getUsosVehiculo();
+    this.SUB_USOS_VEHICULO = this.comboFeedService.getSubUsosVehiculo();
+    this.PERFILES_ASEGURADO = this.comboFeedService.getPerfilesAsegurado();
+    this.OCUPACIONES_HABITACIONALES = this.comboFeedService.getOcupacionesHabitacionales();
+    this.TIPOS_CONSTRUCCION = this.comboFeedService.getTiposConstruccion();
+    this.ZONAS = this.comboFeedService.getZonas();
+    this.REGIONES = this.comboFeedService.getRegiones();
+    this.SUCURSALES = this.comboFeedService.getSucursales();
+
+    this.COMUNAS = this.comboFeedService.getComunas();
+    this.MARCAS = this.comboFeedService.getMarcas();
+    this.MODELOS = this.comboFeedService.getModelos();
+    this.ANIOS = this.comboFeedService.getAnios();
+    this.TIPOS_DOCUMENTO = this.comboFeedService.getTiposDocumento();
+    this.TIPOS_PERSONA = this.comboFeedService.getTiposPersona();
+    this.SUCURSALES = this.comboFeedService.getSucursales();
   }
 
   toggleMenu() {
-    this.sidebarHidden = !this.sidebarHidden;
+    this._sidebarHidden = !this._sidebarHidden;
 
-    this.opcionMenu = this.sidebarHidden ? "Mostrar Menu" : "Ocultar Menu";
-    this.iconoOpcionMenu = this.sidebarHidden ? "fa-list" : "fa-window-close";
+    this.opcionMenu = this._sidebarHidden ? "Mostrar Menu" : "Ocultar Menu";
+    this.iconoOpcionMenu = this._sidebarHidden ? "fa-list" : "fa-window-close";
   }
 
   buscar(){
@@ -67,7 +116,7 @@ export class ConsultaSimulacionComponent implements OnInit {
       text: 'Buscando registros ...',
       timer: 3000
     }).then(() => {
-      this.busquedaRealizada = true;
+      this._busquedaRealizada = true;
   
       Swal.fire({
         allowOutsideClick: false,

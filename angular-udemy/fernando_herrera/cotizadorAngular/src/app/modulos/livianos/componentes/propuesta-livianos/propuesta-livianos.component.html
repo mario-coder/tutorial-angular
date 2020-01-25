@@ -16,7 +16,7 @@
         <form (ngSubmit)="generarPropuesta(fp)" #fp="ngForm">
 
             <!-- Panel Principal Propuesta-->
-            <div class="container section-container">
+            <div class="container section-container flip-in-hor-bottom">
             <p-panel [toggleable]="true">
 
                 <p-header>
@@ -106,7 +106,7 @@
                         </div>
 
                         <div *ngIf="preexistenciasSelected !== undefined && preexistenciasSelected.code == RESPUESTA_SI" 
-                        class="fade-in">
+                        class="fade-in-bottom">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -190,7 +190,7 @@
                         </div>
 
                         <div *ngIf="accesoriosSelected !== undefined && accesoriosSelected.code == RESPUESTA_SI"
-                         class="fade-in">
+                         class="fade-in-bottom">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -324,7 +324,7 @@
                 <p-tabView>
                     <p-tabPanel header="Asegurado/Propietario">
 
-                        <div class="panel-container flip-in-hor-bottom">
+                        <div class="panel-container fade-in-bottom">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -338,7 +338,7 @@
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="tipoDocumento" class="input-label">Tipo de Documento *</label>
                                             <p-dropdown [options]="TIPOS_DOCUMENTO" name="tipoDocumento" 
-                                                [(ngModel)]="selectedTipoDocumento"
+                                                [(ngModel)]="tipoDocumentoSelected"
                                                 placeholder="Selecione" optionLabel="label"></p-dropdown>
                                         </div>
 
@@ -389,7 +389,8 @@
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="comuna" class="input-label">Comuna *</label>
                                             <p-dropdown [options]="COMUNAS" name="comuna" 
-                                            [(ngModel)]="selectedEstadoVehiculo" filter="true"
+                                            [(ngModel)]="comunaSelected" filter="true"
+                                            [virtualScroll]="true"
                                             placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
                                         </div>
                                     </div>
@@ -413,7 +414,7 @@
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="medioNotificacion" class="input-label">Medio Notificaciones *</label>
                                             <p-dropdown [options]="MEDIOS_NOTIFICACION" name="medioNotificacion" 
-                                                [(ngModel)]="respuestaMedioNotificacionSelected"
+                                                [(ngModel)]="medioNotificacionSelected"
                                                 placeholder="Seleccione" optionLabel="label"></p-dropdown>
                                         </div>
                                     </div>
@@ -433,7 +434,7 @@
 
                     <p-tabPanel header="Contratante">
 
-                        <div class="panel-container flip-in-hor-bottom">
+                        <div class="panel-container fade-in-bottom">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -447,7 +448,7 @@
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="tipoDocumento" class="input-label">Tipo de Documento *</label>
                                             <p-dropdown [options]="tiposDocumento" name="tipoDocumento" 
-                                                [(ngModel)]="selectedTipoDocumento"
+                                                [(ngModel)]="tipoDocumentoSelected"
                                                 placeholder="Selecione" optionLabel="label"></p-dropdown>
                                         </div>
 
@@ -499,7 +500,8 @@
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="comuna" class="input-label">Comuna *</label>
                                             <p-dropdown [options]="comunas" name="comuna" 
-                                            [(ngModel)]="selectedEstadoVehiculo" filter="true"
+                                            [(ngModel)]="comunaSelected" filter="true"
+                                            [virtualScroll]="true"
                                             placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
                                         </div>
                                     </div>
@@ -511,7 +513,7 @@
 
                     <p-tabPanel header="Beneficiario">
 
-                        <div class="panel-container flip-in-hor-bottom">
+                        <div class="panel-container fade-in-bottom">
                             <p-panel>
                                 <p-header>
                                     <span class="ui-panel-title">
@@ -525,7 +527,7 @@
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="tipoDocumento" class="input-label">Tipo de Documento *</label>
                                             <p-dropdown [options]="tiposDocumento" name="tipoDocumento" 
-                                                [(ngModel)]="selectedTipoDocumento"
+                                                [(ngModel)]="tipoDocumentoSelected"
                                                 placeholder="Selecione" optionLabel="label"></p-dropdown>
                                         </div>
 
@@ -576,8 +578,9 @@
 
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="comuna" class="input-label">Comuna *</label>
-                                            <p-dropdown [options]="comunas" name="comuna" 
-                                                [(ngModel)]="selectedEstadoVehiculo" filter="true"
+                                            <p-dropdown [options]="COMUNAS" name="comuna" 
+                                                [(ngModel)]="comunaSelected" filter="true"
+                                                [virtualScroll]="true"
                                                 placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
                                         </div>
                                     </div>
@@ -617,7 +620,7 @@
                 </div>
 
                 <!-- Forma de pago PAC -->
-                <div class="panel-container flip-in-hor-bottom" *ngIf="formaPagoSelected.code == FORMA_PAGO_PAC">
+                <div class="panel-container fade-in-bottom" *ngIf="formaPagoSelected.code == FORMA_PAGO_PAC">
                     <p-panel>
                         <p-header>
                             <span class="ui-panel-title">
@@ -682,7 +685,7 @@
                 <!-- Forma de pago PAC -->
 
                 <!-- Forma de pago PAT -->
-                <div class="panel-container flip-in-hor-bottom" *ngIf="formaPagoSelected.code == FORMA_PAGO_PAT">
+                <div class="panel-container fade-in-bottom" *ngIf="formaPagoSelected.code == FORMA_PAGO_PAT">
                     <p-panel>
                         <p-header>
                             <span class="ui-panel-title">
@@ -752,7 +755,7 @@
                 <!-- Forma de pago PAT -->
 
                 <!-- Forma de pago DIRECTO -->
-                <div class="panel-container flip-in-hor-bottom" *ngIf="formaPagoSelected.code == FORMA_PAGO_DIRECTO">
+                <div class="panel-container fade-in-bottom" *ngIf="formaPagoSelected.code == FORMA_PAGO_DIRECTO">
                     <p-panel>
                         <p-header>
                             <span class="ui-panel-title">

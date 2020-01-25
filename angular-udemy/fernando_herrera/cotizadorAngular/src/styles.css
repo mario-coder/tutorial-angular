@@ -1,9 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "./assets/animista/animista.css";
-@import "./assets/magic/magic.css";
 @import "~ngx-bootstrap/datepicker/bs-datepicker.css";
-/* @import "./assets/themes/theme-blue-v4.css"; */
 @import "./assets/themes/nova-colored-custom.css";
 body {
     background-color: #e3e3e3 !important;
@@ -192,4 +190,9 @@ table td.ui-datepicker-today>a {
 
 .calendar-input {
    min-width: 90% !important;
+}
+
+/*Monthpicker*/
+.ui-datepicker-monthpicker {
+    max-width: 20em !important;
 }
