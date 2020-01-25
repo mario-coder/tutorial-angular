@@ -9,8 +9,20 @@ export class ComboFeedService {
 
   getComunas():any[] {
     return [
+      { label: "CERRILLOS", code: "1" },
+      { label: "ESTACION CENTRAL", code: "1" },
+      { label: "HUECHURABA", code: "1" },
+      { label: "INDEPENDENCIA", code: "1" },
+      { label: "LA CISTERNA", code: "1" },
+      { label: "LA REINA", code: "1" },
       { label: "LAS CONDES", code: "1" },
-      { label: "PROVIDENCIA", code: "2" }
+      { label: "MAIPU", code: "1" },
+      { label: "ÑUÑOA", code: "1" },
+      { label: "PEÑALOLEN", code: "2" },
+      { label: "PROVIDENCIA", code: "2" },
+      { label: "RENCA", code: "2" },
+      { label: "SANTIAGO", code: "2" },
+      { label: "VITACURA", code: "2" },
     ]
   }
 
@@ -26,6 +38,16 @@ export class ComboFeedService {
       { label: "A", code: "1" },
       { label: "B", code: "2" },
       { label: "PLUS", code: "2" }
+    ]
+  }
+
+  getRcsEnExceso(): any[] {
+    return [
+      { label: "UF 1.000", code: "1" },
+      { label: "UF 2.000", code: "2" },
+      { label: "UF 3.000", code: "3" },
+      { label: "UF 4.000", code: "4" },
+      { label: "UF 5.000", code: "5" }
     ]
   }
 
@@ -170,9 +192,8 @@ export class ComboFeedService {
     return [
       {label: "TODOS(AS)", code: "1"},
       {label: "ALONSO DE CORDOVA", code: "2"},
-      {label: "ALONSO DE CORDOVA", code: "3"},
-      {label: "LA SERENA", code: "4"},
-      {label: "SANTIAGO CENTRO", code: "5"}
+      {label: "LA SERENA", code: "3"},
+      {label: "SANTIAGO CENTRO", code: "4"}
     ]
   }
 
@@ -223,7 +244,6 @@ export class ComboFeedService {
   
   getEstadosSimulacion(): any[] {
     return [
-      {label: "TODOS(AS)", code: "0"},
       {label: "VIGENTE", code: "1"},
       {label: "RECHAZADA", code: "2"}
     ]
@@ -292,4 +312,17 @@ export class ComboFeedService {
     ]
   }  
 
+  getTiposOperacion(): any {
+    return [
+      {label: "Simulacion", code: "1"},
+      {label: "Propuesta", code: "2"}
+    ]
+  }
+
+  getOpcionesDescuentoRecargo(): any[] {
+    return [
+      { label: "DESCUENTO", code: "1" },
+      { label: "RECARGO", code: "2" }
+    ];
+  }
 }

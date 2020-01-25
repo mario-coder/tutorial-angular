@@ -97,6 +97,10 @@ input {
 }
 
 
+.ui-inputgroup > .ui-inputtext {
+    min-width: 90% !important;
+}
+
   /************/
  /*DATATABLES*/
 /************/

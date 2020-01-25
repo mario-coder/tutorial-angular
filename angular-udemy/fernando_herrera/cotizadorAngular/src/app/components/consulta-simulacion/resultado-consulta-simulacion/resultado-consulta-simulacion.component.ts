@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from 'src/app/domain/car';
 import { CarService } from 'src/app/services/car.service';
+import { ComboFeedService } from 'src/app/services/data/combofeed.service';
 
 @Component({
   selector: 'app-resultado-consulta-simulacion',
@@ -16,6 +17,11 @@ export class ResultadoConsultaSimulacionComponent implements OnInit {
   _OPCION_DETALLE = 1;
   _OPCION_REIMPRIMIR = 2;
   _OPCION_CAMBIAR_ESTADO = 3;
+  
+  nuevoEstadoSimulacionSelected: any;
+  motivoCambioEstado: string;
+
+  ESTADOS_SIMULACION:any[];
 
   car: any = {};
 
@@ -29,10 +35,12 @@ export class ResultadoConsultaSimulacionComponent implements OnInit {
 
   exportColumns: any[];
 
-  constructor(private carService: CarService) { }
+  constructor(private carService: CarService,
+    private comboFeedService: ComboFeedService) { }
 
   ngOnInit() {
       this.cars = this.carService.getCarsLarge()
+      this.ESTADOS_SIMULACION = this.comboFeedService.getEstadosSimulacion();
 
       this.cols = [
           { field: 'vin', header: 'Vin' },

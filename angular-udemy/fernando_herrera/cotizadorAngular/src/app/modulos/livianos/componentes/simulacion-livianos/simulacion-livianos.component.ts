@@ -29,12 +29,13 @@ export class SimulacionLivianosComponent implements OnInit {
   modeloSelected: any;
   tipoDocumentoSelected: any;
   comunaSelected: any;
-  tallerSelected: any;
-  asistenciaSelected: any;
   descuentoRecargoSelected: any;
   rcEnExcesoSelected: any;
   companiaAnteriorSelected: any;
   usoVehiculoSelected: any;
+  tallerSelected: any;
+  asistenciaSelected: any;
+  rcsEnExcesoSelected: any;
 
   ESTADOS_VEHICULO: any[];
   ANIOS: any[];
@@ -42,12 +43,13 @@ export class SimulacionLivianosComponent implements OnInit {
   MODELOS: any[];
   TIPOS_DOCUMENTO: any[];
   COMUNAS: any[];
-  TALLERES: any[];
-  ASISTENCIAS: any[];
   DESCUENTO_RECARGO: any[];
   COMPANIAS_ANTERIORES: any[];
   USOS_VEHICULO: any[];
-  
+  TALLERES: any[];
+  ASISTENCIAS: any[];
+  RCS_EN_EXCESO: any[];
+    
   _tarificado: boolean = false;
   simulaciones: any[];
   tarifasClasificadas: any = {};
@@ -74,12 +76,10 @@ export class SimulacionLivianosComponent implements OnInit {
     this.COMUNAS = this.comboFeedService.getComunas();
     this.TALLERES = this.comboFeedService.getTalleres();;
     this.ASISTENCIAS = this.comboFeedService.getAsistencias();
+    this.RCS_EN_EXCESO = this.comboFeedService.getRcsEnExceso();
     this.ESTADOS_VEHICULO = this.comboFeedService.getEstadosVehiculo();
     this.TIPOS_DOCUMENTO = this.comboFeedService.getTiposDocumento();
-    this.DESCUENTO_RECARGO = [
-      { label: "DESCUENTO", code: "1" },
-      { label: "RECARGO", code: "2" }
-    ];
+    this.DESCUENTO_RECARGO = this.comboFeedService.getOpcionesDescuentoRecargo();
   }
 
   async tarificar() {

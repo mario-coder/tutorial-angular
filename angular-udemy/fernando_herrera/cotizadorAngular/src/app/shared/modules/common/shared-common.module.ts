@@ -13,6 +13,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AccordionModule } from 'primeng/accordion';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [],
@@ -32,7 +33,8 @@ import { CalendarModule } from 'primeng/calendar';
     BsDatepickerModule,
     NgxDropzoneModule,
     DropdownModule,
-    CalendarModule
+    CalendarModule,
+    InputTextareaModule
   ],
   exports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { CalendarModule } from 'primeng/calendar';
     BsDatepickerModule,
     NgxDropzoneModule,
     DropdownModule,
-    CalendarModule
+    CalendarModule,
+    InputTextareaModule
   ],
   providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
 })

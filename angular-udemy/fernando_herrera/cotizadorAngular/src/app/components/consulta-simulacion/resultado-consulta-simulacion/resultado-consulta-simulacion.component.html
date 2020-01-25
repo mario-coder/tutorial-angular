@@ -155,7 +155,7 @@
         </div>
     </p-header>
 
-    <div class="container form-container shadow-drop-center pt-3 pb-3">
+    <div class="container section-container shadow-drop-center pt-3 pb-3">
         <p-panel>
             <p-header>
                 <i class="fa fa-file"></i>&nbsp;
@@ -455,11 +455,11 @@
                                 <strong>Nuevo estado</strong>
                             </div>
                             <div class="col-10">
-                                <select class="form-control " name="nuevoEstado">
-                                    <option value="0">Seleccione</option>
-                                    <option value="1">Aprobado</option>
-                                    <option value="2">Rechazado</option>
-                                </select>
+                                <p-dropdown name="nuevoEstado" [options]="ESTADOS_SIMULACION"
+                                [(ngModel)]="nuevoEstadoSimulacionSelected"
+                                [showClear]="true"
+                                placeholder="Selecione" optionLabel="label">
+                            </p-dropdown>
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -467,7 +467,8 @@
                                 <strong>Observacion</strong>
                             </div>
                             <div class="col-10">
-                                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                                <textarea [(ngModel)]="motivoCambioEstado"
+                                 [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
                             </div>
                         </div>
                     </div>

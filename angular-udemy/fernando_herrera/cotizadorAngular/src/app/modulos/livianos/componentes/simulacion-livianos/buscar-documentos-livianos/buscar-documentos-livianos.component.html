@@ -1,60 +1,65 @@
 
 <div class="fade-in">
     <p-card>
-        <div class="p-2 ml-1 mr-1 bg-info rounded">
+        <div class="p-2 ml-1 mr-1 bg-warning p-3 rounded">
             <p-header>
                 <i class="fa fa-info-circle"></i>
-                <small>Por favor ingrese tipo de documento y numero de RUT de asegurado</small>
+                Por favor ingrese tipo de documento y numero de RUT de asegurado
             </p-header>
         </div>
 
-        <div class="container">
+        <div class="container section-container">
             <div class="row">
                 <div class="col-5">Tipo de documento *</div>
                 <div class="col-7">
-                    <select name="modelos" class="form-control ">
-                        <option value="0" >TODOS(AS)</option>
-                        <option value="1" >SIMULACION</option>
-                        <option value="2" >PROPUESTA</option>
-                    </select>
+                    <p-dropdown [options]="TIPOS_OPERACION" name="tipoOperacion" 
+                        [(ngModel)]="tipoOperacionSelected"
+                        optionLabel="label"></p-dropdown>
                 </div>
             </div>
             <div class="row">
                 <div class="col-5">Numero de documento</div>
                 <div class="col-7">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="N° de documento" aria-label="N° de documento" aria-describedby="button-addon4">
-                        <div class="input-group-append" id="button-addon4">
-                          <button class="btn btn-outline-secondary" type="button">
-                              <i class="fa fa-search"></i>
-                          </button>
-                        </div>
-                      </div>
+                    <div class="ui-inputgroup">
+                        <input type="text"
+                            name="numeroOperacionBusqueda"
+                            placeholder="Numero de documento"
+                            pInputText>
+                        <button pButton 
+                            type="button" 
+                            icon="fa fa-search" 
+                            class="ui-button-primary"></button>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-5">Rut Asegurado</div>
                 <div class="col-7">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Rut Asegurado" aria-label="Rut Asegurado" aria-describedby="button-addon4">
-                        <div class="input-group-append" id="button-addon4">
-                          <button class="btn btn-outline-secondary" type="button">
-                              <i class="fa fa-search"></i>
-                          </button>
-                        </div>
-                      </div>
+                    <div class="ui-inputgroup">
+                        <input type="text" 
+                            name="numeroDocumentoBusqueda"
+                            placeholder="Rut Asegurado"
+                            pInputText>
+                        <button pButton 
+                            type="button" 
+                            icon="fa fa-search" 
+                            class="ui-button-primary"></button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container mx-auto px-0">
+
+
+        <!-- Tabla resultados -->
+        <div class="container section-container">
             <p-table
                 [responsive]="true" 
                 [paginator]="true" 
                 [rows]="15">
 
                 <ng-template pTemplate="caption">
-                    <div class="ui-helper-clearfix" style="text-align: left">        
+                    <div class="ui-helper-clearfix text-left">
             
                         <!-- <button type="button" pButton icon="pi pi-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="margin-right: 0.5em; float: left;"></button> -->
                         <!-- <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportExcel()" style="margin-right: 0.5em; float: left;" class="ui-button-success"></button>
@@ -68,7 +73,7 @@
                 </ng-template>
 
                 <ng-template pTemplate="header" let-columns>
-                    <tr>
+                    <tr style="vertical-align: top;">
                         <th><!-- [pSortableColumn]="col.field"> -->
                             N° Simulacion
                         </th>
