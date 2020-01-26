@@ -16,8 +16,16 @@
             <!-- Sidebar  -->
             <nav id="sidebar" [ngClass]="{ hidden: _sidebarHidden }">
                 <div class="sidebar-header">
+
+                    <button type="button" class="btn btn-danger float-right mb-2" 
+                     pTooltip="Ocultar menu" tooltipPosition="top"
+                     (click)="toggleMenu()">
+                        <i class="fa fa-times"></i>
+                    </button>
+
                     <i class="fa fa-search float-left mt-1 mr-1"></i>
                     <h6>Opciones de busqueda</h6>
+
                 </div>
 
                 <div class="active">
@@ -126,13 +134,15 @@
                                     <div class="col-5 ">Fecha Desde</div>
                                     <div class="col-7 ">
                                         <div class="ui-inputgroup">
+                                            <!-- #dp1="bsDatepicker" -->
                                             <input type="text" name="fechaDesde"
                                                 pInputText class="calendar-input"
-                                                #dp1="bsDatepicker"
+                                                #dp1
                                                 bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
                                             <button pButton type="button" 
                                                 icon="fa fa-calendar-alt" class="ui-button-primary"
-                                                (click)="dp1.toggle()" [attr.aria-expanded]="dp1.isOpen"></button>
+                                                (click)="today(dp1)"
+                                                [attr.aria-expanded]="dp1.isOpen"></button>
                                         </div>
                                     </div>
                                 </div>
@@ -142,11 +152,13 @@
                                         <div class="ui-inputgroup">
                                             <input type="text" name="fechaHasta"
                                                 pInputText class="calendar-input"
-                                                #dp2="bsDatepicker"
+                                                #dp2
                                                 bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
                                             <button pButton type="button" 
                                                 icon="fa fa-calendar-alt" class="ui-button-primary"
-                                                (click)="dp2.toggle()" [attr.aria-expanded]="dp2.isOpen"></button>
+                                                (click)="today(dp2)"
+                                                [attr.aria-expanded]="dp2.isOpen"></button>
+                                                <!-- (click)="dp2.toggle()"  -->
                                         </div>
                                     </div>
                                 </div>
@@ -428,8 +440,9 @@
             </nav>
 
             <!-- Boton mostrar menu -->
-            <div class="content ">
-                <button type="button " class="btn btn-default btn-sm mb-1" (click)="toggleMenu()">
+            <div class="container busqueda-container">
+                <button type="button" class="btn btn-default btn-md my-1 pull-left"
+                *ngIf="_sidebarHidden" (click)="toggleMenu()">
                     <i class="fa" [ngClass]="iconoOpcionMenu"></i>
                     <small> {{ opcionMenu }} </small>
                 </button>
@@ -451,8 +464,8 @@
                     </div>
                 </div>
                 <!-- Tabla Previa a Resultados de busqueda -->
-
             </div>
+
         </div>
     </p-card>
 </div>

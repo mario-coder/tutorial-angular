@@ -1,13 +1,12 @@
-<div class="flip-in-hor-bottom cuadro-tarifa " (click)="selecciona()">
+<div class="flip-in-hor-bottom cuadro-tarifa" (click)="selecciona()">
 
-
-    <div class="pl-6">
-        <p-header>
-            <h6> UF {{ simulacion.importePrimerRecibo | number:'.0-2' }} </h6>
-
-            <small>Anual</small>
-        </p-header>
-    </div>
+    <p-header>
+        <div class="badge badge-success p-2 m-1">
+            <h5> UF {{ simulacion.importePrimerRecibo | number:'.0-2' }} </h5>
+        </div>
+        <h6>Anual</h6>
+    </p-header>
+    
 
     <p-footer>
         <button class="btn btn-info" (click)="showDetalleTarifa()">
@@ -18,31 +17,38 @@
 
 </div>
 
-<p-dialog appendTo="body" header="{{ simulacion.descripcionActividad }} :: Deducible {{simulacion.descripcionDeducible}}" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '600px', minWidth: '600px'}" [minY]="50" [maximizable]="false" [baseZIndex]="100000">
+<p-dialog appendTo="body" header="Detalle Tarifa" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '600px', minWidth: '600px'}" [minY]="50" [maximizable]="false" [baseZIndex]="100000">
     <p-card>
-        <div class="pl-13">
+        <div class="section-container">
             <p-header>
-                <h6>UF {{ simulacion.importePrimerRecibo | number:'.0-2' }}</h6>
+                <div class="p-3">
+                    <h3>{{ simulacion.descripcionActividad }} :: Deducible {{simulacion.descripcionDeducible}}</h3>
+                    <div class="badge badge-success p-2 m-1">
+
+                        <h4>UF {{ simulacion.importePrimerRecibo | number:'.0-2' }}</h4>
+                    </div>
+                </div>
             </p-header>
         </div>
 
-        <p-table [value]="simulacion.coberturas" class="table table-bordered" [scrollable]="true" scrollHeight="200px">
-            <thead>
-                <th>Coberturas</th>
-            </thead>
+        <div class="section-container">
+            <p-table [value]="simulacion.coberturas" class="table" [scrollable]="true" scrollHeight="20em">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Coberturas</th>
+                    </tr>
+                </ng-template>
 
-            <ng-template pTemplate="body" let-cobertura>
-                <tr>
-                    <td>
-                        {{ cobertura.nombreCobertura }}
-                    </td>
-                    <td class="text-right">
-                        UF {{ cobertura.primaTarifaCob | number:'.0-2' }}
-                    </td>
-                </tr>
-            </ng-template>
-
-        </p-table>
+                <ng-template pTemplate="body" let-cobertura>
+                    <tr>
+                        <td>{{ cobertura.nombreCobertura }}</td>
+                        <td class="text-right">
+                            UF {{ cobertura.primaTarifaCob | number:'.0-2' }}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
 
     </p-card>
 </p-dialog>

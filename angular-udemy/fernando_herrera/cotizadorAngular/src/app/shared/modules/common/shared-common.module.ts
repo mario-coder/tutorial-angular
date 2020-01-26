@@ -14,6 +14,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   declarations: [],
@@ -34,7 +35,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     NgxDropzoneModule,
     DropdownModule,
     CalendarModule,
-    InputTextareaModule
+    InputTextareaModule,
+    TooltipModule
   ],
   exports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     NgxDropzoneModule,
     DropdownModule,
     CalendarModule,
-    InputTextareaModule
+    InputTextareaModule,
+    TooltipModule
   ],
   providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
 })

@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { BsDatepickerConfig, DatepickerDateCustomClasses } from "ngx-bootstrap/datepicker";
 import Swal from 'sweetalert2';
 import { DatePickerConfigService } from 'src/app/shared/config/date-picker-config';
 import { ComboFeedService } from 'src/app/services/data/combofeed.service';
+import * as moment from 'moment';
 
 @Component({
   selector: "app-consulta-simulacion",
@@ -10,6 +11,8 @@ import { ComboFeedService } from 'src/app/services/data/combofeed.service';
   styleUrls: ["./consulta-simulacion.component.css"]
 })
 export class ConsultaSimulacionComponent implements OnInit {
+  @ViewChild('dp1', {static: true}) dp1: ElementRef;
+
   _isLoggedIn : number = 1;
   _sidebarHidden: boolean = false;
   _busquedaRealizada: boolean = false;
@@ -102,6 +105,8 @@ export class ConsultaSimulacionComponent implements OnInit {
     this.SUCURSALES = this.comboFeedService.getSucursales();
   }
 
+
+
   toggleMenu() {
     this._sidebarHidden = !this._sidebarHidden;
 
@@ -129,5 +134,14 @@ export class ConsultaSimulacionComponent implements OnInit {
 
 
     console.log("Buscando registros")
+  }
+
+  today(event) {
+
+    console.log(moment().format('DD/MM/YYYY'))
+    console.log(event)
+    event.value = moment().format('DD/MM/YYYY');
+    //console.log(this.dp1)
+    //this.dp1.nativeElement.value = moment().format('DD/MM/YYYY');
   }
 }

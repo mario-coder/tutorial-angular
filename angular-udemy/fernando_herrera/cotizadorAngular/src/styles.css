@@ -87,18 +87,13 @@ div.ui-panel-titlebar {
     font-size: 100% !important;
 }
 
-input {
-    max-width: 100% !important;
-    /*min-width: 100% !important;*/
-}
-
 .extendido {
     width: 100% !important;
 }
 
-
 .ui-inputgroup > .ui-inputtext {
-    min-width: 90% !important;
+    /* min-width: 90% !important; */
+    min-width: calc(100% - 2.357em) !important;
 }
 
   /************/
@@ -136,7 +131,7 @@ input {
     width: 30% !important;
     min-width: 30% !important;
     max-width: 40% !important;
-    float: right !important;
+    float: left !important;
 }
 
   /***********/
@@ -192,9 +187,9 @@ table td.ui-datepicker-today>a {
    color: white !important;
 }
 
-.calendar-input {
+/* .calendar-input {
    min-width: 90% !important;
-}
+} */
 
 /*Monthpicker*/
 .ui-datepicker-monthpicker {

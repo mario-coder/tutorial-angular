@@ -96,8 +96,8 @@
 }
 
 .slit-in-vertical {
-	-webkit-animation: slit-in-vertical 0.45s ease-out both;
-	        animation: slit-in-vertical 0.45s ease-out both;
+	-webkit-animation: slit-in-vertical 0.9s ease-out both;
+	        animation: slit-in-vertical 0.9s ease-out both;
 }
 
 .rotate-scale-up {

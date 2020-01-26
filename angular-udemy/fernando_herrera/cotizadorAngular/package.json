@@ -25,6 +25,7 @@
     "file-saver": "^2.0.2",
     "jspdf": "^1.5.3",
     "jspdf-autotable": "^3.2.11",
+    "moment": "^2.24.0",
     "ngx-bootstrap": "^5.3.2",
     "ngx-dropzone": "^2.2.2",
     "primeicons": "^2.0.0",
