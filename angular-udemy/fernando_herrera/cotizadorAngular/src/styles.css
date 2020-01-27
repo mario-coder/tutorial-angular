@@ -64,6 +64,9 @@ div.ui-panel-titlebar {
             margin-bottom: -0.15em !important;
         }
 
+    #sidebar {
+        transition: all 0.3s;
+    }
 
   /****************/
  /*BOTONES:INPUTS*/
@@ -156,6 +159,10 @@ body .ui-accordion .ui-accordion-content {
     }
 }
 
+.ui-dropdown {
+    min-width: 1em !important;
+}
+
 .bg-image-blur {
     /* The image used */
     background-image: url("./assets/img/sucursal-reale-la-serena.jpg");
@@ -195,3 +202,4 @@ table td.ui-datepicker-today>a {
 .ui-datepicker-monthpicker {
     max-width: 20em !important;
 }
+
