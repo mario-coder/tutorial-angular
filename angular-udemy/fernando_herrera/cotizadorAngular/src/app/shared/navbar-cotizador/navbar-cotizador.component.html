@@ -1,53 +1,60 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-lg fade-in">
+<nav class="navbar navbar-expand-md navbar-light static-top shadow-lg fade-in">
     <a class="navbar-brand " href="/home">
         <img src="assets/img/logo_reale.png " height="35em" alt="" />
     </a>
-    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse " id="navbarSupportedContent ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse swing-in-top-fwd" id="collapsibleNavbar">
+        <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link" routerLink="/home-cotizador">Home <span class="sr-only">(current)</span></a>
             </li>
+        
+            <!-- Dropdown -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownVenta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Venta
-          </a>
-                <ul class="dropdown-menu shadow-lg swing-in-top-fwd" aria-labelledby="navbarDropdownVenta">
-                    <li><a class="dropdown-item" routerLink="/simulacion-livianos">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Venta
+                </a>
+                <div class="dropdown-menu shadow-lg swing-in-top-fwd">
+                    <a class="dropdown-item" routerLink="/simulacion-livianos">
                         <i class="fa fa-car-side"></i>
                         Simular Livianos
-                    </a></li>
-                    <li><a class="dropdown-item" href="#">
+                    </a>
+                    <a class="dropdown-item" href="#">
                         <i class="fa fa-truck-moving"></i>
                         Simular Pesados
-                    </a></li>
-                </ul>
+                    </a>
+                </div>
             </li>
+
+            <!-- Dropdown -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAdministracion" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Administracion
-          </a>
-                <ul class="dropdown-menu shadow-lg swing-in-top-fwd" aria-labelledby="navbarDropdownAdministracion">
-                    <li><a class="dropdown-item" href="#">
-                        <i class="fa fa-calculator"></i>
-                        Consulta Produccion
-                    </a></li>
-                    <li><a class="dropdown-item" routerLink="/consulta-simulacion">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Administración
+                </a>
+                <div class="dropdown-menu shadow-lg swing-in-top-fwd">
+                    <a class="dropdown-item" routerLink="/consulta-simulacion">
                         <i class="fa fa-list"></i>
                         Consulta Simulacion
-                    </a></li>
-                </ul>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fa fa-calculator"></i>
+                        Consulta Produccion
+                    </a>
+                </div>
             </li>
         </ul>
-    </div>
-
-    <div class="ml-3 pull-right clock">
-        <div class="bg-info shadow-sm rounded m-6 p-6">
-            <h6 class="text-white mt-2 ml-2 mr-2 text-center">{{ fecha | date:'medium' }}</h6>
+      </div>
+      
+          <div class="ml-3 pull-right clock">
+            <div class="bg-info shadow-sm rounded m-6 p-6">
+                <h6 class="text-white mt-2 ml-2 mr-2 text-center">{{ fecha | date:'medium' }}</h6>
+            </div>
+            <h6>Bienvenido</h6>
         </div>
-        <h6>Bienvenido</h6>
-    </div>
-</nav>
+    </nav>

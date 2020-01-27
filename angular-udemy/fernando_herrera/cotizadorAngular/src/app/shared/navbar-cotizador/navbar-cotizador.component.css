@@ -46,9 +46,10 @@
     background-color: rgb(255, 255, 255)
 }
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus {
-    background-color: #2279eb
+.dropdown-menu>a:hover,
+.dropdown-menu>a:focus {
+    background-color: #1858ac;
+    color: #fff;
 }
 
 .navbar-inverse {
@@ -127,6 +128,9 @@
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        height: auto;
+    }
     .clock {
         display: none;
     }
