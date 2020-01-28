@@ -36,6 +36,10 @@ div.ui-panel-titlebar {
     border-bottom-right-radius: 3px !important;
 }
 
+.table thead th {
+    vertical-align: top !important;
+}
+ 
 .section-container {
     background-color: #f8f8f8;
     border-radius: 5px;
