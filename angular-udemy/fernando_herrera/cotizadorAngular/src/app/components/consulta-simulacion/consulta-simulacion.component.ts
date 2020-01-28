@@ -119,7 +119,7 @@ export class ConsultaSimulacionComponent implements OnInit {
       allowOutsideClick: false,
       icon: 'info',
       text: 'Buscando registros ...',
-      timer: 3000
+      timer: 1500
     }).then(() => {
       this._busquedaRealizada = true;
   
