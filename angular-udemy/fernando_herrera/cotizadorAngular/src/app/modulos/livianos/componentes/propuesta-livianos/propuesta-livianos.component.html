@@ -1,6 +1,6 @@
 <div>
 <!-- Contenedor datos principales -->
-    <p-card class="fade-in">
+    <p-card class="flip-in-ver-right">
         <div class="ml-3">
             <p-header>
                 <div class="tracking-in-contract">
@@ -67,19 +67,19 @@
                         </div>
                     </p-panel>
 
-                    <div class="ui-g my-3">
-                        <div class="ui-g-12">
-                            <p-checkbox 
-                            name="groupname"
-                            binary="true" 
-                            label="Acepta las Declaraciones de Uso, Destino o Tipo de Vehiculo" [(ngModel)]="_aceptaDeclaraciones"></p-checkbox>
-                        </div>
-                    </div>
                 </div>
             </p-panel>
+
+            <div class="ui-g my-3">
+                <div class="ui-g-12">
+                    <p-checkbox 
+                    name="acepta"
+                    binary="true" 
+                    label="Acepta las Declaraciones de Uso, Destino o Tipo de Vehiculo" [(ngModel)]="_aceptaDeclaraciones"></p-checkbox>
+                </div>
             </div>
-            <!-- </p-tabPanel>
-                </p-tabView> -->
+
+        </div>
 
             <br>
 
