@@ -40,6 +40,11 @@ div.ui-panel-titlebar {
     vertical-align: top !important;
 }
  
+.ui-chkbox,
+.ui-chkbox-label {
+    float: left !important;
+}
+
 .section-container {
     background-color: #f8f8f8;
     border-radius: 5px;

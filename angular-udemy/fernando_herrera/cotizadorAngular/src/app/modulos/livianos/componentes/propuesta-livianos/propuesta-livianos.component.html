@@ -1,5 +1,5 @@
 <!-- Contenedor datos principales -->
-<div class="flip-in-ver-right">
+<div class="fade-in-fwd">
 
     <p-card>
         <div class="ml-3">
@@ -67,6 +67,15 @@
                             </div>
                         </div>
                     </p-panel>
+
+                    <div class="ui-g my-3">
+                        <div class="ui-g-12">
+                            <p-checkbox 
+                            name="groupname"
+                            binary="true" 
+                            label="Acepta las Declaraciones de Uso, Destino o Tipo de Vehiculo" [(ngModel)]="_aceptaDeclaraciones"></p-checkbox>
+                        </div>
+                    </div>
                 </div>
             </p-panel>
             </div>
@@ -432,7 +441,7 @@
                         </div>
                     </p-tabPanel>
 
-                    <p-tabPanel header="Contratante">
+                    <p-tabPanel header="Contratante" *ngIf="!_contratanteIgualAsegurado">
 
                         <div class="panel-container fade-in-bottom">
                             <p-panel>
@@ -511,7 +520,7 @@
                         </div>
                     </p-tabPanel>
 
-                    <p-tabPanel header="Beneficiario">
+                    <p-tabPanel header="Beneficiario" *ngIf="!_beneficiarioIgualAsegurado">
 
                         <div class="panel-container fade-in-bottom">
                             <p-panel>
@@ -592,6 +601,20 @@
 
                 </p-tabView>
 
+                <div class="ui-g my-3">
+                    <div class="ui-g-12">
+                        <p-checkbox 
+                        name="groupname"
+                        binary="true" 
+                        label="CONTRATANTE es el mismo que ASEGURADO/PROPIETARIO" [(ngModel)]="_contratanteIgualAsegurado"></p-checkbox>
+                    </div>
+                    <div class="ui-g-12">
+                        <p-checkbox 
+                        name="groupname" 
+                        binary="true" 
+                        label="BENEFICIARIO es el mismo que ASEGURADO/PROPIETARIO" [(ngModel)]="_beneficiarioIgualAsegurado"></p-checkbox>
+                    </div>                    
+                </div>
             </p-panel>
             </div>
             <!-- Datos Personas -->
@@ -782,13 +805,13 @@
                         </div>
                         
                     </p-panel>
-                    <!-- Forma de pago DIRECTO -->
-
-
-
                 </div>
+                <!-- Forma de pago DIRECTO -->
                 
-                <br>
+                <div class="ml-1 mr-1 bg-info p-3 my-3 rounded">
+                    <i class="fa fa-info-circle"></i>
+                    <strong>Nota:</strong> El mandante corresponde al Contratante definido en los datos de Personas. Para modificarlo debe editar dicha sección.
+                </div>
 
                 <!-- Boton Obtener Totales -->
                 <div class="container mx-xl-5 px-xl-5">

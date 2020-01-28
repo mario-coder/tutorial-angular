@@ -15,6 +15,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TooltipModule } from 'primeng/tooltip';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [],
@@ -36,7 +37,8 @@ import { TooltipModule } from 'primeng/tooltip';
     DropdownModule,
     CalendarModule,
     InputTextareaModule,
-    TooltipModule
+    TooltipModule,
+    CheckboxModule
   ],
   exports: [
     BrowserModule,
@@ -56,7 +58,8 @@ import { TooltipModule } from 'primeng/tooltip';
     DropdownModule,
     CalendarModule,
     InputTextareaModule,
-    TooltipModule
+    TooltipModule,
+    CheckboxModule
   ],
   providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
 })

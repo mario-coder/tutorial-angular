@@ -18,6 +18,8 @@ export class SimulacionLivianosComponent implements OnInit {
   PROPUESTA:number = 2;
   EMISION:number = 3;
 
+  _propuestaActiva: boolean = false;
+
   CURRENT_STAGE = this.SIMULACION;
 
   bsConfig: Partial<BsDatepickerConfig>;
@@ -185,6 +187,6 @@ export class SimulacionLivianosComponent implements OnInit {
   }
 
   comenzarPropuesta(){
-    this.CURRENT_STAGE = this.PROPUESTA;
+    this._propuestaActiva = true;
   }
 }

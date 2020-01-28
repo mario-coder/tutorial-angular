@@ -23,6 +23,10 @@ export class PropuestaLivianosComponent implements OnInit {
 
   fechaExpiracion: any;
 
+  _contratanteIgualAsegurado:boolean = false;
+  _beneficiarioIgualAsegurado:boolean = false;
+  _aceptaDeclaraciones:boolean = false;
+
   preexistenciasSelected : any;
   accesoriosSelected : any;
   modalidadIngresoSelected : any;
@@ -35,6 +39,7 @@ export class PropuestaLivianosComponent implements OnInit {
   diaPagoSelected : any;
   obtenerTotalesSelected:boolean = false;
   propuestaGeneradaSelected:boolean = false;
+  comunaSelected : any;
 
   FORMAS_PAGO:any[];
   RESPUESTAS_SI_NO:any[];
