@@ -25,7 +25,7 @@ export class ResultadoConsultaSimulacionComponent implements OnInit {
 
   ESTADOS_SIMULACION:any[];
 
-  car: any = {};
+  selectedSimulaciones:any[];
 
   newCar: boolean;
 
@@ -80,11 +80,11 @@ export class ResultadoConsultaSimulacionComponent implements OnInit {
       this._opcionEscogidaDialogSimulacion = _OPCION_ESCOGIDA;
   }
 
-  showDialogToAdd() {
-      this.newCar = true;
-      this.car = {};
-      this.displayDialog = true;
-  }
+  // showDialogToAdd() {
+  //     this.newCar = true;
+  //     this.car = {};
+  //     this.displayDialog = true;
+  // }
 
 //   save() {
 //       let cars = [...this.cars];

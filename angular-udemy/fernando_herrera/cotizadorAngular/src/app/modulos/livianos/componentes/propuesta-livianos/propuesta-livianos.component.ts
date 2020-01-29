@@ -52,6 +52,9 @@ export class PropuestaLivianosComponent implements OnInit {
   TIPOS_TARJETA:any[];
   BANCOS: any[];
   TIPOS_DOCUMENTO:any[];
+  PIEZAS_PREEXISTENCIA:any[];
+  NIVELES_GRAVEDAD:any[];
+  ACCESORIOS:any[];
 
     constructor(private router: Router,
       private comboFeedService: ComboFeedService,
@@ -74,6 +77,9 @@ export class PropuestaLivianosComponent implements OnInit {
       this.TIPOS_TARJETA = this.comboFeedService.getTiposTarjeta();
       this.BANCOS = this.comboFeedService.getBancos();
       this.TIPOS_DOCUMENTO = this.comboFeedService.getTiposDocumento();
+      this.PIEZAS_PREEXISTENCIA = this.comboFeedService.getPiezasPreexistencias();
+      this.NIVELES_GRAVEDAD = this.comboFeedService.getNivelesGravedad();
+      this.ACCESORIOS = this.comboFeedService.getAccesorios();
 
 
       this.formaPagoSelected = this.FORMAS_PAGO[0];

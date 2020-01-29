@@ -4,12 +4,12 @@
     <div class="container form-container shadow-drop-center">
         <br>
         <h4 class="tracking-in-contract">Resultado Consulta <small>(Total: {{dt.totalRecords}} registros)</small> </h4>
+        <!-- [(selection)]="selectedSimulaciones"  -->
         <p-table 
             #dt
             selectionMode="single" 
             [columns]="cols"
             [value]="simulaciones" 
-            [(selection)]="selectedCar" 
             [scrollable]="true" 
             [style]="{width:'100%'}" scrollHeight="40em"
             [paginator]="true" 

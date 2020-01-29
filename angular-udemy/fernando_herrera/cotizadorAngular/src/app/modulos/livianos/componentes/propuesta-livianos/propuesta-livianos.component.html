@@ -127,20 +127,15 @@
                                     <div class="row mb-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="pieza" class="input-label">Pieza</label>
-                                            <select class="form-control " name="pieza" [(ngModel)]="selectedEstadoVehiculo">
-                                                <option value="0" >Seleccione</option>
-                                                <option value="2" >ACOLCHADO DE TABLERO</option>
-                                                <option value="1" >AIRBAG</option>
-                                            </select>
+                                            <p-dropdown [options]="PIEZAS_PREEXISTENCIA" name="piezaPreexistencia" 
+                                            [(ngModel)]="piezaPreexistenciaSelected" filter="true"
+                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="gravedad" class="input-label">Gravedad</label>
-                                            <select class="form-control " name="gravedad" [(ngModel)]="selectedEstadoVehiculo">
-                                                <option value="0" >Seleccione</option>
-                                                <option value="1" >LEVE</option>
-                                                <option value="2" >MEDIANO</option>
-                                                <option value="3" >GRAVE</option>
-                                            </select>
+                                            <p-dropdown [options]="NIVELES_GRAVEDAD" name="nivelGravedad" 
+                                            [(ngModel)]="nivelGravedadSelected"
+                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="deducible" class="input-label">Deducible</label>
@@ -211,11 +206,9 @@
                                     <div class="row mb-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="accesorio" class="input-label">Accesorio</label>
-                                            <select class="form-control " name="accesorio" [(ngModel)]="selectedEstadoVehiculo">
-                                                <option value="0" >Seleccione</option>
-                                                <option value="1" >AIRBAGs</option>
-                                                <option value="2" >AIRE ACONDICIONADO</option>
-                                            </select>
+                                            <p-dropdown [options]="ACCESORIOS" name="accesorio" 
+                                            [(ngModel)]="accesorioSelected" filter="true"
+                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="agregarAccesorio" class="input-label">&nbsp;</label>

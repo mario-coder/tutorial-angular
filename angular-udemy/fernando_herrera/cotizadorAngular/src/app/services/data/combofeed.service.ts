@@ -325,4 +325,26 @@ export class ComboFeedService {
       { label: "RECARGO", code: "2" }
     ];
   }
+
+  getAccesorios(): any[] {
+    return [
+      { label: "AIRBAGS", code: "1" },
+      { label: "AIRE ACONDICIONADO", code: "2" }
+    ];
+  }
+
+  getPiezasPreexistencias(): any[] {
+    return [
+      { label: "ACOLCHADO DE TABLEROS", code: "2" },
+      { label: "AIRBAGS", code: "1" }
+    ];
+  }
+
+  getNivelesGravedad(): any[] {
+    return [
+      { label: "LEVE", code: "1" },
+      { label: "MEDIANO", code: "2" },
+      { label: "GRAVE", code: "3" }
+    ];
+  }
 }

@@ -1,0 +1,108 @@
+<div class="fade-in">
+<p-card>
+
+<div class="container form-container shadow-drop-center">
+    <br>
+    <h3 class="first">Tabla CRUD</h3>
+<p-table [columns]="cols" #dt [value]="cars" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
+    <ng-template pTemplate="caption">
+        <div class="ui-helper-clearfix" style="text-align: right">        
+
+            <!-- <button type="button" pButton icon="pi pi-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="margin-right: 0.5em; float: left;"></button> -->
+            <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportExcel()" style="margin-right: 0.5em; float: left;" class="ui-button-success"></button>
+            <button type="button" pButton icon="pi pi-file-pdf" iconPos="left" label="PDF" (click)="exportPdf()" class="ui-button-warning" style="float: left;"></button>
+
+            <i class="fa fa-search mr-2 mt-2"></i>
+            <input type="text" class="inputSearch" pInputText size="50" placeholder="Ingrese un termino" (input)="dt.filterGlobal($event.target.value, 'contains')">
+        </div>
+    </ng-template>
+    
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th class="optionTD">
+                <i class="fa fa-list fa-2x" pTooltip="Opciones" tooltipPosition="right"></i>
+            </th>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+            <td class="optionTD">
+                <div class="btn-group dropright">
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                      <i class="fa fa-list"></i>
+                    </button>
+                    <div class="dropdown-menu shadow-sm swing-in-left-fwd ml-5" appentTo="body">
+                      <h6 class="dropdown-header">Opciones</h6>
+                      <a class="dropdown-item" href="#">Accion</a>
+                      <a class="dropdown-item" href="#">Otra accion</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Algo mas</a>
+                    </div>
+                  </div>
+            </td>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+            <button type="button" pButton icon="fa fa-plus" (click)="showDialogToAdd()" label="Add"></button>
+        </div>
+    </ng-template>    
+</p-table>
+<br>
+</div>
+
+
+<p-dialog header="Car Details" appendTo="body" [(visible)]="displayDialog" [focusOnShow]="false" [responsive]="true" showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
+    <div class="ui-g ui-fluid" *ngIf="car">
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="vin">Vin</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="vin" [(ngModel)]="car.vin" autofocus />
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="year">Year</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="year" [(ngModel)]="car.year" />
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="brand">Brand</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="brand" [(ngModel)]="car.brand" />
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <div class="ui-g-4">
+                <label for="color">Color</label>
+            </div>
+            <div class="ui-g-8">
+                <input pInputText id="color" [(ngModel)]="car.color" />
+            </div>
+        </div>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button" pButton icon="fa fa-close" (click)="delete()" label="Delete"></button>
+            <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"></button>
+        </div>
+    </p-footer>
+</p-dialog>
+
+
+</p-card>
+
+</div>
