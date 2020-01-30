@@ -40,7 +40,7 @@ export class SeleccionTarifasComponent implements OnInit {
     this.elem.nativeElement.querySelectorAll(".fila-"+ numeroFila).
     forEach((item, index) => {
       item.checked = event;
-      this.chequearHeadersFilaColumna(numeroFila, index, event);
+      this.chequearHeadersFilaColumna(numeroFila, index);
       this.cd.detectChanges();
     })
 
@@ -50,16 +50,15 @@ export class SeleccionTarifasComponent implements OnInit {
     this.elem.nativeElement.querySelectorAll(".columna-"+ numeroColumna).
     forEach((item, index) => {
       item.checked = event;
-      this.chequearHeadersFilaColumna(index, numeroColumna, event);
+      this.chequearHeadersFilaColumna(index, numeroColumna);
       this.cd.detectChanges();
     })
 
   }
 
-  chequearHeadersFilaColumna(numeroFila, numeroColumna, event) {
+  chequearHeadersFilaColumna(numeroFila, numeroColumna) {
     let todasLasFilas: boolean = true;
     let todasLasColumnas: boolean = true;
-    //let estadoCheckboxActual = event.srcElement? event.srcElement.checked : event;
     let estadoCheckboxActual = this.elem.nativeElement.querySelectorAll(`.fila-${numeroFila}.columna-${numeroColumna}`)[0].checked;
 
     this.grillaChecked[numeroFila][numeroColumna] = estadoCheckboxActual;
@@ -82,26 +81,6 @@ export class SeleccionTarifasComponent implements OnInit {
 
     console.log(this.grillaChecked);
     console.log("======================================")
-
-    // let filaActual = this.elem.nativeElement.querySelectorAll(".fila-"+ numeroFila);
-    // filaActual.forEach((item, index) => {
-    //   if(item.checked != estadoCheckboxActual) {
-    //     todasLasFilas = false;
-    //   }
-    // })
-
-    // let columnaActual = this.elem.nativeElement.querySelectorAll(".columna-"+ numeroColumna);
-    // columnaActual.forEach((item, index) => {
-    //   if(item.checked != estadoCheckboxActual) {
-    //     todasLasColumnas = false;
-    //   }
-    // })
-
-    // console.log("fila: "+ numeroFila + " columna: "+ numeroColumna + " estadocheckboxactual: "+ estadoCheckboxActual);
-
-    // this.headerFilas[numeroFila-1] = (todasLasFilas)? estadoCheckboxActual : false;
-
-    // this.headerColumnas[numeroColumna-1] = (todasLasColumnas)? estadoCheckboxActual : false;
     
     this.cd.detectChanges();
   }
