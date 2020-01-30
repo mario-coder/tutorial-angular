@@ -245,6 +245,10 @@
 
                     <br>
 
+                    <app-seleccion-tarifas></app-seleccion-tarifas>
+
+                    <br>
+
                     <!-- Botones tarificacion -->
                     <div class="m-3">
                         <div class="row">
@@ -292,75 +296,77 @@
 
                         <br>
                         
-                        <ul class="tabla-tarifas list-group" role="tablist">
-                            <li class="row">
-                                <div class="listwrap col-2 header">PRODUCTO/DEDUCIBLE</div>
-                                <div class="list-group-item border-0 col text-center">
-                                    <div class="listwrap header">0 UF</div>
-                                </div>
-                                <div class="list-group-item border-0 col text-center">
-                                    <div class="listwrap header">3 UF</div>
-                                </div>
-                                <div class="list-group-item border-0 col text-center">
-                                    <div class="listwrap header">5 UF</div>
-                                </div>
-                                <div class="list-group-item border-0 col text-center">
-                                    <div class="listwrap header">10 UF</div>
-                                </div>
-                            </li>
-                            <li class="row" *ngIf="tarifasClasificadas['tarifasXL'] !== undefined && tarifasClasificadas['tarifasXL'].length > 0">
-                                <div class="listwrap col-2 headerprod">
-                                    <br>
-                                    <h4>XL Liviano Particular</h4>
-                                </div>
-                                <div *ngFor="let tarifa of tarifasClasificadas['tarifasXL']" 
-                                    class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                    <div class="listwrap">
-                                        <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
-                                        &nbsp;
+                        <div class="container section-container">
+                            <ul class="tabla-tarifas list-group" role="tablist">
+                                <li class="row">
+                                    <div class="listwrap col-2 header">PRODUCTO/DEDUCIBLE</div>
+                                    <div class="list-group-item border-0 col text-center">
+                                        <div class="listwrap header">0 UF</div>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="row" *ngIf="tarifasClasificadas['tarifasL'] !== undefined && tarifasClasificadas['tarifasL'].length > 0">
-                                <div class="listwrap col-2 headerprod">
-                                    <br>
-                                    <h4>L Liviano Particular</h4>
-                                </div>
-                                <div *ngFor="let tarifa of tarifasClasificadas['tarifasL']" 
-                                    class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                    <div class="listwrap">
-                                        <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
-                                        &nbsp;
+                                    <div class="list-group-item border-0 col text-center">
+                                        <div class="listwrap header">3 UF</div>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="row" *ngIf="tarifasClasificadas['tarifasM'] !== undefined && tarifasClasificadas['tarifasM'].length > 0">
-                                <div class="listwrap col-2 headerprod">
-                                    <br>
-                                    <h4>M Liviano Particular</h4>
-                                </div>
-                                <div *ngFor="let tarifa of tarifasClasificadas['tarifasM']" 
-                                    class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                    <div class="listwrap">
-                                        <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
-                                        &nbsp;
+                                    <div class="list-group-item border-0 col text-center">
+                                        <div class="listwrap header">5 UF</div>
                                     </div>
-                                </div>
-                            </li>
-                            <li class="row" *ngIf="tarifasClasificadas['tarifasS'] !== undefined && tarifasClasificadas['tarifasS'].length > 0">
-                                <div class="listwrap col-2 headerprod">
-                                    <br>
-                                    <h4>S Liviano Particular</h4>
-                                </div>
-                                <div *ngFor="let tarifa of tarifasClasificadas['tarifasS']" 
-                                    class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
-                                    <div class="listwrap">
-                                        <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
-                                        &nbsp;
+                                    <div class="list-group-item border-0 col text-center">
+                                        <div class="listwrap header">10 UF</div>
                                     </div>
-                                </div>
-                            </li>
-                        </ul>
+                                </li>
+                                <li class="row" *ngIf="tarifasClasificadas['tarifasXL'] !== undefined && tarifasClasificadas['tarifasXL'].length > 0">
+                                    <div class="listwrap col-2 headerprod">
+                                        <br>
+                                        <h4>XL Liviano Particular</h4>
+                                    </div>
+                                    <div *ngFor="let tarifa of tarifasClasificadas['tarifasXL']" 
+                                        class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
+                                        <div class="listwrap">
+                                            <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="row" *ngIf="tarifasClasificadas['tarifasL'] !== undefined && tarifasClasificadas['tarifasL'].length > 0">
+                                    <div class="listwrap col-2 headerprod">
+                                        <br>
+                                        <h4>L Liviano Particular</h4>
+                                    </div>
+                                    <div *ngFor="let tarifa of tarifasClasificadas['tarifasL']" 
+                                        class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
+                                        <div class="listwrap">
+                                            <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="row" *ngIf="tarifasClasificadas['tarifasM'] !== undefined && tarifasClasificadas['tarifasM'].length > 0">
+                                    <div class="listwrap col-2 headerprod">
+                                        <br>
+                                        <h4>M Liviano Particular</h4>
+                                    </div>
+                                    <div *ngFor="let tarifa of tarifasClasificadas['tarifasM']" 
+                                        class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
+                                        <div class="listwrap">
+                                            <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="row" *ngIf="tarifasClasificadas['tarifasS'] !== undefined && tarifasClasificadas['tarifasS'].length > 0">
+                                    <div class="listwrap col-2 headerprod">
+                                        <br>
+                                        <h4>S Liviano Particular</h4>
+                                    </div>
+                                    <div *ngFor="let tarifa of tarifasClasificadas['tarifasS']" 
+                                        class="list-group-item list-group-item-action col border-0" data-toggle="list" role="tab">
+                                        <div class="listwrap">
+                                            <app-tarifa-livianos [simulacion]="tarifa"></app-tarifa-livianos>
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
                         <br>
 

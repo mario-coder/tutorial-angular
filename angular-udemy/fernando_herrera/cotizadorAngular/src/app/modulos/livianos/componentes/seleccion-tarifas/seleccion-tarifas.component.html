@@ -1,0 +1,189 @@
+                    <!-- Contenedor seleccion tarifas -->
+                    <div class="fade-in-bottom">
+                        <div class="container section-container">
+                            <p-panel [toggleable]="true">
+
+                                <p-header>
+                                    <span class="ui-panel-title">
+                                        <i class="fa fa-money-bill"></i>
+                                        Ofertas Disponibles
+                                    </span>
+                                </p-header>
+
+                                <div class="container section-container tabla-tarifas seleccion">
+                                    <div class="row">
+                                        <div class="col col-2">
+                                            PRODUCTO/DEDUCIBLE
+                                        </div>
+                                        <div class="col border-0 header px-auto">
+                                            <p-checkbox 
+                                            name="fila"
+                                            binary="true" 
+                                            label="0 UF"
+                                            (onChange)="chequearTodaLaColumna(1, $event)"></p-checkbox>
+                                        </div>
+                                        <div class="col border-0 header">
+                                            <p-checkbox 
+                                            name="fila"
+                                            binary="true" 
+                                            label="3 UF"
+                                            (onChange)="chequearTodaLaColumna(2, $event)"></p-checkbox>
+                                        </div>
+                                        <div class="col border-0 header">
+                                            <p-checkbox 
+                                            name="fila"
+                                            binary="true" 
+                                            label="5 UF"
+                                            (onChange)="chequearTodaLaColumna(3, $event)"></p-checkbox>
+                                        </div>
+                                        <div class="col border-0 header">
+                                            <p-checkbox 
+                                            name="fila"
+                                            binary="true" 
+                                            label="10 UF"
+                                            (onChange)="chequearTodaLaColumna(4, $event)"></p-checkbox>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col col-2 headerprod">
+                                            <p-checkbox 
+                                                class="pull-right"
+                                                name="fila"
+                                                binary="true"
+                                                label="XL Liviano Particular" 
+                                                (onChange)="chequearTodaLaFila(1, $event)"></p-checkbox>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb1" class="fila-1 columna-1"/>
+                                            <label for="cb1">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb2" class="fila-1 columna-2"/>
+		                                    <label for="cb2">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb3" class="fila-1 columna-3"/>
+		                                    <label for="cb3">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb4" class="fila-1 columna-4"/>
+		                                    <label for="cb4">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-2 headerprod">
+                                            <p-checkbox 
+                                            class="pull-right"
+                                            name="fila"
+                                            binary="true" 
+                                            label="L Liviano Particular"
+                                            (onChange)="chequearTodaLaFila(2, $event)"></p-checkbox>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb5" class="fila-2 columna-1"/>
+                                            <label for="cb5">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb6" class="fila-2 columna-2"/>
+		                                    <label for="cb6">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb7" class="fila-2 columna-3"/>
+		                                    <label for="cb7">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb8" class="fila-2 columna-4"/>
+		                                    <label for="cb8">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-2 headerprod">
+                                            <p-checkbox 
+                                            class="pull-right"
+                                            name="fila"
+                                            binary="true"
+                                            label="M Liviano Particular"
+                                            (onChange)="chequearTodaLaFila(3, $event)"></p-checkbox>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb9" class="fila-3 columna-1"/>
+		                                    <label for="cb9">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb10" class="fila-3 columna-2"/>
+		                                    <label for="cb10">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb11" class="fila-3 columna-3"/>
+		                                    <label for="cb11">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb12" class="fila-3 columna-4"/>
+                                            <label for="cb12">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-2 headerprod">
+                                            <p-checkbox 
+                                            class="pull-right"
+                                            name="fila"
+                                            binary="true" 
+                                            label="S Liviano Particular"
+                                            (onChange)="chequearTodaLaFila(4, $event)"></p-checkbox>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb13" class="fila-4 columna-1"/>
+                                            <label for="cb13">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb14" class="fila-4 columna-2"/>
+		                                    <label for="cb14">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb15" class="fila-4 columna-3"/>
+		                                    <label for="cb15">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                        <div class="col border-0 text-center">
+                                            <input type="checkbox" id="cb16" class="fila-4 columna-4"/>
+		                                    <label for="cb16">
+                                                <div class="img_auto"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </p-panel>
+                        </div>
+                    </div>
+                    <!-- Contenedor seleccion tarifas -->
