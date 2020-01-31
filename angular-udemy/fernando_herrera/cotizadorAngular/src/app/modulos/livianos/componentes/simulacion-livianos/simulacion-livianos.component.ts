@@ -38,6 +38,7 @@ export class SimulacionLivianosComponent implements OnInit {
   tallerSelected: any;
   asistenciaSelected: any;
   rcsEnExcesoSelected: any;
+  tipoOperacionSelected: any;
 
   ESTADOS_VEHICULO: any[];
   ANIOS: any[];

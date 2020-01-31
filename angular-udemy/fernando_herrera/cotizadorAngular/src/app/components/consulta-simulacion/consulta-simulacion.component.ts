@@ -45,8 +45,10 @@ export class ConsultaSimulacionComponent implements OnInit {
   anioSelected:any;
   tipoDocumentoSelected:any;
   tipoPersonaSelected:any;
+  estadoVehiculoSelected:any;
 
-  TIPO_CONSULTA:any[];
+  TIPOS_CONSULTA:any[];
+  TIPOS_PERSONA:any[];
   CANALES:any[];
   CORREDORES:any[];
   COMPANIAS:any[];
@@ -68,7 +70,6 @@ export class ConsultaSimulacionComponent implements OnInit {
   MODELOS: any[];
   ANIOS: any[];
   TIPOS_DOCUMENTO: any[];
-  TIPOS_PERSONA: any[];
   
   constructor(
     private comboFeedService: ComboFeedService,
@@ -79,7 +80,7 @@ export class ConsultaSimulacionComponent implements OnInit {
     this.bsConfig = this.datePickerConfig.bsConfig;
     this.dateCustomClasses = this.datePickerConfig.dateCustomClasses;
 
-    this.TIPO_CONSULTA = this.comboFeedService.getTiposConsulta();
+    this.TIPOS_CONSULTA = this.comboFeedService.getTiposConsulta();
     this.CANALES = this.comboFeedService.getCanales();
     this.CORREDORES = this.comboFeedService.getCorredores();
     this.COMPANIAS = this.comboFeedService.getCompanias();

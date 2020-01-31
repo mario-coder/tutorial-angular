@@ -10,7 +10,8 @@ export class BuscarDocumentosLivianosComponent implements OnInit {
 
   // @Output() displayChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  TIPOS_OPERACION: any;
+  tipoOperacionSelected:any;
+  TIPOS_OPERACION: any[];
 
   constructor(private comboFeedService: ComboFeedService) { }
 

@@ -41,6 +41,11 @@ export class PropuestaLivianosComponent implements OnInit {
   propuestaGeneradaSelected:boolean = false;
   comunaSelected : any;
 
+  piezaPreexistenciaSelected: any;
+  nivelGravedadSelected: any;
+  accesorioSelected: any;
+  tipoDocumentoSelected: any;
+
   FORMAS_PAGO:any[];
   RESPUESTAS_SI_NO:any[];
   COMUNAS: any[];    
