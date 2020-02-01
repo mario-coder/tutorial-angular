@@ -1,12 +1,12 @@
-<div *ngIf="isLoggedIn == 0">
+<div *ngIf="_isLoggedIn == 0">
   <br>
   <app-login (logged)="setLogged($event)" ></app-login>
 </div>
 
-<div *ngIf="isLoggedIn == 1">
+<div *ngIf="_isLoggedIn == 1">
 
   <app-navbar-cotizador></app-navbar-cotizador>
-  
+
   <br>
   
   <!-- <div [@routeAnimations]="prepareRoute(outlet)" class="container mx-auto m-5">

@@ -1,6 +1,7 @@
-<div class="fade-in">
+<!-- <div class="fade-in-bottom"> -->
+<div>
 
-    <div class="slide-in-top">
+    <div class="flip-in-ver-right">
     <p-card>
 
         <div class="row">
@@ -11,18 +12,20 @@
             <form>
                 <p-panel class="loginPanel shadow-drop-center" >
                 <p-header>
-                    <span class="ui-panel-title">
-                    <i class="fa fa-key"></i>
-                    INICIAR SESIÓN
-                </span>
+                    <!-- <div class="tracking-in-contract"> -->
+                    <div>
+                        <span class="ui-panel-title">
+                            INICIAR SESIÓN
+                        </span>
+                    </div>
                 </p-header>
 
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-prepend"><i class="input-group-text fa fa-user"></i></div>
-                                <input type="text" class="form-control" placeholder="Username">
+                            <div class="ui-inputgroup">
+                                <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+                                <input type="text" pInputText placeholder="Username">         
                             </div>
                         </div>
                     </div>
@@ -30,20 +33,21 @@
 
                 <div class="row">
                     <div class="col">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-
-                                  <i class="input-group-text fa fa-lock" id="basic-addon1"></i>
-
-                            </div>
-                            <input type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
-                          </div>
+                        <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon"><i class="pi pi-lock" style="line-height: 1.25;"></i></span>
+                            <input type="password" pInputText placeholder="Password">         
+                        </div>
                         </div>
                     </div>
                 <br>
                 <div class="row">
                     <div class="col text-center">
-                        <button type="button" class="btn btn-warning btn-wide" (click)="login()"> <strong>LOGIN</strong> </button>
+                        <button type="button" class="btn btn-warning btn-lg btn-wide" (click)="login()"> 
+                            <strong>
+                                <i class="fa fa-key"></i>
+                                INGRESAR
+                            </strong>
+                        </button>
                     </div>
                 </div>
                 

@@ -1,0 +1,118 @@
+
+<div class="fade-in">
+    <p-card>
+        <div class="ml-1 mr-1 bg-warning p-3 rounded">
+            <p-header>
+                <i class="fa fa-info-circle"></i>
+                Por favor ingrese tipo de documento y numero de RUT de asegurado
+            </p-header>
+        </div>
+
+        <div class="container section-container">
+            <div class="row">
+                <div class="col-5">Tipo de documento *</div>
+                <div class="col-7">
+                    <p-dropdown [options]="TIPOS_OPERACION" name="tipoOperacion" 
+                        [(ngModel)]="tipoOperacionSelected"
+                        optionLabel="label"></p-dropdown>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">Numero de documento</div>
+                <div class="col-7">
+                    <div class="ui-inputgroup">
+                        <input type="text"
+                            name="numeroOperacionBusqueda"
+                            placeholder="Numero de documento"
+                            pInputText>
+                        <button pButton 
+                            type="button" 
+                            icon="fa fa-search" 
+                            class="ui-button-primary"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5">Rut Asegurado</div>
+                <div class="col-7">
+                    <div class="ui-inputgroup">
+                        <input type="text" 
+                            name="numeroDocumentoBusqueda"
+                            placeholder="Rut Asegurado"
+                            pInputText>
+                        <button pButton 
+                            type="button" 
+                            icon="fa fa-search" 
+                            class="ui-button-primary"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Tabla resultados -->
+        <div class="container section-container">
+            <p-table
+                [responsive]="true" 
+                [paginator]="true" 
+                [rows]="15">
+
+                <ng-template pTemplate="caption">
+                    <div class="ui-helper-clearfix text-left">
+            
+                        <!-- <button type="button" pButton icon="pi pi-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="margin-right: 0.5em; float: left;"></button> -->
+                        <!-- <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="EXCEL" (click)="exportExcel()" style="margin-right: 0.5em; float: left;" class="ui-button-success"></button>
+                        <button type="button" pButton icon="pi pi-file-pdf" iconPos="left" label="PDF" (click)="exportPdf()" class="ui-button-warning" style="float: left;"></button>
+             -->
+                        <!-- <i class="fa fa-search mr-2 mt-2"></i>
+                        <input type="text" class="inputSearch" pInputText size="50" placeholder="Ingrese un termino" (input)="dt.filterGlobal($event.target.value, 'contains')"> -->
+                    
+                        Resultados
+                    </div>
+                </ng-template>
+
+                <ng-template pTemplate="header" let-columns>
+                    <tr class="align-top">
+                        <th><!-- [pSortableColumn]="col.field"> -->
+                            N° Simulacion
+                        </th>
+                        <th><!-- [pSortableColumn]="col.field"> -->
+                            N° Propuesta
+                        </th>
+                        <th><!-- [pSortableColumn]="col.field"> -->
+                            Rut Asegurado
+                        </th>
+                        <th><!-- [pSortableColumn]="col.field"> -->
+                            Año
+                        </th>
+                        <th><!-- [pSortableColumn]="col.field"> -->
+                            Marca
+                        </th>
+                        <th><!-- [pSortableColumn]="col.field"> -->
+                            Modelo
+                        </th>
+                        <th><!-- [pSortableColumn]="col.field"> -->
+                            Estado
+                        </th>
+                        <th><!-- [pSortableColumn]="col.field"> -->
+                            Cuotas
+                        </th>
+                        <th><!-- [pSortableColumn]="col.field"> -->
+                            Accion
+                        </th>
+                    </tr>
+                </ng-template>                
+
+                <ng-template pTemplate="body">
+
+                </ng-template>
+
+            </p-table>
+        </div>
+
+
+
+    </p-card>
+
+</div>

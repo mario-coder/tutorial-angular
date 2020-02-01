@@ -1,10 +1,6 @@
 .card-menu-home {
     cursor: pointer;
-    /*
-    width: 8vw;
-    max-width: 10vw;
-    height: 8vw;
-    margin: auto;*/
+    min-width: 10em;
     transition: all .5s ease-in-out;
     display: block;
     position: relative;

@@ -1,35 +1,49 @@
-<div class="fade-in">
+<!-- <div class="fade-in-top"> -->
+<div>
     <p-card>
         <div class="ml-3">
             <p-header>
-                <h1>Consulta Simulacion</h1>
-                <i class="fa fa-home float-left m-1"></i>
-                <h6>Inicio/Consulta Simulacion</h6>
+                <div class="tracking-in-contract">
+                    <h1>Consulta Simulacion</h1>
+                    <i class="fa fa-home float-left m-1"></i>
+                    <h6>Inicio/Consulta Simulacion</h6>
+                </div>
             </p-header>
         </div>
 
         <hr />
 
-        <div class="wrapper">
+        <div class="wrapper flip-in-hor-bottom">
             <!-- Sidebar  -->
-            <nav id="sidebar" [ngClass]="{ hidden: sidebarHidden }">
+            <nav id="sidebar" [ngClass]="{ hidden: _sidebarHidden }">
                 <div class="sidebar-header">
+
+                    <button type="button" class="btn btn-danger float-right mb-2" 
+                     pTooltip="Ocultar menu" tooltipPosition="top"
+                     (click)="toggleMenu()">
+                        <i class="fa fa-times"></i>
+                    </button>
+
                     <i class="fa fa-search float-left mt-1 mr-1"></i>
                     <h6>Opciones de busqueda</h6>
+
                 </div>
 
                 <div class="active">
                     <form>
                         <p-accordion [multiple]="true">
+
+                            <!-- Busqueda General -->
                             <p-accordionTab header="Busqueda General">
                                 <div class="row">
                                     <div class="col-5">
                                         Tipo Consulta
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="1" >GENERAL</option>
-                                        </select>
+                                        <p-dropdown name="tipoConsulta" 
+                                        [options]="TIPOS_CONSULTA"
+                                        [(ngModel)]="tipoConsultaSelected"
+                                        placeholder="Seleccione" optionLabel="label"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -37,10 +51,11 @@
                                         Canal
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="1" >TODOS(AS)</option>
-                                            <option value="2" >CORREDORES</option>
-                                        </select>
+                                        <p-dropdown name="canal" 
+                                        [options]="CANALES"
+                                        [(ngModel)]="canalSelected"
+                                        placeholder="Seleccione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -48,13 +63,11 @@
                                         Sucursal
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" >TODOS(AS)</option>
-                                            <option value="1" >ALONSO DE CORDOVA</option>
-                                            <option value="1" >ALONSO DE CORDOVA</option>
-                                            <option value="2" >LA SERENA</option>
-                                            <option value="3" >SANTIAGO CENTRO</option>
-                                        </select>
+                                        <p-dropdown name="sucursal" 
+                                            [options]="SUCURSALES"
+                                            [(ngModel)]="sucursalSelected"
+                                            placeholder="Seleccione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -62,11 +75,11 @@
                                         Corredor
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" >TODOS(AS)</option>
-                                            <option value="1" >A y B Corredores de seguros</option>
-                                            <option value="2" >Actualrial</option>
-                                        </select>
+                                        <p-dropdown name="corredor" 
+                                        [options]="CORREDORES"
+                                        [(ngModel)]="corredorSelected"
+                                        placeholder="Seleccione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -74,10 +87,11 @@
                                         Cia De Seguros
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" >TODOS(AS)</option>
-                                            <option value="1" >REALE</option>
-                                        </select>
+                                        <p-dropdown name="compania" 
+                                        [options]="COMPANIAS"
+                                        [(ngModel)]="companiaSelected"
+                                        placeholder="Seleccione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -85,14 +99,11 @@
                                         Ramo
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" >TODOS(AS)</option>
-                                            <option value="1" >Accidentes Personales</option>
-                                            <option value="2" >Auto</option>
-                                            <option value="3" >Hogar</option>
-                                            <option value="4" >SOAP</option>
-                                            <option value="5" >Vida</option>
-                                        </select>
+                                        <p-dropdown name="ramo" 
+                                        [options]="RAMOS"
+                                        [(ngModel)]="ramoSelected"
+                                        placeholder="Seleccione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
 
@@ -107,44 +118,48 @@
                                     </div>
                                 </div>
                             </p-accordionTab>
+
+                            <!-- Busqueda por Fechas -->
                             <p-accordionTab header="Busqueda por Fechas" [selected]="true">
                                 <div class="row">
                                     <div class="col-5">
                                         Periodo
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="1" >REGISTRO</option>
-                                        </select>
+                                        <p-dropdown name="periodo" 
+                                        [(ngModel)]="periodoSelected"
+                                        placeholder="REGISTRO" optionLabel="label"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 ">Fecha Desde</div>
                                     <div class="col-7 ">
-                                        <div class="input-group ">
-                                            <input type="text " class="form-control calendar-input"
-                                            bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
-                                            aria-label="Fecha Desde " aria-describedby="basic-addon2 " />
-                                            <div class="input-group-append ">
-                                                <span class="input-group-text " id="basic-addon2 ">
-                                                    <i class="fa fa-calendar-day "></i>
-                                                </span>
-                                            </div>
+                                        <div class="ui-inputgroup">
+                                            <!-- #dp1="bsDatepicker" -->
+                                            <input type="text" name="fechaDesde"
+                                                pInputText class="calendar-input"
+                                                #dp1
+                                                bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
+                                            <button pButton type="button" 
+                                                icon="fa fa-calendar-alt" class="ui-button-primary"
+                                                (click)="today(dp1)"
+                                                [attr.aria-expanded]="dp1.isOpen"></button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 ">Fecha Hasta</div>
                                     <div class="col-7 ">
-                                        <div class="input-group ">
-                                            <input type="text " class="form-control calendar-input"
-                                            bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses"
-                                            aria-label="Fecha Hasta " aria-describedby="basic-addon3 " />
-                                            <div class="input-group-append ">
-                                                <span class="input-group-text " id="basic-addon3 ">
-                                                    <i class="fa fa-calendar-day "></i>
-                                                </span>
-                                            </div>
+                                        <div class="ui-inputgroup">
+                                            <input type="text" name="fechaHasta"
+                                                pInputText class="calendar-input"
+                                                #dp2
+                                                bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
+                                            <button pButton type="button" 
+                                                icon="fa fa-calendar-alt" class="ui-button-primary"
+                                                (click)="today(dp2)"
+                                                [attr.aria-expanded]="dp2.isOpen"></button>
+                                                <!-- (click)="dp2.toggle()"  -->
                                         </div>
                                     </div>
                                 </div>
@@ -160,11 +175,13 @@
                                     </div>
                                 </div>
                             </p-accordionTab>
-                            <p-accordionTab header="Busqueda por Documento ">
+
+                            <!-- Busqueda por Documento -->
+                            <p-accordionTab header="Busqueda por Documento">
                                 <div class="row">
                                     <div class="col-5 ">Numero de Simulacion</div>
                                     <div class="col-7 ">
-                                        <input type="text " class="form-control" />
+                                        <input pInputText name="" type="text" />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -172,11 +189,11 @@
                                         Estado Simulacion
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" >TODOS(AS)</option>
-                                            <option value="1" >VIGENTE</option>
-                                            <option value="2" >RECHAZADA</option>
-                                        </select>
+                                        <p-dropdown name="estadoSimulacion" 
+                                        [options]="ESTADOS_SIMULACION"
+                                        [(ngModel)]="estadoSimulacionSelected"
+                                        placeholder="Seleccione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
 
@@ -191,15 +208,19 @@
                                     </div>
                                 </div>
                             </p-accordionTab>
-                            <p-accordionTab header="Busqueda por Persona ">
+
+                            <!-- Busqueda por Persona -->
+                            <p-accordionTab header="Busqueda por Persona">
                                 <div class="row">
                                     <div class="col-5">
                                         Tipo De Persona
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="1" >ASEGURADO</option>
-                                        </select>
+                                        <p-dropdown name="tipoPersona" 
+                                        [options]="TIPOS_PERSONA"
+                                        [(ngModel)]="tipoPersonaSelected"
+                                        placeholder="Seleccione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -207,28 +228,28 @@
                                         Tipo De Documento
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="tiposDocumento" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                            <option value="0" >TODOS(AS)</option>
-                                            <option *ngFor="let tipo of tiposDocumento" value={{tipo.code}}>{{ tipo.label }}</option>
-                                        </select>
+                                        <p-dropdown [options]="TIPOS_DOCUMENTO" name="tipoDocumento" 
+                                            [(ngModel)]="tipoDocumentoSelected"
+                                            placeholder="Selecione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 ">Numero De Documento</div>
                                     <div class="col-7 ">
-                                        <input type="text " class="form-control" />
+                                        <input pInputText name="" type="text" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 ">Nombre</div>
                                     <div class="col-7 ">
-                                        <input type="text " class="form-control" />
+                                        <input pInputText name="" type="text" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 ">Apellido</div>
                                     <div class="col-7 ">
-                                        <input type="text " class="form-control" />
+                                        <input pInputText name="" type="text" />
                                     </div>
                                 </div>
 
@@ -243,16 +264,18 @@
                                     </div>
                                 </div>
                             </p-accordionTab>
-                            <p-accordionTab header="Busqueda por Datos del Riesgo Vehiculo ">
+
+                            <!-- Busqueda por Datos del Riesgo Vehiculo -->
+                            <p-accordionTab header="Busqueda por Datos del Riesgo Vehiculo">
                                 <div class="row">
                                     <div class="col-5">
                                         Año
                                     </div>
                                     <div class="col-7 ">
-                                        <select class="form-control " name="anio" [(ngModel)]="selectedEstadoVehiculo">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option *ngFor="let anio of anios" value={{anio.code}} >{{ anio.label }}</option>
-                                        </select>
+                                        <p-dropdown [options]="ANIOS" name="anio" 
+                                        [(ngModel)]="anioSelected" 
+                                        placeholder="Selecione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -260,16 +283,10 @@
                                         Tipo
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option value="1" >AUTOMOVIL</option>
-                                            <option value="2" >CAMIONETA</option>
-                                            <option value="3" >FURGON</option>
-                                            <option value="4" >MINIBUS</option>
-                                            <option value="5" >MOTO</option>
-                                            <option value="6" >STATION-WAGON</option>
-                                            <option value="7" >TODO TERRENO</option>
-                                        </select>
+                                        <p-dropdown [options]="TIPOS_VEHICULO" name="tipoVehiculo"
+                                        [(ngModel)]="tipoVehiculoSelected" 
+                                        placeholder="Selecione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -277,10 +294,11 @@
                                         Marca
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="marcas" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option *ngFor="let marca of marcas" value={{marca.code}} >{{ marca.label }}</option>
-                                        </select>
+                                        <p-dropdown [options]="MARCAS" name="marca" filter="true"
+                                        [(ngModel)]="marcaSelected"
+                                        [virtualScroll]=true
+                                        placeholder="Selecione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -288,16 +306,16 @@
                                         Modelo
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option *ngFor="let modelo of modelos" value={{modelo.code}} >{{ modelo.label }}</option>
-                                        </select>
+                                        <p-dropdown [options]="MODELOS" name="modelo" 
+                                        [(ngModel)]="estadoVehiculoSelected" filter="true"
+                                        placeholder="Selecione" optionLabel="label" 
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-5 ">Patente</div>
                                     <div class="col-7 ">
-                                        <input type="text " class="form-control" />
+                                        <input pInputText name="" type="text" />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -305,11 +323,10 @@
                                         Uso
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option value="1" >PARTICULAR</option>
-                                            <option value="2" >COMERCIAL</option>
-                                        </select>
+                                        <p-dropdown [options]="USOS_VEHICULO" name="usoVehiculo" 
+                                        [(ngModel)]="usoVehiculoSelected"
+                                        placeholder="Selecione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -317,12 +334,10 @@
                                         Sub Uso
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option value="1" >DIARIO</option>
-                                            <option value="2" >FINES DE SEMANA</option>
-                                            <option value="3" >VACACIONAL</option>
-                                        </select>
+                                        <p-dropdown [options]="SUB_USOS_VEHICULO" name="subUsoVehiculo" 
+                                        [(ngModel)]="subUsoVehiculoSelected"
+                                        placeholder="Selecione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
 
@@ -337,17 +352,18 @@
                                     </div>
                                 </div>
                             </p-accordionTab>
-                            <p-accordionTab header="Busqueda por Datos del Riesgo Hogar ">
+
+                            <!-- Busqueda por Datos del Riesgo Hogar -->
+                            <p-accordionTab header="Busqueda por Datos del Riesgo Hogar">
                                 <div class="row">
                                     <div class="col-5">
                                         Perfil Asegurado
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option value="1">Propietario</option>
-                                            <option value="2">Arrendatario</option>
-                                        </select>
+                                        <p-dropdown [options]="PERFILES_ASEGURADO" name="perfilAsegurado"
+                                        [(ngModel)]="perfilAseguradoSelected"
+                                        placeholder="Selecione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -355,11 +371,10 @@
                                         Ocupacion del Riesgo
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option value="1">Casa Ocupacion Habitacional</option>
-                                            <option value="2">Casa Ocupacion Temporal</option>
-                                        </select>
+                                        <p-dropdown [options]="OCUPACIONES_HABITACIONALES" name="ocupacionHabitacional"
+                                        [(ngModel)]="ocupacionHabitacionalSelected"
+                                        placeholder="Selecione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -367,11 +382,10 @@
                                         Tipo Construccion
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option value="1">Solida</option>
-                                            <option value="2">Ligero Combustible</option>
-                                        </select>
+                                        <p-dropdown [options]="TIPOS_CONSTRUCCION" name="tipoConstruccion"
+                                        [(ngModel)]="tipoConstruccionSelected"
+                                        placeholder="Selecione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -379,12 +393,11 @@
                                         Region
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option value="1">Antofagasta</option>
-                                            <option value="2">La Serena</option>
-                                            <option value="3">Metropolitana</option>
-                                        </select>
+                                        <p-dropdown [options]="REGIONES" name="region" filter="true"
+                                        [(ngModel)]="regionSelected"
+                                        [virtualScroll]=true
+                                        placeholder="Selecione" optionLabel="label" 
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -392,10 +405,11 @@
                                         Comuna
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="comunas" class="form-control " [(ngModel)]="selectedEstadoVehiculo">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option *ngFor="let comuna of comunas" value={{comuna.code}}>{{ comuna.label }}</option>
-                                        </select>
+                                        <p-dropdown [options]="COMUNAS" name="comuna" 
+                                            [(ngModel)]="comunaSelected" filter="true"
+                                            [virtualScroll]="true"
+                                            placeholder="Selecione" optionLabel="label" 
+                                            [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -403,11 +417,10 @@
                                         Zona
                                     </div>
                                     <div class="col-7 ">
-                                        <select name="modelos" class="form-control ">
-                                            <option value="0" selected>Seleccione</option>
-                                            <option value="1">Rural</option>
-                                            <option value="2">Urbana</option>
-                                        </select>
+                                        <p-dropdown [options]="ZONAS" name="zona" 
+                                        [(ngModel)]="zonaSelected"
+                                        placeholder="Selecione" optionLabel="label"
+                                        [showClear]="true"></p-dropdown>
                                     </div>
                                 </div>
 
@@ -427,20 +440,22 @@
                 </div>
             </nav>
 
-            <div class="content ">
-                <button type="button " class="btn btn-default btn-sm mb-1" (click)="toggleMenu()">
+            <!-- Boton mostrar menu -->
+            <div class="container busqueda-container">
+                <button type="button" class="btn btn-default btn-md my-1 pull-left"
+                *ngIf="_sidebarHidden" (click)="toggleMenu()">
                     <i class="fa" [ngClass]="iconoOpcionMenu"></i>
                     <small> {{ opcionMenu }} </small>
                 </button>
 
                 <!-- Tabla Resultados de busqueda -->
-                <app-resultado-consulta-simulacion *ngIf="busquedaRealizada"></app-resultado-consulta-simulacion>
+                <app-resultado-consulta-simulacion *ngIf="_busquedaRealizada"></app-resultado-consulta-simulacion>
                 <!-- Tabla Resultados de busqueda -->
             
 
                 <!-- Tabla Previa a Resultados de busqueda -->
-                <div *ngIf="!busquedaRealizada" class="bg-light">
-                    <div class="container p-5">
+                <div *ngIf="!_busquedaRealizada" class="bg-light">
+                    <div class="container p-5 tracking-in-contract">
                         <i class="fa fa-4x fa-info-circle float-left"></i>
                         <h2>Realice una busqueda</h2>
                         <p class="lead">
@@ -450,8 +465,8 @@
                     </div>
                 </div>
                 <!-- Tabla Previa a Resultados de busqueda -->
-
             </div>
+
         </div>
     </p-card>
 </div>

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  isLoggedIn : number = 0;
+  _isLoggedIn : number = 0;
   title = 'cotizadorAngular';
   
   constructor(private router: Router) { 
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   setLogged(logueado) {
     console.log("seteando logueado "+ logueado)
-    this.isLoggedIn = logueado
+    this._isLoggedIn = logueado
     this.router.navigateByUrl("/home-cotizador")
   }
 }

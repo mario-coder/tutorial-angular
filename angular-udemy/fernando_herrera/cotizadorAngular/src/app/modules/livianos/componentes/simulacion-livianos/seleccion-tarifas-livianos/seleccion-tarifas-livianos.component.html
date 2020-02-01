@@ -1,0 +1,245 @@
+                    <!-- Contenedor seleccion tarifas -->
+                    <div class="fade-in-bottom">
+                        <div class="container section-container">
+                            <p-panel [toggleable]="true">
+
+                                <p-header>
+                                    <span class="ui-panel-title">
+                                        <i class="fa fa-th"></i>
+                                        Seleccion tarifas
+                                        <!-- Desmarca las opciones de productos, deducibles o combinación de ambos que no quieras simular -->
+                                    </span>
+                                </p-header>
+
+                                <p-card>
+                                    <p-header>
+                                        <img src="assets/img/logo_reale.png" style="width: 15em;">
+                                    </p-header>
+
+                                    <div class="container section-container tabla-tarifas seleccion">
+                                        <div class="row">
+                                            <div class="col col-2 headerprodded">
+                                                PRODUCTO/DEDUCIBLE
+                                            </div>
+                                            <div class="col  header px-auto">
+                                                <p-checkbox 
+                                                name="fila"
+                                                binary="true" 
+                                                label="0 UF"
+                                                [(ngModel)]="headerColumnas[0]"
+                                                class="header-columna-0"
+                                                (onChange)="chequearTodaLaColumna(0, $event)"></p-checkbox>
+                                            </div>
+                                            <div class="col  header">
+                                                <p-checkbox 
+                                                name="fila"
+                                                binary="true" 
+                                                label="3 UF"
+                                                [(ngModel)]="headerColumnas[1]"
+                                                class="header-columna-1"
+                                                (onChange)="chequearTodaLaColumna(1, $event)"></p-checkbox>
+                                            </div>
+                                            <div class="col  header">
+                                                <p-checkbox 
+                                                name="fila"
+                                                binary="true" 
+                                                label="5 UF"
+                                                [(ngModel)]="headerColumnas[2]"
+                                                class="header-columna-2"
+                                                (onChange)="chequearTodaLaColumna(2, $event)"></p-checkbox>
+                                            </div>
+                                            <div class="col  header">
+                                                <p-checkbox 
+                                                name="fila"
+                                                binary="true" 
+                                                label="10 UF"
+                                                [(ngModel)]="headerColumnas[3]"
+                                                class="header-columna-3"
+                                                (onChange)="chequearTodaLaColumna(3, $event)"></p-checkbox>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col col-2 headerprod">
+                                                <p-checkbox 
+                                                    name="fila"
+                                                    binary="true"
+                                                    label="XL Liviano Particular"
+                                                    [(ngModel)]="headerFilas[0]"
+                                                    class="header-fila-0"
+                                                    (onChange)="chequearTodaLaFila(0, $event)"></p-checkbox>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" 
+                                                id="cb1" 
+                                                class="fila-0 columna-0"
+                                                (change)="chequearHeadersFilaColumna(0, 0)"/>
+                                                <label for="cb1">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" 
+                                                id="cb2" 
+                                                class="fila-0 columna-1"
+                                                (change)="chequearHeadersFilaColumna(0, 1)"/>
+                                                <label for="cb2">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" 
+                                                id="cb3" 
+                                                class="fila-0 columna-2"
+                                                (change)="chequearHeadersFilaColumna(0, 2)"/>
+                                                <label for="cb3">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" 
+                                                id="cb4" 
+                                                class="fila-0 columna-3"
+                                                (change)="chequearHeadersFilaColumna(0, 3)"/>
+                                                <label for="cb4">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col col-2 headerprod">
+                                                <p-checkbox 
+                                                name="fila"
+                                                binary="true" 
+                                                label="L Liviano Particular"
+                                                [(ngModel)]="headerFilas[1]"
+                                                class="header-fila-1"
+                                                (onChange)="chequearTodaLaFila(1, $event)"></p-checkbox>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb5" 
+                                                class="fila-1 columna-0"
+                                                (change)="chequearHeadersFilaColumna(1, 0)"/>
+                                                <label for="cb5">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb6" 
+                                                class="fila-1 columna-1"
+                                                (change)="chequearHeadersFilaColumna(1, 1)"/>
+                                                <label for="cb6">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb7" 
+                                                class="fila-1 columna-2"
+                                                (change)="chequearHeadersFilaColumna(1, 2)"/>
+                                                <label for="cb7">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb8" 
+                                                class="fila-1 columna-3"
+                                                (change)="chequearHeadersFilaColumna(1, 3)"/>
+                                                <label for="cb8">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col col-2 headerprod">
+                                                <p-checkbox 
+                                                name="fila"
+                                                binary="true"
+                                                label="M Liviano Particular"
+                                                [(ngModel)]="headerFilas[2]"
+                                                class="header-fila-2"
+                                                (onChange)="chequearTodaLaFila(2, $event)"></p-checkbox>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb9" 
+                                                class="fila-2 columna-0"
+                                                (change)="chequearHeadersFilaColumna(2, 0)"/>
+                                                <label for="cb9">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb10" 
+                                                class="fila-2 columna-1"
+                                                (change)="chequearHeadersFilaColumna(2, 1)"/>
+                                                <label for="cb10">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb11" 
+                                                class="fila-2 columna-2"
+                                                (change)="chequearHeadersFilaColumna(2, 2)"/>
+                                                <label for="cb11">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb12" 
+                                                class="fila-2 columna-3"
+                                                (change)="chequearHeadersFilaColumna(2, 3)"/>
+                                                <label for="cb12">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col col-2 headerprod">
+                                                <p-checkbox 
+                                                name="fila"
+                                                binary="true" 
+                                                label="S Liviano Particular"
+                                                [(ngModel)]="headerFilas[3]"
+                                                class="header-fila-3"
+                                                (onChange)="chequearTodaLaFila(3, $event)"></p-checkbox>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb13" 
+                                                class="fila-3 columna-0"
+                                                (change)="chequearHeadersFilaColumna(3, 0)"/>
+
+                                                <label for="cb13">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb14" 
+                                                class="fila-3 columna-1"
+                                                (change)="chequearHeadersFilaColumna(3, 1)"/>
+                                                <label for="cb14">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb15" 
+                                                class="fila-3 columna-2"
+                                                (change)="chequearHeadersFilaColumna(3, 2)"/>
+                                                <label for="cb15">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col  text-center">
+                                                <input type="checkbox" id="cb16" 
+                                                class="fila-3 columna-3"
+                                                (change)="chequearHeadersFilaColumna(3, 3)"/>
+                                                <label for="cb16">
+                                                    <div class="img_auto"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </p-card>
+                            </p-panel>
+                        </div>
+                    </div>
+                    <!-- Contenedor seleccion tarifas -->

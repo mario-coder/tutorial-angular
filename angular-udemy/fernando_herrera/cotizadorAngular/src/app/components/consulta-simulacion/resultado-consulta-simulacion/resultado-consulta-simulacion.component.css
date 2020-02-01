@@ -1,0 +1,35 @@
+.ui-widget {
+    display: inline-block !important;
+}
+
+.optionTD {
+    width: 10%;
+    min-width: 8%;
+    text-align: center;
+}
+
+tr.ui-state-highlight a.dropdown-item {
+    color: #212529 !important;
+}
+
+tr.ui-state-highlight a.dropdown-item:hover {
+    color: white !important;
+}
+
+.dropdown-item {
+    color: #212529;
+}
+
+.dropdown-item:hover {
+    background-color: #007ad9;
+    color: #ffffff !important;
+}
+
+.dropdown-header {
+    background-color: #054677;
+    color: #ffffff;
+}
+
+.fa-2x {
+    color: green;
+}
