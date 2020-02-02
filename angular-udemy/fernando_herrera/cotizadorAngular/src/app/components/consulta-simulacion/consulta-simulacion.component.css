@@ -98,8 +98,8 @@ a[aria-expanded="true"] {
   /***********/
  /*ACCORDION*/
 /***********/
-body .ui-accordion .ui-accordion-content {
-    padding-top: 0px !important;
+/* body .ui-accordion .ui-accordion-content {
+    padding-top: 0em !important;
     padding-right: 1em !important;
     padding-bottom: 0.571em !important;
     padding-left: 1em !important;
@@ -108,7 +108,7 @@ body .ui-accordion .ui-accordion-content {
 body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
     background-color: rgb(8, 8, 133) !important;
     color: white;
-}
+} */
 
 /* ---------------------------------------------------
     CONTENT STYLE
