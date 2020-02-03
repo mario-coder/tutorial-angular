@@ -15,7 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { DatePickerConfigService } from './shared/config/date-picker-config';
 import { DragDropDirective } from './shared/directives/drag-drop.directive';
 import { NgxDropzoneModule } from 'ngx-dropzone';
-import { SharedCommonModule } from './shared/modules/common/shared-common.module';
+import { SharedCommonModule } from './modules/common/shared/shared-common.module';
+
 
 @NgModule({
   declarations: [
