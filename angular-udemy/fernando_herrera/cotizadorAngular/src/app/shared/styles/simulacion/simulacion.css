@@ -20,6 +20,8 @@
 .listwrap {
     border: 1px solid rgb(230, 226, 226);
     /*margin: 0px !important;*/
+    text-align: center;
+    padding-top: 1em;
 }
 
 

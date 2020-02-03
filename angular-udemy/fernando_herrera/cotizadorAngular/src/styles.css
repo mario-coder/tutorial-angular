@@ -40,12 +40,16 @@ body {
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
 }
 
+  /********/
+ /*PANELS*/
+/********/
 div.ui-panel-titlebar {
     border-top-left-radius: 3px !important;
     border-top-right-radius: 3px !important;
-    font-size: large;
+    font-size: medium;
 }
 
+/*Paneles internos (claros)*/
 .panel-container div.ui-panel-titlebar {
     background-color: #f8f8f8 !important;
     color: #002355 !important;
@@ -61,6 +65,23 @@ div.ui-panel-titlebar {
     border-bottom-right-radius: 3px !important;
 }
 
+/*workaround toggle button en panel con botones*/
+body .ui-panel .ui-panel-title {
+    width: calc(100% - 30px) !important;
+    display: inline-block !important;
+}
+body .ui-panel .ui-panel-title .ui-panel-title-buttons {
+    float: right !important;
+    margin: 0.1em 0.2em !important;
+}
+body .ui-panel .ui-panel-title .ui-panel-titlebar-icon {
+    margin-top: -0.15em !important;
+    margin-bottom: -0.15em !important;
+}
+
+  /*******/
+ /*TABLE*/
+/*******/
 .table thead th {
     vertical-align: top !important;
 }
@@ -68,20 +89,7 @@ div.ui-panel-titlebar {
 .ui-chkbox,
 .ui-chkbox-label {
     float: left !important;
-}
-
-/*workaround toggle button en panel con botones*/
-body .ui-panel .ui-panel-title {
-    width: calc(100% - 30px) !important;
-    display: inline-block !important;
-}
-body .ui-panel .ui-panel-title .ui-panel-title-buttons {
-        float: right !important;
-        margin: 0.1em 0.2em !important;
-}
-body .ui-panel .ui-panel-title .ui-panel-titlebar-icon {
-    margin-top: -0.15em !important;
-    margin-bottom: -0.15em !important;
+    cursor: pointer;
 }
 
   /******************/
