@@ -127,10 +127,6 @@ body .ui-panel .ui-panel-title .ui-panel-titlebar-icon {
   /************/
  /*DATATABLES*/
 /************/
-.seleccionado {
-    border: 6px solid rgb(230, 215, 0) !important;
-}
-
 .ui-state-highlight,
 .ui-tabview-selected,
 .ui-paginator-page.ui-state-active {

@@ -1,1 +1,81 @@
-<p>grilla-tarifas-livianos works!</p>
+
+
+<!-- Contenedor tarifas -->
+<div>
+    <div class="container section-container">
+        <p-panel [toggleable]="true">
+
+            <p-header>
+                <span class="ui-panel-title">
+                    <i class="fa fa-th"></i>
+                    Seleccion tarifas
+                    <!-- Desmarca las opciones de productos, deducibles o combinación de ambos que no quieras simular -->
+                </span>
+            </p-header>
+
+            <!-- <p-card> -->
+                <!-- <p-header> -->
+                    <img src="assets/img/logo_reale.png" class="mb-3" style="width: 15em;">
+                <!-- </p-header> -->
+
+                <div class="container section-container tabla-tarifas mb-3">
+                    <div class="row">
+                        <div class="col col-2 headerprodded">
+                            PRODUCTO/DEDUCIBLE
+                        </div>
+                        <div class="col  header px-auto">
+                            0 UF
+                        </div>
+                        <div class="col  header">
+                            3 UF
+                        </div>
+                        <div class="col  header">
+                            5 UF
+                        </div>
+                        <div class="col  header">
+                            10 UF
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="tarifasClasificadas['tarifasXL'] !== undefined && tarifasClasificadas['tarifasXL'].length > 0">
+                        <div class="col col-2 headerprod">
+                            XL Liviano Particular
+                        </div>
+                        <div class="col text-center" *ngFor="let tarifa of tarifasClasificadas['tarifasXL']; let i = index" (click)="selecciona(0, i)">
+                            <app-celda-tarifa-livianos [simulacion]="tarifa"></app-celda-tarifa-livianos>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="tarifasClasificadas['tarifasL'] !== undefined && tarifasClasificadas['tarifasL'].length > 0">
+                        <div class="col col-2 headerprod">
+                            L Liviano Particular
+                        </div>
+                        <div class="col text-center" *ngFor="let tarifa of tarifasClasificadas['tarifasL']; let i = index" (click)="selecciona(1, i)">
+                            <app-celda-tarifa-livianos [simulacion]="tarifa"></app-celda-tarifa-livianos>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="tarifasClasificadas['tarifasM'] !== undefined && tarifasClasificadas['tarifasM'].length > 0">
+                        <div class="col col-2 headerprod">
+                            M Liviano Particular
+                        </div>
+                        <div class="col text-center" *ngFor="let tarifa of tarifasClasificadas['tarifasM']; let i = index" (click)="selecciona(2, i)">
+                            <app-celda-tarifa-livianos [simulacion]="tarifa"></app-celda-tarifa-livianos>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="tarifasClasificadas['tarifasS'] !== undefined && tarifasClasificadas['tarifasS'].length > 0">
+                        <div class="col col-2 headerprod">
+                            S Liviano Particular
+                        </div>
+                        <div class="col text-center" *ngFor="let tarifa of tarifasClasificadas['tarifasS']; let i = index" (click)="selecciona(3, i)">
+                            <app-celda-tarifa-livianos [simulacion]="tarifa"></app-celda-tarifa-livianos>
+                        </div>
+                    </div>
+
+                </div>
+            <!-- </p-card> -->
+        </p-panel>
+    </div>
+</div>
+<!-- Contenedor tarifas -->
