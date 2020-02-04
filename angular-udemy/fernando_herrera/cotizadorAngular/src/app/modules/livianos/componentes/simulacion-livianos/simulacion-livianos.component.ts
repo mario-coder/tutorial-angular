@@ -88,7 +88,6 @@ export class SimulacionLivianosComponent implements OnInit {
   }
 
   async tarificar() {
-    let simulaciones: any[];
 
     Swal.fire({
       allowOutsideClick: false,
@@ -98,13 +97,16 @@ export class SimulacionLivianosComponent implements OnInit {
     Swal.showLoading();
 
     setTimeout(async () => {
-      simulaciones = await this.tarificadorService.tarificar();
+      this.simulaciones = await this.tarificadorService.tarificar();
 
       //this.tarifasClasificadas = this.clasificacionTarifas(simulaciones);
-      this.tarifasClasificadas = this.mapeoTarifas(simulaciones);
+      //this.tarifasClasificadas = this.mapeoTarifas(simulaciones);
 
-      console.log("this.tarifasclasificadas");
-      console.log(this.tarifasClasificadas);
+      //console.log("this.tarifasclasificadas");
+      //console.log(this.tarifasClasificadas);
+      
+      console.log("simulaciones")
+      console.log(this.simulaciones);
 
       this._tarificado = true;
 

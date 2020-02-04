@@ -286,26 +286,34 @@
             <div class="container section-container">
                 <p-panel [toggleable]="true">
 
-                    <p-header>
+                    <!-- <p-header>
                         <span class="ui-panel-title">
                             <i class="fa fa-money-bill"></i>
                             Ofertas Disponibles
                         </span>
-                    </p-header>
+                    </p-header> -->
 
                     <!-- <p-card> -->
                         <!-- <p-header> -->
-                        <div>
+                        <!-- <div>
                             <img src="assets/img/logo_reale.png" style="width: 15em;">
                             <div style="float: right" class="m-4">Nro. Simulación: 12345</div>
-                        </div>
+                        </div> -->
                         <!-- </p-header> -->
 
 
                         <br>
                         
+
+                        <app-grilla-tarifas-livianos 
+                            *ngIf="_tarificado"
+                            [simulaciones]="simulaciones"
+                            [planTarifaSeleccionada]=""
+                            [deducibleTarifaSeleccionada]="">
+                        </app-grilla-tarifas-livianos>
+
                         <!-- <div class="container section-container"> -->
-                            <ul class="tabla-tarifas list-group shadow-drop-center" role="tablist">
+                            <!-- <ul class="tabla-tarifas list-group shadow-drop-center" role="tablist">
                                 <li class="row">
                                     <div class="listwrap col-2 header">PRODUCTO/DEDUCIBLE</div>
                                     <div class="list-group-item border-0 col text-center">
@@ -373,7 +381,7 @@
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul> -->
                         <!-- </div> -->
 
                         <br>
