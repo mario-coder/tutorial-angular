@@ -57,8 +57,7 @@ export class SimulacionLivianosComponent implements OnInit {
     
   _tarificado: boolean = false;
   simulaciones: any[];
-  tarifasClasificadas: any = {};
-
+ 
   constructor(
       private comboFeedService: ComboFeedService,
       private tarificadorService: TarificadorService,
@@ -99,92 +98,17 @@ export class SimulacionLivianosComponent implements OnInit {
     setTimeout(async () => {
       this.simulaciones = await this.tarificadorService.tarificar();
 
-      //this.tarifasClasificadas = this.clasificacionTarifas(simulaciones);
-      //this.tarifasClasificadas = this.mapeoTarifas(simulaciones);
-
-      //console.log("this.tarifasclasificadas");
-      //console.log(this.tarifasClasificadas);
-      
-      console.log("simulaciones")
-      console.log(this.simulaciones);
-
       this._tarificado = true;
 
-      // Swal.fire({
-      //   allowOutsideClick: false,
-      //   icon: 'success',
-      //   text: 'Proceso exitoso',
-      //   showConfirmButton: true
-      // });
+      Swal.fire({
+        allowOutsideClick: false,
+        icon: 'success',
+        text: 'Proceso de tarificacion exitoso',
+        showConfirmButton: true
+      });
 
       Swal.close();
     }, 2000);
-  }
-
-  clasificacionTarifas(simulaciones: any) {
-    let tarifasClasificadas: any = {};
-
-    simulaciones.map(simulacion => {
-      console.log(simulacion.descripcionActividad);
-      let codigoTarifaGrilla =
-        simulacion.codigoActividad + "-" + simulacion.codigoDeducible;
-      if (tarifasClasificadas[codigoTarifaGrilla] === undefined) {
-        tarifasClasificadas[codigoTarifaGrilla] = [];
-      }
-      tarifasClasificadas[codigoTarifaGrilla].push(simulacion);
-    });
-
-    //console.log("Tarifas Clasificadas")
-    //console.log(tarifasClasificadas)
-    
-    return tarifasClasificadas;
-  }
-  
-  ordena(simA: { codigoDeducible: number; }, simB: { codigoDeducible: number; }){ return (simA.codigoDeducible - simB.codigoDeducible)}
-
-  mapeoTarifas(simulaciones: any) {
-    let tarifasClasificadas: any = {};
-    let tarifasXL: any[] = [];
-    let tarifasL: any[] = [];
-    let tarifasM: any[] = [];
-    let tarifasS: any[] = [];
-
-    let tarifaXL_Part = "1";
-    let tarifaL_Part = "2";
-    let tarifaM_Part = "3";
-    let tarifaS_Part = "4";
-
-    simulaciones.map(simulacion => {
-      switch(simulacion.codigoActividad){
-        case tarifaXL_Part:
-          tarifasXL.push(simulacion)
-        break;
-        case tarifaL_Part:
-          tarifasL.push(simulacion)
-        break;
-        case tarifaM_Part:
-          tarifasM.push(simulacion)
-        break;
-        case tarifaS_Part:
-          tarifasS.push(simulacion)
-        break;
-      }
-    });
-
-    tarifasXL.sort(this.ordena)
-    tarifasL.sort(this.ordena)
-    tarifasM.sort(this.ordena)
-    tarifasS.sort(this.ordena)
-    
-    tarifasClasificadas = {
-      tarifasXL,
-      tarifasL,
-      tarifasM,
-      tarifasS
-    }
-
-    this._tarificado = true;
-    return tarifasClasificadas
   }
 
   saludo() {

@@ -24,19 +24,13 @@ export class GrillaTarifasLivianosComponent implements OnInit {
   columnaTarifaSeleccionadaNew: number;
 
   tarifasClasificadas : any = {};
-  _tarificado: boolean = false;
+  
 
   constructor(private renderer: Renderer2, private elem: ElementRef, private cd : ChangeDetectorRef){}
   
   ngOnInit() {
 
-    console.log("grilla tarifas")
-    console.log(this.simulaciones)
-
-    this.tarifasClasificadas = this.mapeoTarifas(this.simulaciones);
-
-    console.log("tarifas clasificadas")
-    console.log(this.tarifasClasificadas)
+    this.mapeoTarifas(this.simulaciones);
 
 
     this.cd.detectChanges();
@@ -45,7 +39,6 @@ export class GrillaTarifasLivianosComponent implements OnInit {
   ordena(simA: { codigoDeducible: number; }, simB: { codigoDeducible: number; }){ return (simA.codigoDeducible - simB.codigoDeducible)}
 
   mapeoTarifas(simulaciones: any) {
-    let tarifasClasificadas: any = {};
     let tarifasXL: any[] = [];
     let tarifasL: any[] = [];
     let tarifasM: any[] = [];
@@ -78,15 +71,12 @@ export class GrillaTarifasLivianosComponent implements OnInit {
     tarifasM.sort(this.ordena)
     tarifasS.sort(this.ordena)
     
-    tarifasClasificadas = {
+    this.tarifasClasificadas = {
       tarifasXL,
       tarifasL,
       tarifasM,
       tarifasS
     }
-
-    this._tarificado = true;
-    return tarifasClasificadas
   }
 
   selecciona(fila, columna) {
