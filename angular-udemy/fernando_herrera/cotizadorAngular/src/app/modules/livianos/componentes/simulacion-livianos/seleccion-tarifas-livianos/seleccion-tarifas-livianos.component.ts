@@ -14,6 +14,8 @@ export class SeleccionTarifasComponent implements OnInit {
   @Input() totalFilas: number;
   @Input() totalColumnas: number;
   @Input() producto: string; //AUTO, MOTO, PESADO, HOGAR
+  @Input() deducibles: any[];
+  @Input() productos: any[];
 
   grillaChecked: boolean[][];
   backgroundOn: string = "";
@@ -22,11 +24,6 @@ export class SeleccionTarifasComponent implements OnInit {
   constructor(private renderer: Renderer2, private elem: ElementRef, private cd : ChangeDetectorRef){}
   
   ngOnInit() {
-    //this.totalFilas = 4;
-    //this.totalColumnas = 4;
-
-    //this.headerColumnas = [false, false, false, false];
-    //this.headerFilas = [false, false, false, false];
     this.backgroundOn = `url('../../../../../../../assets/img/switch_livianos/${this.producto}_ON_.png')`;
     this.backgroundOff = `url('../../../../../../assets/img/switch_livianos/${this.producto}_OFF_.png')`;
 
@@ -38,6 +35,7 @@ export class SeleccionTarifasComponent implements OnInit {
       this.headerColumnas[j] = false;
     }
 
+    //Arreglo bidimensional que representa la grilla en pantalla
     this.grillaChecked = [];
     for(let i = 0; i < this.totalFilas ; i++) {
       this.grillaChecked[i] = [];
@@ -91,18 +89,5 @@ export class SeleccionTarifasComponent implements OnInit {
     this.headerColumnas[numeroColumna] = (todasLasColumnas)? estadoCheckboxActual: false;
 
     this.cd.detectChanges();
-  }
-
-  ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
-
-    // this.elem.nativeElement.querySelectorAll(":checked + label .img_auto").forEach(element => {
-    //   element.style.backgroundImage = this.backgroundOn;
-    // });
-
-    // this.elem.nativeElement.querySelectorAll("label .img_auto").forEach(element => {
-    //   element.style.backgroundImage = this.backgroundOff;
-    // });
   }
 }
