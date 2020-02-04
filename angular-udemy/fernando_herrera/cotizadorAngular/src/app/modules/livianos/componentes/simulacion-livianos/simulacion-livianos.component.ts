@@ -10,7 +10,9 @@ import { ComboFeedService } from 'src/app/services/data/combofeed.service';
   templateUrl: "./simulacion-livianos.component.html",
   styleUrls: ["../../../../shared/styles/simulacion/simulacion.css"]
 })
+
 export class SimulacionLivianosComponent implements OnInit {
+  PRODUCTO = "AUTO";
   _displayBuscarDocumento: boolean = false;
   _isLoggedIn : number = 1;
   

@@ -1,7 +1,0 @@
-:checked + label .img_auto {
-  background-image: url("../../../../../../assets/img/switch_livianos/AUTO_ON_.png");
-}
-
-label .img_auto {
-  background-image: url("../../../../../../assets/img/switch_livianos/AUTO_OFF_.png");
-}
