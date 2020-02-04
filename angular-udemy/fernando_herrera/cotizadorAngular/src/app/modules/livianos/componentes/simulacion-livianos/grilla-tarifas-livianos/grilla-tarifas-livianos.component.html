@@ -41,7 +41,11 @@
                         <div class="col col-2 headerprod">
                             XL Liviano Particular
                         </div>
-                        <div class="col text-center" *ngFor="let tarifa of tarifasClasificadas['tarifasXL']; let i = index" (click)="selecciona(0, i)">
+                        <div
+                        *ngFor="let tarifa of tarifasClasificadas['tarifasXL']; let i = index" 
+                        (click)="selecciona(0, i)"
+                        [ngClass]="{seleccionado: filaTarifaSeleccionadaNew == 0 && columnaTarifaSeleccionadaNew == i}"
+                        [class]="'col text-center fila_0 columna_'+i">
                             <app-celda-tarifa-livianos [simulacion]="tarifa"></app-celda-tarifa-livianos>
                         </div>
                     </div>
@@ -50,7 +54,7 @@
                         <div class="col col-2 headerprod">
                             L Liviano Particular
                         </div>
-                        <div class="col text-center" *ngFor="let tarifa of tarifasClasificadas['tarifasL']; let i = index" (click)="selecciona(1, i)">
+                        <div class="col text-center idle" *ngFor="let tarifa of tarifasClasificadas['tarifasL']; let i = index" (click)="selecciona(1, i)">
                             <app-celda-tarifa-livianos [simulacion]="tarifa"></app-celda-tarifa-livianos>
                         </div>
                     </div>
@@ -59,7 +63,7 @@
                         <div class="col col-2 headerprod">
                             M Liviano Particular
                         </div>
-                        <div class="col text-center" *ngFor="let tarifa of tarifasClasificadas['tarifasM']; let i = index" (click)="selecciona(2, i)">
+                        <div class="col text-center idle" *ngFor="let tarifa of tarifasClasificadas['tarifasM']; let i = index" (click)="selecciona(2, i)">
                             <app-celda-tarifa-livianos [simulacion]="tarifa"></app-celda-tarifa-livianos>
                         </div>
                     </div>
@@ -68,7 +72,7 @@
                         <div class="col col-2 headerprod">
                             S Liviano Particular
                         </div>
-                        <div class="col text-center" *ngFor="let tarifa of tarifasClasificadas['tarifasS']; let i = index" (click)="selecciona(3, i)">
+                        <div class="col text-center idle" *ngFor="let tarifa of tarifasClasificadas['tarifasS']; let i = index" (click)="selecciona(3, i)">
                             <app-celda-tarifa-livianos [simulacion]="tarifa"></app-celda-tarifa-livianos>
                         </div>
                     </div>

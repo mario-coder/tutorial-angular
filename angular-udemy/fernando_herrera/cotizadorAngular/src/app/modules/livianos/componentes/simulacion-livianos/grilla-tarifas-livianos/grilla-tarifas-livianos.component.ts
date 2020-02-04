@@ -3,7 +3,7 @@ import { Component, OnInit, ElementRef, Renderer2, ChangeDetectorRef, Input } fr
 @Component({
   selector: 'app-grilla-tarifas-livianos',
   templateUrl: './grilla-tarifas-livianos.component.html',
-  styleUrls: [
+  styleUrls: ["./grilla-tarifas-livianos.component.css",
 '../../../../../shared/styles/simulacion/seleccion-tarifas/seleccion-tarifas.css']
 })
 export class GrillaTarifasLivianosComponent implements OnInit {
@@ -81,5 +81,11 @@ export class GrillaTarifasLivianosComponent implements OnInit {
 
   selecciona(fila, columna) {
     console.log(fila, columna)
+
+    this.filaTarifaSeleccionadaNew = fila;
+    this.columnaTarifaSeleccionadaNew = columna;
+
+    this.filaTarifaSeleccionadaOld = null;
+    this.columnaTarifaSeleccionadaOld = null;
   }
 }

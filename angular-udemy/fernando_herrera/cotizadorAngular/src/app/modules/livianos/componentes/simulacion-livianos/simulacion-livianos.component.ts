@@ -19,10 +19,10 @@ export class SimulacionLivianosComponent implements OnInit {
   SIMULACION:number = 1;
   PROPUESTA:number = 2;
   EMISION:number = 3;
+  CURRENT_STAGE = this.SIMULACION;
 
   _propuestaActiva: boolean = false;
 
-  CURRENT_STAGE = this.SIMULACION;
 
   bsConfig: Partial<BsDatepickerConfig>;
   dateCustomClasses: DatepickerDateCustomClasses[];
