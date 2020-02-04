@@ -13,7 +13,7 @@ export class SeleccionTarifasComponent implements OnInit {
 
   @Input() totalFilas: number;
   @Input() totalColumnas: number;
-  @Input() producto: string;
+  @Input() producto: string; //AUTO, MOTO, PESADO, HOGAR
 
   grillaChecked: boolean[][];
   backgroundOn: string = "";
