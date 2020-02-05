@@ -25,17 +25,8 @@
                         <div class="col col-2 headerprodded">
                             PRODUCTO/DEDUCIBLE
                         </div>
-                        <div class="col  header px-auto">
-                            0 UF
-                        </div>
-                        <div class="col  header">
-                            3 UF
-                        </div>
-                        <div class="col  header">
-                            5 UF
-                        </div>
-                        <div class="col  header">
-                            10 UF
+                        <div class="col header px-auto" *ngFor="let deducible of deduciblesExistentes; let i = index" >
+                            {{ deducible.descripcionDeducible }}
                         </div>
                     </div>
 
