@@ -22,10 +22,11 @@
                     *ngIf="arrayTarifas !== undefined && arrayTarifas.length > 0">
 
                     <div class="row">
-                        <div class="col col-2 headerprodded">
+                        <div class="col headerprodded d-flex justify-content-center">
                             PRODUCTO/DEDUCIBLE
                         </div>
-                        <div class="col header px-auto" *ngFor="let deducible of deduciblesExistentes; let i = index" >
+                        <div class="col header d-flex justify-content-center" 
+                            *ngFor="let deducible of deduciblesExistentes; let i = index" >
                             {{ deducible.descripcionDeducible }}
                         </div>
                     </div>

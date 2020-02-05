@@ -42,7 +42,7 @@ export class GrillaTarifasLivianosComponent implements OnInit {
   ordenaPorCodigoDeducible(simA: { codigoDeducible: number; }, simB: { codigoDeducible: number; }){ return (simA.codigoDeducible - simB.codigoDeducible)}
   ordenaPorCodigoActividad(groupSimsA: { codigoActividad: number; }, groupSimsB: { codigoActividad: number; }){ return (groupSimsA.codigoActividad - groupSimsB.codigoActividad)}
 
-  //Organia las tarifas entregadas por el WS 
+  //Organiza las tarifas entregadas por el WS, asumiendo que no vienen ordenadas ni con todos los deducibles
   mapeoTarifas(simulaciones: any) {
     
     simulaciones.sort(this.ordenaPorCodigoActividad);
