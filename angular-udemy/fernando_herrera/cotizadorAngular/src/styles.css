@@ -2,7 +2,7 @@
 
 @import "./assets/animista/animista.css";
 @import "~ngx-bootstrap/datepicker/bs-datepicker.css";
-@import "./assets/themes/nova-colored-custom.css";
+@import "./assets/themes/nova-colored-custom/nova-colored-custom.css";
 
 body {
     background-color: #e3e3e3 !important;
@@ -16,12 +16,40 @@ body {
     max-width: 97% !important;
 }
 
+.page-container {
+    max-width: 100% !important;
+    margin-top: 2.3rem !important;
+    margin-bottom: 2.3rem !important;
+    margin-left: 0.2rem !important;
+    margin-right: 0.2rem !important;
+    padding-left: 0.3em !important;
+    padding-right: 0.3rem !important;
+}
+
+.section-container {
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    border: 1px solid rgb(210, 214, 214);
+    margin-top: 0.4%;
+    margin-left: 0.3%;
+    margin-right: 0.3%;
+    padding: 1%;
+    min-width: 100% !important;
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+}
+
+  /********/
+ /*PANELS*/
+/********/
 div.ui-panel-titlebar {
     border-top-left-radius: 3px !important;
     border-top-right-radius: 3px !important;
-    font-size: large;
+    font-size: medium;
 }
 
+/*Paneles internos (claros)*/
 .panel-container div.ui-panel-titlebar {
     background-color: #f8f8f8 !important;
     color: #002355 !important;
@@ -37,6 +65,23 @@ div.ui-panel-titlebar {
     border-bottom-right-radius: 3px !important;
 }
 
+/*workaround toggle button en panel con botones*/
+body .ui-panel .ui-panel-title {
+    width: calc(100% - 30px) !important;
+    display: inline-block !important;
+}
+body .ui-panel .ui-panel-title .ui-panel-title-buttons {
+    float: right !important;
+    margin: 0.1em 0.2em !important;
+}
+body .ui-panel .ui-panel-title .ui-panel-titlebar-icon {
+    margin-top: -0.15em !important;
+    margin-bottom: -0.15em !important;
+}
+
+  /*******/
+ /*TABLE*/
+/*******/
 .table thead th {
     vertical-align: top !important;
 }
@@ -44,55 +89,24 @@ div.ui-panel-titlebar {
 .ui-chkbox,
 .ui-chkbox-label {
     float: left !important;
+    cursor: pointer;
 }
 
-.section-container {
-    background-color: #f8f8f8;
-    border-radius: 5px;
-    border: 1px solid rgb(210, 214, 214);
-    margin: 1% auto;
-    padding: 1%;
-    width: 100% !important;
-    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    -moz-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
-}
-
-/*workaround toggle button en panel con botones*/
-
-        body .ui-panel .ui-panel-title {
-            width: calc(100% - 30px) !important;
-            display: inline-block !important;
-        }
-        body .ui-panel .ui-panel-title .ui-panel-title-buttons {
-                float: right !important;
-                margin: 0.1em 0.2em !important;
-        }
-
-        body .ui-panel .ui-panel-title .ui-panel-titlebar-icon {
-            margin-top: -0.15em !important;
-            margin-bottom: -0.15em !important;
-        }
-
-    #sidebar {
-        transition: all 0.3s;
-    }
-
-  /****************/
- /*BOTONES:INPUTS*/
-/****************/
-.input-label {
-    text-align: left;
-    font-size: 0.8rem;
-    margin-bottom: 3px;
+  /******************/
+ /*BUTTONS & INPUTS*/
+/******************/
+.btn-wide {
+    min-width: 100% !important;
 }
 
 .btn {
     font-size: 95% !important;
 }
 
-.btn-wide {
-    min-width: 100% !important;
+.input-label {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-bottom: 3px;
 }
 
 .form-control {
@@ -100,14 +114,14 @@ div.ui-panel-titlebar {
     font-size: 100% !important;
 }
 
-.extendido {
-    width: 100% !important;
-}
-
-
+/*Calculo de ancho para inputgroups*/
 .ui-inputgroup > .ui-inputtext {
     /* min-width: 90% !important; */
     min-width: calc(100% - 2.357em) !important;
+}
+
+.ui-dropdown {
+    min-width: 1em !important;
 }
 
   /************/
@@ -134,10 +148,6 @@ div.ui-panel-titlebar {
     display: block !important;
 }
 
-.seleccionado {
-    border: 6px solid rgb(230, 215, 0) !important;
-}
-
   /***********/
  /*BUSQUEDAS*/
 /***********/
@@ -147,50 +157,6 @@ div.ui-panel-titlebar {
     max-width: 40% !important;
     float: left !important;
 }
-
-  /***********/
- /*ACCORDION*/
-/***********/
-body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
-    background-color: rgb(8, 8, 133) !important;
-    color: white;
-}
-
-body .ui-accordion .ui-accordion-content {
-    padding-top: 0px !important;
-}
-
-.btnSearch {
-    margin-left: 50em !important;
-}
-
-@media (max-width: 768px) {
-    .btnSearch {
-        margin-left: 1em !important;
-    }
-}
-
-.ui-dropdown {
-    min-width: 1em !important;
-}
-
-.bg-image-blur {
-    /* The image used */
-    background-image: url("./assets/img/sucursal-reale-la-serena.jpg");
-  
-    /* Add the blur effect */
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-  
-    /* Full height */
-    height: 100%;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 
   /************/
  /*DATEPICKER*/
@@ -204,10 +170,6 @@ body .ui-accordion .ui-accordion-content {
 table td.ui-datepicker-today>a {
    color: white !important;
 }
-
-/* .calendar-input {
-   min-width: 90% !important;
-} */
 
 /*Monthpicker*/
 .ui-datepicker-monthpicker {

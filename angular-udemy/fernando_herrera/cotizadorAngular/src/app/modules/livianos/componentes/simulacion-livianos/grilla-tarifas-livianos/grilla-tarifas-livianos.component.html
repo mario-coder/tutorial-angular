@@ -1,0 +1,63 @@
+
+
+<!-- Contenedor tarifas -->
+<div>
+    <div class="container section-container">
+        <p-panel [toggleable]="true">
+
+            <p-header>
+                <span class="ui-panel-title">
+                    <i class="fa fa-th"></i>
+                    Seleccion tarifas
+                    <!-- Desmarca las opciones de productos, deducibles o combinación de ambos que no quieras simular -->
+                </span>
+            </p-header>
+
+            <!-- <p-card> -->
+                <!-- <p-header> -->
+                    <img src="assets/img/logo_reale.png" class="mb-3" style="width: 15em;">
+                <!-- </p-header> -->
+
+                <div class="container section-container tabla-tarifas mb-3"
+                    *ngIf="arrayTarifas !== undefined && arrayTarifas.length > 0">
+
+                    <div class="row">
+                        <div class="col col-2 headerprodded">
+                            PRODUCTO/DEDUCIBLE
+                        </div>
+                        <div class="col  header px-auto">
+                            0 UF
+                        </div>
+                        <div class="col  header">
+                            3 UF
+                        </div>
+                        <div class="col  header">
+                            5 UF
+                        </div>
+                        <div class="col  header">
+                            10 UF
+                        </div>
+                    </div>
+
+                    <div class="row" *ngFor="let tarifaActual of arrayTarifas; let i = index" >
+                        <div class="col col-2 headerprod">
+                            {{ tarifaActual.descripcionActividad }}
+                        </div>
+                        
+                        <div *ngFor="let tarifa of tarifaActual.listaTarifas; let j = index" 
+                            (click)="selecciona(i, j)"
+                            [ngClass]="{seleccionado: _filaTarifaSeleccionada == i && _columnaTarifaSeleccionada == j}"
+                            [class]="'col text-center fila_'+i +' columna_'+j">
+
+                            <app-celda-tarifa-livianos [simulacion]="tarifa">
+                            </app-celda-tarifa-livianos>
+
+                        </div>
+                    </div>
+
+                </div>
+            <!-- </p-card> -->
+        </p-panel>
+    </div>
+</div>
+<!-- Contenedor tarifas -->

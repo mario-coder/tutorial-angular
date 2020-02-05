@@ -2,14 +2,14 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { ConsultaSimulacionComponent } from "./components/consulta-simulacion/consulta-simulacion.component";
 import { HomeCotizadorComponent } from './components/home-cotizador/home-cotizador.component';
-import { PropuestaGeneradaLivianosComponent } from './modulos/livianos/componentes/propuesta-livianos/propuesta-generada-livianos/propuesta-generada-livianos.component';
-import { PropuestaLivianosComponent } from './modulos/livianos/componentes/propuesta-livianos/propuesta-livianos.component';
-import { SimulacionLivianosComponent } from './modulos/livianos/componentes/simulacion-livianos/simulacion-livianos.component';
-import { EmisionLivianosComponent } from './modulos/livianos/componentes/emision-livianos/emision-livianos.component';
-import { PolizaEmitidaLivianosComponent } from './modulos/livianos/componentes/emision-livianos/poliza-emitida-livianos/poliza-emitida-livianos.component';
+import { PropuestaLivianosComponent } from './modules/livianos/componentes/propuesta-livianos/propuesta-livianos.component';
+import { SimulacionLivianosComponent } from './modules/livianos/componentes/simulacion-livianos/simulacion-livianos.component';
+import { EmisionLivianosComponent } from './modules/livianos/componentes/emision-livianos/emision-livianos.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './guards/auth.guard';
+import { PolizaEmitidaLivianosComponent } from './modules/livianos/componentes/emision-livianos/poliza-emitida-livianos/poliza-emitida-livianos.component';
+import { PropuestaGeneradaLivianosComponent } from './modules/livianos/componentes/propuesta-livianos/propuesta-generada-livianos/propuesta-generada-livianos.component';
 
 const routes: Routes = [
   { path: "consulta-simulacion", component: ConsultaSimulacionComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
@@ -25,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
