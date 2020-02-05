@@ -38,9 +38,11 @@ export class GrillaTarifasLivianosComponent implements OnInit {
     this.cd.detectChanges();
   }
 
+  //Funciones de ordenamiento
   ordenaPorCodigoDeducible(simA: { codigoDeducible: number; }, simB: { codigoDeducible: number; }){ return (simA.codigoDeducible - simB.codigoDeducible)}
   ordenaPorCodigoActividad(groupSimsA: { codigoActividad: number; }, groupSimsB: { codigoActividad: number; }){ return (groupSimsA.codigoActividad - groupSimsB.codigoActividad)}
 
+  //Organia las tarifas entregadas por el WS 
   mapeoTarifas(simulaciones: any) {
     
     simulaciones.sort(this.ordenaPorCodigoActividad);
@@ -57,6 +59,10 @@ export class GrillaTarifasLivianosComponent implements OnInit {
     });
 
 
+    this.deduciblesExistentes.sort(this.ordenaPorCodigoDeducible);
+    this.planesExistentes.sort(this.ordenaPorCodigoActividad);
+
+
     this.tarifasClasificadas.map(listaTarifas => {
 
       let simulacionExt = (listaTarifas && listaTarifas.length > 0)? listaTarifas[0] : undefined;
@@ -67,22 +73,37 @@ export class GrillaTarifasLivianosComponent implements OnInit {
         let grupoTarifas = {
           codigoActividad : simulacionExt.codigoActividad,
           descripcionActividad: simulacionExt.descripcionActividad,
-          listaTarifas : this.tarifasClasificadas[simulacionExt.codigoActividad]
+          listaTarifas : this.organizaTarifasMedianteDeduciblesExistentes(this.tarifasClasificadas[simulacionExt.codigoActividad])
         }
     
         this.arrayTarifas.push(grupoTarifas)
       }
     });
-
-    this.deduciblesExistentes.sort(this.ordenaPorCodigoDeducible);
-    this.planesExistentes.sort(this.ordenaPorCodigoActividad);
   }
 
+  //Marca la cotizacion seleccionada
   selecciona(fila, columna) {
     this._filaTarifaSeleccionada = fila;
     this._columnaTarifaSeleccionada = columna;
   }
 
+  //Añade tarifas vacias en los casos en que la lista de tarifas no tenga valor para cierto deducible
+  organizaTarifasMedianteDeduciblesExistentes(listaTarifas:any[]) {
+    let listaTarifasAux : any[] = [];
+    let counter: number = 0;
+
+    this.deduciblesExistentes.map((deducible) => {
+      if(listaTarifas.findIndex(tarifa => tarifa.codigoDeducible === deducible.codigoDeducible) === -1) {
+        listaTarifasAux.push(undefined)
+      } else {
+        listaTarifasAux.push(listaTarifas[counter++]);
+      }
+    })
+
+    return listaTarifasAux;
+  }
+
+  //Clasifica los planes existentes en el conjunto de tarifas
   guardarPlanExistente(simulacion) {
     let plan = {
       codigoActividad: simulacion.codigoActividad,
@@ -94,6 +115,7 @@ export class GrillaTarifasLivianosComponent implements OnInit {
     }
   }
 
+  //Clasifica los deducibles existentes en el conjunto de tarifas
   guardarDeducibleExistente(simulacion) {
     let deducible = {
       codigoDeducible: simulacion.codigoDeducible,

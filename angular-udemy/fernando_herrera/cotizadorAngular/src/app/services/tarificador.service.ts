@@ -106,159 +106,159 @@ response : any = {
     "exceptionCanonicalName": null,
     "error": null,
     "simulaciones": [
-      {
-        "numeroSimulacion": "3716775",
-        "codigoActividad": "1",
-        "descripcionActividad": "XL Liviano Particular",
-        "codigoDeducible": "1",
-        "descripcionDeducible": "0 UF",
-        "primaTarifa": "36.9961",
-        "totalImpuestos": "10.9319",
-        "primaTotal": "68.4686",
-        "importePrimerRecibo": "68.4686",
-        "mensaje": "",
-        "coberturas": [
-          {
-            "codigoCobertura": "1300",
-            "nombreCobertura": "Daños Materiales",
-            "capitalCob": "373.1002",
-            "deducibleCob": "1",
-            "principalCob": "1",
-            "primaTarifaCob": "26.9002",
-            "primaNetaAnualAcob": "41.8354"
-          },
-          {
-            "codigoCobertura": "1302",
-            "nombreCobertura": "Robo, Hurto o Uso no Autorizado",
-            "capitalCob": "373.1002",
-            "deducibleCob": "1",
-            "principalCob": "0",
-            "primaTarifaCob": "4.0912",
-            "primaNetaAnualAcob": "6.3627"
-          },
-          {
-            "codigoCobertura": "1303",
-            "nombreCobertura": "Robo de Accesorios",
-            "capitalCob": "373.1002",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          },
-          {
-            "codigoCobertura": "1304",
-            "nombreCobertura": "Daños Materiales por Actos Maliciosos",
-            "capitalCob": "373.1002",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          },
-          {
-            "codigoCobertura": "1306",
-            "nombreCobertura": "Daños al Vehículo durante Viaje al Extranjero",
-            "capitalCob": "373.1002",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".1000",
-            "primaNetaAnualAcob": ".1555"
-          },
-          {
-            "codigoCobertura": "1310",
-            "nombreCobertura": "Taller Reale",
-            "capitalCob": "0",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          },
-          {
-            "codigoCobertura": "1313",
-            "nombreCobertura": "RC Daño Emergente",
-            "capitalCob": "3000",
-            "deducibleCob": "1",
-            "principalCob": "1",
-            "primaTarifaCob": "3.0517",
-            "primaNetaAnualAcob": "4.7461"
-          },
-          {
-            "codigoCobertura": "1314",
-            "nombreCobertura": "RC Daño Moral",
-            "capitalCob": "3000",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".3815",
-            "primaNetaAnualAcob": ".5933"
-          },
-          {
-            "codigoCobertura": "1315",
-            "nombreCobertura": "RC Lucro Cesante",
-            "capitalCob": "3000",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".3815",
-            "primaNetaAnualAcob": ".5933"
-          },
-          {
-            "codigoCobertura": "1316",
-            "nombreCobertura": "Daños a Terceros Causados por la Carga",
-            "capitalCob": "3000",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          },
-          {
-            "codigoCobertura": "1318",
-            "nombreCobertura": "Defensa Penal y Constitución de Fianzas",
-            "capitalCob": "200",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          },
-          {
-            "codigoCobertura": "1319",
-            "nombreCobertura": "Asiento de Pasajero",
-            "capitalCob": "600",
-            "deducibleCob": "0",
-            "principalCob": "1",
-            "primaTarifaCob": ".3000",
-            "primaNetaAnualAcob": ".4666"
-          },
-          {
-            "codigoCobertura": "1322",
-            "nombreCobertura": "Asistencia C",
-            "capitalCob": "0",
-            "deducibleCob": "0",
-            "principalCob": "1",
-            "primaTarifaCob": "1.7900",
-            "primaNetaAnualAcob": "2.7838"
-          },
-          {
-            "codigoCobertura": "1374",
-            "nombreCobertura": "Daños Materiales Causados por la Carga",
-            "capitalCob": "373.1002",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          }
-        ],
-        "psu": [
-          {
-            "descrip": "Edad Asegurado",
-            "estado": "Autorizado",
-            "rolPsu": "60"
-          },
-          {
-            "descrip": "Retroactividad",
-            "estado": "Autorizado",
-            "rolPsu": "25"
-          }
-        ],
-        "amparos": []
-      },
+      // {
+      //   "numeroSimulacion": "3716775",
+      //   "codigoActividad": "1",
+      //   "descripcionActividad": "XL Liviano Particular",
+      //   "codigoDeducible": "1",
+      //   "descripcionDeducible": "0 UF",
+      //   "primaTarifa": "36.9961",
+      //   "totalImpuestos": "10.9319",
+      //   "primaTotal": "68.4686",
+      //   "importePrimerRecibo": "68.4686",
+      //   "mensaje": "",
+      //   "coberturas": [
+      //     {
+      //       "codigoCobertura": "1300",
+      //       "nombreCobertura": "Daños Materiales",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "1",
+      //       "principalCob": "1",
+      //       "primaTarifaCob": "26.9002",
+      //       "primaNetaAnualAcob": "41.8354"
+      //     },
+      //     {
+      //       "codigoCobertura": "1302",
+      //       "nombreCobertura": "Robo, Hurto o Uso no Autorizado",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "1",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": "4.0912",
+      //       "primaNetaAnualAcob": "6.3627"
+      //     },
+      //     {
+      //       "codigoCobertura": "1303",
+      //       "nombreCobertura": "Robo de Accesorios",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     },
+      //     {
+      //       "codigoCobertura": "1304",
+      //       "nombreCobertura": "Daños Materiales por Actos Maliciosos",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     },
+      //     {
+      //       "codigoCobertura": "1306",
+      //       "nombreCobertura": "Daños al Vehículo durante Viaje al Extranjero",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".1000",
+      //       "primaNetaAnualAcob": ".1555"
+      //     },
+      //     {
+      //       "codigoCobertura": "1310",
+      //       "nombreCobertura": "Taller Reale",
+      //       "capitalCob": "0",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     },
+      //     {
+      //       "codigoCobertura": "1313",
+      //       "nombreCobertura": "RC Daño Emergente",
+      //       "capitalCob": "3000",
+      //       "deducibleCob": "1",
+      //       "principalCob": "1",
+      //       "primaTarifaCob": "3.0517",
+      //       "primaNetaAnualAcob": "4.7461"
+      //     },
+      //     {
+      //       "codigoCobertura": "1314",
+      //       "nombreCobertura": "RC Daño Moral",
+      //       "capitalCob": "3000",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".3815",
+      //       "primaNetaAnualAcob": ".5933"
+      //     },
+      //     {
+      //       "codigoCobertura": "1315",
+      //       "nombreCobertura": "RC Lucro Cesante",
+      //       "capitalCob": "3000",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".3815",
+      //       "primaNetaAnualAcob": ".5933"
+      //     },
+      //     {
+      //       "codigoCobertura": "1316",
+      //       "nombreCobertura": "Daños a Terceros Causados por la Carga",
+      //       "capitalCob": "3000",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     },
+      //     {
+      //       "codigoCobertura": "1318",
+      //       "nombreCobertura": "Defensa Penal y Constitución de Fianzas",
+      //       "capitalCob": "200",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     },
+      //     {
+      //       "codigoCobertura": "1319",
+      //       "nombreCobertura": "Asiento de Pasajero",
+      //       "capitalCob": "600",
+      //       "deducibleCob": "0",
+      //       "principalCob": "1",
+      //       "primaTarifaCob": ".3000",
+      //       "primaNetaAnualAcob": ".4666"
+      //     },
+      //     {
+      //       "codigoCobertura": "1322",
+      //       "nombreCobertura": "Asistencia C",
+      //       "capitalCob": "0",
+      //       "deducibleCob": "0",
+      //       "principalCob": "1",
+      //       "primaTarifaCob": "1.7900",
+      //       "primaNetaAnualAcob": "2.7838"
+      //     },
+      //     {
+      //       "codigoCobertura": "1374",
+      //       "nombreCobertura": "Daños Materiales Causados por la Carga",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     }
+      //   ],
+      //   "psu": [
+      //     {
+      //       "descrip": "Edad Asegurado",
+      //       "estado": "Autorizado",
+      //       "rolPsu": "60"
+      //     },
+      //     {
+      //       "descrip": "Retroactividad",
+      //       "estado": "Autorizado",
+      //       "rolPsu": "25"
+      //     }
+      //   ],
+      //   "amparos": []
+      // },
       {
         "numeroSimulacion": "3716779",
         "codigoActividad": "1",
@@ -1024,159 +1024,159 @@ response : any = {
         ],
         "amparos": []
       },
-      {
-        "numeroSimulacion": "3716777",
-        "codigoActividad": "2",
-        "descripcionActividad": "L Liviano Particular",
-        "codigoDeducible": "3",
-        "descripcionDeducible": "5 UF",
-        "primaTarifa": "20.3644",
-        "totalImpuestos": "6.0176",
-        "primaTotal": "37.6885",
-        "importePrimerRecibo": "37.6885",
-        "mensaje": "",
-        "coberturas": [
-          {
-            "codigoCobertura": "1300",
-            "nombreCobertura": "Daños Materiales",
-            "capitalCob": "373.1002",
-            "deducibleCob": "0.58113",
-            "principalCob": "1",
-            "primaTarifaCob": "15.8208",
-            "primaNetaAnualAcob": "24.6047"
-          },
-          {
-            "codigoCobertura": "1302",
-            "nombreCobertura": "Robo, Hurto o Uso no Autorizado",
-            "capitalCob": "373.1002",
-            "deducibleCob": "0.58113",
-            "principalCob": "0",
-            "primaTarifaCob": "2.4062",
-            "primaNetaAnualAcob": "3.7421"
-          },
-          {
-            "codigoCobertura": "1303",
-            "nombreCobertura": "Robo de Accesorios",
-            "capitalCob": "55.965",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          },
-          {
-            "codigoCobertura": "1304",
-            "nombreCobertura": "Daños Materiales por Actos Maliciosos",
-            "capitalCob": "373.1002",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          },
-          {
-            "codigoCobertura": "1306",
-            "nombreCobertura": "Daños al Vehículo durante Viaje al Extranjero",
-            "capitalCob": "373.1002",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".1000",
-            "primaNetaAnualAcob": ".1555"
-          },
-          {
-            "codigoCobertura": "1310",
-            "nombreCobertura": "Taller Reale",
-            "capitalCob": "0",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          },
-          {
-            "codigoCobertura": "1313",
-            "nombreCobertura": "RC Daño Emergente",
-            "capitalCob": "1500",
-            "deducibleCob": "0.58113",
-            "principalCob": "1",
-            "primaTarifaCob": ".7897",
-            "primaNetaAnualAcob": "1.2282"
-          },
-          {
-            "codigoCobertura": "1314",
-            "nombreCobertura": "RC Daño Moral",
-            "capitalCob": "1500",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0987",
-            "primaNetaAnualAcob": ".1535"
-          },
-          {
-            "codigoCobertura": "1315",
-            "nombreCobertura": "RC Lucro Cesante",
-            "capitalCob": "1500",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0987",
-            "primaNetaAnualAcob": ".1535"
-          },
-          {
-            "codigoCobertura": "1316",
-            "nombreCobertura": "Daños a Terceros Causados por la Carga",
-            "capitalCob": "1500",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          },
-          {
-            "codigoCobertura": "1318",
-            "nombreCobertura": "Defensa Penal y Constitución de Fianzas",
-            "capitalCob": "150",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          },
-          {
-            "codigoCobertura": "1319",
-            "nombreCobertura": "Asiento de Pasajero",
-            "capitalCob": "450",
-            "deducibleCob": "0",
-            "principalCob": "1",
-            "primaTarifaCob": ".1200",
-            "primaNetaAnualAcob": ".1866"
-          },
-          {
-            "codigoCobertura": "1321",
-            "nombreCobertura": "Asistencia B",
-            "capitalCob": "0",
-            "deducibleCob": "0",
-            "principalCob": "1",
-            "primaTarifaCob": ".9303",
-            "primaNetaAnualAcob": "1.4468"
-          },
-          {
-            "codigoCobertura": "1374",
-            "nombreCobertura": "Daños Materiales Causados por la Carga",
-            "capitalCob": "373.1002",
-            "deducibleCob": "0",
-            "principalCob": "0",
-            "primaTarifaCob": ".0000",
-            "primaNetaAnualAcob": ".0000"
-          }
-        ],
-        "psu": [
-          {
-            "descrip": "Edad Asegurado",
-            "estado": "Autorizado",
-            "rolPsu": "60"
-          },
-          {
-            "descrip": "Retroactividad",
-            "estado": "Autorizado",
-            "rolPsu": "25"
-          }
-        ],
-        "amparos": []
-      },
+      // {
+      //   "numeroSimulacion": "3716777",
+      //   "codigoActividad": "2",
+      //   "descripcionActividad": "L Liviano Particular",
+      //   "codigoDeducible": "3",
+      //   "descripcionDeducible": "5 UF",
+      //   "primaTarifa": "20.3644",
+      //   "totalImpuestos": "6.0176",
+      //   "primaTotal": "37.6885",
+      //   "importePrimerRecibo": "37.6885",
+      //   "mensaje": "",
+      //   "coberturas": [
+      //     {
+      //       "codigoCobertura": "1300",
+      //       "nombreCobertura": "Daños Materiales",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "0.58113",
+      //       "principalCob": "1",
+      //       "primaTarifaCob": "15.8208",
+      //       "primaNetaAnualAcob": "24.6047"
+      //     },
+      //     {
+      //       "codigoCobertura": "1302",
+      //       "nombreCobertura": "Robo, Hurto o Uso no Autorizado",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "0.58113",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": "2.4062",
+      //       "primaNetaAnualAcob": "3.7421"
+      //     },
+      //     {
+      //       "codigoCobertura": "1303",
+      //       "nombreCobertura": "Robo de Accesorios",
+      //       "capitalCob": "55.965",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     },
+      //     {
+      //       "codigoCobertura": "1304",
+      //       "nombreCobertura": "Daños Materiales por Actos Maliciosos",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     },
+      //     {
+      //       "codigoCobertura": "1306",
+      //       "nombreCobertura": "Daños al Vehículo durante Viaje al Extranjero",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".1000",
+      //       "primaNetaAnualAcob": ".1555"
+      //     },
+      //     {
+      //       "codigoCobertura": "1310",
+      //       "nombreCobertura": "Taller Reale",
+      //       "capitalCob": "0",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     },
+      //     {
+      //       "codigoCobertura": "1313",
+      //       "nombreCobertura": "RC Daño Emergente",
+      //       "capitalCob": "1500",
+      //       "deducibleCob": "0.58113",
+      //       "principalCob": "1",
+      //       "primaTarifaCob": ".7897",
+      //       "primaNetaAnualAcob": "1.2282"
+      //     },
+      //     {
+      //       "codigoCobertura": "1314",
+      //       "nombreCobertura": "RC Daño Moral",
+      //       "capitalCob": "1500",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0987",
+      //       "primaNetaAnualAcob": ".1535"
+      //     },
+      //     {
+      //       "codigoCobertura": "1315",
+      //       "nombreCobertura": "RC Lucro Cesante",
+      //       "capitalCob": "1500",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0987",
+      //       "primaNetaAnualAcob": ".1535"
+      //     },
+      //     {
+      //       "codigoCobertura": "1316",
+      //       "nombreCobertura": "Daños a Terceros Causados por la Carga",
+      //       "capitalCob": "1500",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     },
+      //     {
+      //       "codigoCobertura": "1318",
+      //       "nombreCobertura": "Defensa Penal y Constitución de Fianzas",
+      //       "capitalCob": "150",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     },
+      //     {
+      //       "codigoCobertura": "1319",
+      //       "nombreCobertura": "Asiento de Pasajero",
+      //       "capitalCob": "450",
+      //       "deducibleCob": "0",
+      //       "principalCob": "1",
+      //       "primaTarifaCob": ".1200",
+      //       "primaNetaAnualAcob": ".1866"
+      //     },
+      //     {
+      //       "codigoCobertura": "1321",
+      //       "nombreCobertura": "Asistencia B",
+      //       "capitalCob": "0",
+      //       "deducibleCob": "0",
+      //       "principalCob": "1",
+      //       "primaTarifaCob": ".9303",
+      //       "primaNetaAnualAcob": "1.4468"
+      //     },
+      //     {
+      //       "codigoCobertura": "1374",
+      //       "nombreCobertura": "Daños Materiales Causados por la Carga",
+      //       "capitalCob": "373.1002",
+      //       "deducibleCob": "0",
+      //       "principalCob": "0",
+      //       "primaTarifaCob": ".0000",
+      //       "primaNetaAnualAcob": ".0000"
+      //     }
+      //   ],
+      //   "psu": [
+      //     {
+      //       "descrip": "Edad Asegurado",
+      //       "estado": "Autorizado",
+      //       "rolPsu": "60"
+      //     },
+      //     {
+      //       "descrip": "Retroactividad",
+      //       "estado": "Autorizado",
+      //       "rolPsu": "25"
+      //     }
+      //   ],
+      //   "amparos": []
+      // },
       {
         "numeroSimulacion": "3716782",
         "codigoActividad": "2",

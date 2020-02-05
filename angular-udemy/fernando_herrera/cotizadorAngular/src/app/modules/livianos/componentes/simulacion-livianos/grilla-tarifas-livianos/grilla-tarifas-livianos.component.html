@@ -40,7 +40,9 @@
                             [ngClass]="{seleccionado: _filaTarifaSeleccionada == i && _columnaTarifaSeleccionada == j}"
                             [class]="'col text-center fila_'+i +' columna_'+j">
 
-                            <app-celda-tarifa-livianos [simulacion]="tarifa">
+                            <app-celda-tarifa-livianos 
+                                *ngIf="tarifa"
+                                [simulacion]="tarifa">
                             </app-celda-tarifa-livianos>
 
                         </div>
