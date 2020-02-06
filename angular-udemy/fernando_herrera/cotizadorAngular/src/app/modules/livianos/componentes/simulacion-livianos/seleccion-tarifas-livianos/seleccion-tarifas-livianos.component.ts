@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef, Renderer2, ChangeDetectorRef, Input } from '@angular/core';
+import { Deducible } from 'src/app/domain/deducible';
+import { Plan } from 'src/app/domain/plan';
 
 @Component({
   selector: 'app-seleccion-tarifas-livianos',
@@ -11,21 +13,41 @@ export class SeleccionTarifasComponent implements OnInit {
   headerColumnas: boolean[] = [];
   headerFilas: boolean[] = [];
 
-  @Input() totalFilas: number;
-  @Input() totalColumnas: number;
   @Input() producto: string; //AUTO, MOTO, PESADO, HOGAR
-  @Input() deducibles: any[];
-  @Input() productos: any[];
+  @Input() deducibles: Deducible[];
+  @Input() productos: Plan[];
 
   grillaChecked: boolean[][];
   backgroundOn: string = "";
   backgroundOff: string = "";
+  
+  totalFilas: number;
+  totalColumnas: number;
+  deduciblesExistentes: Deducible[] = [];
+  planesExistentes: Plan[] = [];
 
   constructor(private renderer: Renderer2, private elem: ElementRef, private cd : ChangeDetectorRef){}
   
   ngOnInit() {
+    //Imagenes para seleccionado y deseleccionado
     this.backgroundOn = `url('../../../../../../../assets/img/switch_livianos/${this.producto}_ON_.png')`;
     this.backgroundOff = `url('../../../../../../assets/img/switch_livianos/${this.producto}_OFF_.png')`;
+
+    //Inicializacion de deducibles y planes
+    this.deduciblesExistentes = [
+      {codigoDeducible: "1", descripcionDeducible: "0 UF"},
+      {codigoDeducible: "2", descripcionDeducible: "3 UF"},
+      {codigoDeducible: "3", descripcionDeducible: "5 UF"},
+      {codigoDeducible: "4", descripcionDeducible: "10 UF"}]
+    this.planesExistentes = [
+      {codigoActividad: "1", descripcionActividad: "XL Liviano Particular"},
+      {codigoActividad: "2", descripcionActividad: "L Liviano Particular"},
+      {codigoActividad: "3", descripcionActividad: "M Liviano Particular"},
+      {codigoActividad: "4", descripcionActividad: "S Liviano Particular"}]
+
+    //CALCULOS
+    this.totalFilas = this.planesExistentes.length;
+    this.totalColumnas = this.deduciblesExistentes.length;
 
     for(let i = 0; i < this.totalFilas ; i++) {
       this.headerFilas[i] = false;
@@ -64,6 +86,7 @@ export class SeleccionTarifasComponent implements OnInit {
   }
 
   chequearHeadersFilaColumna(numeroFila, numeroColumna) {
+    console.log(numeroFila, numeroColumna)
     let todasLasFilas: boolean = true;
     let todasLasColumnas: boolean = true;
     let checkboxActual = this.elem.nativeElement.querySelectorAll(`.fila-${numeroFila}.columna-${numeroColumna}`)[0];

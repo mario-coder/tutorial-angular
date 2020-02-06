@@ -1,4 +1,6 @@
 import { Component, OnInit, ElementRef, Renderer2, ChangeDetectorRef, Input } from '@angular/core';
+import { Deducible } from '../../../../../domain/deducible';
+import { Plan } from '../../../../../domain/plan';
 
 @Component({
   selector: 'app-grilla-tarifas-livianos',
@@ -14,8 +16,8 @@ export class GrillaTarifasLivianosComponent implements OnInit {
   @Input() planTarifaSeleccionada: number;
   @Input() deducibleTarifaSeleccionada: number;
   @Input() simulaciones: any[];
-  deduciblesExistentes: any[] = [];
-  planesExistentes: any[] = [];
+  deduciblesExistentes: Deducible[] = [];
+  planesExistentes: Plan[] = [];
 
   _filaTarifaSeleccionada: number;
   _columnaTarifaSeleccionada: number;
@@ -28,7 +30,6 @@ export class GrillaTarifasLivianosComponent implements OnInit {
   
   ngOnInit() {
 
-//    this.mapeoTarifas(this.simulaciones);
     this.mapeoTarifas(this.simulaciones);
 
     // this.filaTarifaSeleccionada = this.planTarifaSeleccionada;
@@ -105,7 +106,7 @@ export class GrillaTarifasLivianosComponent implements OnInit {
 
   //Clasifica los planes existentes en el conjunto de tarifas
   guardarPlanExistente(simulacion) {
-    let plan = {
+    let plan: Plan = {
       codigoActividad: simulacion.codigoActividad,
       descripcionActividad: simulacion.descripcionActividad
     }
@@ -117,7 +118,7 @@ export class GrillaTarifasLivianosComponent implements OnInit {
 
   //Clasifica los deducibles existentes en el conjunto de tarifas
   guardarDeducibleExistente(simulacion) {
-    let deducible = {
+    let deducible: Deducible = {
       codigoDeducible: simulacion.codigoDeducible,
       descripcionDeducible: simulacion.descripcionDeducible
     }

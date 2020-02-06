@@ -26,7 +26,7 @@
                             PRODUCTO/DEDUCIBLE
                         </div>
                         <div class="colF col header flex-fill" 
-                            *ngFor="let deducible of deduciblesExistentes; let i = index" >
+                            *ngFor="let deducible of deduciblesExistentes" >
                             {{ deducible.descripcionDeducible }}
                         </div>
                     </div>
@@ -38,7 +38,8 @@
                         
                         <div *ngFor="let tarifa of tarifaActual.listaTarifas; let j = index" 
                             (click)="tarifa && selecciona(i, j)"
-                            [ngClass]="{seleccionable: tarifa, seleccionado: _filaTarifaSeleccionada == i && _columnaTarifaSeleccionada == j}"
+                            [ngClass]="{seleccionable: tarifa, 
+                                seleccionado: _filaTarifaSeleccionada == i && _columnaTarifaSeleccionada == j}"
                             [class]="'colF col flex-fill fila_'+i +' columna_'+j">
 
                             <app-celda-tarifa-livianos 
