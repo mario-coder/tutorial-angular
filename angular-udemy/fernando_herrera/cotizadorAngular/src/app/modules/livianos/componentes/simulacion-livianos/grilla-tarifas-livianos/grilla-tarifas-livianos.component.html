@@ -21,25 +21,25 @@
                 <div class="container section-container tabla-tarifas mb-3"
                     *ngIf="arrayTarifas !== undefined && arrayTarifas.length > 0">
 
-                    <div class="row">
-                        <div class="col headerprodded">
+                    <div class="d-flex flex-row">
+                        <div class="colFCH col headerprod flex-fill">
                             PRODUCTO/DEDUCIBLE
                         </div>
-                        <div class="col header d-flex justify-content-center" 
+                        <div class="colF col header flex-fill" 
                             *ngFor="let deducible of deduciblesExistentes; let i = index" >
                             {{ deducible.descripcionDeducible }}
                         </div>
                     </div>
 
-                    <div class="row" *ngFor="let tarifaActual of arrayTarifas; let i = index" >
-                        <div class="col col-2 headerprod">
+                    <div class="d-flex flex-row" *ngFor="let tarifaActual of arrayTarifas; let i = index" >
+                        <div class="colFCH col headerprod flex-fill">
                             {{ tarifaActual.descripcionActividad }}
                         </div>
                         
                         <div *ngFor="let tarifa of tarifaActual.listaTarifas; let j = index" 
-                            (click)="selecciona(i, j)"
-                            [ngClass]="{seleccionado: _filaTarifaSeleccionada == i && _columnaTarifaSeleccionada == j}"
-                            [class]="'col text-center fila_'+i +' columna_'+j">
+                            (click)="tarifa && selecciona(i, j)"
+                            [ngClass]="{seleccionable: tarifa, seleccionado: _filaTarifaSeleccionada == i && _columnaTarifaSeleccionada == j}"
+                            [class]="'colF col flex-fill fila_'+i +' columna_'+j">
 
                             <app-celda-tarifa-livianos 
                                 *ngIf="tarifa"
