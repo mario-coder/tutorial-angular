@@ -12,6 +12,10 @@ body {
   /**************/
  /*DIAGRAMACION*/
 /**************/
+.bg-info {
+    background-color: lightskyblue !important;
+}
+
 .container {
     max-width: 97% !important;
 }
