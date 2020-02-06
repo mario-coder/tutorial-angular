@@ -14,11 +14,15 @@
     justify-content: center !important;
   }
   
+  .tabla-tarifas .colFCH {
+    border: 1px solid rgb(230, 226, 226);
+    display: flex;
+    justify-content: left !important;
+  }
+
   .headerprod {
       padding-top: 1%;
-      /* padding-left: 1.5em; */
       padding-right: 0.3em !important;
-      /* min-width: 25% !important; */
       color: #002466;
       font-size: 1.3em;
       font-weight: bold;
@@ -27,7 +31,6 @@
   
   .headerprodded {
       padding-top: 0.2em;
-      /* min-width: 25% !important; */
       color: #002466;
       font-size: 1.3em;
       font-weight: bold;
@@ -42,11 +45,9 @@
   
   .header {
     padding-top: 0.5em;
-    text-align: center !important;
     color: #002466 !important;
-      font-weight: bold !important;
-      vertical-align: middle !important;
-      text-align: center !important;
+    font-weight: bold !important;
+    vertical-align: middle !important;
   }
   
   
