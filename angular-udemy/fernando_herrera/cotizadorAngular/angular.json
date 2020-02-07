@@ -30,7 +30,8 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/assets/font-awesome/css/all.css",
-              "src/assets/animista/animista.css"
+              "src/assets/animista/animista.css",
+              "src/assets/ripple/ripple.css"
             ],
             "scripts": []
           },

@@ -3,6 +3,7 @@
 @import "./assets/animista/animista.css";
 @import "~ngx-bootstrap/datepicker/bs-datepicker.css";
 @import "./assets/themes/nova-colored-custom/nova-colored-custom.css";
+@import "./assets/ripple/ripple.css";
 
 body {
     background-color: #e3e3e3 !important;

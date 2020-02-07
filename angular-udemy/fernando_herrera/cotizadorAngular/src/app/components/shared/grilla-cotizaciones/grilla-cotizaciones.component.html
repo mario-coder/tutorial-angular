@@ -36,6 +36,7 @@
                             {{ tarifaActual.descripcionActividad }}
                         </div>
                         
+                        <!-- La funcion para evento (click) es condicional usando operador && -->
                         <div *ngFor="let tarifa of tarifaActual.listaTarifas; let j = index" 
                             (click)="tarifa && selecciona(i, j)"
                             [ngClass]="{seleccionable: tarifa, 

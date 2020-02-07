@@ -22,7 +22,7 @@
                     <input type="text" class="inputSearch mr-2" pInputText size="50" placeholder="Ingrese un termino" (input)="dt.filterGlobal($event.target.value, 'contains')">
         
                     <!-- <button type="button" pButton icon="pi pi-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="margin-right: 0.5em; float: left;"></button> -->
-                    <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="Exportar" (click)="exportExcel()" style="margin-right: 0.5em; float: left;" class="ui-button-success"></button>
+                    <button type="button" pButton icon="pi pi-file-excel" iconPos="left" label="Exportar" (click)="exportExcel()" style="margin-right: 0.5em; float: left;" class="ui-button-success ripple"></button>
                     <!-- <button type="button" pButton icon="pi pi-file-pdf" iconPos="left" label="PDF" (click)="exportPdf()" class="ui-button-warning" style="float: left;"></button> -->
                 </div>
             </ng-template>
@@ -49,19 +49,19 @@
                     <td class="text-center" style="width: auto;">
                         <div class="btn-group" role="group" aria-label="Basic example">
 
-                            <button type="button" class="btn btn-secondary btn-sm btn-info"
+                            <button type="button" class="btn btn-secondary btn-sm btn-info ripple"
                                 pTooltip="Detalle Simulacion" tooltipPosition="top"
                                 (click)="showDialogSimulacion(_OPCION_DETALLE)">
                                 <i class="fa fa-search"></i>
                             </button>
 
-                            <button type="button" class="btn btn-secondary btn-sm btn-success"
+                            <button type="button" class="btn btn-secondary btn-sm btn-success ripple"
                                 pTooltip="Reimprimir Simulacion" tooltipPosition="top"
                                 (click)="showDialogSimulacion(_OPCION_REIMPRIMIR)">
                                 <i class="fa fa-print"></i>
                             </button>
 
-                            <button type="button" class="btn btn-secondary btn-sm btn-warning"
+                            <button type="button" class="btn btn-secondary btn-sm btn-warning ripple"
                                 pTooltip="Cambiar Estado" tooltipPosition="top"
                                 (click)="showDialogSimulacion(_OPCION_CAMBIAR_ESTADO)">
                                 <i class="fa fa-exchange-alt"></i>
@@ -402,7 +402,7 @@ appendTo="body"
                             <a href="#">Primera Hoja Propuesta Individual</a>
                         </td>
                         <td>
-                            <button class="btn btn-success">
+                            <button class="btn btn-success ripple">
                                 <i class="fa fa-download"></i>
                             </button>
                         </td>
@@ -414,7 +414,7 @@ appendTo="body"
                             <a href="#">Mandato</a>
                         </td>
                         <td>
-                            <button class="btn btn-success">
+                            <button class="btn btn-success ripple">
                                 <i class="fa fa-download"></i>
                             </button>
                         </td>
@@ -443,10 +443,10 @@ appendTo="body"
                             </div>
                             <div class="col-10">
                                 <p-dropdown name="nuevoEstado" [options]="ESTADOS_SIMULACION"
-                                [(ngModel)]="nuevoEstadoSimulacionSelected"
-                                [showClear]="true"
-                                placeholder="Selecione" optionLabel="label">
-                            </p-dropdown>
+                                    [(ngModel)]="nuevoEstadoSimulacionSelected"
+                                    [showClear]="true"
+                                    placeholder="Selecione" optionLabel="label">
+                                </p-dropdown>
                         </div>
                     </div>
                         <div class="row mb-2">
@@ -465,13 +465,13 @@ appendTo="body"
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <button class="btn btn-outline-primary btn-wide">
+                                <button class="btn btn-outline-primary btn-wide ripple">
                                     <i class="fa fa-check-circle"></i>
                                     Aceptar
                                 </button>
                             </div>
                             <div class="col">
-                                <button class="btn btn-warning btn-wide">
+                                <button class="btn btn-warning btn-wide ripple">
                                     <i class="fa fa-times-circle"></i>
                                     Cancelar
                                 </button>

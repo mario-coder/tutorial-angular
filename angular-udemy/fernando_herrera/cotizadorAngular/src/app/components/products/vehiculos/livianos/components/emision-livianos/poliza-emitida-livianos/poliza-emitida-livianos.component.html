@@ -54,13 +54,13 @@
                 <div class="container">
                     <div class="row mb-3">
                         <div class="col mb-3">
-                            <button type="button" class="btn btn-primary btn-wide">
+                            <button type="button" class="btn btn-primary btn-wide ripple">
                                 <i class="fa fa-sync"></i>
                                 Actualizar Documentos
                             </button>
                         </div>
                         <div class="col">
-                            <button type="button" class="btn btn-primary btn-wide" (click)="_displayVerDocumentos = true">
+                            <button type="button" class="btn btn-primary btn-wide ripple" (click)="_displayVerDocumentos = true">
                                 <i class="fa fa-file-pdf"></i>
                                 Ver Documentos
                             </button>
@@ -83,7 +83,7 @@
                             
                             <div class="col mx-xl-5">
                                 <button id="btn-nueva-simulacion" type="button" name="btn-nueva-simulacion" 
-                                    class="btn btn-outline-primary btn-wide" (click)="nuevaSimulacion()">
+                                    class="btn btn-outline-primary btn-wide ripple" (click)="nuevaSimulacion()">
                                     <i class="fa fa-file"></i>
                                     NUEVA SIMULACION
                                 </button>
@@ -124,7 +124,7 @@
                             {{ doc.descripcionDocumento }}
                         </td>
                         <td>
-                            <button class="btn btn-success" (click)="descargarDocumento(i, $event)">
+                            <button class="btn btn-success ripple" (click)="descargarDocumento(i, $event)">
                                 <i class="fa fa-download"></i>
                             </button>
                         </td>
