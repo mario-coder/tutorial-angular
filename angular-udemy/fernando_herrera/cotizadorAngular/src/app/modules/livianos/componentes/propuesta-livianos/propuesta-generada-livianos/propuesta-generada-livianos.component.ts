@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { PropuestaService } from 'src/app/services/propuesta.service';
+import { Base64Service } from 'src/app/services/base64.service';
+import { ExportService } from 'src/app/services/export.service';
 
 // const URL = '/api/';
 const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
@@ -13,14 +17,19 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 export class PropuestaGeneradaLivianosComponent implements OnInit {
 
   files: any[] = [];
+  propuesta: any = {};
   _polizaEmitidaSelected: boolean = false;
   _displayVerDocumentos: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, 
+    private propuestaService: PropuestaService, 
+    private base64Service: Base64Service,
+    private exportService: ExportService) {
 
   }
 
   ngOnInit() {
+    this.propuesta = this.propuestaService.doPropuesta();
   }
 
   emitirPoliza() {
@@ -45,6 +54,16 @@ export class PropuestaGeneradaLivianosComponent implements OnInit {
 
     console.log("Emitiendo poliza ...")
   }
+
+  descargarDocumento(indice, event) {
+    let documento = this.propuesta.documento[indice];
+    let docBlob = this.base64Service.strBase64ToPdfBlob(documento.contenido);
+    
+    let fileName = documento.nombreDocumento;
+    this.exportService.savePdfBlobAsPdfFile(docBlob, fileName);
+  }
+
+
 
   onFileDropped(event) {
     for (let index = 0; index < event.length; index++) {

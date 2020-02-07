@@ -39,7 +39,7 @@
                                     <td>XL Liviano Particular</td>
                                     <td>0 UF</td>
                                     <td>5854424</td>
-                                    <td>5327227</td>
+                                    <td>{{ propuesta.numeroPropuesta }}</td>
                                     <td>Aprobada</td>
                                 </tr>
                             </tbody>
@@ -144,32 +144,24 @@
             </p-header>
             
             <div class="section-container fade-in">
-                <table class="table table-striped table-hover">
-                    <tr>
+                <table class="table table-striped table-hover" *ngIf="propuesta.documento && propuesta.documento.length > 0">
+                    <tr *ngFor="let doc of propuesta.documento; let i = index">
                         <td>
                             <i class="fa fa-2x fa-file-pdf"></i>
                             &nbsp;
-                            <a href="#">Primera Hoja Propuesta Individual</a>
+                            {{ doc.descripcionDocumento }}
                         </td>
                         <td>
-                            <button class="btn btn-success">
-                                <i class="fa fa-download"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <i class="fa fa-2x fa-file-pdf"></i>
-                            &nbsp;
-                            <a href="#">Mandato</a>
-                        </td>
-                        <td>
-                            <button class="btn btn-success">
+                            <button class="btn btn-success" (click)="descargarDocumento(i, $event)">
                                 <i class="fa fa-download"></i>
                             </button>
                         </td>
                     </tr>
                 </table>
+
+                <div class="alert alert-warning rounded p-2" *ngIf="!propuesta.documento || propuesta.documento.length <= 0">
+                    No se encontraron documentos
+                </div>
             </div>
 
         </p-dialog>

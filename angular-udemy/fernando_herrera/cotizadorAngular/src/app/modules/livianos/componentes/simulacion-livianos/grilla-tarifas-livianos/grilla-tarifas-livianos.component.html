@@ -22,10 +22,10 @@
                     *ngIf="arrayTarifas !== undefined && arrayTarifas.length > 0">
 
                     <div class="d-flex flex-row">
-                        <div class="colFCH col headerprod flex-fill">
+                        <div class="colFCH col headerprod pt-0 flex-fill">
                             PRODUCTO/DEDUCIBLE
                         </div>
-                        <div class="colF col header flex-fill" 
+                        <div class="colF col header pt-1 flex-fill" 
                             *ngFor="let deducible of deduciblesExistentes" >
                             {{ deducible.descripcionDeducible }}
                         </div>

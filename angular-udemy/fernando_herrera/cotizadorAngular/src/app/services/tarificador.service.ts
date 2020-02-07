@@ -1354,7 +1354,7 @@ response : any = {
 
   doTarificar() {
 
-    return this.response["simulaciones"];
+    return this.response.simulaciones;
 
       // return this.http.post(this.url, this.request, this.httpOptions).pipe(
     //   map(data => data["simulaciones"]));

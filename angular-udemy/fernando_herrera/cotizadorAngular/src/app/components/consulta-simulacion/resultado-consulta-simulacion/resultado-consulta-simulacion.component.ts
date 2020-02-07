@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CarService } from 'src/app/services/car.service';
 import { ComboFeedService } from 'src/app/services/data/combofeed.service';
 import { Simulacion } from 'src/app/domain/simulacion';
 import { BuscadorSimulacionesService } from 'src/app/services/buscador-simulaciones.service';
@@ -35,7 +34,7 @@ export class ResultadoConsultaSimulacionComponent implements OnInit {
 
   exportColumns: any[];
 
-  constructor(private carService: CarService,
+  constructor(
     private comboFeedService: ComboFeedService,
     private buscadorSimulacionesService: BuscadorSimulacionesService) { }
 

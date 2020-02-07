@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Simulacion } from '../domain/simulacion';
-import { simulaciones } from './simulaciones';
+import { simulaciones } from './data/simulaciones';
 
 @Injectable({
   providedIn: 'root'
