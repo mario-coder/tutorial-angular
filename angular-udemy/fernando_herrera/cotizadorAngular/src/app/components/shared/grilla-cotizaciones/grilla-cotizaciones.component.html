@@ -1,25 +1,9 @@
 
 
 <!-- Contenedor tarifas -->
-<div>
-    <div class="container section-container">
-        <p-panel [toggleable]="true">
 
-            <p-header>
-                <span class="ui-panel-title">
-                    <i class="fa fa-th"></i>
-                    Seleccion tarifas
-                    <!-- Desmarca las opciones de productos, deducibles o combinación de ambos que no quieras simular -->
-                </span>
-            </p-header>
 
-            <!-- <p-card> -->
-                <!-- <p-header> -->
-                    <img src="assets/img/logo_reale.png" class="mb-3" style="width: 15em;">
-                <!-- </p-header> -->
-
-                <div class="container section-container tabla-tarifas mb-3"
-                    *ngIf="arrayTarifas !== undefined && arrayTarifas.length > 0">
+                <div class="tabla-tarifas shadow-drop-center mb-3">
 
                     <div class="d-flex flex-row">
                         <div class="colFCH col headerprod pt-0 flex-fill">
@@ -52,8 +36,4 @@
                     </div>
 
                 </div>
-            <!-- </p-card> -->
-        </p-panel>
-    </div>
-</div>
 <!-- Contenedor tarifas -->

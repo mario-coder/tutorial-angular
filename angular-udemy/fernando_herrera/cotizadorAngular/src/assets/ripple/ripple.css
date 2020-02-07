@@ -1,7 +1,4 @@
-body {
-  overflow-x: hidden !important;
-}
-
+/* 
 .ripple {
     position: relative;
     overflow: hidden;
@@ -29,4 +26,4 @@ body {
     transform: scale(0, 0);
     opacity: .3;
     transition: 0s
-  }
+  } */
