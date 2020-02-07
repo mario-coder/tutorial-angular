@@ -105,6 +105,10 @@ body .ui-panel .ui-panel-title .ui-panel-titlebar-icon {
     min-width: 100% !important;
 }
 
+.btn-md-wide {
+    min-width: 60% !important;
+}
+
 .btn {
     font-size: 95% !important;
 }
