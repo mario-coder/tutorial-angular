@@ -1,15 +1,16 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { ConsultaSimulacionComponent } from "./components/consulta-simulacion/consulta-simulacion.component";
-import { HomeCotizadorComponent } from './components/home-cotizador/home-cotizador.component';
-import { PropuestaLivianosComponent } from './modules/livianos/componentes/propuesta-livianos/propuesta-livianos.component';
-import { SimulacionLivianosComponent } from './modules/livianos/componentes/simulacion-livianos/simulacion-livianos.component';
-import { EmisionLivianosComponent } from './modules/livianos/componentes/emision-livianos/emision-livianos.component';
-import { LoginComponent } from './components/login/login.component';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './guards/auth.guard';
-import { PolizaEmitidaLivianosComponent } from './modules/livianos/componentes/emision-livianos/poliza-emitida-livianos/poliza-emitida-livianos.component';
-import { PropuestaGeneradaLivianosComponent } from './modules/livianos/componentes/propuesta-livianos/propuesta-generada-livianos/propuesta-generada-livianos.component';
+import { ConsultaSimulacionComponent } from './components/common/consulta-simulacion/consulta-simulacion.component';
+import { SimulacionLivianosComponent } from './components/products/vehiculos/livianos/components/simulacion-livianos/simulacion-livianos.component';
+import { PropuestaLivianosComponent } from './components/products/vehiculos/livianos/components/propuesta-livianos/propuesta-livianos.component';
+import { PropuestaGeneradaLivianosComponent } from './components/products/vehiculos/livianos/components/propuesta-livianos/propuesta-generada-livianos/propuesta-generada-livianos.component';
+import { PolizaEmitidaLivianosComponent } from './components/products/vehiculos/livianos/components/emision-livianos/poliza-emitida-livianos/poliza-emitida-livianos.component';
+import { EmisionLivianosComponent } from './components/products/vehiculos/livianos/components/emision-livianos/emision-livianos.component';
+import { HomeCotizadorComponent } from './components/common/home-cotizador/home-cotizador.component';
+import { LoginComponent } from './components/common/login/login.component';
+
 
 const routes: Routes = [
   { path: "consulta-simulacion", component: ConsultaSimulacionComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },

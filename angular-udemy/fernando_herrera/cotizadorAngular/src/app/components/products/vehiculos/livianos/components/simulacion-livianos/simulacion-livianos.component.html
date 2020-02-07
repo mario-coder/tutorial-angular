@@ -1,0 +1,393 @@
+<!-- <div class="fade-in"> -->
+<div>
+
+    <p-card>
+
+        <div class="ml-3">
+            <p-header>
+                <div class="tracking-in-contract">
+                    <h1>Simular Livianos</h1>
+                    <i class="fa fa-home float-left m-1"></i>
+                    <h6>Inicio/Simular Livianos</h6>
+                </div>
+            </p-header>
+        </div>
+
+        <hr>
+
+        <!-- Dialogo busqueda documentos -->
+        <p-dialog 
+            appendTo="body" 
+            [(visible)]="_displayBuscarDocumento" 
+            [modal]="true" 
+            [responsive]="true" 
+            [minY]="50" 
+            [maximizable]="false"
+            [baseZIndex]="100000"
+            [style]="{width: '60%', minWidth: '60%'}">
+
+            <p-header>
+                <i class="fa fa-search"></i>
+                Buscar Documento
+            </p-header>
+            <!-- (onHide)="emitOnHide()" -->
+                <app-buscar-documentos-livianos>
+                </app-buscar-documentos-livianos>
+        </p-dialog>
+
+        <!-- Contenedor datos principales -->
+        <div class="container section-container flip-in-hor-bottom">
+
+            <form (ngSubmit)="tarificar()" #f="ngForm">
+
+                <!-- Panel Principal -->
+                <p-panel [toggleable]="true">
+
+                    <p-header>
+                        <div class="ui-panel-title">
+                            <i class="fa fa-list"></i>
+                            Datos Principales
+
+                            <div class="ui-panel-title-buttons">
+                                <button pButton 
+                                    label="Buscar Documento"
+                                    (click)="_displayBuscarDocumento = true"
+                                    class="ui-button-raised ui-button-success"
+                                    type="button" icon="pi pi-search" iconPos="left"></button>
+                            </div>
+                        </div>
+                    </p-header>
+
+                    <div class="panel-container">
+                        <!-- Datos del vehiculo -->
+                        <p-panel [toggleable]="true">
+
+                            <p-header>
+                                <span class="ui-panel-title">
+                                    <i class="fa fa-car"></i>
+                                    Datos del Vehículo
+                                </span>
+                            </p-header>
+
+                        <div class="container mx-1 px-1">
+                            <div class="row mb-3">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <label for="estadoVehiculo" class="input-label">Nuevo/Usado *</label>
+                                    <p-dropdown [options]="ESTADOS_VEHICULO" name="estadosVehiculo" 
+                                        [(ngModel)]="estadoVehiculoSelected" 
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <label for="patente" class="input-label">Patente</label>
+                                    <input pInputText name="patente" type="text" />
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <label for="anio" class="input-label">Año *</label>
+                                    <p-dropdown [options]="ANIOS" name="anio" 
+                                        [(ngModel)]="anioSelected" 
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <label for="marca" class="input-label">Marca *</label>
+                                    <p-dropdown [options]="MARCAS" name="marca" 
+                                        filter="true"
+                                        [virtualScroll]="true"
+                                        [(ngModel)]="marcaSelected" 
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <label for="modelo" class="input-label">Modelo *</label>
+                                    <p-dropdown [options]="MODELOS" name="modelo" 
+                                        filter="true"
+                                        [virtualScroll]="true"
+                                        [(ngModel)]="modeloSelected" 
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <label for="anio" class="input-label">Compañia Anterior *</label>
+                                    <p-dropdown [options]="COMPANIAS_ANTERIORES" name="companiaAnterior" 
+                                        [(ngModel)]="companiaAnteriorSelected" 
+                                        filter="true" [showClear]="true"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <label for="marca" class="input-label">Uso *</label>
+                                    <p-dropdown [options]="USOS_VEHICULO" name="usoVehiculo"
+                                        [(ngModel)]="usoVehiculoSelected" 
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        </p-panel>
+                        <!-- Datos del vehiculo -->
+
+                        <br>
+
+                        <!-- Datos del asegurado -->
+                        <p-panel [toggleable]="true">
+
+                            <p-header>
+                                <span class="ui-panel-title">
+                                    <i class="fa fa-user"></i>
+                                    Datos del Asegurado
+                                </span>
+                            </p-header>
+
+                            <div class="container mx-1 px-1">
+                                <div class="row mb-3">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="tipoDocumento" class="input-label">Tipo de Documento *</label>
+                                        <p-dropdown [options]="TIPOS_DOCUMENTO" name="tipoDocumento" 
+                                        [(ngModel)]="tipoDocumentoSelected"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="numeroDocumento" class="input-label">Numero de Documento * </label>
+                                        <input pInputText name="numeroDocumento" type="text" />
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="primerNombre" class="input-label">Primer Nombre *</label>
+                                        <input pInputText name="primerNombre" type="text" />
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="apellidoPaterno" class="input-label">Apellido Paterno *</label>
+                                        <input pInputText name="apellidoPaterno" type="text" />
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="comuna" class="input-label">Comuna *</label>
+                                        <p-dropdown [options]="COMUNAS" name="comuna" 
+                                        [(ngModel)]="comunaSelected" filter="true"
+                                        [virtualScroll]="true"
+                                        placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="email" class="input-label">Email *</label>
+                                        <input pInputText name="email" type="text" />
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="fechaInicioNuevaVigencia" class="input-label">Inicio Nueva Vigencia</label>
+                                        <div class="ui-inputgroup">
+                                            <input type="text" name="fechaInicioNuevaVigencia"
+                                                pInputText class="calendar-input"
+                                                #dp="bsDatepicker"
+                                                bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
+                                            <button pButton type="button" 
+                                                icon="fa fa-calendar-alt" class="ui-button-primary"
+                                                (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen"></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </p-panel>
+                        <!-- Datos del asegurado -->
+
+                        <br>
+
+                        <!-- Adicionales -->
+                        <p-panel [toggleable]="true">
+
+                            <p-header>
+                                <span class="ui-panel-title">
+                                    <i class="fa fa-plus-circle"></i>
+                                    Adicionales
+                                </span>
+                            </p-header>
+
+                            <div class="container mx-1 px-1">
+                                <div class="row mb-3">
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="taller" class="input-label">Taller</label>
+                                        <p-dropdown [options]="TALLERES" name="taller" 
+                                        [(ngModel)]="tallerSelected" appentTo="body"
+                                        [showClear]="true"
+                                        placeholder="Por defecto" optionLabel="label"></p-dropdown>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="asistencia" class="input-label">Asistencia</label>
+                                        <p-dropdown [options]="ASISTENCIAS" name="asistencia" 
+                                        [(ngModel)]="asistenciaSelected" appentTo="body"
+                                        [showClear]="true"
+                                        placeholder="Por defecto" optionLabel="label"></p-dropdown>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="rcEnExceso" class="input-label">RC en Exceso</label>
+                                        <p-dropdown [options]="RCS_EN_EXCESO" name="rcEnExceso" 
+                                        [(ngModel)]="rcEnExcesoSelected" appentTo="body"
+                                        [showClear]="true"
+                                        placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                    </div>
+                                </div>
+                            </div>
+                        </p-panel>
+                        <!-- Fin Adicionales -->
+                    </div>
+
+                    <br>
+
+                    <app-seleccion-tarifas 
+                        [producto] = "PRODUCTO">
+                    </app-seleccion-tarifas>
+
+                    <br>
+
+                    <!-- Botones tarificacion -->
+                    <div class="m-3">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <button id="btn-borrar" type="button" class="btn btn-outline-primary btn-wide" (click)="saludo()">
+                                    <i class="fa fa-file"></i>
+                                    LIMPIAR FORMULARIO
+                                </button>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <button id="btn-tarificar" type="button" class="btn btn-warning btn-wide" (click)="tarificar()">
+                                    <i class="fa fa-calculator"></i>
+                                    OBTENER TARIFAS
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Botones tarificacion -->
+
+                </p-panel>
+                <!-- Panel Principal -->
+            </form>
+        </div>
+        <!-- Contenedor datos principales -->
+
+        <br>
+
+        <!-- Contenedor tarifas -->
+        <div class="fade-in-bottom" *ngIf="_tarificado">
+            <div class="container section-container">
+                <p-panel [toggleable]="true">
+
+                    <!-- <p-header>
+                        <span class="ui-panel-title">
+                            <i class="fa fa-money-bill"></i>
+                            Ofertas Disponibles
+                        </span>
+                    </p-header> -->
+
+                    <!-- <p-card> -->
+                        <!-- <p-header> -->
+                        <!-- <div>
+                            <img src="assets/img/logo_reale.png" style="width: 15em;">
+                            <div style="float: right" class="m-4">Nro. Simulación: 12345</div>
+                        </div> -->
+                        <!-- </p-header> -->
+
+
+                        <br>
+                        
+
+                        <app-grilla-cotizaciones 
+                            *ngIf="_tarificado"
+                            [simulaciones]="simulaciones"
+                            [planTarifaSeleccionada]=""
+                            [deducibleTarifaSeleccionada]="">
+                        </app-grilla-cotizaciones>
+
+
+                        <br>
+
+                        <div class="bg-info p-3 rounded">
+                            <i class="fa fa-exclamation-circle"></i> Nota: Taller seleccionado: Por defecto / Asistencia seleccionada:
+                            <br> Por defecto Todas las Primas Incluyen el IVA
+                        </div>
+
+                        <br>
+
+                        <p-card>
+                            <div class="container mx-1 px-1">
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label for="descuentoRecargo" class="input-label">Descuento/Recargo</label>
+                                        <p-dropdown name="descuentoRecargo" [options]="DESCUENTO_RECARGO"
+                                            [(ngModel)]="descuentoRecargoSelected"
+                                            [showClear]="true"
+                                            placeholder="Selecione" optionLabel="label">
+                                        </p-dropdown>
+                                    </div>
+                                    <div class="col">
+                                        <label for="porcentaje" class="input-label">Porcentaje</label>
+                                        <input pInputText name="porcentaje" type="text" />
+                                    </div>
+                                    <div class="col">
+                                        <label for="retarificar" class="input-label">&nbsp;</label>
+                                        <button id="btn-tarificar" name="retarificar" class="btn btn-warning btn-wide" (click)="tarificar()">
+                                            <i class="fa fa-calculator"></i>
+                                            RETARIFICAR
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </p-card>
+
+                        <br>
+
+                        <!-- Botones Propuesta -->
+                        <div class="m-3">
+                            <div class="row mb-3">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <button id="btn-borrar" type="button" class="btn btn-outline-primary btn-wide" (click)="saludo()">
+                                        <i class="fa fa-print"></i>
+                                        IMPRIMIR SIMULACION
+                                    </button>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <button id="btn-comenzarPropuesta" type="button" class="btn btn-warning btn-wide" (click)="comenzarPropuesta()">
+                                        CONTINUAR
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Botones Propuesta -->
+
+                    <!-- </p-card> -->
+
+                </p-panel>
+            </div>
+        </div>
+        <!-- Contenedor tarifas -->
+
+        
+    </p-card>
+    
+    
+    <br>
+
+    <!-- Contenedor Propuesta -->
+    <app-propuesta-livianos *ngIf="_propuestaActiva"></app-propuesta-livianos>
+    <!-- Contenedor Propuesta -->
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+</div>
