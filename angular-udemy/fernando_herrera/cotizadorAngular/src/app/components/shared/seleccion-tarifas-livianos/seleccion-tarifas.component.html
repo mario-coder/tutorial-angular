@@ -17,35 +17,39 @@
                 <!-- </p-header> -->
 
                 <div class="container section-container tabla-tarifas mb-3">
-                    <div class="d-flex flex-row">
-                        <div class="colF col headerprod pt-0 flex-fill">
-                            PRODUCTO/DEDUCIBLE
+                    <div class="row">
+                        <div class="colF col headerprod pt-0">
+                            PRODUCTO / DEDUCIBLE
                         </div>
-                        <div class="colF col pt-1 header flex-fill" 
+                        <div class="colF col pt-1 header" 
                             *ngFor="let deducible of deduciblesExistentes; let d = index" >
-                            <p-checkbox 
-                                name="fila"
-                                binary="true" 
-                                [label]="deducible.descripcionDeducible"
-                                [(ngModel)]="headerColumnas[d]"
-                                [class]="'header-columna-'+d"
-                                (onChange)="chequearTodaLaColumna(d, $event)">
-                            </p-checkbox>
+                            <div>
+                                <p-checkbox 
+                                    name="fila"
+                                    binary="true" 
+                                    [label]="deducible.descripcionDeducible"
+                                    [(ngModel)]="headerColumnas[d]"
+                                    [class]="'header-columna-'+d"
+                                    (onChange)="chequearTodaLaColumna(d, $event)">
+                                </p-checkbox>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="d-flex flex-row" *ngFor="let plan of planesExistentes; let i = index" >
-                        <div class="colFCH col headerprod flex-fill">
-                            <p-checkbox 
-                                name="fila"
-                                binary="true"
-                                [label]="plan.descripcionActividad"
-                                [(ngModel)]="headerFilas[i]"
-                                [class]="'header-fila-'+i"
-                                (onChange)="chequearTodaLaFila(i, $event)">
-                            </p-checkbox>
+                    <div class="row" *ngFor="let plan of planesExistentes; let i = index" >
+                        <div class="colFCH col headerprod">
+                            <div>
+                                <p-checkbox 
+                                    name="fila"
+                                    binary="true"
+                                    [label]="plan.descripcionActividad"
+                                    [(ngModel)]="headerFilas[i]"
+                                    [class]="'header-fila-'+i"
+                                    (onChange)="chequearTodaLaFila(i, $event)">
+                                </p-checkbox>
+                            </div>
                         </div>
-                        <div class="colF col header flex-fill" *ngFor="let deducible of deduciblesExistentes; let j = index">
+                        <div class="colF col header" *ngFor="let deducible of deduciblesExistentes; let j = index">
                             <input type="checkbox" 
                                 [id]="'cb'+i+j" 
                                 [class]="'fila-'+i+' columna-'+j"

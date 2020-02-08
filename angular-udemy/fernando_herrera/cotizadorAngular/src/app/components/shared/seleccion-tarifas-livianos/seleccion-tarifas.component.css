@@ -4,30 +4,39 @@
   
   .tabla-tarifas {
     border: 3px solid darkblue;
-    overflow: visible;
+    overflow-x: hidden;
+    overflow-y: hidden;
     border-radius: 2px;
+    padding-left: 1%;
+    padding-right: 1%;
     height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .tabla-tarifas {
+      overflow-x: scroll;
+    }
   }
   
   .tabla-tarifas .colF {
     border: 1px solid rgb(230, 226, 226);
-    display: flex;
-    justify-content: center !important;
   }
   
   .tabla-tarifas .colFCH {
     border: 1px solid rgb(230, 226, 226);
-    display: flex;
-    justify-content: left !important;
   }
 
   .headerprod {
-      padding-top: 1%;
-      padding-right: 0.3em !important;
-      color: #002466;
-      font-size: 1.3em;
-      font-weight: bold;
-      text-align: center !important;
+    padding-top: 1.5%;
+    padding-left: 2rem;
+    /* padding-right: 0.3em !important; */
+    color: #002466;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+  .headerprod>div {
+    vertical-align: middle;
   }
   
   .headerprodded {
@@ -46,11 +55,16 @@
   
   .header {
     padding-top: 0.5em;
+    padding-bottom: 0.5em;
     color: #002466 !important;
     font-weight: bold !important;
     vertical-align: middle !important;
   }
-  
+
+  .header>div{
+    display: flex;
+    justify-content: center;
+  }
   
     input[type="checkbox"][id^="cb"] {
       display: none;
