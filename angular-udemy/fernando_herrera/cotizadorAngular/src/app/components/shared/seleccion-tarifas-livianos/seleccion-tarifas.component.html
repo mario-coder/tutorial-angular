@@ -16,55 +16,60 @@
                     <img src="assets/img/logo_reale.png" class="mb-3" style="width: 15em;">
                 <!-- </p-header> -->
 
-                <div class="container section-container tabla-tarifas mb-3">
-                    <div class="row">
-                        <div class="colF col headerprod pt-0">
-                            PRODUCTO / DEDUCIBLE
-                        </div>
-                        <div class="colF col pt-1 header" 
-                            *ngFor="let deducible of deduciblesExistentes; let d = index" >
-                            <div>
-                                <p-checkbox 
-                                    name="fila"
-                                    binary="true" 
-                                    [label]="deducible.descripcionDeducible"
-                                    [(ngModel)]="headerColumnas[d]"
-                                    [class]="'header-columna-'+d"
-                                    (onChange)="chequearTodaLaColumna(d, $event)">
-                                </p-checkbox>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row" *ngFor="let plan of planesExistentes; let i = index" >
-                        <div class="colFCH col headerprod">
-                            <div>
-                                <p-checkbox 
-                                    name="fila"
-                                    binary="true"
-                                    [label]="plan.descripcionActividad"
-                                    [(ngModel)]="headerFilas[i]"
-                                    [class]="'header-fila-'+i"
-                                    (onChange)="chequearTodaLaFila(i, $event)">
-                                </p-checkbox>
-                            </div>
-                        </div>
-                        <div class="colF col header" *ngFor="let deducible of deduciblesExistentes; let j = index">
-                            <input type="checkbox" 
-                                [id]="'cb'+i+j" 
-                                [class]="'fila-'+i+' columna-'+j"
-                                (change)="chequearHeadersFilaColumna(i, j)"
-                                [name]="'chk'+i+'-'+j"
-                                [(ngModel)]="grillaChecked[i][j]"/>
-                            <label [for]="'cb'+i+j">
-                                <div class="img_auto" 
-                                    [ngStyle]="{'background-image': grillaChecked[i][j] ? backgroundOn : backgroundOff }">
+            <div class="tabla-tarifas-container">
+                <table class="container tabla-tarifas">
+                    <thead>
+                        <tr>
+                            <th class="colF headerprod pt-0">
+                                PRODUCTO / DEDUCIBLE
+                            </th>
+                            <th *ngFor="let deducible of deduciblesExistentes; let d = index"
+                                class="colF pt-1 header">
+                                <div>
+                                    <p-checkbox 
+                                        name="fila"
+                                        binary="true" 
+                                        [label]="deducible.descripcionDeducible"
+                                        [(ngModel)]="headerColumnas[d]"
+                                        [class]="'header-columna-'+d"
+                                        (onChange)="chequearTodaLaColumna(d, $event)">
+                                    </p-checkbox>
                                 </div>
-                            </label>
-                        </div>
+                            </th>
+                        </tr>
+                    </thead>
 
-                    </div>
-                </div>
+                    <tbody>
+                        <tr *ngFor="let plan of planesExistentes; let i = index" >
+                            <td class="colFCH headerprod">
+                                <div>
+                                    <p-checkbox 
+                                        name="fila"
+                                        binary="true"
+                                        [label]="plan.descripcionActividad"
+                                        [(ngModel)]="headerFilas[i]"
+                                        [class]="'header-fila-'+i"
+                                        (onChange)="chequearTodaLaFila(i, $event)">
+                                    </p-checkbox>
+                                </div>
+                            </td>
+                            <td class="colF header" *ngFor="let deducible of deduciblesExistentes; let j = index">
+                                <input type="checkbox" 
+                                    [id]="'cb'+i+j" 
+                                    [class]="'fila-'+i+' columna-'+j"
+                                    (change)="chequearHeadersFilaColumna(i, j)"
+                                    [name]="'chk'+i+'-'+j"
+                                    [(ngModel)]="grillaChecked[i][j]"/>
+                                <label [for]="'cb'+i+j">
+                                    <div class="img_auto" 
+                                        [ngStyle]="{'background-image': grillaChecked[i][j] ? backgroundOn : backgroundOff }">
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <!-- </p-card> -->
         </p-panel>
     </div>

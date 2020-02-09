@@ -2,38 +2,44 @@
 
 <!-- Contenedor tarifas -->
 
-
-                <div class="tabla-tarifas shadow-drop-center mb-3">
-
-                    <div class="d-flex flex-row">
-                        <div class="colFCH col headerprod pt-0 flex-fill">
-                            PRODUCTO/DEDUCIBLE
-                        </div>
-                        <div class="colF col header pt-1 flex-fill" 
-                            *ngFor="let deducible of deduciblesExistentes" >
+    <div class="tabla-tarifas-container">
+        <table class="container tabla-tarifas">
+            <thead>
+                <tr>
+                    <th class="colFCH headerprod pt-0">
+                        PRODUCTO/DEDUCIBLE
+                    </th>
+                    <th *ngFor="let deducible of deduciblesExistentes"
+                        class="colF header pt-1">
+                        <div class="text-center">
                             {{ deducible.descripcionDeducible }}
                         </div>
-                    </div>
+                    </th>
+                </tr>
+            </thead>
 
-                    <div class="d-flex flex-row" *ngFor="let tarifaActual of arrayTarifas; let i = index" >
-                        <div class="colFCH col headerprod flex-fill">
-                            {{ tarifaActual.descripcionActividad }}
-                        </div>
+            <tbody>
+                <tr *ngFor="let tarifaActual of arrayTarifas; let i = index" >
+                    <td class="colFCH headerprod">
+                        {{ tarifaActual.descripcionActividad }}
+                    </td>
                         
-                        <!-- La funcion para evento (click) es condicional usando operador && -->
-                        <div *ngFor="let tarifa of tarifaActual.listaTarifas; let j = index" 
-                            (click)="tarifa && selecciona(i, j)"
-                            [ngClass]="{seleccionable: tarifa, 
-                                seleccionado: _filaTarifaSeleccionada == i && _columnaTarifaSeleccionada == j}"
-                            [class]="'colF col flex-fill fila_'+i +' columna_'+j">
+                    <!-- La funcion para evento (click) es condicional usando operador && -->
+                    <td *ngFor="let tarifa of tarifaActual.listaTarifas; let j = index" 
+                        (click)="tarifa && selecciona(i, j)"
+                        [ngClass]="{seleccionable: tarifa, 
+                        seleccionado: _filaTarifaSeleccionada == i && _columnaTarifaSeleccionada == j}"
+                        [class]="'colF fila_'+i +' columna_'+j">
 
-                            <app-celda-cotizacion
-                                *ngIf="tarifa"
-                                [simulacion]="tarifa">
-                            </app-celda-cotizacion>
+                        <app-celda-cotizacion
+                            *ngIf="tarifa"
+                            [simulacion]="tarifa">
+                        </app-celda-cotizacion>
 
-                        </div>
-                    </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-                </div>
+    </div>
 <!-- Contenedor tarifas -->

@@ -2,23 +2,34 @@
     padding: 0% !important;
   }
   
-  .tabla-tarifas {
+  .tabla-tarifas-container {
+    padding: 1.2rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
     border: 3px solid darkblue;
-    overflow: visible;
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (max-width: 768px) {
+    .tabla-tarifas-container {
+      overflow-x: scroll;
+    }
+  }
+
+  .tabla-tarifas {
+    border: 2px solid grey;
     border-radius: 2px;
     height: auto;
   }
   
   .tabla-tarifas .colF {
     border: 1px solid rgb(230, 226, 226);
-    display: flex;
-    justify-content: center !important;
   }
   
   .tabla-tarifas .colFCH {
     border: 1px solid rgb(230, 226, 226);
-    display: flex;
-    justify-content: left !important;
   }
 
   .headerprod {
