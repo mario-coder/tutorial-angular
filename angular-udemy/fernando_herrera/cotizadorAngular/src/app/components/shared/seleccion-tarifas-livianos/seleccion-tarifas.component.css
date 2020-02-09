@@ -12,7 +12,7 @@
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .tabla-tarifas-container {
       overflow-x: scroll;
     }
@@ -23,7 +23,7 @@
     border-radius: 2px;
     height: auto;
   }
-  
+
   .tabla-tarifas .colF {
     border: 1px solid rgb(230, 226, 226);
   }

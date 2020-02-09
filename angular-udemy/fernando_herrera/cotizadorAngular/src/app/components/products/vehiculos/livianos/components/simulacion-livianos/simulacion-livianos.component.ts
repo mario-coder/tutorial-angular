@@ -13,7 +13,7 @@ import { DatePickerConfigService } from 'src/app/config/date-picker-config';
 })
 
 export class SimulacionLivianosComponent implements OnInit {
-  PRODUCTO = "AUTO";
+  PRODUCTO = "livianos";
   _displayBuscarDocumento: boolean = false;
   _isLoggedIn : number = 1;
   

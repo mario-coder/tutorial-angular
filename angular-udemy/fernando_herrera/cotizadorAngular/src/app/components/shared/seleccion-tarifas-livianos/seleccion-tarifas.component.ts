@@ -29,8 +29,8 @@ export class SeleccionTarifasComponent implements OnInit {
   
   ngOnInit() {
     //Imagenes para seleccionado y deseleccionado
-    this.backgroundOn = `url('../../../../../../../assets/img/switch_livianos/${this.producto}_ON_.png')`;
-    this.backgroundOff = `url('../../../../../../assets/img/switch_livianos/${this.producto}_OFF_.png')`;
+    this.backgroundOn = `url('../../../../../../../assets/img/switch_${this.producto}/${this.producto}_ON_.png')`;
+    this.backgroundOff = `url('../../../../../../assets/img/switch_${this.producto}/${this.producto}_OFF_.png')`;
 
     //Inicializacion de deducibles y planes
     this.deduciblesExistentes = [
