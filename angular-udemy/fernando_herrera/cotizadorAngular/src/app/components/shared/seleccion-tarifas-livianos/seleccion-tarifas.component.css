@@ -71,11 +71,11 @@
     }
     
     label {
-        /* width: 110px; */
-        height: auto;
-        margin-left: 30%;
-        margin-right: 30%;
-        /* border: 1px solid #fff; */
+      /* width: 110px; */
+      height: auto;
+      margin-left: 20%;
+      margin-right: 20%;
+      /* border: 1px solid #fff; */
       /* padding: 10px; */
       display: block;
       position: relative;
@@ -109,7 +109,7 @@
   
     label .img_auto {
       /* background-image: url("../../../../../../assets/img/switch_livianos/AUTO_OFF_.png"); */
-      background-size: 100px 55px;
+      background-size: 70px 30px;
       background-repeat: no-repeat;
       background-position: center;
       transition-duration: 0.2s;
@@ -128,8 +128,8 @@
     
     :checked + label .img_auto {
       /* background-image: url("../../../../../../assets/img/switch_livianos/AUTO_ON_.png"); */
-      background-size: 100px 55px;
+      background-size: 70px 30px;
       background-repeat: no-repeat;
       background-position: center;
-      transform: scale(1.1);
+      transform: scale(1.3);
     }
