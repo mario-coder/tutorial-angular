@@ -8,7 +8,7 @@ import { Plan } from 'src/app/domain/plan';
   templateUrl: './grilla-cotizaciones.component.html',
   styleUrls: ["./grilla-cotizaciones.component.css"]
 })
-export class GrillaTarifasLivianosComponent implements OnInit {
+export class GrillaCotizacionesComponent implements OnInit {
 
   headerColumnas: boolean[] = [];
   headerFilas: boolean[] = [];

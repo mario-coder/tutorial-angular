@@ -7,8 +7,7 @@ import { registerLocaleData } from '@angular/common';
   templateUrl: './celda-cotizacion.component.html',
   styleUrls: ['./celda-cotizacion.component.css']
 })
-export class TarifaLivianosComponent implements OnInit {
-
+export class CeldaCotizacionComponent implements OnInit {
   @Input() simulacion: any;
   display: boolean = false;
 

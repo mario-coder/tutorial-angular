@@ -16,9 +16,13 @@ import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TooltipModule } from 'primeng/tooltip';
 import { CheckboxModule } from 'primeng/checkbox';
+import { SeleccionTarifasComponent } from '../seleccion-tarifas-livianos/seleccion-tarifas.component';
+import { GrillaCotizacionesComponent } from '../grilla-cotizaciones/grilla-cotizaciones.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SeleccionTarifasComponent,
+    GrillaCotizacionesComponent],
   imports: [
     BrowserModule,
     CommonModule,
