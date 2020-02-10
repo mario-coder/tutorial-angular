@@ -1,0 +1,13 @@
+:host ::ng-deep .img_item {
+    width: 40px;
+    height: 60px;
+  }
+
+  :host ::ng-deep label .img_item {
+    background-size: 40px 60px;
+  }
+  
+ 
+  :host ::ng-deep :checked + label .img_item {
+    background-size: 40px 60px;
+  }

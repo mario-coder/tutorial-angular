@@ -73,7 +73,6 @@ export class SeleccionTarifasComponent implements OnInit {
   }
 
   chequearHeadersFilaColumna(numeroFila, numeroColumna) {
-    console.log(numeroFila, numeroColumna)
     let todasLasFilas: boolean = true;
     let todasLasColumnas: boolean = true;
     let checkboxActual = this.elem.nativeElement.querySelectorAll(`.fila-${numeroFila}.columna-${numeroColumna}`)[0];
@@ -81,14 +80,14 @@ export class SeleccionTarifasComponent implements OnInit {
 
     this.grillaChecked[numeroFila][numeroColumna] = estadoCheckboxActual;
 
-    for(let j = 0; j < this.totalFilas ; j++) {
+    for(let j = 0; j < this.totalColumnas ; j++) {
       if(this.grillaChecked[numeroFila][j] != estadoCheckboxActual){
         todasLasFilas = false;
         break;
       }
     }
 
-    for(let i = 0; i < this.totalColumnas ; i++) {
+    for(let i = 0; i < this.totalFilas ; i++) {
       if(this.grillaChecked[i][numeroColumna] != estadoCheckboxActual){
         todasLasColumnas = false;
         break;

@@ -113,9 +113,9 @@ export class SimulacionPesadosComponent implements OnInit {
       {codigoDeducible: "7", descripcionDeducible: "50 UF"},
       {codigoDeducible: "8", descripcionDeducible: "100 UF"}]
     this.planesExistentes = [
-      {codigoActividad: "2", descripcionActividad: "L Liviano Particular"},
-      {codigoActividad: "3", descripcionActividad: "M Liviano Particular"},
-      {codigoActividad: "4", descripcionActividad: "S Liviano Particular"}]
+      {codigoActividad: "1", descripcionActividad: "L Liviano Particular"},
+      {codigoActividad: "2", descripcionActividad: "M Liviano Particular"},
+      {codigoActividad: "3", descripcionActividad: "S Liviano Particular"}]
   }
 
   async tarificar() {
