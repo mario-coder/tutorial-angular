@@ -16,8 +16,8 @@ export class GrillaCotizacionesComponent implements OnInit {
   @Input() planTarifaSeleccionada: number;
   @Input() deducibleTarifaSeleccionada: number;
   @Input() simulaciones: any[];
-  deduciblesExistentes: Deducible[] = [];
-  planesExistentes: Plan[] = [];
+  @Input() deduciblesExistentes: Deducible[];
+  @Input() planesExistentes: Plan[];
 
   _filaTarifaSeleccionada: number;
   _columnaTarifaSeleccionada: number;
@@ -52,17 +52,8 @@ export class GrillaCotizacionesComponent implements OnInit {
       if(this.tarifasClasificadas[simulacion.codigoActividad] === undefined) {
         this.tarifasClasificadas[simulacion.codigoActividad] = []
       }
-      
-      this.guardarDeducibleExistente(simulacion)
-      this.guardarPlanExistente(simulacion)
-
       this.tarifasClasificadas[simulacion.codigoActividad].push(simulacion);
     });
-
-
-    this.deduciblesExistentes.sort(this.ordenaPorCodigoDeducible);
-    this.planesExistentes.sort(this.ordenaPorCodigoActividad);
-
 
     this.tarifasClasificadas.map(listaTarifas => {
 
@@ -103,31 +94,4 @@ export class GrillaCotizacionesComponent implements OnInit {
 
     return listaTarifasAux;
   }
-
-  //Clasifica los planes existentes en el conjunto de tarifas
-  guardarPlanExistente(simulacion) {
-    let plan: Plan = {
-      codigoActividad: simulacion.codigoActividad,
-      descripcionActividad: simulacion.descripcionActividad
-    }
-
-    if(this.planesExistentes.findIndex(pl => pl.codigoActividad === plan.codigoActividad) === -1) {
-      this.planesExistentes.push(plan)
-    }
-  }
-
-  //Clasifica los deducibles existentes en el conjunto de tarifas
-  guardarDeducibleExistente(simulacion) {
-    let deducible: Deducible = {
-      codigoDeducible: simulacion.codigoDeducible,
-      descripcionDeducible: simulacion.descripcionDeducible
-    }
-
-    if(this.deduciblesExistentes.findIndex(ded => ded.codigoDeducible === deducible.codigoDeducible) === -1) {
-      this.deduciblesExistentes.push(deducible)
-    }
-  }
-
-
-
 }

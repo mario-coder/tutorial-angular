@@ -308,6 +308,8 @@
                         <app-grilla-cotizaciones 
                             *ngIf="_tarificado"
                             [simulaciones]="simulaciones"
+                            [deduciblesExistentes]= "deduciblesExistentes"
+                            [planesExistentes]="planesExistentes"
                             [planTarifaSeleccionada]=""
                             [deducibleTarifaSeleccionada]="">
                         </app-grilla-cotizaciones>

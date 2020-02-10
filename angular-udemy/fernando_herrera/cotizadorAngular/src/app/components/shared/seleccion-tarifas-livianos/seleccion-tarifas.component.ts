@@ -13,8 +13,8 @@ export class SeleccionTarifasComponent implements OnInit {
   headerFilas: boolean[] = [];
 
   @Input() producto: string; //AUTO, MOTO, PESADO, HOGAR
-  @Input() deducibles: Deducible[];
-  @Input() productos: Plan[];
+  @Input() deduciblesExistentes: Deducible[];
+  @Input() planesExistentes: Plan[];
 
   grillaChecked: boolean[][];
   backgroundOn: string = "";
@@ -22,8 +22,6 @@ export class SeleccionTarifasComponent implements OnInit {
   
   totalFilas: number;
   totalColumnas: number;
-  @Input() deduciblesExistentes: Deducible[];
-  @Input() planesExistentes: Plan[];
 
   constructor(private renderer: Renderer2, private elem: ElementRef, private cd : ChangeDetectorRef){}
   
