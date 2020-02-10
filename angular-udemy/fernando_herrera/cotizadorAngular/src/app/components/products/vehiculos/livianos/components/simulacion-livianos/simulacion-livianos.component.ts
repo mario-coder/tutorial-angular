@@ -117,7 +117,7 @@ export class SimulacionLivianosComponent implements OnInit {
     Swal.showLoading();
 
     setTimeout(async () => {
-      this.simulaciones = await this.tarificadorService.tarificar();
+      this.simulaciones = await this.tarificadorService.tarificarLivianos();
 
       this._tarificado = true;
 
@@ -128,7 +128,7 @@ export class SimulacionLivianosComponent implements OnInit {
         showConfirmButton: true
       });
 
-      Swal.close();
+      // Swal.close();
     }, 2000);
   }
 

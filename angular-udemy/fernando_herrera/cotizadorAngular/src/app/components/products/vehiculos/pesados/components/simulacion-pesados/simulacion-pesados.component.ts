@@ -128,7 +128,7 @@ export class SimulacionPesadosComponent implements OnInit {
     Swal.showLoading();
 
     setTimeout(async () => {
-      this.simulaciones = await this.tarificadorService.tarificar();
+      this.simulaciones = await this.tarificadorService.tarificarPesados();
 
       this._tarificado = true;
 
@@ -139,7 +139,7 @@ export class SimulacionPesadosComponent implements OnInit {
         showConfirmButton: true
       });
 
-      Swal.close();
+      // Swal.close();
     }, 2000);
   }
 

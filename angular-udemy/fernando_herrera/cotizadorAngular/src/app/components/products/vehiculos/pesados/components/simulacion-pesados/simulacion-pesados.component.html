@@ -316,18 +316,17 @@
                             </div>
                             </p-header>
     
-    
                             <br>
-                            
     
                             <app-grilla-cotizaciones 
                                 *ngIf="_tarificado"
                                 [simulaciones]="simulaciones"
+                                [deduciblesExistentes]= "deduciblesExistentes"
+                                [planesExistentes]= "planesExistentes"
                                 [planTarifaSeleccionada]=""
                                 [deducibleTarifaSeleccionada]="">
                             </app-grilla-cotizaciones>
-    
-    
+        
                             <br>
     
                             <div class="bg-info p-3 rounded">
