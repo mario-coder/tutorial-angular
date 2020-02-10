@@ -22,8 +22,8 @@ export class SeleccionTarifasComponent implements OnInit {
   
   totalFilas: number;
   totalColumnas: number;
-  deduciblesExistentes: Deducible[] = [];
-  planesExistentes: Plan[] = [];
+  @Input() deduciblesExistentes: Deducible[];
+  @Input() planesExistentes: Plan[];
 
   constructor(private renderer: Renderer2, private elem: ElementRef, private cd : ChangeDetectorRef){}
   
@@ -31,18 +31,6 @@ export class SeleccionTarifasComponent implements OnInit {
     //Imagenes para seleccionado y deseleccionado
     this.backgroundOn = `url('../../../../../../../assets/img/switch_${this.producto}/${this.producto}_ON_.png')`;
     this.backgroundOff = `url('../../../../../../assets/img/switch_${this.producto}/${this.producto}_OFF_.png')`;
-
-    //Inicializacion de deducibles y planes
-    this.deduciblesExistentes = [
-      {codigoDeducible: "1", descripcionDeducible: "0 UF"},
-      {codigoDeducible: "2", descripcionDeducible: "3 UF"},
-      {codigoDeducible: "3", descripcionDeducible: "5 UF"},
-      {codigoDeducible: "4", descripcionDeducible: "10 UF"}]
-    this.planesExistentes = [
-      {codigoActividad: "1", descripcionActividad: "XL Liviano Particular"},
-      {codigoActividad: "2", descripcionActividad: "L Liviano Particular"},
-      {codigoActividad: "3", descripcionActividad: "M Liviano Particular"},
-      {codigoActividad: "4", descripcionActividad: "S Liviano Particular"}]
 
     //CALCULOS
     this.totalFilas = this.planesExistentes.length;

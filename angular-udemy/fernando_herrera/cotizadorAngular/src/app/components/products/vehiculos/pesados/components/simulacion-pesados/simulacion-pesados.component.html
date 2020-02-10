@@ -64,7 +64,7 @@
     
                                 <p-header>
                                     <span class="ui-panel-title">
-                                        <i class="fa fa-car"></i>
+                                        <i class="fa fa-truck-moving"></i>
                                         Datos del Vehículo
                                     </span>
                                 </p-header>
@@ -73,7 +73,7 @@
                                 <div class="row mb-3">
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="estadoVehiculo" class="input-label">Nuevo/Usado *</label>
-                                        <p-dropdown [options]="ESTADOS_VEHICULO" name="estadosVehiculo" 
+                                        <p-dropdown [options]="ESTADOS_VEHICULO" name="estadoVehiculo" 
                                             [(ngModel)]="estadoVehiculoSelected" 
                                             placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
@@ -81,6 +81,13 @@
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="patente" class="input-label">Patente</label>
                                         <input pInputText name="patente" type="text" />
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="tipoVehiculo" class="input-label">Tipo *</label>
+                                        <p-dropdown [options]="TIPOS_VEHICULOS_PESADOS" name="tipoVehiculo" 
+                                            [(ngModel)]="tipoVehiculoSelected" 
+                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
                                 </div>
     
@@ -91,7 +98,6 @@
                                             [(ngModel)]="anioSelected" 
                                             placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
-    
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="marca" class="input-label">Marca *</label>
                                         <p-dropdown [options]="MARCAS" name="marca" 
@@ -100,34 +106,32 @@
                                             [(ngModel)]="marcaSelected" 
                                             placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
-    
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                        <label for="modelo" class="input-label">Modelo *</label>
-                                        <p-dropdown [options]="MODELOS" name="modelo" 
-                                            filter="true"
-                                            [virtualScroll]="true"
-                                            [(ngModel)]="modeloSelected" 
-                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                        <label for="modelo" class="input-label">Monto Asegurado UF *</label>
+                                        <input pInputText name="montoAseguradoUF" type="text" />
                                     </div>
                                 </div>
     
                                 <div class="row mb-3">
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                        <label for="anio" class="input-label">Compañia Anterior *</label>
+                                        <label for="marca" class="input-label">Uso *</label>
+                                        <p-dropdown [options]="USOS_VEHICULOS_PESADOS" name="usoVehiculo"
+                                            [(ngModel)]="usoVehiculoSelected" 
+                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="subUsoVehiculo" class="input-label">Sub Uso *</label>
+                                        <p-dropdown [options]="SUB_USOS_VEHICULOS_PESADOS" name="subUsoVehiculo"
+                                            [(ngModel)]="subUsoVehiculoSelected" 
+                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="companiaAnterior" class="input-label">Compañia Anterior *</label>
                                         <p-dropdown [options]="COMPANIAS_ANTERIORES" name="companiaAnterior" 
                                             [(ngModel)]="companiaAnteriorSelected" 
                                             filter="true" [showClear]="true"
                                             placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
-    
-                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                        <label for="marca" class="input-label">Uso *</label>
-                                        <p-dropdown [options]="USOS_VEHICULO" name="usoVehiculo"
-                                            [(ngModel)]="usoVehiculoSelected" 
-                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
-                                    </div>
-    
-    
                                 </div>
                             </div>
     
@@ -151,8 +155,8 @@
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="tipoDocumento" class="input-label">Tipo de Documento *</label>
                                             <p-dropdown [options]="TIPOS_DOCUMENTO" name="tipoDocumento" 
-                                            [(ngModel)]="tipoDocumentoSelected"
-                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                                [(ngModel)]="tipoDocumentoSelected"
+                                                placeholder="Selecione" optionLabel="label"></p-dropdown>
                                         </div>
     
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -175,9 +179,9 @@
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="comuna" class="input-label">Comuna *</label>
                                             <p-dropdown [options]="COMUNAS" name="comuna" 
-                                            [(ngModel)]="comunaSelected" filter="true"
-                                            [virtualScroll]="true"
-                                            placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
+                                                [(ngModel)]="comunaSelected" filter="true"
+                                                [virtualScroll]="true"
+                                                placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
                                         </div>
     
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -238,6 +242,17 @@
                                             [showClear]="true"
                                             placeholder="Selecione" optionLabel="label"></p-dropdown>
                                         </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                            <label for="clausulasAdicionales" class="input-label">Clausulas Adicionales</label>
+                                            <p-multiSelect [options]="CLAUSULAS_ADICIONALES_PESADOS"
+                                                appendTo="body"
+                                                name="clausulasAdicionales"
+                                                optionLabel="label"
+                                                [defaultLabel]="'Seleccione'"
+                                                selectedItemsLabel="Todas las opciones seleccionadas"
+                                                [filter]="false"
+                                                [(ngModel)]="clausulasAdicionalesSelected"></p-multiSelect>
+                                        </div>
                                     </div>
                                 </div>
                             </p-panel>
@@ -247,7 +262,9 @@
                         <br>
     
                         <app-seleccion-tarifas 
-                            [producto] = "PRODUCTO">
+                            [producto] = "PRODUCTO"
+                            [deduciblesExistentes]="deduciblesExistentes"
+                            [planesExistentes]="planesExistentes">
                         </app-seleccion-tarifas>
     
                         <br>

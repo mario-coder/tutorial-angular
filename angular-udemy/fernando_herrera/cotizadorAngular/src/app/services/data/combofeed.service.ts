@@ -347,4 +347,45 @@ export class ComboFeedService {
       { label: "GRAVE", code: "3" }
     ];
   }
+
+  getTiposVehiculosPesados(): any[] {
+    return [
+      { label: "BUS", code: "1"},
+      { label: "CAMION", code: "2"},
+      { label: "MINIBUS", code: "3"},
+      { label: "REMOLQUE", code: "4"},
+      { label: "SEMIRREMOLQUE", code: "5"},
+      { label: "TRACTO CAMION", code: "6"}
+    ]
+  }
+
+  getUsosVehiculosPesados(): any[] {
+    return [
+      {label: "COMERCIAL", code: "2"}
+    ]
+  }
+
+  getSubUsosCamion(): any[] {
+    return [
+      { label: "TRANSPORTE CARGA FORESTAL", code: "1"},
+      { label: "TRANSPORTE MATERIALES PARA LA MINERÍA", code: "2"},
+      { label: "TRANSPORTE HORMIGÓN Y MATERIALES DE CONSTRUCCIÓN", code: "3"},
+      { label: "TRANSPORTE DE ANIMALES VIVOS", code: "4"},
+      { label: "TRANSPORTE DE CONTENEDORES", code: "5"},
+      { label: "TRANSPORTE DE ESCOMBROS", code: "6"},
+      { label: "TRANSPORTE DE ALIMENTOS NO REFRIGERADOS", code: "7"},
+      { label: "TRANSPORTE DE ALIMENTOS REFRIGERADOS", code: "8"},
+      { label: "TRANSPORTE DE VEHÍCULOS Y MAQUINARIAS", code: "9"},
+      { label: "OTROS (EXCLUYE TTE. PÚB. DE PASAJEROS, TTE. COMB. Y TTE. CARGAS PELIGROSAS, EXPL. Y/O CORROSIVAS)", code: "10"}
+    ]
+  }
+
+  getClausulasAdicionalesPesados(): any[] {
+    return [
+      { label: "COBERTURA CAMINOS PRIVADO", code: "1"},
+      { label: "COBERTURA DE CARGA Y DESCARGA", code: "2"},
+      { label: "COBERTURA DE TRABAJO EN FAENA", code: "3"},
+      { label: "COBERTURA TRASLADO DEL VEHÍCULO", code: "4"}
+    ]
+  }
 }

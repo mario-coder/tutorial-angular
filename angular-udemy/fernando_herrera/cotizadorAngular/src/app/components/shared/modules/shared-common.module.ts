@@ -16,6 +16,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TooltipModule } from 'primeng/tooltip';
 import { CheckboxModule } from 'primeng/checkbox';
+import { MultiSelectModule } from 'primeng/multiselect';
 import { SeleccionTarifasComponent } from '../seleccion-tarifas-livianos/seleccion-tarifas.component';
 import { GrillaCotizacionesComponent } from '../grilla-cotizaciones/grilla-cotizaciones.component';
 import { CeldaCotizacionComponent } from '../grilla-cotizaciones/celda-cotizacion/celda-cotizacion.component';
@@ -44,7 +45,8 @@ import { CeldaCotizacionComponent } from '../grilla-cotizaciones/celda-cotizacio
     CalendarModule,
     InputTextareaModule,
     TooltipModule,
-    CheckboxModule
+    CheckboxModule,
+    MultiSelectModule
   ],
   exports: [
     BrowserModule,
@@ -66,6 +68,7 @@ import { CeldaCotizacionComponent } from '../grilla-cotizaciones/celda-cotizacio
     InputTextareaModule,
     TooltipModule,
     CheckboxModule,
+    MultiSelectModule,
     SeleccionTarifasComponent,
     GrillaCotizacionesComponent,
     CeldaCotizacionComponent

@@ -5,11 +5,14 @@ import { BsDatepickerConfig, DatepickerDateCustomClasses } from "ngx-bootstrap/d
 
 import { ComboFeedService } from 'src/app/services/data/combofeed.service';
 import { DatePickerConfigService } from 'src/app/config/date-picker-config';
+import { Deducible } from 'src/app/domain/deducible';
+import { Plan } from 'src/app/domain/plan';
 
 @Component({
   selector: "app-simulacion-pesados",
   templateUrl: "./simulacion-pesados.component.html",
-  styleUrls: ["../../../../styles/simulacion/simulacion.css"]
+  styleUrls: ["./simulacion-pesados.component.css",
+  "../../../../styles/simulacion/simulacion.css"]
 })
 
 export class SimulacionPesadosComponent implements OnInit {
@@ -38,10 +41,14 @@ export class SimulacionPesadosComponent implements OnInit {
   rcEnExcesoSelected: any;
   companiaAnteriorSelected: any;
   usoVehiculoSelected: any;
+  subUsoVehiculoSelected: any;
   tallerSelected: any;
   asistenciaSelected: any;
   rcsEnExcesoSelected: any;
   tipoOperacionSelected: any;
+
+  tipoVehiculoSelected: any;
+  clausulasAdicionalesSelected: any[];
 
   ESTADOS_VEHICULO: any[];
   ANIOS: any[];
@@ -51,13 +58,18 @@ export class SimulacionPesadosComponent implements OnInit {
   COMUNAS: any[];
   DESCUENTO_RECARGO: any[];
   COMPANIAS_ANTERIORES: any[];
-  USOS_VEHICULO: any[];
+  USOS_VEHICULOS_PESADOS: any[];
   TALLERES: any[];
   ASISTENCIAS: any[];
   RCS_EN_EXCESO: any[];
+  TIPOS_VEHICULOS_PESADOS: any[];
+  SUB_USOS_VEHICULOS_PESADOS: any[];
+  CLAUSULAS_ADICIONALES_PESADOS: any[];
     
   _tarificado: boolean = false;
   simulaciones: any[];
+  deduciblesExistentes: Deducible[];
+  planesExistentes: Plan[];
  
   constructor(
       private comboFeedService: ComboFeedService,
@@ -77,7 +89,8 @@ export class SimulacionPesadosComponent implements OnInit {
     this.MARCAS = this.comboFeedService.getMarcas();
     this.MODELOS = this.comboFeedService.getModelos();
     this.COMPANIAS_ANTERIORES = this.comboFeedService.getCompaniasAnteriores();
-    this.USOS_VEHICULO = this.comboFeedService.getUsosVehiculo();
+    this.USOS_VEHICULOS_PESADOS = this.comboFeedService.getUsosVehiculosPesados();
+    this.SUB_USOS_VEHICULOS_PESADOS = this.comboFeedService.getSubUsosCamion();
     this.COMUNAS = this.comboFeedService.getComunas();
     this.TALLERES = this.comboFeedService.getTalleres();;
     this.ASISTENCIAS = this.comboFeedService.getAsistencias();
@@ -85,6 +98,24 @@ export class SimulacionPesadosComponent implements OnInit {
     this.ESTADOS_VEHICULO = this.comboFeedService.getEstadosVehiculo();
     this.TIPOS_DOCUMENTO = this.comboFeedService.getTiposDocumento();
     this.DESCUENTO_RECARGO = this.comboFeedService.getOpcionesDescuentoRecargo();
+
+    this.TIPOS_VEHICULOS_PESADOS = this.comboFeedService.getTiposVehiculosPesados();
+    this.CLAUSULAS_ADICIONALES_PESADOS = this.comboFeedService.getClausulasAdicionalesPesados();
+
+    //Inicializacion de deducibles y planes para tarificacion
+    this.deduciblesExistentes = [
+      {codigoDeducible: "1", descripcionDeducible: "0 UF"},
+      {codigoDeducible: "2", descripcionDeducible: "5 UF"},
+      {codigoDeducible: "3", descripcionDeducible: "10 UF"},
+      {codigoDeducible: "4", descripcionDeducible: "20 UF"},
+      {codigoDeducible: "5", descripcionDeducible: "30 UF"},
+      {codigoDeducible: "6", descripcionDeducible: "40 UF"},
+      {codigoDeducible: "7", descripcionDeducible: "50 UF"},
+      {codigoDeducible: "8", descripcionDeducible: "100 UF"}]
+    this.planesExistentes = [
+      {codigoActividad: "2", descripcionActividad: "L Liviano Particular"},
+      {codigoActividad: "3", descripcionActividad: "M Liviano Particular"},
+      {codigoActividad: "4", descripcionActividad: "S Liviano Particular"}]
   }
 
   async tarificar() {

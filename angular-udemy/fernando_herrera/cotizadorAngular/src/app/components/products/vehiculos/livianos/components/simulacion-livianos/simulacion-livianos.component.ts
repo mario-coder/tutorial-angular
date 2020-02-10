@@ -5,11 +5,14 @@ import { BsDatepickerConfig, DatepickerDateCustomClasses } from "ngx-bootstrap/d
 
 import { ComboFeedService } from 'src/app/services/data/combofeed.service';
 import { DatePickerConfigService } from 'src/app/config/date-picker-config';
+import { Deducible } from 'src/app/domain/deducible';
+import { Plan } from 'src/app/domain/plan';
 
 @Component({
   selector: "app-simulacion-livianos",
   templateUrl: "./simulacion-livianos.component.html",
-  styleUrls: ["../../../../styles/simulacion/simulacion.css"]
+  styleUrls: ["./simulacion-livianos.component.css",
+  "../../../../styles/simulacion/simulacion.css"]
 })
 
 export class SimulacionLivianosComponent implements OnInit {
@@ -58,7 +61,12 @@ export class SimulacionLivianosComponent implements OnInit {
     
   _tarificado: boolean = false;
   simulaciones: any[];
+  
+  deduciblesExistentes: Deducible[];
+  planesExistentes: Plan[];
  
+
+  
   constructor(
       private comboFeedService: ComboFeedService,
       private tarificadorService: TarificadorService,
@@ -85,6 +93,18 @@ export class SimulacionLivianosComponent implements OnInit {
     this.ESTADOS_VEHICULO = this.comboFeedService.getEstadosVehiculo();
     this.TIPOS_DOCUMENTO = this.comboFeedService.getTiposDocumento();
     this.DESCUENTO_RECARGO = this.comboFeedService.getOpcionesDescuentoRecargo();
+
+    //Inicializacion de deducibles y planes para tarificacion
+    this.deduciblesExistentes = [
+      {codigoDeducible: "1", descripcionDeducible: "0 UF"},
+      {codigoDeducible: "2", descripcionDeducible: "3 UF"},
+      {codigoDeducible: "3", descripcionDeducible: "5 UF"},
+      {codigoDeducible: "4", descripcionDeducible: "10 UF"}]
+    this.planesExistentes = [
+      {codigoActividad: "1", descripcionActividad: "XL Liviano Particular"},
+      {codigoActividad: "2", descripcionActividad: "L Liviano Particular"},
+      {codigoActividad: "3", descripcionActividad: "M Liviano Particular"},
+      {codigoActividad: "4", descripcionActividad: "S Liviano Particular"}]
   }
 
   async tarificar() {
