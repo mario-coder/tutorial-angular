@@ -14,8 +14,8 @@ export class HomeCotizadorComponent implements OnInit {
     console.log("init home")
   }
 
-  goPage(page: string) {
-    this.router.navigateByUrl(`/${page}`);
+  goToRoute(route: string) {
+    this.router.navigateByUrl(`/${route}`);
   }
 
 

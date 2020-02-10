@@ -4,7 +4,7 @@
 <br>
     <p-panel>
         <div class="card-deck">
-            <div class="card card-menu-home shadow-lg slide-in-bck-left" (click)="goPage('simulacion-livianos')">
+            <div class="card card-menu-home shadow-lg slide-in-bck-left" (click)="goToRoute('simulacion-livianos')">
                 <div class="card-header ripple">
                     <h6>Simular Livianos</h6>
                 </div>
@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <div class="card card-menu-home shadow-lg slide-in-bck-left">
+            <div class="card card-menu-home shadow-lg slide-in-bck-left" (click)="goToRoute('simulacion-pesados')">
                 <div class="card-header ">
                     <h6>Simular Pesados</h6>
                 </div>

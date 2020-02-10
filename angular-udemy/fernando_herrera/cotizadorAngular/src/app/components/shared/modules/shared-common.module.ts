@@ -18,11 +18,13 @@ import { TooltipModule } from 'primeng/tooltip';
 import { CheckboxModule } from 'primeng/checkbox';
 import { SeleccionTarifasComponent } from '../seleccion-tarifas-livianos/seleccion-tarifas.component';
 import { GrillaCotizacionesComponent } from '../grilla-cotizaciones/grilla-cotizaciones.component';
+import { CeldaCotizacionComponent } from '../grilla-cotizaciones/celda-cotizacion/celda-cotizacion.component';
 
 @NgModule({
   declarations: [
     SeleccionTarifasComponent,
-    GrillaCotizacionesComponent],
+    GrillaCotizacionesComponent,
+    CeldaCotizacionComponent],
   imports: [
     BrowserModule,
     CommonModule,
@@ -63,7 +65,10 @@ import { GrillaCotizacionesComponent } from '../grilla-cotizaciones/grilla-cotiz
     CalendarModule,
     InputTextareaModule,
     TooltipModule,
-    CheckboxModule
+    CheckboxModule,
+    SeleccionTarifasComponent,
+    GrillaCotizacionesComponent,
+    CeldaCotizacionComponent
   ],
   providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
 })
