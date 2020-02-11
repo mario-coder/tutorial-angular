@@ -1,13 +1,10 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
 .navbar {
-    /*
-    position: sticky;
-    top: -200px;
-    padding-top: 200px;*/
-    height: 3.2em;
-    /*width: 100% !important;*/
+    height: 2.7em;
     background-color: #ffffff; 
-    border-bottom: 2px solid rgb(161, 196, 5);
+    border-bottom: 3px solid rgb(161, 196, 5);
+    padding-top: 0rem;
+    padding-bottom: 0rem;
 }
 
 /* li.dropdown:hover > .dropdown-menu {
@@ -16,119 +13,40 @@
 
 .navbar-brand {
     font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase
+    text-transform: uppercase;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
 }
 
 .navbar .nav {
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 1.2rem
-}
-
-.navbar-inverse {
-    background-color: #003300
-}
-
-.navbar-inverse .navbar-nav>.active>a:hover,
-.navbar-inverse .navbar-nav>li>a:hover,
-.navbar-inverse .navbar-nav>li>a:focus {
-    background-color: #002200
-}
-
-.navbar-inverse .navbar-nav>.active>a,
-.navbar-inverse .navbar-nav>.open>a,
-.navbar-inverse .navbar-nav>.open>a,
-.navbar-inverse .navbar-nav>.open>a:hover,
-.navbar-inverse .navbar-nav>.open>a,
-.navbar-inverse .navbar-nav>.open>a:hover,
-.navbar-inverse .navbar-nav>.open>a:focus {
-    background-color: #003300
 }
 
 .dropdown-menu {
-    background-color: rgb(255, 255, 255)
+    margin-top: -0.1em;
 }
 
-.dropdown-menu>a:hover,
-.dropdown-menu>a:focus {
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
     background-color: #1858ac;
-    color: #fff;
+    color: #fff !important;
 }
 
-.navbar-inverse {
-    background-image: none;
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #ebeff3;
 }
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus {
-    background-image: none;
-}
-
-.navbar-inverse {
-    border-color: #003300
-}
-
-.navbar-inverse .navbar-brand {
-    color: rgb(0, 0, 0)
-}
-
-.navbar-inverse .navbar-brand:hover {
-    color: rgb(255, 255, 255)
-}
-
-.navbar-inverse .navbar-nav>li>a {
-    color: rgb(0, 0, 0)
-}
-
-.navbar-inverse .navbar-nav>li>a:hover,
-.navbar-inverse .navbar-nav>li>a:focus {
-    color: rgb(255, 255, 255)
-}
-
-.navbar-inverse .navbar-nav>.active>a,
-.navbar-inverse .navbar-nav>.open>a,
-.navbar-inverse .navbar-nav>.open>a:hover,
-.navbar-inverse .navbar-nav>.open>a:focus {
-    color: rgb(255, 255, 255)
-}
-
-.navbar-inverse .navbar-nav>.active>a:hover,
-.navbar-inverse .navbar-nav>.active>a:focus {
-    color: rgb(255, 255, 255)
-}
-
+.nav-link,
 .dropdown-menu>li>a {
-    color: rgb(0, 0, 0)
-}
-
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus {
-    color: rgb(255, 255, 255)
-}
-
-.navbar-inverse .navbar-nav>.dropdown>a .caret {
-    border-top-color: #FFFFFF
-}
-
-.navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
-    border-top-color: #FFFFFF
-}
-
-.navbar-inverse .navbar-nav>.dropdown>a .caret {
-    border-bottom-color: #FFFFFF
-}
-
-.navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
-    border-bottom-color: #FFFFFF
-}
-
-.nav-link {
     color: #071170 !important;
 }
 
 .clock {
-    display: block;
+    display: flex;
+    margin-top: 0.6rem;
 }
 
 @media (max-width: 768px) {
