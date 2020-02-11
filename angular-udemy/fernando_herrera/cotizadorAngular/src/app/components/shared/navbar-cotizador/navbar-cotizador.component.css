@@ -10,6 +10,10 @@
     border-bottom: 2px solid rgb(161, 196, 5);
 }
 
+/* li.dropdown:hover > .dropdown-menu {
+    display: block;
+} */
+
 .navbar-brand {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase

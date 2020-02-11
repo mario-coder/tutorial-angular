@@ -25,6 +25,11 @@
 	        animation: fade-in-left 0.6s ease-in both;
 }
 
+.fade-out {
+	-webkit-animation: fade-out 1s ease-out both;
+	        animation: fade-out 1s ease-out both;
+}
+
 .flip-in-hor-bottom {
 	-webkit-animation: flip-in-hor-bottom 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: flip-in-hor-bottom 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -1902,5 +1907,27 @@
     -webkit-filter: blur(0px);
             filter: blur(0px);
     opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-out
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
