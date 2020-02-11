@@ -5,9 +5,7 @@ import { SimulacionPesadosComponent } from './components/simulacion-pesados/simu
 
 @NgModule({
   declarations: [
-    SimulacionPesadosComponent,
-
-
+    SimulacionPesadosComponent
   ],
   imports: [
     SharedCommonModule

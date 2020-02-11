@@ -3,7 +3,6 @@ import { SharedCommonModule } from 'src/app/components/shared/modules/shared-com
 import { SimulacionMotosComponent } from './components/simulacion-motos/simulacion-motos.component';
 
 
-
 @NgModule({
   declarations: [SimulacionMotosComponent],
   imports: [

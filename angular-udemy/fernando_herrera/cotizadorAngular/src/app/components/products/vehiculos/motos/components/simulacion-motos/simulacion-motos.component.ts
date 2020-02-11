@@ -40,15 +40,15 @@ export class SimulacionMotosComponent implements OnInit {
   descuentoRecargoSelected: any;
   rcEnExcesoSelected: any;
   companiaAnteriorSelected: any;
-  usoVehiculoSelected: any;
+  usoMotoSelected: any;
   subUsoVehiculoSelected: any;
   tallerSelected: any;
   asistenciaSelected: any;
   rcsEnExcesoSelected: any;
   tipoOperacionSelected: any;
 
-  tipoVehiculoSelected: any;
-  clausulasAdicionalesSelected: any[];
+  clasificacionSelected: any;
+  cilindradaMotoSelected: any;
 
   ESTADOS_VEHICULO: any[];
   ANIOS: any[];
@@ -65,6 +65,10 @@ export class SimulacionMotosComponent implements OnInit {
   TIPOS_VEHICULOS_PESADOS: any[];
   SUB_USOS_VEHICULOS_PESADOS: any[];
   CLAUSULAS_ADICIONALES_PESADOS: any[];
+  CILINDRADAS_MOTOS: any[];
+
+  CLASIFICACIONES_MOTOS: any[];
+  USOS_MOTOS: any;
     
   _tarificado: boolean = false;
   simulaciones: any[];
@@ -89,18 +93,18 @@ export class SimulacionMotosComponent implements OnInit {
     this.MARCAS = this.comboFeedService.getMarcas();
     this.MODELOS = this.comboFeedService.getModelos();
     this.COMPANIAS_ANTERIORES = this.comboFeedService.getCompaniasAnteriores();
-    this.USOS_VEHICULOS_PESADOS = this.comboFeedService.getUsosVehiculosPesados();
-    this.SUB_USOS_VEHICULOS_PESADOS = this.comboFeedService.getSubUsosCamion();
+    this.USOS_MOTOS = this.comboFeedService.getUsosMotos();
+    
     this.COMUNAS = this.comboFeedService.getComunas();
     this.TALLERES = this.comboFeedService.getTalleres();;
     this.ASISTENCIAS = this.comboFeedService.getAsistencias();
-    this.RCS_EN_EXCESO = this.comboFeedService.getRcsEnExceso();
+    
     this.ESTADOS_VEHICULO = this.comboFeedService.getEstadosVehiculo();
     this.TIPOS_DOCUMENTO = this.comboFeedService.getTiposDocumento();
     this.DESCUENTO_RECARGO = this.comboFeedService.getOpcionesDescuentoRecargo();
 
-    this.TIPOS_VEHICULOS_PESADOS = this.comboFeedService.getTiposVehiculosPesados();
-    this.CLAUSULAS_ADICIONALES_PESADOS = this.comboFeedService.getClausulasAdicionalesPesados();
+    this.CLASIFICACIONES_MOTOS = this.comboFeedService.getClasificacionesMotos();
+    this.CILINDRADAS_MOTOS = this.comboFeedService.getCilindradasMotos();
 
     //Inicializacion de deducibles y planes para tarificacion
     this.deduciblesExistentes = [

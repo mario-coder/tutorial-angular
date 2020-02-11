@@ -5,10 +5,15 @@
     
             <div class="ml-3">
                 <p-header>
-                    <div class="tracking-in-contract">
-                        <h1>Simular Pesados</h1>
-                        <i class="fa fa-home float-left m-1"></i>
-                        <h6>Inicio/Simular Motos</h6>
+                    <div class="d-flex">
+                        <div class="tracking-in-contract">
+                            <h1>Simular Motos</h1>
+                            <i class="fa fa-home float-left m-1"></i>
+                            <h6>Inicio/Simular Motos</h6>
+                        </div>
+                        <div class="pull-left ml-4">
+                            <img src="assets/img/switch_motos/motos_ON_.png" height="120px" height="70px" alt="">
+                        </div>
                     </div>
                 </p-header>
             </div>
@@ -31,8 +36,8 @@
                     Buscar Documento
                 </p-header>
                 <!-- (onHide)="emitOnHide()" -->
-                    <!-- <app-buscar-documentos>
-                    </app-buscar-documentos> -->
+                    <app-buscar-documentos>
+                    </app-buscar-documentos>
             </p-dialog>
     
             <!-- Contenedor datos principales -->
@@ -64,7 +69,7 @@
     
                                 <p-header>
                                     <span class="ui-panel-title">
-                                        <i class="fa fa-truck-moving"></i>
+                                        <i class="fa fa-motorcycle"></i>
                                         Datos del Vehículo
                                     </span>
                                 </p-header>
@@ -84,9 +89,9 @@
                                     </div>
 
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                        <label for="tipoVehiculo" class="input-label">Tipo *</label>
-                                        <p-dropdown [options]="TIPOS_VEHICULOS_PESADOS" name="tipoVehiculo" 
-                                            [(ngModel)]="tipoVehiculoSelected" 
+                                        <label for="clasificacion" class="input-label">Clasificación *</label>
+                                        <p-dropdown [options]="CLASIFICACIONES_MOTOS" name="clasificacion" 
+                                            [(ngModel)]="clasificacionSelected" 
                                             placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
                                 </div>
@@ -98,6 +103,7 @@
                                             [(ngModel)]="anioSelected" 
                                             placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
+    
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                         <label for="marca" class="input-label">Marca *</label>
                                         <p-dropdown [options]="MARCAS" name="marca" 
@@ -106,32 +112,40 @@
                                             [(ngModel)]="marcaSelected" 
                                             placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
+    
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                        <label for="modelo" class="input-label">Monto Asegurado UF *</label>
-                                        <input pInputText name="montoAseguradoUF" type="text" />
+                                        <label for="modelo" class="input-label">Modelo *</label>
+                                        <p-dropdown [options]="MODELOS" name="modelo" 
+                                            filter="true"
+                                            [virtualScroll]="true"
+                                            [(ngModel)]="modeloSelected" 
+                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
                                 </div>
-    
+
                                 <div class="row mb-3">
                                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                        <label for="marca" class="input-label">Uso *</label>
-                                        <p-dropdown [options]="USOS_VEHICULOS_PESADOS" name="usoVehiculo"
-                                            [(ngModel)]="usoVehiculoSelected" 
-                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                        <label for="subUsoVehiculo" class="input-label">Sub Uso *</label>
-                                        <p-dropdown [options]="SUB_USOS_VEHICULOS_PESADOS" name="subUsoVehiculo"
-                                            [(ngModel)]="subUsoVehiculoSelected" 
-                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                        <label for="companiaAnterior" class="input-label">Compañia Anterior *</label>
+                                        <label for="anio" class="input-label">Compañia Anterior *</label>
                                         <p-dropdown [options]="COMPANIAS_ANTERIORES" name="companiaAnterior" 
                                             [(ngModel)]="companiaAnteriorSelected" 
                                             filter="true" [showClear]="true"
                                             placeholder="Selecione" optionLabel="label"></p-dropdown>
                                     </div>
+    
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="usoMoto" class="input-label">Uso *</label>
+                                        <p-dropdown [options]="USOS_MOTOS" name="usoMoto"
+                                            [(ngModel)]="usoMotoSelected" 
+                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                        <label for="cilindradaMoto" class="input-label">Cilindrada *</label>
+                                        <p-dropdown [options]="CILINDRADAS_MOTOS" name="cilindradaMoto"
+                                            [(ngModel)]="cilindradaMotoSelected" 
+                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                    </div>
+    
                                 </div>
                             </div>
     

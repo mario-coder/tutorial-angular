@@ -401,10 +401,16 @@ export class ComboFeedService {
     ]
   }
 
-  getCilindradaMotos(): any[] {
+  getCilindradasMotos(): any[] {
     return [
       {code: "1", label: "1000"},
       {code: "2", label: "2000"}
+    ]
+  }
+
+  getUsosMotos(): any {
+    return [
+      {code: "1", label: "PARTICULAR"}
     ]
   }
 }

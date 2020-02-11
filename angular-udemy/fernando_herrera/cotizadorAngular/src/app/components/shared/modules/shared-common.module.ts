@@ -20,12 +20,15 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { SeleccionTarifasComponent } from '../seleccion-tarifas-livianos/seleccion-tarifas.component';
 import { GrillaCotizacionesComponent } from '../grilla-cotizaciones/grilla-cotizaciones.component';
 import { CeldaCotizacionComponent } from '../grilla-cotizaciones/celda-cotizacion/celda-cotizacion.component';
+import { BuscarDocumentosComponent } from 'src/app/components/shared/buscar-documentos/buscar-documentos.component';
+
 
 @NgModule({
   declarations: [
     SeleccionTarifasComponent,
     GrillaCotizacionesComponent,
-    CeldaCotizacionComponent],
+    CeldaCotizacionComponent,
+    BuscarDocumentosComponent],
   imports: [
     BrowserModule,
     CommonModule,
@@ -71,7 +74,8 @@ import { CeldaCotizacionComponent } from '../grilla-cotizaciones/celda-cotizacio
     MultiSelectModule,
     SeleccionTarifasComponent,
     GrillaCotizacionesComponent,
-    CeldaCotizacionComponent
+    CeldaCotizacionComponent,
+    BuscarDocumentosComponent
   ],
   providers: [{provide: LOCALE_ID, useValue: "es-Es"}],
 })

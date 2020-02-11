@@ -6,7 +6,7 @@ import { ComboFeedService } from 'src/app/services/data/combofeed.service';
   templateUrl: './buscar-documentos.component.html',
   styleUrls: ['./buscar-documentos.component.css']
 })
-export class BuscarDocumentosLivianosComponent implements OnInit {
+export class BuscarDocumentosComponent implements OnInit {
 
   @Input() producto;
 

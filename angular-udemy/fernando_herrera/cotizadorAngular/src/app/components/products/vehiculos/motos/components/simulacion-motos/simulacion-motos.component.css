@@ -1,9 +1,17 @@
 :host ::ng-deep .img_item {
     width: 60px;
-    height: 30px;
+    height: 35px;
   }
 
   :host ::ng-deep label .img_item, 
   :host ::ng-deep :checked + label .img_item {
-    background-size: 60px 30px !important;
+    background-size: 60px 35px !important;
+  }
+
+
+  .titulo {
+    background-image: url("../../../../../../../assets/img/switch_motos/motos_ON_.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 120px 70px;
   }
