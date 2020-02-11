@@ -5,7 +5,7 @@
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
-      </button>
+    </button>
     
       <!-- Navbar links -->
       <div class="collapse navbar-collapse swing-in-top-fwd" id="collapsibleNavbar">
@@ -20,16 +20,20 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                     Venta
                 </a>
-                <div class="dropdown-menu shadow-lg swing-in-top-fwd">
-                    <a class="dropdown-item" routerLink="/simulacion-livianos">
-                        <i class="fa fa-car-side"></i>
-                        Simular Livianos
-                    </a>
-                    <a class="dropdown-item" routerLink="/simulacion-pesados">
-                        <i class="fa fa-truck-moving"></i>
-                        Simular Pesados
-                    </a>
-                </div>
+                <ul class="dropdown-menu shadow-lg swing-in-top-fwd">
+                    <li>
+                        <a class="dropdown-item" routerLink="/simulacion-livianos">
+                            <i class="fa fa-car-side"></i>
+                            Simular Livianos
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="/simulacion-pesados">
+                            <i class="fa fa-truck-moving"></i>
+                            Simular Pesados
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             <!-- Dropdown -->
@@ -38,23 +42,28 @@
                     Administración
                 </a>
                 <div class="dropdown-menu shadow-lg swing-in-top-fwd">
-                    <a class="dropdown-item" routerLink="/consulta-simulacion">
-                        <i class="fa fa-list"></i>
-                        Consulta Simulacion
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fa fa-calculator"></i>
-                        Consulta Produccion
-                    </a>
+                    <li>
+                        <a class="dropdown-item" routerLink="/consulta-simulacion">
+                            <i class="fa fa-list"></i>
+                            Consulta Simulacion
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="fa fa-calculator"></i>
+                            Consulta Produccion
+                        </a>
+                    </li>
                 </div>
             </li>
         </ul>
       </div>
       
-          <div class="ml-3 pull-right clock">
-            <div class="bg-info shadow-sm rounded m-6 p-6">
-                <h6 class="text-white mt-2 ml-2 mr-2 text-center">{{ fecha | date:'medium' }}</h6>
-            </div>
+          <div class="ml-3 mb-2 pull-right clock">
             <h6>Bienvenido Mario</h6>
+            
+            <div class="bg-info rounded ml-2 p-1">
+                <h6 class="text-white text-left">{{ fecha | date:'short' }}</h6>
+            </div>
         </div>
     </nav>
