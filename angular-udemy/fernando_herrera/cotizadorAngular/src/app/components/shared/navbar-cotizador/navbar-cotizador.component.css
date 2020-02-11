@@ -7,9 +7,10 @@
     padding-bottom: 0rem;
 }
 
-/* li.dropdown:hover > .dropdown-menu {
+li.dropdown:hover > .dropdown-menu {
+    display: none;
     display: block;
-} */
+}
 
 .navbar-brand {
     font-family: 'Montserrat', sans-serif;
