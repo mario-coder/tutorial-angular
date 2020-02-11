@@ -5,7 +5,7 @@ import { SimulacionLivianosComponent } from './components/simulacion-livianos/si
 import { PropuestaLivianosComponent } from './components/propuesta-livianos/propuesta-livianos.component';
 import { EmisionLivianosComponent } from './components/emision-livianos/emision-livianos.component';
 import { PropuestaGeneradaLivianosComponent } from './components/propuesta-livianos/propuesta-generada-livianos/propuesta-generada-livianos.component';
-import { BuscarDocumentosLivianosComponent } from './components/simulacion-livianos/buscar-documentos-livianos/buscar-documentos-livianos.component';
+import { BuscarDocumentosLivianosComponent } from '../../../shared/buscar-documentos-livianos/buscar-documentos.component';
 import { PolizaEmitidaLivianosComponent } from './components/emision-livianos/poliza-emitida-livianos/poliza-emitida-livianos.component';
 
 @NgModule({

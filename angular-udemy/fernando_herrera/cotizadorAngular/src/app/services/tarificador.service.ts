@@ -7,6 +7,9 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
   providedIn: 'root'
 })
 export class TarificadorService {
+  tarificarMotos(): any[] | PromiseLike<any[]> {
+    throw new Error("Method not implemented.");
+  }
 
   url: string="http://iaxistest.realechile.cl:8081/realeaxisconnect/simulacion";
   httpOptions = {

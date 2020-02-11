@@ -7,11 +7,6 @@
     padding-bottom: 0rem;
 }
 
-li.dropdown:hover > .dropdown-menu {
-    display: none;
-    display: block;
-}
-
 .navbar-brand {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
@@ -26,6 +21,7 @@ li.dropdown:hover > .dropdown-menu {
 }
 
 .dropdown-menu {
+    border-radius: 2px !important;
     margin-top: -0.1em;
 }
 

@@ -11,12 +11,14 @@ import { EmisionLivianosComponent } from './components/products/vehiculos/livian
 import { HomeCotizadorComponent } from './components/common/home-cotizador/home-cotizador.component';
 import { LoginComponent } from './components/common/login/login.component';
 import { SimulacionPesadosComponent } from './components/products/vehiculos/pesados/components/simulacion-pesados/simulacion-pesados.component';
+import { SimulacionMotosComponent } from './components/products/vehiculos/motos/components/simulacion-motos/simulacion-motos.component';
 
 
 const routes: Routes = [
   { path: "consulta-simulacion", component: ConsultaSimulacionComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "simulacion-livianos", component: SimulacionLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "simulacion-pesados", component: SimulacionPesadosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
+  { path: "simulacion-motos", component: SimulacionMotosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "propuesta-livianos", component: PropuestaLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "propuesta-generada-livianos", component: PropuestaGeneradaLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "poliza-emitida-livianos", component: PolizaEmitidaLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },

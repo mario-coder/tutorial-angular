@@ -17,6 +17,7 @@ import { SharedCommonModule } from './components/shared/modules/shared-common.mo
 import { LivianosModule } from './components/products/vehiculos/livianos/livianos.module';
 import { DatePickerConfigService } from './config/date-picker-config';
 import { PesadosModule } from './components/products/vehiculos/pesados/pesados.module';
+import { MotosModule } from './components/products/vehiculos/motos/motos.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PesadosModule } from './components/products/vehiculos/pesados/pesados.m
     AppRoutingModule,
     LivianosModule,
     PesadosModule,
+    MotosModule,
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,

@@ -3,11 +3,7 @@
     height: 60px;
   }
 
-  :host ::ng-deep label .img_item {
-    background-size: 40px 60px;
-  }
-  
- 
+  :host ::ng-deep label .img_item,
   :host ::ng-deep :checked + label .img_item {
-    background-size: 40px 60px;
+    background-size: 40px 60px !important;
   }

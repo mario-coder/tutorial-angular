@@ -2,11 +2,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ComboFeedService } from 'src/app/services/data/combofeed.service';
 
 @Component({
-  selector: 'app-buscar-documentos-livianos',
-  templateUrl: './buscar-documentos-livianos.component.html',
-  styleUrls: ['../../../../../styles/simulacion/buscar-documentos/buscar-documentos.css']
+  selector: 'app-buscar-documentos',
+  templateUrl: './buscar-documentos.component.html',
+  styleUrls: ['./buscar-documentos.component.css']
 })
 export class BuscarDocumentosLivianosComponent implements OnInit {
+
+  @Input() producto;
 
   // @Output() displayChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
