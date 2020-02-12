@@ -2,7 +2,8 @@
     padding: 0% !important;
   }
   
-  .tabla-tarifas-container {
+  /*Es movido a css general styles.css*/
+  /* .tabla-tarifas-container {
     padding: 1.2rem;
     margin-bottom: 0.5rem;
     border-radius: 6px;
@@ -16,7 +17,7 @@
     .tabla-tarifas-container {
       overflow-x: scroll;
     }
-  }
+  } */
   
   .tabla-tarifas {
     border: 2px solid grey;

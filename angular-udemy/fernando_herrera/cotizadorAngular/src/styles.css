@@ -55,6 +55,22 @@ body {
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
 }
 
+.tabla-tarifas-container {
+    padding: 1.2rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    border: 3px solid darkblue;
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (max-width: 1024px) {
+    .tabla-tarifas-container {
+      overflow-x: scroll;
+    }
+  }
+
   /********/
  /*PANELS*/
 /********/
@@ -71,7 +87,8 @@ div.ui-panel-titlebar {
     border: 1px solid #a5d5f5 !important;
 }
 
-.panel-container span.pi {
+/*Iconos de cierre de paneles dentro de panel container (y que no sean checkbox)*/
+.panel-container span.pi:not(.ui-chkbox-icon) {
     color: #007ad9 !important;
 }
 
@@ -80,7 +97,7 @@ div.ui-panel-titlebar {
     border-bottom-right-radius: 3px !important;
 }
 
-/*workaround toggle button en panel con botones*/
+/*workaround toggle button en panel con botones (Buscar documento)*/
 body .ui-panel .ui-panel-title {
     width: calc(100% - 30px) !important;
     display: inline-block !important;
@@ -92,6 +109,22 @@ body .ui-panel .ui-panel-title .ui-panel-title-buttons {
 body .ui-panel .ui-panel-title .ui-panel-titlebar-icon {
     margin-top: -0.15em !important;
     margin-bottom: -0.15em !important;
+}
+
+/*Titulo Fieldsets (primeNG)*/
+legend {
+    font-size: 1em;
+    font-weight: bold;
+    width: fit-content !important
+}
+
+/*Slider ng5*/
+.ng5-slider-inner-tooltip {
+    display: none !important;
+}
+
+.slider-flex {
+    min-width: 600px !important;
 }
 
   /*******/
@@ -126,6 +159,10 @@ body .ui-panel .ui-panel-title .ui-panel-titlebar-icon {
     text-align: left;
     font-size: 0.8rem;
     margin-bottom: 3px;
+}
+
+body .ui-radiobutton {
+    float: left;
 }
 
 .form-control {

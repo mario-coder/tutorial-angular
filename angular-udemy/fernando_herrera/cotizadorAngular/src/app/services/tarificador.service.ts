@@ -7,10 +7,6 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
   providedIn: 'root'
 })
 export class TarificadorService {
-  tarificarMotos(): any[] | PromiseLike<any[]> {
-    throw new Error("Method not implemented.");
-  }
-
   url: string="http://iaxistest.realechile.cl:8081/realeaxisconnect/simulacion";
   httpOptions = {
     headers: new HttpHeaders({
@@ -2392,6 +2388,13 @@ responseLivianos : any = {
 
       // return this.http.post(this.url, this.request, this.httpOptions).pipe(
     //   map(data => data["simulaciones"]));
+  }
+
+  tarificarHogar(): any[] | PromiseLike<any[]> {
+    throw new Error("Method not implemented.");
+  }
+  tarificarMotos(): any[] | PromiseLike<any[]> {
+    throw new Error("Method not implemented.");
   }
 
 }

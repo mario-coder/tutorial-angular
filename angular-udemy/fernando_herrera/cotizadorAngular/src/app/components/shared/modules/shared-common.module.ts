@@ -17,6 +17,10 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { TooltipModule } from 'primeng/tooltip';
 import { CheckboxModule } from 'primeng/checkbox';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { FieldsetModule } from 'primeng/fieldset';
+import { Ng5SliderModule } from 'ng5-slider';
+
 import { SeleccionTarifasComponent } from '../seleccion-tarifas-livianos/seleccion-tarifas.component';
 import { GrillaCotizacionesComponent } from '../grilla-cotizaciones/grilla-cotizaciones.component';
 import { CeldaCotizacionComponent } from '../grilla-cotizaciones/celda-cotizacion/celda-cotizacion.component';
@@ -49,7 +53,10 @@ import { BuscarDocumentosComponent } from 'src/app/components/shared/buscar-docu
     InputTextareaModule,
     TooltipModule,
     CheckboxModule,
-    MultiSelectModule
+    MultiSelectModule,
+    RadioButtonModule,
+    FieldsetModule,
+    Ng5SliderModule
   ],
   exports: [
     BrowserModule,
@@ -72,6 +79,10 @@ import { BuscarDocumentosComponent } from 'src/app/components/shared/buscar-docu
     TooltipModule,
     CheckboxModule,
     MultiSelectModule,
+    RadioButtonModule,
+    FieldsetModule,
+    Ng5SliderModule,
+
     SeleccionTarifasComponent,
     GrillaCotizacionesComponent,
     CeldaCotizacionComponent,

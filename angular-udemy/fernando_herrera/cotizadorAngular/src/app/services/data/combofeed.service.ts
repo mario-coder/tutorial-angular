@@ -348,6 +348,9 @@ export class ComboFeedService {
     ];
   }
 
+/**********/
+/*PESADOS*/
+/********/
   getTiposVehiculosPesados(): any[] {
     return [
       {code: "1", label: "BUS"},
@@ -389,6 +392,9 @@ export class ComboFeedService {
     ]
   }
 
+/********/
+/*MOTOS*/
+/******/
   getClasificacionesMotos(): any[] {
     return [
       {code: "1", label: "MOTO URBANA"},
@@ -411,6 +417,46 @@ export class ComboFeedService {
   getUsosMotos(): any {
     return [
       {code: "1", label: "PARTICULAR"}
+    ]
+  }
+
+/********/
+/*HOGAR*/
+/******/
+  getZonasHogar(): any[] {
+    return [
+      {code: "1", label: "Urbana"},
+      {code: "2", label: "Rural"}
+    ]
+  }
+
+  getTiposViasHogar(): any[] {
+    return [
+      {code: "1", label: "Autopista"},
+      {code: "2", label: "Avenida"},
+      {code: "3", label: "Calle"},
+      {code: "4", label: "Carretera"},
+      {code: "5", label: "Pasaje"},
+      {code: "6", label: "Paseo"},
+    ]
+  }
+
+  getOcupacionesRiesgoHogar(): any[] {
+    return [
+      {code: "1", label: "Casa Ocupacion Habitual"},
+      {code: "2", label: "Casa Ocupacion Temporal"},
+      {code: "3", label: "Departamente Ocupacion Habitual"},
+      {code: "4", label: "Departamento Ocupacion Temporal"},
+    ]
+  }
+
+  getTiposConstruccionHogar(): any[] {
+    return [
+      {code: "1", label: "Sólida"},
+      {code: "2", label: "Ligero Combustible"},
+      {code: "3", label: "Ligero No Combustible"},
+      {code: "4", label: "Adoble y/o Adobillo"},
+      {code: "5", label: "Mixto Sólido/Ligero"},
     ]
   }
 }
