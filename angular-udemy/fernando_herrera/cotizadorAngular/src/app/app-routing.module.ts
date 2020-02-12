@@ -12,17 +12,19 @@ import { HomeCotizadorComponent } from './components/common/home-cotizador/home-
 import { LoginComponent } from './components/common/login/login.component';
 import { SimulacionPesadosComponent } from './components/products/vehiculos/pesados/components/simulacion-pesados/simulacion-pesados.component';
 import { SimulacionMotosComponent } from './components/products/vehiculos/motos/components/simulacion-motos/simulacion-motos.component';
+import { SimulacionHogarComponent } from './components/products/inmobiliario/hogar/components/simulacion-hogar/simulacion-hogar.component';
 
 
 const routes: Routes = [
   { path: "consulta-simulacion", component: ConsultaSimulacionComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "simulacion-livianos", component: SimulacionLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
-  { path: "simulacion-pesados", component: SimulacionPesadosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
-  { path: "simulacion-motos", component: SimulacionMotosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "propuesta-livianos", component: PropuestaLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "propuesta-generada-livianos", component: PropuestaGeneradaLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "poliza-emitida-livianos", component: PolizaEmitidaLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "emision-livianos", component: EmisionLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
+  { path: "simulacion-pesados", component: SimulacionPesadosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
+  { path: "simulacion-motos", component: SimulacionMotosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
+  { path: "simulacion-hogar", component: SimulacionHogarComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "home-cotizador", component: HomeCotizadorComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "login", component: LoginComponent }, //, data: {animation: 'isRight'} },
   { path: "**", redirectTo: "home-cotizador" }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedCommonModule } from 'src/app/components/shared/modules/shared-common.module';
 import { SimulacionHogarComponent } from './components/simulacion-hogar/simulacion-hogar.component';
 
 
@@ -7,7 +7,7 @@ import { SimulacionHogarComponent } from './components/simulacion-hogar/simulaci
 @NgModule({
   declarations: [SimulacionHogarComponent],
   imports: [
-    CommonModule
+    SharedCommonModule
   ]
 })
 export class HogarModule { }
