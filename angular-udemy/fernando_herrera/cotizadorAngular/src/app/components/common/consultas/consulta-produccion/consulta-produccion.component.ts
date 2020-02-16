@@ -7,11 +7,11 @@ import * as moment from 'moment';
 import { DatePickerConfigService } from 'src/app/config/date-picker-config';
 
 @Component({
-  selector: "app-consulta-simulacion",
-  templateUrl: "./consulta-simulacion.component.html",
-  styleUrls: ["./consulta-simulacion.component.css"]
+  selector: "app-consulta-produccion",
+  templateUrl: "./consulta-produccion.component.html",
+  styleUrls: ["../styles/consulta.css"]
 })
-export class ConsultaSimulacionComponent implements OnInit {
+export class ConsultaProduccionComponent implements OnInit {
   @ViewChild('dp1', {static: true}) dp1: ElementRef;
 
   _isLoggedIn : number = 1;
@@ -55,7 +55,7 @@ export class ConsultaSimulacionComponent implements OnInit {
   COMPANIAS:any[];
   RAMOS:any[];
   PERIODOS:any[];
-  ESTADOS_SIMULACION:any[];
+  ESTADOS_POLIZA:any[];
   TIPOS_VEHICULO:any[];
   USOS_VEHICULO:any[];
   SUB_USOS_VEHICULO:any[];
@@ -87,7 +87,7 @@ export class ConsultaSimulacionComponent implements OnInit {
     this.COMPANIAS = this.comboFeedService.getCompanias();
     this.RAMOS = this.comboFeedService.getRamos();
     this.PERIODOS = this.comboFeedService.getPeriodos();
-    this.ESTADOS_SIMULACION = this.comboFeedService.getEstadosSimulacion();
+    this.ESTADOS_POLIZA = this.comboFeedService.getEstadosPoliza();
     this.TIPOS_VEHICULO = this.comboFeedService.getTiposVehiculo();
     this.USOS_VEHICULO = this.comboFeedService.getUsosVehiculo();
     this.SUB_USOS_VEHICULO = this.comboFeedService.getSubUsosVehiculo();

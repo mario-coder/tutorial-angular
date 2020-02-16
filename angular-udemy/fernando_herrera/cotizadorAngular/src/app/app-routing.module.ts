@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { AppComponent } from './app.component';
 import { AuthGuard } from './guards/auth.guard';
-import { ConsultaSimulacionComponent } from './components/common/consulta-simulacion/consulta-simulacion.component';
+import { ConsultaSimulacionComponent } from './components/common/consultas/consulta-simulacion/consulta-simulacion.component';
 import { SimulacionLivianosComponent } from './components/products/vehiculos/livianos/components/simulacion-livianos/simulacion-livianos.component';
 import { PropuestaLivianosComponent } from './components/products/vehiculos/livianos/components/propuesta-livianos/propuesta-livianos.component';
 import { PropuestaGeneradaLivianosComponent } from './components/products/vehiculos/livianos/components/propuesta-livianos/propuesta-generada-livianos/propuesta-generada-livianos.component';
@@ -13,10 +13,12 @@ import { LoginComponent } from './components/common/login/login.component';
 import { SimulacionPesadosComponent } from './components/products/vehiculos/pesados/components/simulacion-pesados/simulacion-pesados.component';
 import { SimulacionMotosComponent } from './components/products/vehiculos/motos/components/simulacion-motos/simulacion-motos.component';
 import { SimulacionHogarComponent } from './components/products/inmobiliario/hogar/components/simulacion-hogar/simulacion-hogar.component';
+import { ConsultaProduccionComponent } from './components/common/consultas/consulta-produccion/consulta-produccion.component';
 
 
 const routes: Routes = [
   { path: "consulta-simulacion", component: ConsultaSimulacionComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
+  { path: "consulta-produccion", component: ConsultaProduccionComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "simulacion-livianos", component: SimulacionLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "propuesta-livianos", component: PropuestaLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },
   { path: "propuesta-generada-livianos", component: PropuestaGeneradaLivianosComponent, canActivate: [AuthGuard] }, //, data: {animation: 'isRight'} },

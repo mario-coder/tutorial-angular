@@ -1,0 +1,496 @@
+<!-- <div class="fade-in-top"> -->
+    <div>
+        <p-card>
+            <div class="ml-3">
+                <p-header>
+                    <div class="tracking-in-contract">
+                        <h1>Consulta Produccion</h1>
+                        <i class="fa fa-home float-left m-1"></i>
+                        <h6>Inicio/Consulta Produccion</h6>
+                    </div>
+                </p-header>
+            </div>
+    
+            <hr />
+    
+            <div class="wrapper flip-in-hor-bottom">
+                <!-- Sidebar  -->
+                <nav id="sidebar" [ngClass]="{ hidden: _sidebarHidden }">
+                    <div class="sidebar-header">
+    
+                        <button type="button" class="btn btn-danger float-right mb-2" 
+                         pTooltip="Ocultar menu" tooltipPosition="top"
+                         (click)="toggleMenu()">
+                            <i class="fa fa-times"></i>
+                        </button>
+    
+                        <i class="fa fa-search float-left mt-1 mr-1"></i>
+                        <h6>Opciones de busqueda</h6>
+    
+                    </div>
+    
+                    <div class="active">
+                        <form>
+                            <p-accordion [multiple]="true">
+    
+                                <!-- Busqueda General -->
+                                <p-accordionTab header="Busqueda General">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Tipo Consulta
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown name="tipoConsulta" 
+                                            [options]="TIPOS_CONSULTA"
+                                            [(ngModel)]="tipoConsultaSelected"
+                                            placeholder="Seleccione" optionLabel="label"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Canal
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown name="canal" 
+                                            [options]="CANALES"
+                                            [(ngModel)]="canalSelected"
+                                            placeholder="Seleccione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Sucursal
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown name="sucursal" 
+                                                [options]="SUCURSALES"
+                                                [(ngModel)]="sucursalSelected"
+                                                placeholder="Seleccione" optionLabel="label"
+                                                [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Corredor
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown name="corredor" 
+                                            [options]="CORREDORES"
+                                            [(ngModel)]="corredorSelected"
+                                            placeholder="Seleccione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Cia De Seguros
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown name="compania" 
+                                            [options]="COMPANIAS"
+                                            [(ngModel)]="companiaSelected"
+                                            placeholder="Seleccione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Ramo
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown name="ramo" 
+                                            [options]="RAMOS"
+                                            [(ngModel)]="ramoSelected"
+                                            placeholder="Seleccione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+    
+                                    <br />
+    
+                                    <div class="row">
+                                        <div class="col-12" colspan="2">
+                                            <button type="button" class="btn btn-outline-primary" (click)="buscar()">
+                                                <i class="fa fa-search"></i>
+                                                Buscar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </p-accordionTab>
+    
+                                <!-- Busqueda por Fechas -->
+                                <p-accordionTab header="Busqueda por Fechas" [selected]="true">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Periodo
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown name="periodo" 
+                                            [(ngModel)]="periodoSelected"
+                                            placeholder="REGISTRO" optionLabel="label"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 ">Fecha Desde</div>
+                                        <div class="col-7 ">
+                                            <div class="ui-inputgroup">
+                                                <!-- #dp1="bsDatepicker" -->
+                                                <input type="text" name="fechaDesde"
+                                                    pInputText class="calendar-input"
+                                                    #dp1
+                                                    bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
+                                                <button pButton type="button" 
+                                                    icon="fa fa-calendar-alt" class="ui-button-primary"
+                                                    (click)="today(dp1)"
+                                                    [attr.aria-expanded]="dp1.isOpen"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 ">Fecha Hasta</div>
+                                        <div class="col-7 ">
+                                            <div class="ui-inputgroup">
+                                                <input type="text" name="fechaHasta"
+                                                    pInputText class="calendar-input"
+                                                    #dp2
+                                                    bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
+                                                <button pButton type="button" 
+                                                    icon="fa fa-calendar-alt" class="ui-button-primary"
+                                                    (click)="today(dp2)"
+                                                    [attr.aria-expanded]="dp2.isOpen"></button>
+                                                    <!-- (click)="dp2.toggle()"  -->
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <br />
+    
+                                    <div class="row">
+                                        <div class="col-12" colspan="2">
+                                            <button type="button" class="btn btn-outline-primary" (click)="buscar()">
+                                                <i class="fa fa-search"></i>
+                                                Buscar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </p-accordionTab>
+    
+                                <!-- Busqueda por Documento -->
+                                <p-accordionTab header="Busqueda por Documento">
+                                    <div class="row">
+                                        <div class="col-5 ">Numero de Simulacion</div>
+                                        <div class="col-7 ">
+                                            <input pInputText name="" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 ">Numero de Propuesta</div>
+                                        <div class="col-7 ">
+                                            <input pInputText name="" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 ">Numero de Poliza</div>
+                                        <div class="col-7 ">
+                                            <input pInputText name="" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 ">Numero de Certificado</div>
+                                        <div class="col-7 ">
+                                            <input pInputText name="" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Estado Poliza
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown name="estadoPoliza" 
+                                            [options]="ESTADOS_POLIZA"
+                                            [(ngModel)]="estadoPolizaSelected"
+                                            placeholder="TODOS(AS)" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+    
+                                    <br />
+    
+                                    <div class="row">
+                                        <div class="col-12" colspan="2">
+                                            <button type="button" class="btn btn-outline-primary" (click)="buscar()">
+                                                <i class="fa fa-search"></i>
+                                                Buscar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </p-accordionTab>
+    
+                                <!-- Busqueda por Persona -->
+                                <p-accordionTab header="Busqueda por Persona">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Tipo De Persona
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown name="tipoPersona" 
+                                            [options]="TIPOS_PERSONA"
+                                            [(ngModel)]="tipoPersonaSelected"
+                                            placeholder="Seleccione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Tipo De Documento
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="TIPOS_DOCUMENTO" name="tipoDocumento" 
+                                                [(ngModel)]="tipoDocumentoSelected"
+                                                placeholder="Selecione" optionLabel="label"
+                                                [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 ">Numero De Documento</div>
+                                        <div class="col-7 ">
+                                            <input pInputText name="" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 ">Numero De Medio de Pago</div>
+                                        <div class="col-7 ">
+                                            <input pInputText name="" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 ">Nombre</div>
+                                        <div class="col-7 ">
+                                            <input pInputText name="" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 ">Apellido</div>
+                                        <div class="col-7 ">
+                                            <input pInputText name="" type="text" />
+                                        </div>
+                                    </div>
+    
+                                    <br />
+    
+                                    <div class="row">
+                                        <div class="col-12" colspan="2">
+                                            <button type="button" class="btn btn-outline-primary" (click)="buscar()">
+                                                <i class="fa fa-search"></i>
+                                                Buscar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </p-accordionTab>
+    
+                                <!-- Busqueda por Datos del Riesgo Vehiculo -->
+                                <p-accordionTab header="Busqueda por Datos del Riesgo Vehiculo">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Año
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="ANIOS" name="anio" 
+                                            [(ngModel)]="anioSelected" 
+                                            placeholder="Selecione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Tipo
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="TIPOS_VEHICULO" name="tipoVehiculo"
+                                            [(ngModel)]="tipoVehiculoSelected" 
+                                            placeholder="Selecione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Marca
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="MARCAS" name="marca" filter="true"
+                                            [(ngModel)]="marcaSelected"
+                                            [virtualScroll]=true
+                                            placeholder="Selecione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Modelo
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="MODELOS" name="modelo" 
+                                            [(ngModel)]="estadoVehiculoSelected" filter="true"
+                                            placeholder="Selecione" optionLabel="label" 
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 ">Patente</div>
+                                        <div class="col-7 ">
+                                            <input pInputText name="" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Uso
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="USOS_VEHICULO" name="usoVehiculo" 
+                                            [(ngModel)]="usoVehiculoSelected"
+                                            placeholder="Selecione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Sub Uso
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="SUB_USOS_VEHICULO" name="subUsoVehiculo" 
+                                            [(ngModel)]="subUsoVehiculoSelected"
+                                            placeholder="Selecione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+    
+                                    <br />
+    
+                                    <div class="row">
+                                        <div class="col-12" colspan="2">
+                                            <button type="button" class="btn btn-outline-primary" (click)="buscar()">
+                                                <i class="fa fa-search"></i>
+                                                Buscar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </p-accordionTab>
+    
+                                <!-- Busqueda por Datos del Riesgo Hogar -->
+                                <p-accordionTab header="Busqueda por Datos del Riesgo Hogar">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Perfil Asegurado
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="PERFILES_ASEGURADO" name="perfilAsegurado"
+                                            [(ngModel)]="perfilAseguradoSelected"
+                                            placeholder="Selecione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Ocupacion del Riesgo
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="OCUPACIONES_HABITACIONALES" name="ocupacionHabitacional"
+                                            [(ngModel)]="ocupacionHabitacionalSelected"
+                                            placeholder="Selecione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Tipo Construccion
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="TIPOS_CONSTRUCCION" name="tipoConstruccion"
+                                            [(ngModel)]="tipoConstruccionSelected"
+                                            placeholder="Selecione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Region
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="REGIONES" name="region" filter="true"
+                                            [(ngModel)]="regionSelected"
+                                            [virtualScroll]=true
+                                            placeholder="Selecione" optionLabel="label" 
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Comuna
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="COMUNAS" name="comuna" 
+                                                [(ngModel)]="comunaSelected" filter="true"
+                                                [virtualScroll]="true"
+                                                placeholder="Selecione" optionLabel="label" 
+                                                [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">
+                                            Zona
+                                        </div>
+                                        <div class="col-7 ">
+                                            <p-dropdown [options]="ZONAS" name="zona" 
+                                            [(ngModel)]="zonaSelected"
+                                            placeholder="Selecione" optionLabel="label"
+                                            [showClear]="true"></p-dropdown>
+                                        </div>
+                                    </div>
+    
+                                    <br />
+    
+                                    <div class="row">
+                                        <div class="col-12" colspan="2">
+                                            <button type="button" class="btn btn-outline-primary" (click)="buscar()">
+                                                <i class="fa fa-search"></i>
+                                                Buscar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </p-accordionTab>
+                            </p-accordion>
+                        </form>
+                    </div>
+                </nav>
+    
+                <!-- Boton mostrar menu -->
+                <div class="container busqueda-container">
+                    <button type="button" class="btn btn-default btn-md my-1 pull-left"
+                    *ngIf="_sidebarHidden" (click)="toggleMenu()">
+                        <i class="fa" [ngClass]="iconoOpcionMenu"></i>
+                        <small> {{ opcionMenu }} </small>
+                    </button>
+    
+                    <!-- Tabla Resultados de busqueda -->
+                    <app-resultado-consulta-simulacion *ngIf="_busquedaRealizada"></app-resultado-consulta-simulacion>
+                    <!-- Tabla Resultados de busqueda -->
+                
+    
+                    <!-- Tabla Previa a Resultados de busqueda -->
+                    <div *ngIf="!_busquedaRealizada" class="bg-light">
+                        <div class="container p-5 tracking-in-contract">
+                            <i class="fa fa-4x fa-info-circle float-left"></i>
+                            <h2>Realice una busqueda</h2>
+                            <p class="lead">
+                                <!-- <i class="fa fa-2x fa-arrow-circle-left"></i> -->
+                                Utilice el menu a la izquierda para buscar
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Tabla Previa a Resultados de busqueda -->
+                </div>
+    
+            </div>
+        </p-card>
+    </div>

@@ -248,6 +248,17 @@ export class ComboFeedService {
       {code: "2", label: "RECHAZADA"},
     ]
   }
+
+  getEstadosPoliza(): any[] {
+    return [
+      {code: "1", label: "ANULADA"},
+      {code: "2", label: "APROBADA"},
+      {code: "3", label: "ERRONEA"},
+      {code: "4", label: "EXPIRADA"},
+      {code: "5", label: "SOLICITADA"},
+      {code: "6", label: "VIGENTE"},
+    ]
+  }
   
   getTiposVehiculo(): any[] {
     return [

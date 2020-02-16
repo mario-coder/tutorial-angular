@@ -5,11 +5,11 @@ import { Simulacion } from 'src/app/domain/simulacion';
 import { BuscadorSimulacionesService } from 'src/app/services/buscador-simulaciones.service';
 
 @Component({
-  selector: 'app-resultado-consulta-simulacion',
-  templateUrl: './resultado-consulta-simulacion.component.html',
-  styleUrls: ['./resultado-consulta-simulacion.component.css']
+  selector: 'app-resultado-consulta-produccion',
+  templateUrl: './resultado-consulta-produccion.component.html',
+  styleUrls: ["../../styles/resultado-consulta.css"]
 })
-export class ResultadoConsultaSimulacionComponent implements OnInit {
+export class ResultadoConsultaProduccionComponent implements OnInit {
 
   displayDialog: boolean;
 

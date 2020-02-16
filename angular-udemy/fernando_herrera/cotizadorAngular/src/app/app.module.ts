@@ -10,8 +10,8 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { DragDropDirective } from './directives/drag-drop.directive';
 import { NavbarCotizadorComponent } from './components/shared/navbar-cotizador/navbar-cotizador.component';
 import { HomeCotizadorComponent } from './components/common/home-cotizador/home-cotizador.component';
-import { ConsultaSimulacionComponent } from './components/common/consulta-simulacion/consulta-simulacion.component';
-import { ResultadoConsultaSimulacionComponent } from './components/common/consulta-simulacion/resultado-consulta-simulacion/resultado-consulta-simulacion.component';
+import { ConsultaSimulacionComponent } from './components/common/consultas/consulta-simulacion/consulta-simulacion.component';
+import { ResultadoConsultaSimulacionComponent } from './components/common/consultas/consulta-simulacion/resultado-consulta-simulacion/resultado-consulta-simulacion.component';
 import { LoginComponent } from './components/common/login/login.component';
 import { SharedCommonModule } from './components/shared/modules/shared-common.module';
 import { LivianosModule } from './components/products/vehiculos/livianos/livianos.module';
@@ -19,6 +19,8 @@ import { DatePickerConfigService } from './config/date-picker-config';
 import { PesadosModule } from './components/products/vehiculos/pesados/pesados.module';
 import { MotosModule } from './components/products/vehiculos/motos/motos.module';
 import { HogarModule } from './components/products/inmobiliario/hogar/hogar.module';
+import { ConsultaProduccionComponent } from './components/common/consultas/consulta-produccion/consulta-produccion.component';
+import { ResultadoConsultaProduccionComponent } from './components/common/consultas/consulta-produccion/resultado-consulta-produccion/resultado-consulta-produccion.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { HogarModule } from './components/products/inmobiliario/hogar/hogar.modu
     HomeCotizadorComponent,
     ConsultaSimulacionComponent,
     ResultadoConsultaSimulacionComponent,
-    LoginComponent
+    LoginComponent,
+    ConsultaProduccionComponent,
+    ResultadoConsultaProduccionComponent
   ],
   imports: [
     SharedCommonModule,
