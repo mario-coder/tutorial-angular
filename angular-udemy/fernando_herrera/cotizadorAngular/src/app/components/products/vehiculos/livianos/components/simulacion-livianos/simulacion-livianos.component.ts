@@ -7,6 +7,7 @@ import { ComboFeedService } from 'src/app/services/data/combofeed.service';
 import { DatePickerConfigService } from 'src/app/config/date-picker-config';
 import { Deducible } from 'src/app/domain/deducible';
 import { Plan } from 'src/app/domain/plan';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: "app-simulacion-livianos",
@@ -16,6 +17,8 @@ import { Plan } from 'src/app/domain/plan';
 })
 
 export class SimulacionLivianosComponent implements OnInit {
+  livianosForm: FormGroup;
+
   PRODUCTO = "livianos";
   _displayBuscarDocumento: boolean = false;
   _isLoggedIn : number = 1;
@@ -27,25 +30,11 @@ export class SimulacionLivianosComponent implements OnInit {
 
   _propuestaActiva: boolean = false;
 
-
+  //Configuracion Datepicker
   bsConfig: Partial<BsDatepickerConfig>;
   dateCustomClasses: DatepickerDateCustomClasses[];
   
-  estadoVehiculoSelected: any;
-  anioSelected: any;
-  marcaSelected: any;
-  modeloSelected: any;
-  tipoDocumentoSelected: any;
-  comunaSelected: any;
-  descuentoRecargoSelected: any;
-  rcEnExcesoSelected: any;
-  companiaAnteriorSelected: any;
-  usoVehiculoSelected: any;
-  tallerSelected: any;
-  asistenciaSelected: any;
-  rcsEnExcesoSelected: any;
-  tipoOperacionSelected: any;
-
+  //Combos
   ESTADOS_VEHICULO: any[];
   ANIOS: any[];
   MARCAS: any[];
@@ -105,6 +94,37 @@ export class SimulacionLivianosComponent implements OnInit {
       {codigoActividad: "2", descripcionActividad: "L Liviano Particular"},
       {codigoActividad: "3", descripcionActividad: "M Liviano Particular"},
       {codigoActividad: "4", descripcionActividad: "S Liviano Particular"}]
+
+
+      /**
+       * GENERACION FORMULARIO
+       */
+      this.livianosForm = new FormGroup({
+        vehiculo: new FormGroup({
+          estadoVehiculo: new FormControl("", [Validators.required]),
+          patente: new FormControl("", []),
+          anio: new FormControl("", [Validators.required]),
+          marca: new FormControl("", [Validators.required]),
+          modelo: new FormControl("", [Validators.required]),
+          companiaAnterior: new FormControl("", [Validators.required]),
+          uso: new FormControl("", [Validators.required]),
+        }),
+        persona: new FormGroup({
+          tipoDocumento: new FormControl("", [Validators.required]),
+          numeroDocumento: new FormControl("", [Validators.required]),
+          primerNombre: new FormControl("", [Validators.required]),
+          apellidoPaterno: new FormControl("", [Validators.required]),
+          comuna: new FormControl("", [Validators.required]),
+          email: new FormControl("", [Validators.required, Validators.email]),
+          fechaInicioNuevaVigencia: new FormControl("", [Validators.required]),
+        }),
+        adicionales: new FormGroup({
+          taller: new FormControl("", []),
+          asistencia: new FormControl("", []),
+          rcEnExceso: new FormControl("", []),
+        })
+      })
+
   }
 
   async tarificar() {
@@ -128,15 +148,18 @@ export class SimulacionLivianosComponent implements OnInit {
         showConfirmButton: true
       });
 
-      // Swal.close();
     }, 2000);
   }
 
-  saludo() {
-    console.log("hola mundirijillo");
+  reset() {
+    this.livianosForm.reset();
   }
 
   comenzarPropuesta(){
     this._propuestaActiva = true;
+  }
+
+  recibeSeleccion(seleccion) {
+    console.log(seleccion)
   }
 }

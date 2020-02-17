@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ChangeDetectorRef, Input, Output, EventEmitter } from '@angular/core';
 import { Deducible } from 'src/app/domain/deducible';
 import { Plan } from 'src/app/domain/plan';
 
@@ -12,9 +12,10 @@ export class SeleccionTarifasComponent implements OnInit {
   headerColumnas: boolean[] = [];
   headerFilas: boolean[] = [];
 
-  @Input() producto: string; //AUTO, MOTO, PESADO, HOGAR
-  @Input() deduciblesExistentes: Deducible[];
-  @Input() planesExistentes: Plan[];
+  @Input()  producto: string; //AUTO, MOTO, PESADO, HOGAR
+  @Input()  deduciblesExistentes: Deducible[];
+  @Input()  planesExistentes: Plan[];
+  @Output() grillaSeleccion = new EventEmitter();
 
   grillaChecked: boolean[][];
   backgroundOn: string = "";
@@ -96,5 +97,7 @@ export class SeleccionTarifasComponent implements OnInit {
     this.headerColumnas[numeroColumna] = (todasLasColumnas)? estadoCheckboxActual: false;
 
     this.cd.detectChanges();
+    this.grillaSeleccion.emit({seleccion: this.grillaChecked})
   }
+
 }

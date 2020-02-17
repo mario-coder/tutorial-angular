@@ -1,9 +1,9 @@
 :host ::ng-deep .img_item {
     width: 70px;
-    height: 30px;
+    height: 25px;
   }
 
   :host ::ng-deep label .img_item,
   :host ::ng-deep :checked + label .img_item {
-    background-size: 70px 30px !important;
+    background-size: 70px 25px !important;
   }
