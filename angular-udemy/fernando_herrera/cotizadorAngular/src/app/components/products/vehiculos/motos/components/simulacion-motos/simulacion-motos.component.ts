@@ -148,4 +148,8 @@ export class SimulacionMotosComponent implements OnInit {
   comenzarPropuesta(){
     this._propuestaActiva = true;
   }
+
+  recibeSeleccion(seleccion) {
+    console.log(seleccion)
+  }
 }

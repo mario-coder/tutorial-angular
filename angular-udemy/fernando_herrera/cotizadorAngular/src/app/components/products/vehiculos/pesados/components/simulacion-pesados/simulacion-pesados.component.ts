@@ -7,6 +7,7 @@ import { ComboFeedService } from 'src/app/services/data/combofeed.service';
 import { DatePickerConfigService } from 'src/app/config/date-picker-config';
 import { Deducible } from 'src/app/domain/deducible';
 import { Plan } from 'src/app/domain/plan';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: "app-simulacion-pesados",
@@ -16,6 +17,8 @@ import { Plan } from 'src/app/domain/plan';
 })
 
 export class SimulacionPesadosComponent implements OnInit {
+  pesadosForm: FormGroup;
+
   PRODUCTO = "pesados";
   _displayBuscarDocumento: boolean = false;
   _isLoggedIn : number = 1;
@@ -31,25 +34,6 @@ export class SimulacionPesadosComponent implements OnInit {
   bsConfig: Partial<BsDatepickerConfig>;
   dateCustomClasses: DatepickerDateCustomClasses[];
   
-  estadoVehiculoSelected: any;
-  anioSelected: any;
-  marcaSelected: any;
-  modeloSelected: any;
-  tipoDocumentoSelected: any;
-  comunaSelected: any;
-  descuentoRecargoSelected: any;
-  rcEnExcesoSelected: any;
-  companiaAnteriorSelected: any;
-  usoVehiculoSelected: any;
-  subUsoVehiculoSelected: any;
-  tallerSelected: any;
-  asistenciaSelected: any;
-  rcsEnExcesoSelected: any;
-  tipoOperacionSelected: any;
-
-  tipoVehiculoSelected: any;
-  clausulasAdicionalesSelected: any[];
-
   ESTADOS_VEHICULO: any[];
   ANIOS: any[];
   MARCAS: any[];
@@ -116,6 +100,39 @@ export class SimulacionPesadosComponent implements OnInit {
       {codigoActividad: "1", descripcionActividad: "L Liviano Particular"},
       {codigoActividad: "2", descripcionActividad: "M Liviano Particular"},
       {codigoActividad: "3", descripcionActividad: "S Liviano Particular"}]
+  
+  
+        /**
+       * GENERACION FORMULARIO
+       */
+      this.pesadosForm = new FormGroup({
+        vehiculo: new FormGroup({
+          estado: new FormControl("", [Validators.required]),
+          patente: new FormControl("", []),
+          tipo: new FormControl("", [Validators.required]),
+          anio: new FormControl("", [Validators.required]),
+          marca: new FormControl("", [Validators.required]),
+          montoAsegurado: new FormControl("", [Validators.required]),
+          uso: new FormControl("", [Validators.required]),
+          subUso: new FormControl("", [Validators.required]),
+          companiaAnterior: new FormControl("", [Validators.required]),
+        }),
+        persona: new FormGroup({
+          tipoDocumento: new FormControl("", [Validators.required]),
+          numeroDocumento: new FormControl("", [Validators.required]),
+          primerNombre: new FormControl("", [Validators.required]),
+          apellidoPaterno: new FormControl("", [Validators.required]),
+          comuna: new FormControl("", [Validators.required]),
+          email: new FormControl("", [Validators.required, Validators.email]),
+          fechaInicioNuevaVigencia: new FormControl("", [Validators.required]),
+        }),
+        adicionales: new FormGroup({
+          taller: new FormControl("", []),
+          asistencia: new FormControl("", []),
+          rcEnExceso: new FormControl("", []),
+          clausulasAdicionales: new FormControl("", []),
+        })
+      })
   }
 
   async tarificar() {
@@ -149,5 +166,9 @@ export class SimulacionPesadosComponent implements OnInit {
 
   comenzarPropuesta(){
     this._propuestaActiva = true;
+  }
+
+  recibeSeleccion(seleccion) {
+    console.log(seleccion)
   }
 }

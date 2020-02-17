@@ -101,7 +101,7 @@ export class SimulacionLivianosComponent implements OnInit {
        */
       this.livianosForm = new FormGroup({
         vehiculo: new FormGroup({
-          estadoVehiculo: new FormControl("", [Validators.required]),
+          estado: new FormControl("", [Validators.required]),
           patente: new FormControl("", []),
           anio: new FormControl("", [Validators.required]),
           marca: new FormControl("", [Validators.required]),

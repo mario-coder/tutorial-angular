@@ -278,7 +278,8 @@
                         <app-seleccion-tarifas 
                             [producto] = "PRODUCTO"
                             [deduciblesExistentes]="deduciblesExistentes"
-                            [planesExistentes]="planesExistentes">
+                            [planesExistentes]="planesExistentes"
+                            (grillaSeleccion)="recibeSeleccion($event)">
                         </app-seleccion-tarifas>
     
                         <br>
