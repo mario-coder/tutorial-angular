@@ -8,6 +8,7 @@ import { DatePickerConfigService } from 'src/app/config/date-picker-config';
 import { Deducible } from 'src/app/domain/deducible';
 import { Plan } from 'src/app/domain/plan';
 import { Options } from 'ng5-slider';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-simulacion-hogar',
@@ -16,7 +17,9 @@ import { Options } from 'ng5-slider';
 })
 
 export class SimulacionHogarComponent implements OnInit {
-  PRODUCTO = "livianos";
+  hogarForm: FormGroup;
+
+  PRODUCTO = "hogar";
   _displayBuscarDocumento: boolean = false;
   _isLoggedIn : number = 1;
   
@@ -31,36 +34,10 @@ export class SimulacionHogarComponent implements OnInit {
   bsConfig: Partial<BsDatepickerConfig>;
   dateCustomClasses: DatepickerDateCustomClasses[];
   
-  estadoVehiculoSelected: any;
-  anioSelected: any;
-  marcaSelected: any;
-  modeloSelected: any;
-  tipoDocumentoSelected: any;
-  comunaSelected: any;
-  descuentoRecargoSelected: any;
-  rcEnExcesoSelected: any;
-  companiaAnteriorSelected: any;
-  usoVehiculoSelected: any;
-  tallerSelected: any;
-  asistenciaSelected: any;
-  rcsEnExcesoSelected: any;
-  tipoOperacionSelected: any;
-  
-  opcionAsistenciaSelected: any;
-
-  opcionCristales: any;
-  opcionResponsabilidadCivil: any;
-  opcionInhabitabilidad: any;
-  opcionAsistencia: boolean;
-  opcionAccidentesPersonales: any;
-  opcionperdidasArriendo: any;
+  asistencia: any;
   
   _aceptaDeclaracion: boolean;
 
-  ocupacionRiesgoSelected: any;
-  tipoConstruccionSelected: any;
-  tipoViaSelected: any;
-  zonaHogarSelected: any;
 
   ESTADOS_VEHICULO: any[];
   ANIOS: any[];
@@ -136,23 +113,87 @@ export class SimulacionHogarComponent implements OnInit {
       {codigoActividad: "4", descripcionActividad: "S Liviano Particular"}]
   
   
-    this.valueSliderEdificioSelected = 0;
     this.optionsSliderEdificio = {
-    showTicksValues: true,
-    stepsArray: [
-      {value: 0,     legend: '0 UF'},
-      {value: 1000,  legend: '1000 UF'},
-      {value: 2000,  legend: '2000 UF'},
-      {value: 3000,  legend: '3000 UF'},
-      {value: 4000,  legend: '4000 UF'},
-      {value: 5000,  legend: '5000 UF'},
-      {value: 7000,  legend: '7000 UF'},
-      {value: 10000, legend: '10000 UF'},
-      {value: 12000, legend: '12000 UF'},
-      {value: 15000, legend: '15000 UF'},
-    ]
-  };
-  
+      showTicksValues: true,
+      stepsArray: [
+        {value: 0,     legend: '0 UF'},
+        {value: 1000,  legend: '1000 UF'},
+        {value: 2000,  legend: '2000 UF'},
+        {value: 3000,  legend: '3000 UF'},
+        {value: 4000,  legend: '4000 UF'},
+        {value: 5000,  legend: '5000 UF'},
+        {value: 7000,  legend: '7000 UF'},
+        {value: 10000, legend: '10000 UF'},
+        {value: 12000, legend: '12000 UF'},
+        {value: 15000, legend: '15000 UF'},
+        ]
+      };
+
+      this.optionsSliderContenido = {
+        showTicksValues: true,
+        stepsArray: [
+          {value: 0,     legend: '0 UF'},
+          {value: 1000,  legend: '1000 UF'},
+          {value: 2000,  legend: '2000 UF'},
+          {value: 3000,  legend: '3000 UF'},
+          {value: 4000,  legend: '4000 UF'},
+          {value: 5000,  legend: '5000 UF'},
+          {value: 7000,  legend: '7000 UF'},
+          {value: 10000, legend: '10000 UF'},
+          {value: 12000, legend: '12000 UF'},
+          {value: 15000, legend: '15000 UF'},
+          ]
+      };
+
+      /**
+       * GENERACION FORMULARIO
+       */
+      this.hogarForm = new FormGroup({
+        persona: new FormGroup({
+          tipoDocumento: new FormControl("", [Validators.required]),
+          numeroDocumento: new FormControl("", [Validators.required]),
+          primerNombre: new FormControl("", [Validators.required]),
+          apellidoPaterno: new FormControl("", [Validators.required]),
+          comuna: new FormControl("", [Validators.required]),
+          email: new FormControl("", [Validators.required, Validators.email]),
+          perfil: new FormControl("", [Validators.required]),
+        }),
+        inmueble: new FormGroup({
+          anioConstruccion: new FormControl("", []),
+          ocupacion: new FormControl("", [Validators.required]),
+          tipoConstruccion: new FormControl("", [Validators.required]),
+          fechaInicioNuevaVigencia: new FormControl("", [Validators.required]),
+        }),
+        direccion: new FormGroup({
+          tipoVia: new FormControl("", [Validators.required]),
+          direccion: new FormControl("", [Validators.required]),
+          numero: new FormControl("", [Validators.required]),
+          pisoDepto: new FormControl("", []),
+          comuna: new FormControl("", [Validators.required]),
+          zona: new FormControl("", [Validators.required]),
+        }),
+        montoAsegurado: new FormGroup({
+          edificio: new FormControl("0", []),
+          contenido: new FormControl("0", []),
+        }),
+        opcionales: new FormGroup({
+          cristales: new FormControl("", []),
+          responsabilidadCivil: new FormControl("", []),
+          inhabitabilidad: new FormControl("", []),
+          asistencia: new FormControl("", []),
+          opcionAsistencia: new FormControl({value:"", disabled: true}, []),
+          accidentesPersonales: new FormControl("", []),
+          perdidasArriendo: new FormControl("", []),
+        }),
+        aceptaDeclaracion: new FormControl("", [Validators.required]),
+        descuentoRecargo: new FormControl("", [Validators.required]),
+      })
+
+      this.hogarForm.statusChanges.subscribe(
+        result => console.log(this.hogarForm)
+      );
+
+      this.validateDisabledFields();
     }
 
   async tarificar() {
@@ -187,4 +228,20 @@ export class SimulacionHogarComponent implements OnInit {
   comenzarPropuesta(){
     this._propuestaActiva = true;
   }
+
+ validateDisabledFields() {
+    this.hogarForm.controls["opcionales"]["controls"]["asistencia"].value == false || this.hogarForm.controls["opcionales"]["controls"]["asistencia"].value == "" ? 
+    this.hogarForm.controls["opcionales"]["controls"]["opcionAsistencia"].disable() : 
+    this.hogarForm.controls["opcionales"]["controls"]["opcionAsistencia"].enable();
+
+    this.hogarForm.controls["opcionales"]["controls"]["asistencia"].valueChanges
+     .subscribe(selectedAsistencia => {
+         if (selectedAsistencia) {
+           this.hogarForm.controls["opcionales"]["controls"]["opcionAsistencia"].enable();
+         } else {
+           this.hogarForm.controls["opcionales"]["controls"]["opcionAsistencia"].disable();
+         }
+     });
+ }
+
 }

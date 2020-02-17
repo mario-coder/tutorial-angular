@@ -30,29 +30,9 @@ export class SimulacionMotosComponent implements OnInit {
 
   _propuestaActiva: boolean = false;
 
-
   bsConfig: Partial<BsDatepickerConfig>;
   dateCustomClasses: DatepickerDateCustomClasses[];
   
-  estadoVehiculoSelected: any;
-  anioSelected: any;
-  marcaSelected: any;
-  modeloSelected: any;
-  tipoDocumentoSelected: any;
-  comunaSelected: any;
-  descuentoRecargoSelected: any;
-  rcEnExcesoSelected: any;
-  companiaAnteriorSelected: any;
-  usoMotoSelected: any;
-  subUsoVehiculoSelected: any;
-  tallerSelected: any;
-  asistenciaSelected: any;
-  rcsEnExcesoSelected: any;
-  tipoOperacionSelected: any;
-
-  clasificacionSelected: any;
-  cilindradaMotoSelected: any;
-
   ESTADOS_VEHICULO: any[];
   ANIOS: any[];
   MARCAS: any[];
@@ -147,8 +127,7 @@ export class SimulacionMotosComponent implements OnInit {
           asistencia: new FormControl("", []),
         })
       })  
-  
-  
+    
     }
 
   async tarificar() {

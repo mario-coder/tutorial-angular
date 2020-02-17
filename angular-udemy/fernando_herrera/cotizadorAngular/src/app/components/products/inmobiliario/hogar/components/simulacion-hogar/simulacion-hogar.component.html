@@ -43,7 +43,7 @@
             <!-- Contenedor datos principales -->
             <div class="container section-container flip-in-hor-bottom">
     
-                <form (ngSubmit)="tarificar()" #f="ngForm">
+                <form [formGroup]="hogarForm" (ngSubmit)="tarificar()">
     
                     <!-- Panel Principal -->
                     <p-panel [toggleable]="true">
@@ -74,35 +74,38 @@
                                     </span>
                                 </p-header>
         
-                                <div class="container mx-1 px-1">
+                                <div formGroupName="persona" class="container mx-1 px-1">
                                     <div class="row mb-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="tipoDocumento" class="input-label">Tipo de Documento *</label>
-                                            <p-dropdown [options]="TIPOS_DOCUMENTO" name="tipoDocumento" 
-                                            [(ngModel)]="tipoDocumentoSelected"
-                                            placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                            <p-dropdown 
+                                                formControlName="tipoDocumento"
+                                                [options]="TIPOS_DOCUMENTO" 
+                                                name="tipoDocumento" 
+                                                placeholder="Selecione" 
+                                                optionLabel="label"></p-dropdown>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="numeroDocumento" class="input-label">Numero de Documento * </label>
-                                            <input pInputText name="numeroDocumento" type="text" />
+                                            <input formControlName="numeroDocumento" pInputText name="numeroDocumento" type="text" />
                                         </div>
 
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="primerNombre" class="input-label">Primer Nombre *</label>
-                                            <input pInputText name="primerNombre" type="text" />
+                                            <input formControlName="primerNombre" pInputText name="primerNombre" type="text" />
                                         </div>
 
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="apellidoPaterno" class="input-label">Apellido Paterno *</label>
-                                            <input pInputText name="apellidoPaterno" type="text" />
+                                            <input formControlName="apellidoPaterno" pInputText name="apellidoPaterno" type="text" />
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="email" class="input-label">Email *</label>
-                                            <input pInputText name="email" type="text" />
+                                            <input formControlName="email" pInputText name="email" type="text" />
                                         </div>
                                     </div>
 
@@ -116,8 +119,14 @@
                                     <div class="row mb-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <div class="ui-g" style="width: 250px;">
-                                                <div class="ui-g-6"><p-radioButton name="perfilAsegurado" value="Propietario" label="Propietario" [(ngModel)]="perfilAseguradoSelected" inputId="perfilAsegurado1"></p-radioButton></div>
-                                                <div class="ui-g-6"><p-radioButton name="perfilAsegurado" value="Arrendatario" label="Asegurado" [(ngModel)]="perfilAseguradoSelected" inputId="perfilAsegurado2"></p-radioButton></div>
+                                                <div class="ui-g-6">
+                                                    <p-radioButton name="perfilAsegurado" value="Propietario" label="Propietario" 
+                                                    formControlName="perfil" inputId="perfilAsegurado1"></p-radioButton>
+                                                </div>
+                                                <div class="ui-g-6">
+                                                    <p-radioButton name="perfilAsegurado" value="Arrendatario" label="Asegurado" 
+                                                    formControlName="perfil" inputId="perfilAsegurado2"></p-radioButton>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -140,31 +149,38 @@
                                     </span>
                                 </p-header>
     
-                                <div class="container mx-1 px-1">
+                                <div formGroupName="inmueble" class="container mx-1 px-1">
                                     <div class="row mb-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="ocupacionRiesgo" class="input-label">Ocupación del riesgo *</label>
-                                            <p-dropdown [options]="OCUPACIONES_RIESGO_HOGAR" name="ocupacionRiesgo" 
-                                                [(ngModel)]="ocupacionRiesgoSelected" 
+                                            <p-dropdown 
+                                                formControlName="ocupacion" 
+                                                [options]="OCUPACIONES_RIESGO_HOGAR" 
+                                                name="ocupacionRiesgo" 
                                                 placeholder="Selecione" optionLabel="label"></p-dropdown>
                                         </div>
         
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="tipoConstruccion" class="input-label">Tipo de construcción *</label>
-                                            <p-dropdown [options]="TIPOS_CONSTRUCCION_HOGAR" name="tipoConstruccion" 
-                                                [(ngModel)]="tipoConstruccionSelected" 
-                                                placeholder="Selecione" optionLabel="label"></p-dropdown>
+                                            <p-dropdown 
+                                                formControlName="tipoConstruccion" 
+                                                [options]="TIPOS_CONSTRUCCION_HOGAR" 
+                                                name="tipoConstruccion" 
+                                                placeholder="Selecione" 
+                                                optionLabel="label"></p-dropdown>
                                         </div>
 
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="patente" class="input-label">Año construcción</label>
-                                            <input pInputText name="patente" type="text" />
+                                            <input formControlName="anioConstruccion" pInputText name="anioConstruccion" type="text" />
                                         </div>
 
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="fechaInicioNuevaVigencia" class="input-label">Fecha Inicio Vigencia</label>
                                             <div class="ui-inputgroup">
-                                                <input type="text" name="fechaInicioNuevaVigencia"
+                                                <input type="text" 
+                                                    formControlName="fechaInicioNuevaVigencia"
+                                                    name="fechaInicioNuevaVigencia"
                                                     pInputText class="calendar-input"
                                                     #dp="bsDatepicker"
                                                     bsDatepicker [bsConfig]="bsConfig" [dateCustomClasses]="dateCustomClasses">   
@@ -191,43 +207,55 @@
                                     </span>
                                 </p-header>
     
-                                <div class="container mx-1 px-1">
+                                <div formGroupName="direccion" class="container mx-1 px-1">
                                     <div class="row mb-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="tipoVia" class="input-label">Tipo vía *</label>
-                                            <p-dropdown [options]="TIPOS_VIAS_HOGAR" name="tipoVia" 
-                                            [(ngModel)]="tipoViaSelected" appentTo="body"
-                                            [showClear]="true"
-                                            placeholder="Por defecto" optionLabel="label"></p-dropdown>
+                                            <p-dropdown 
+                                                formControlName="tipoVia" 
+                                                [options]="TIPOS_VIAS_HOGAR" 
+                                                name="tipoVia" 
+                                                appentTo="body"
+                                                [showClear]="true"
+                                                placeholder="Por defecto" 
+                                                optionLabel="label"></p-dropdown>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="direccion" class="input-label">Dirección *</label>
-                                            <input pInputText name="direccion" type="text" />
+                                            <input formControlName="direccion" pInputText name="direccion" type="text" />
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="numero" class="input-label">Número *</label>
-                                            <input pInputText name="numero" type="text" />
+                                            <input formControlName="numero" pInputText name="numero" type="text" />
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="pisoDepto" class="input-label">Piso/Depto</label>
-                                            <input pInputText name="pisoDepto" type="text" />
+                                            <input formControlName="pisoDepto" pInputText name="pisoDepto" type="text" />
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="comuna" class="input-label">Comuna *</label>
-                                            <p-dropdown [options]="COMUNAS" name="comuna" 
-                                                [(ngModel)]="comunaSelected" filter="true"
+                                            <p-dropdown 
+                                                formControlName="comuna" 
+                                                [options]="COMUNAS" name="comuna" 
+                                                filter="true"
                                                 [virtualScroll]="true"
-                                                placeholder="Selecione" optionLabel="label" [showClear]="true"></p-dropdown>
+                                                placeholder="Selecione" 
+                                                optionLabel="label" 
+                                                [showClear]="true"></p-dropdown>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <label for="zonaHogar" class="input-label">Zona *</label>
-                                            <p-dropdown [options]="ZONAS_HOGAR" name="zonaHogar" 
-                                                [(ngModel)]="zonaHogarSelected" appentTo="body"
+                                            <p-dropdown 
+                                                formControlName="zona" 
+                                                [options]="ZONAS_HOGAR" 
+                                                name="zonaHogar" 
+                                                appentTo="body"
                                                 [showClear]="true"
-                                                placeholder="Por defecto" optionLabel="label"></p-dropdown>
+                                                placeholder="Por defecto" 
+                                                optionLabel="label"></p-dropdown>
                                         </div>
                                     </div>
                                 </div>
@@ -253,7 +281,7 @@
                                         <img src="assets/img/logo_reale.png" class="mb-3" style="width: 15em;">
                                     <!-- </p-header> -->
                     
-                                <div class="tabla-tarifas-container">
+                                <div formGroupName="montoAsegurado" class="tabla-tarifas-container">
                                     
                                     <p-fieldset legend="Edificio *">
                                         <div class="d-flex flex-row">
@@ -262,7 +290,7 @@
                                             </div>
                                             <div class="w-100 slider-flex">
                                                 <ng5-slider 
-                                                    [(value)]="valueSliderEdificioSelected" 
+                                                    formControlName="edificio"
                                                     [options]="optionsSliderEdificio" 
                                                     style="margin-bottom: 4rem;">
                                                 </ng5-slider>
@@ -282,8 +310,8 @@
                                             </div>
                                             <div class="w-100 slider-flex">
                                                 <ng5-slider 
-                                                    [(value)]="valueSliderEdificioSelected" 
-                                                    [options]="optionsSliderEdificio" 
+                                                    formControlName="contenido"
+                                                    [options]="optionsSliderContenido" 
                                                     style="margin-bottom: 4rem;">
                                                 </ng5-slider>
                                             </div>
@@ -305,7 +333,7 @@
                         <br>
 
                         <!-- Coberturas Opcionales -->
-                        <div class="section-container panel-container">
+                        <div formGroupName="opcionales" class="section-container panel-container">
                             <p-panel [toggleable]="true">
     
                                 <p-header>
@@ -319,44 +347,50 @@
                                     <div class="row mt-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <p-checkbox 
+                                                formControlName="cristales"
                                                 name="cristales"
                                                 binary="true" 
-                                                label="Cristales" 
-                                                [(ngModel)]="opcionCristales">
+                                                label="Cristales">
                                             </p-checkbox>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <p-checkbox 
-                                                name="opcionResponsabilidadCivil"
+                                                formControlName="responsabilidadCivil"
+                                                name="responsabilidadCivil"
                                                 binary="true" 
-                                                label="Responsabilidad Civil" 
-                                                [(ngModel)]="opcionResponsabilidadCivil">
+                                                label="Responsabilidad Civil">
                                             </p-checkbox>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <p-checkbox 
+                                                formControlName="inhabitabilidad"
                                                 name="opcionInhabitabilidad"
                                                 binary="true" 
-                                                label="Inhabitabilidad de la vivienda" 
-                                                [(ngModel)]="opcionInhabitabilidad">
+                                                label="Inhabitabilidad de la vivienda">
                                             </p-checkbox>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 rowspan-2">
                                             <div class="row">
                                                 <div class="col">
                                                     <p-checkbox 
-                                                        name="opcionAsistencia"
+                                                        formControlName="asistencia"
+                                                        name="asistencia"
                                                         binary="true" 
-                                                        label="Asistencia:" 
-                                                        [(ngModel)]="opcionAsistencia">
+                                                        label="Asistencia:">
                                                     </p-checkbox>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="ui-g" style="width: 250px;">
-                                                        <div class="ui-g-6"><p-radioButton name="opcionAsistenciaSelected" [disabled]="!opcionAsistencia" value="Basica" label="Básica" [(ngModel)]="opcionAsistenciaSelected" inputId="opcionAsistenciaSelected1"></p-radioButton></div>
-                                                        <div class="ui-g-6"><p-radioButton name="opcionAsistenciaSelected" [disabled]="!opcionAsistencia" value="Full" label="Full" [(ngModel)]="opcionAsistenciaSelected" inputId="opcionAsistenciaSelected2"></p-radioButton></div>
+                                                        <div class="ui-g-6">
+                                                            <p-radioButton name="opcionAsistenciaSelected" value="Basica" label="Básica" 
+                                                            formControlName="opcionAsistencia" inputId="opcionAsistenciaSelected1"></p-radioButton>
+                                                        </div>
+                                                        <div class="ui-g-6">
+                                                            <p-radioButton name="opcionAsistenciaSelected" value="Full" label="Full" 
+                                                            formControlName="opcionAsistencia" inputId="opcionAsistenciaSelected2"></p-radioButton>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -366,18 +400,18 @@
                                     <div class="row mb-3">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <p-checkbox 
-                                                name="opcionAccidentesPersonales"
+                                                formControlName="accidentesPersonales"
+                                                name="accidentesPersonales"
                                                 binary="true" 
-                                                label="Accidentes Personales" 
-                                                [(ngModel)]="opcionAccidentesPersonales">
+                                                label="Accidentes Personales">
                                             </p-checkbox>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                             <p-checkbox 
+                                                formControlName="perdidasArriendo"
                                                 name="perdidasArriendo"
                                                 binary="true" 
-                                                label="Perdidas de entradas por arriendo" 
-                                                [(ngModel)]="opcionperdidasArriendo">
+                                                label="Perdidas de entradas por arriendo">
                                             </p-checkbox>
                                         </div>
                                     </div>
@@ -395,10 +429,10 @@
                                 <div class="ml-3 my-2">
                                     <p-header>
                                         <p-checkbox 
+                                            formControlName="aceptaDeclaracion"
                                             name="cristales"
                                             binary="true" 
-                                            label="DECLARO QUE LA VIVIENDA ANTES MENCIONADA CUENTA CON LAS SIGUIENTES CARACTERISTICAS:" 
-                                            [(ngModel)]="_aceptaDeclaracion">
+                                            label="DECLARO QUE LA VIVIENDA ANTES MENCIONADA CUENTA CON LAS SIGUIENTES CARACTERISTICAS:">
                                         </p-checkbox>
                                     </p-header>
                                 </div>
@@ -493,7 +527,7 @@
                                         <div class="col">
                                             <label for="descuentoRecargo" class="input-label">Descuento/Recargo</label>
                                             <p-dropdown name="descuentoRecargo" [options]="DESCUENTO_RECARGO"
-                                                [(ngModel)]="descuentoRecargoSelected"
+                                                formControlName="descuentoRecargo"
                                                 [showClear]="true"
                                                 placeholder="Selecione" optionLabel="label">
                                             </p-dropdown>
