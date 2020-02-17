@@ -7,6 +7,7 @@ import { ComboFeedService } from 'src/app/services/data/combofeed.service';
 import { DatePickerConfigService } from 'src/app/config/date-picker-config';
 import { Deducible } from 'src/app/domain/deducible';
 import { Plan } from 'src/app/domain/plan';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: "app-simulacion-motos",
@@ -16,6 +17,8 @@ import { Plan } from 'src/app/domain/plan';
 })
 
 export class SimulacionMotosComponent implements OnInit {
+  motosForm: FormGroup;
+
   PRODUCTO = "motos";
   _displayBuscarDocumento: boolean = false;
   _isLoggedIn : number = 1;
@@ -74,7 +77,7 @@ export class SimulacionMotosComponent implements OnInit {
   simulaciones: any[];
   deduciblesExistentes: Deducible[];
   planesExistentes: Plan[];
- 
+   
   constructor(
       private comboFeedService: ComboFeedService,
       private tarificadorService: TarificadorService,
@@ -114,7 +117,39 @@ export class SimulacionMotosComponent implements OnInit {
       {codigoActividad: "1", descripcionActividad: "Plan L Particular"},
       {codigoActividad: "2", descripcionActividad: "Plan M Particular"},
       {codigoActividad: "3", descripcionActividad: "Plan S Particular"}]
-  }
+  
+      /**
+       * GENERACION FORMULARIO
+       */
+      this.motosForm = new FormGroup({
+        vehiculo: new FormGroup({
+          estado: new FormControl("", [Validators.required]),
+          patente: new FormControl("", []),
+          clasificacion: new FormControl("", [Validators.required]),
+          anio: new FormControl("", [Validators.required]),
+          marca: new FormControl("", [Validators.required]),
+          modelo: new FormControl("", [Validators.required]),
+          companiaAnterior: new FormControl("", [Validators.required]),
+          uso: new FormControl("", [Validators.required]),
+          cilindrada: new FormControl("", [Validators.required]),
+        }),
+        persona: new FormGroup({
+          tipoDocumento: new FormControl("", [Validators.required]),
+          numeroDocumento: new FormControl("", [Validators.required]),
+          primerNombre: new FormControl("", [Validators.required]),
+          apellidoPaterno: new FormControl("", [Validators.required]),
+          comuna: new FormControl("", [Validators.required]),
+          email: new FormControl("", [Validators.required, Validators.email]),
+          fechaInicioNuevaVigencia: new FormControl("", [Validators.required]),
+        }),
+        adicionales: new FormGroup({
+          taller: new FormControl("", []),
+          asistencia: new FormControl("", []),
+        })
+      })  
+  
+  
+    }
 
   async tarificar() {
 
