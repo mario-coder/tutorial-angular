@@ -29,7 +29,7 @@ export class ConsultaProduccionComponent implements OnInit {
   companiaSelected:any;
   ramoSelected:any;
   periodoSelected:any;
-  estadoSimulacionSelected:any;
+  estadoPolizaSelected:any;
   tipoVehiculoSelected:any;
   usoVehiculoSelected:any;
   subUsoVehiculoSelected:any;

@@ -29,7 +29,7 @@ export class SimulacionPesadosComponent implements OnInit {
   CURRENT_STAGE = this.SIMULACION;
 
   _propuestaActiva: boolean = false;
-
+  descuentoRecargoSelected: any;
 
   bsConfig: Partial<BsDatepickerConfig>;
   dateCustomClasses: DatepickerDateCustomClasses[];

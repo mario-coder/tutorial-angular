@@ -29,6 +29,7 @@ export class SimulacionLivianosComponent implements OnInit {
   CURRENT_STAGE = this.SIMULACION;
 
   _propuestaActiva: boolean = false;
+  descuentoRecargoSelected: any;
 
   //Configuracion Datepicker
   bsConfig: Partial<BsDatepickerConfig>;
